@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1ACEBDB-3E63-4726-90C4-25D2629417ED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WFL_Tool_IoU.My.MyApplication</StartupObject>
+    <RootNamespace>WFL_Tool_IoU</RootNamespace>
+    <AssemblyName>WFL Tool IoU</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WFL Tool IoU.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WFL Tool IoU.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>setup.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>WFL Tool IoU.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>WFL Tool IoU.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UninstAdmin.Designer.vb">
+      <DependentUpon>UninstAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UninstAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupAdmin.Designer.vb">
+      <DependentUpon>SetupAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetupAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUninstUserFinish.Designer.vb">
+      <DependentUpon>NewUninstUserFinish.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewUninstUserFinish.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupUser.designer.vb">
+      <DependentUpon>SetupUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetupUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupUserLicense.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupUserLicense.Designer.vb">
+      <DependentUpon>SetupUserLicense.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SetupUserInstall.Designer.vb">
+      <DependentUpon>SetupUserInstall.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetupUserInstall.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupUserBackground.Designer.vb">
+      <DependentUpon>SetupUserBackground.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetupUserBackground.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UninstUser.Designer.vb">
+      <DependentUpon>UninstUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UninstUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SetupAdmin.resx">
+      <DependentUpon>SetupAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUninstUserFinish.resx">
+      <DependentUpon>NewUninstUserFinish.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupUser.resx">
+      <DependentUpon>SetupUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupUserLicense.resx">
+      <DependentUpon>SetupUserLicense.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupUserInstall.resx">
+      <DependentUpon>SetupUserInstall.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupUserBackground.resx">
+      <DependentUpon>SetupUserBackground.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UninstAdmin.resx">
+      <DependentUpon>UninstAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UninstUser.resx">
+      <DependentUpon>UninstUser.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo256.png" />
+    <Content Include="setup.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

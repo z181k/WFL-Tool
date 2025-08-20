@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap uap10 rescap">
+  <Identity Name="DBT.Appx.WflTool" Publisher="CN=DBT's Appx Sign, OU=此系列证书使用者名称一样，以签发日期分先后, CN=China" Version="8.34.8352.1" ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>WFL Tool</DisplayName>
+    <PublisherDisplayName>DBT Soft</PublisherDisplayName>
+    <Description>None</Description>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <uap10:PackageIntegrity>
+      <uap10:Content Enforcement="on" />
+    </uap10:PackageIntegrity>
+  </Properties>
+  <Resources>
+    <Resource Language="zh-cn" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.26020.1" />
+  </Dependencies>
+  <Applications>
+    <Application Id="MainApp" Executable="WFLtool64.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements BackgroundColor="transparent" DisplayName="WFL Tool" Square150x150Logo="Assets\WFLTOOLSixFour-Square150x150Logo.png" Square44x44Logo="Assets\WFLTOOLSixFour-Square44x44Logo.png" Description="WFLtool64">
+        <uap:DefaultTile Wide310x150Logo="Assets\WFLTOOLSixFour-Wide310x150Logo.png" Square310x310Logo="Assets\WFLTOOLSixFour-Square310x310Logo.png" Square71x71Logo="Assets\WFLTOOLSixFour-Square71x71Logo.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+<Capabilities><rescap:Capability Name="runFullTrust" /></Capabilities></Package>
