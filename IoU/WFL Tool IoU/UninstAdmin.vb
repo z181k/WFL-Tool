@@ -41,7 +41,7 @@
         Dim dpfu As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", True).GetValue("Desktop", "%homedrive%%homepath%\desktop")
         Shell("cmd.EXE /c del ""%homedrive%\users\public\desktop\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 75
-        Shell("cmd.exe /c reg.exe delete ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c reg.exe delete ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 100
         NewUninstUserFinish.Show()
         SetupUserInstall.Label1.Text = "卸载完成"

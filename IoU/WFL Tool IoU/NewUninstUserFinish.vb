@@ -25,15 +25,12 @@
             Exit Sub
         End If
         '用户模式卸载不清除数据
+        Shell("cmd.EXE /c timeout.exe /t 2 &DEL ""%localappdata%\WFL Tool\uninstall.exe""", AppWinStyle.Hide, False, -1)
 exit1:
         Shell("cmd.EXE /c timeout.exe /t 2 &DEL ""%localappdata%\WFL Tool\uninstall.exe""", AppWinStyle.Hide, False, -1)
     End Sub
 
     Private Sub NewUninstUserFinish_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         Me.Visible = False
-    End Sub
-
-    Private Sub NewUninstUserFinish_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

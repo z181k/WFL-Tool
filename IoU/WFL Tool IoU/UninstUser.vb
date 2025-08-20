@@ -10,7 +10,7 @@ Public Class UninstUser
         Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Uninst /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         Timer1.Start()
-        SetupUserInstall.PB1.Value = 0
+        SetupUserInstall.PB1.Value = 25
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -30,19 +30,13 @@ Public Class UninstUser
         SetupUserInstall.Label4.Text = "卸载程序"
         SetupUserInstall.Label1.Text = "正在卸载"
         Timer1.Start()
-        SetupUserInstall.PB1.Value = 0
+        SetupUserInstall.PB1.Value = 25
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Stop()
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\EWV2viewer\*.*"" /s /q", AppWinStyle.Hide, False, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 25
-        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\MessageBox.exe""", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll""", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll""", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\resources.pri""", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 50
         Shell("cmd.EXE /c del ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
         Dim dpfu As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", True).GetValue("Desktop", "%homedrive%%homepath%\desktop")

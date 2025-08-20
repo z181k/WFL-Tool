@@ -12,7 +12,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Hide()
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v InstallAdmin /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
-        CreateObject("shell.application").shellexecute("InAdmin.exe", "", "", "runas", 1)        '所有用户
+        CreateObject("shell.application").shellexecute("InAdmin.exe", "", "", "runas", 0)        '所有用户
         End
     End Sub
 
