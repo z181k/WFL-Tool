@@ -35,7 +35,7 @@ Partial Class EWV2webpage
         Me.WebView21.Location = New System.Drawing.Point(0, 0)
         Me.WebView21.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.WebView21.Name = "WebView21"
-        Me.WebView21.Size = New System.Drawing.Size(1852, 1159)
+        Me.WebView21.Size = New System.Drawing.Size(2512, 1311)
         Me.WebView21.Source = New System.Uri("https://www.gov.cn", System.UriKind.Absolute)
         Me.WebView21.TabIndex = 0
         Me.WebView21.ZoomFactor = 1.0R
@@ -44,7 +44,7 @@ Partial Class EWV2webpage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1851, 1157)
+        Me.ClientSize = New System.Drawing.Size(2512, 1311)
         Me.Controls.Add(Me.WebView21)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
