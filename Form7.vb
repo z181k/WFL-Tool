@@ -21,27 +21,22 @@
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC"" /v EnableMtcUvc /T REG_DWORD /d 1 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC"" /v EnableMtcUvc /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC"" /v EnableMtcUvc /T REG_DWORD /d 0 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC"" /v EnableMtcUvc /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network"" /v ReplaceVan /T REG_DWORD /d 2 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network"" /v ReplaceVan /T REG_DWORD /d 2 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network"" /v ReplaceVan /T REG_DWORD /d 1 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network"" /v ReplaceVan /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network"" /v ReplaceVan /T REG_DWORD /d 0 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network"" /v ReplaceVan /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -75,32 +70,26 @@
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v VerboseStatus /T REG_DWORD /d 0 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v VerboseStatus /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v VerboseStatus /T REG_DWORD /d 1 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v VerboseStatus /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell /v UseWin32BatteryFlyout /T REG_DWORD /d 1 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell /v UseWin32BatteryFlyout /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell /v UseWin32BatteryFlyout /T REG_DWORD /d 0 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell /v UseWin32BatteryFlyout /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\FlightedFeatures /v ImmersiveContextMenu /T REG_DWORD /d 0 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\FlightedFeatures /v ImmersiveContextMenu /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\FlightedFeatures /v ImmersiveContextMenu /T REG_DWORD /d 1 /f", "", "runas", 0)
-        'Shell("cmd.exe /c reg.exe add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\FlightedFeatures /v ImmersiveContextMenu /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
@@ -119,8 +108,6 @@
     Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device"" /v DevicePasswordLessBuildVersion /T REG_DWORD /d 0 /f", "", "runas", 0)
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\wow6432node\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device"" /v DevicePasswordLessBuildVersion /T REG_DWORD /d 0 /f", "", "runas", 0)
-        'Shell("cmd.exe /C reg.exe add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device"" /v DevicePasswordLessBuildVersion /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)
-        'Shell("cmd.exe /C reg.exe add ""HKEY_LOCAL_MACHINE\SOFTWARE\wow6432node\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device"" /v DevicePasswordLessBuildVersion /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
@@ -176,11 +163,11 @@
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < "19041" Then              '检查版本控制netplwiz显示
+        If CurrentBuild < 19041 Then              '检查版本控制netplwiz显示
             Button26.Enabled = False
         End If
         '下面采用14393这个版本作为保底，再之前的win10版本功能缺失过多，故屏蔽
-        If CurrentBuild < "14393" Then
+        If CurrentBuild < 14393 Then
             GroupBox6.Enabled = False             '检查版本控制Windows 10 音量控制界面样式显示
             GroupBox16.Enabled = False             '检查版本控制Windows 10 及以上版本控制面板隐藏项目显示
             GroupBox3.Enabled = False             '检查版本控制WWindows 10 电池界面样式显示
@@ -189,25 +176,30 @@
             Button16.Enabled = False            '检查版本控制Windows 10 任务栏透明度设置教程显示
         End If
         '下面是win11隐藏win10专属功能
-        If CurrentBuild > "21390" Then
+        If CurrentBuild > 21390 Then
             GroupBox6.Enabled = False              '检查版本控制Windows 10 音量控制界面样式显示
             GroupBox3.Enabled = False            '检查版本控制WWindows 10 电池界面样式显示
             GroupBox2.Enabled = False             '检查版本控制WWindows 10 通知显示
             GroupBox5.Enabled = False            '检查版本控制Win10 网络面板显示
             Button16.Enabled = False            '检查版本控制Windows 10 任务栏透明度设置教程显示
         End If
-        If CurrentBuild >= "22621" Then              '检查版本控制旧版任务栏图标选项显示(由于win11 21h2 支持所以不屏蔽win11 21h2)
+        If CurrentBuild >= 22621 Then              '检查版本控制旧版任务栏图标选项显示(由于win11 21h2 支持所以不屏蔽win11 21h2)
             'Button33.Enabled = False          '暂时不屏蔽
         End If
         '分界线
-        If CurrentBuild < "10240" Then              '检查版本控制Windows 10 桌面上下文菜单显示(小于win10部分)
+        If CurrentBuild < 10240 Then              '检查版本控制Windows 10 桌面上下文菜单显示(小于win10部分)
             GroupBox7.Enabled = False
         ElseIf CurrentBuild >= "18362" Then              '检查版本控制Windows 10 桌面上下文菜单显示(大于win10 1903部分)
             GroupBox7.Enabled = False
         End If
-        If CurrentBuild < "22000" Then
+        If CurrentBuild < 22000 Then
             Button25.Enabled = False              '检查版本控制Windows 11 explorer xaml菜单显示
             Button15.Enabled = False              '检查版本控制Windows 11 explorer win32菜单显示
         End If
+    End Sub
+
+    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
+        CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device"" /v DevicePasswordLessBuildVersion /T REG_DWORD /d 2 /f", "", "runas", 0)
+        CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\wow6432node\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device"" /v DevicePasswordLessBuildVersion /T REG_DWORD /d 2 /f", "", "runas", 0)
     End Sub
 End Class

@@ -85,11 +85,11 @@
             返回没有关闭窗口就行.Visible = True
         End If
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < "22621" Then              '检查版本控制WIN11conhost显示
+        If CurrentBuild < 22621 Then              '检查版本控制WIN11conhost显示
             Button12.Enabled = False
-        ElseIf CurrentBuild > "26020" Then
+        ElseIf CurrentBuild > 26020 Then
             Button6.Enabled = False              '检查版本控制写字板显示
-        ElseIf CurrentBuild < "14393" Then
+        ElseIf CurrentBuild < 14393 Then
             LinkLabel2.Enabled = False              '检查版本控制可选功能显示
         End If
     End Sub

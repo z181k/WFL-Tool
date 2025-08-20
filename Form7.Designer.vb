@@ -83,6 +83,7 @@ Partial Class Form7
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button34 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button27 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -161,6 +162,7 @@ Partial Class Form7
         '
         'GroupBox13
         '
+        Me.GroupBox13.Controls.Add(Me.Button27)
         Me.GroupBox13.Controls.Add(Me.Button26)
         Me.GroupBox13.Location = New System.Drawing.Point(11, 329)
         Me.GroupBox13.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
@@ -176,7 +178,7 @@ Partial Class Form7
         Me.Button26.Location = New System.Drawing.Point(22, 66)
         Me.Button26.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button26.Name = "Button26"
-        Me.Button26.Size = New System.Drawing.Size(587, 66)
+        Me.Button26.Size = New System.Drawing.Size(286, 66)
         Me.Button26.TabIndex = 29
         Me.Button26.Text = "显示全部 (推荐)"
         Me.Button26.UseVisualStyleBackColor = True
@@ -744,6 +746,16 @@ Partial Class Form7
         Me.Button34.Text = "重启资源管理器"
         Me.Button34.UseVisualStyleBackColor = True
         '
+        'Button27
+        '
+        Me.Button27.Location = New System.Drawing.Point(323, 66)
+        Me.Button27.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(286, 66)
+        Me.Button27.TabIndex = 30
+        Me.Button27.Text = "不显示全部"
+        Me.Button27.UseVisualStyleBackColor = True
+        '
         'Form7
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
@@ -854,4 +866,5 @@ Partial Class Form7
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button34 As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Button27 As Button
 End Class
