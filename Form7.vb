@@ -164,7 +164,7 @@
         Timer1.Start()
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild < 19041 Then              '检查版本控制netplwiz显示
-            Button26.Enabled = False
+            GroupBox13.Enabled = False
         End If
         '下面采用14393这个版本作为保底，再之前的win10版本功能缺失过多，故屏蔽
         If CurrentBuild < 14393 Then

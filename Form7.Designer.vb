@@ -32,6 +32,7 @@ Partial Class Form7
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button25 = New System.Windows.Forms.Button()
         Me.GroupBox13 = New System.Windows.Forms.GroupBox()
+        Me.Button27 = New System.Windows.Forms.Button()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.Button11 = New System.Windows.Forms.Button()
@@ -83,7 +84,6 @@ Partial Class Form7
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button34 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Button27 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -171,7 +171,17 @@ Partial Class Form7
         Me.GroupBox13.Size = New System.Drawing.Size(627, 147)
         Me.GroupBox13.TabIndex = 6
         Me.GroupBox13.TabStop = False
-        Me.GroupBox13.Text = "Windows build 19041 及以上版本 netplwiz (低于的版本均为默认显示全部)(注意：显示全部后无法恢复)"
+        Me.GroupBox13.Text = "Windows build 19041 及以上版本 netplwiz (低于的版本均为默认显示全部)"
+        '
+        'Button27
+        '
+        Me.Button27.Location = New System.Drawing.Point(323, 66)
+        Me.Button27.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(286, 66)
+        Me.Button27.TabIndex = 30
+        Me.Button27.Text = "不显示全部"
+        Me.Button27.UseVisualStyleBackColor = True
         '
         'Button26
         '
@@ -745,16 +755,6 @@ Partial Class Form7
         Me.Button34.TabIndex = 34
         Me.Button34.Text = "重启资源管理器"
         Me.Button34.UseVisualStyleBackColor = True
-        '
-        'Button27
-        '
-        Me.Button27.Location = New System.Drawing.Point(323, 66)
-        Me.Button27.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(286, 66)
-        Me.Button27.TabIndex = 30
-        Me.Button27.Text = "不显示全部"
-        Me.Button27.UseVisualStyleBackColor = True
         '
         'Form7
         '
