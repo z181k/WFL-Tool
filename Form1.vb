@@ -383,7 +383,7 @@ starttask:
             Button20.Text = "启动没有如何起始页的 Internet Explorer 浏览器"
         End If
         'MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
-        'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
+        MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
         Exit Sub
 openreg:
         '辅助打开软件
