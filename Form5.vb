@@ -89,8 +89,6 @@
             Button12.Enabled = False
         ElseIf CurrentBuild > "26020" Then
             Button6.Enabled = False              '检查版本控制写字板显示
-        ElseIf CurrentBuild < "14393" Then
-            LinkLabel2.Enabled = False              '检查版本控制可选功能显示
         End If
     End Sub
 

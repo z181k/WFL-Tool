@@ -188,9 +188,9 @@ Partial Class Form5
         Me.Label1.Location = New System.Drawing.Point(22, 44)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(516, 56)
+        Me.Label1.Size = New System.Drawing.Size(474, 56)
         Me.Label1.TabIndex = 11
-        Me.Label1.Text = "如果无法打开请到" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "下载安装相关功能，无法点击表示该系统不支持该功能" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label1.Text = "如果无法打开请到" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "下载安装相关功能，灰色表示该系统不支持该功能" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'LinkLabel1
         '

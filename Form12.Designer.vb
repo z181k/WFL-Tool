@@ -71,9 +71,9 @@ Partial Class Form12
         Me.Button3.Location = New System.Drawing.Point(22, 716)
         Me.Button3.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(332, 51)
+        Me.Button3.Size = New System.Drawing.Size(306, 51)
         Me.Button3.TabIndex = 3
-        Me.Button3.Text = "前往 WFL Tool 选项取消授权"
+        Me.Button3.Text = "撤销接受并退出程序"
         Me.Button3.UseVisualStyleBackColor = True
         Me.Button3.Visible = False
         '

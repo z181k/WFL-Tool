@@ -33,13 +33,13 @@
         End
     End Sub
 
-    Private Sub Windows1011ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Windows1011ToolStripMenuItem.Click
+    Private Sub Windows87VistaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Windows87VistaToolStripMenuItem.Click
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild >= "10240" Then   'Win10/11更新
             Shell("cmd.exe /c start ms-settings:windowsupdate", AppWinStyle.Hide, True, -1)
             Exit Sub
         End If
-        Shell("wuapp.exe", AppWinStyle.NormalFocus, False, -1)   'win7/8/vista更新
+        Shell("wuapp.exe", AppWinStyle.NormalFocus, False, -1)   'win7更新
     End Sub
 
     Private Sub WindowsDefenderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsDefenderToolStripMenuItem.Click
@@ -64,7 +64,6 @@
         Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
         Exit Sub
 legacy:
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
         Dim NF4 As New Form4()
         NF4.Show()
         NF4.Text = "更新本程序 - 下载密码: down - 电脑功能启动器"            'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
@@ -76,27 +75,11 @@ legacy:
     End Sub
 
     Private Sub 功能说明帮助ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 功能说明帮助ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""这里的功能可能会对计算机造成损坏，请谨慎使用！"" ""高级功能"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("这里的功能可能会对计算机造成损坏，请谨慎使用！", MsgBoxStyle.OkOnly, "高级功能")
-        End If
+        MsgBox("这里的功能可能会对计算机造成损坏，请谨慎使用！", MsgBoxStyle.OkOnly, "高级功能")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click                     '关闭explorer
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""请保存数据，所有打开的文件夹将关闭(包括文件复制)。"" ""Microsoft Windows"" 0 0 0", AppWinStyle.NormalFocus, True, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
-        End If
+        MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
         Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
     End Sub
 
@@ -216,7 +199,7 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     End Sub
 
     Private Sub 查看系统位数ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 查看系统位数ToolStripMenuItem.Click
-        'MsgBox("在弹出窗口中找到系统类型，后面就是系统和cpu位数。x86 是 x86 平台的 32 位，x64 (全称 x86_64 或 AMD 64)是 x86 平台的 64 位。注：x86 既代表了 x86 CPU 架构集，也代表了 x86 CPU 架构集中的 32 位架构", MsgBoxStyle.OkOnly, "系统位数与架构")
+        MsgBox("在弹出窗口中找到系统类型，后面就是系统和cpu位数。x86 是 x86 平台的 32 位，x64 (全称 x86_64 或 AMD 64)是 x86 平台的 64 位。注：x86 既代表了 x86 CPU 架构集，也代表了 x86 CPU 架构集中的 32 位架构", MsgBoxStyle.OkOnly, "系统位数与架构")
         Shell("explorer.exe shell:::{BB06C0E4-D293-4F75-8A90-CB05B6477EEE}", AppWinStyle.NormalFocus, False, -1)
     End Sub
 
@@ -376,14 +359,14 @@ starttask:
             启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
+        'MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
+        'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild < "18362" Then              '检查版本控制UWP应用显示
             UWP应用ToolStripMenuItem.Enabled = False
-        ElseIf CurrentBuild < "21390" Then              '检查版本控制Win11IE名字
-            Button20.Text = "启动没有如何起始页的 Internet Explorer 浏览器"
+        ElseIf CurrentBuild < "21390" Then              '检查版本控制UWP应用显示
+            Button20.Enabled = False
         End If
-        'MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
-        'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
         Exit Sub
 openreg:
         '辅助打开软件
@@ -411,16 +394,8 @@ openreg:
         Form5.Show()              '附件右键菜单1
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click   '主页应用图标点击
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""好用请推荐给别人"" ""温馨提示"" 0 64 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("好用请推荐给别人", MsgBoxStyle.Information, "温馨提示")
-        End If
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        MsgBox("好用请推荐给别人", MsgBoxStyle.Information, "温馨提示")   '主页应用图标点击
     End Sub
 
     Private Sub ToolStripMenuItem15_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem15.Click
@@ -511,30 +486,14 @@ wflttext:
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v TrayIcon /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
         启动时打开ToolStripMenuItem.Text = "启动时打开 (当前,重启应用生效)"
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""设置重启应用生效，但你可以手动临时打开/关闭托盘图标"" ""通知区域图标"" 0 64 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("设置重启应用生效，但你可以手动临时打开/关闭托盘图标", 0, "通知区域图标")
-        End If
+        MsgBox("设置重启应用生效，但你可以手动临时打开/关闭托盘图标", 0, "通知区域图标")
     End Sub
 
     Private Sub 启动时不打开当前ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 启动时不打开当前ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v TrayIcon /T REG_SZ /d 3 /f", AppWinStyle.Hide, True, -1)
         启动时不打开当前ToolStripMenuItem.Text = "启动时不打开 (当前,重启应用生效)"
         启动时打开ToolStripMenuItem.Text = "启动时打开"
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""设置重启应用生效，但你可以手动临时打开/关闭托盘图标"" ""通知区域图标"" 0 64 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("设置重启应用生效，但你可以手动临时打开/关闭托盘图标", 0, "通知区域图标")
-        End If
+        MsgBox("设置重启应用生效，但你可以手动临时打开/关闭托盘图标", 0, "通知区域图标")
     End Sub
 
     Private Sub 命令提示符管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 命令提示符管理员ToolStripMenuItem.Click
@@ -574,16 +533,11 @@ legacy:
     End Sub
 
     Private Sub 清除数据并退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除数据并退出程序ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""该功能请到新版选项使用，新版选项已经为您打开"" ""清除数据并退出程序"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("")
+        If MsgBox("是否要清除数据？此操作会清除应用所有设置并关闭应用。", 308, "清除数据并关闭程序") = vbYes Then
+            Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /va /f", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c rd ""%localappdata%\WFL Tool\EWV2viewer\EWV2viewer.exe.webview2"" /s /q", AppWinStyle.Hide, True, -1)
+            End
         End If
-        Form11.Show()
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click  '主界面右上角文字点击
@@ -617,9 +571,5 @@ wflttext:
 
     Private Sub 注册表编辑器多开x86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 注册表编辑器多开x86ToolStripMenuItem.Click
         CreateObject("shell.application").shellexecute("c:\windows\syswow64\regedit.exe", "-m", "", "", 1)
-    End Sub
-
-    Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
-        Form11.Show()
     End Sub
 End Class

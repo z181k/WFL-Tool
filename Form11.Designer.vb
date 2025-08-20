@@ -79,7 +79,6 @@ Partial Class Form11
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.MaximizeBox = False
         Me.Name = "Form11"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "WFL Tool 选项"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)

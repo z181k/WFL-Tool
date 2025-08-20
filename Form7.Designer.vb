@@ -82,7 +82,6 @@ Partial Class Form7
         Me.Button29 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button34 = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -691,7 +690,7 @@ Partial Class Form7
         Me.Button33.Name = "Button33"
         Me.Button33.Size = New System.Drawing.Size(627, 66)
         Me.Button33.TabIndex = 18
-        Me.Button33.Text = "打开旧版任务栏图标选项" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Win11 22h2 及以后版本能打开，但设置无效)"
+        Me.Button33.Text = "打开旧版任务栏图标选项（Win 11 能打开，但设置无效）"
         Me.Button33.UseVisualStyleBackColor = True
         '
         'Button32
@@ -751,7 +750,7 @@ Partial Class Form7
         Me.AutoScroll = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1428, 961)
+        Me.ClientSize = New System.Drawing.Size(1417, 859)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.Button34)
         Me.Controls.Add(Me.PictureBox1)
@@ -767,6 +766,7 @@ Partial Class Form7
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(1441, 923)
         Me.MinimumSize = New System.Drawing.Size(1441, 923)
         Me.Name = "Form7"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -853,5 +853,4 @@ Partial Class Form7
     Friend WithEvents Button33 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button34 As Button
-    Friend WithEvents Timer1 As Timer
 End Class

@@ -3,6 +3,8 @@
         Close()
     End Sub
 
+
+
     Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel6.LinkClicked
         CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /T REG_DWORD /d 0 /f", "", "runas", 0)
         'Shell("cmd.exe /c reg.exe add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)

@@ -172,42 +172,4 @@
     Private Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
         Shell("cmd.exe /c start shell:::{ED834ED6-4B5A-4bfe-8F11-A626DCB6A921}\pageWallpaper", AppWinStyle.Hide, True, -1)
     End Sub
-
-    Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Start()
-        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < "19041" Then              '检查版本控制netplwiz显示
-            Button26.Enabled = False
-        End If
-        '下面采用14393这个版本作为保底，再之前的win10版本功能缺失过多，故屏蔽
-        If CurrentBuild < "14393" Then
-            GroupBox6.Enabled = False             '检查版本控制Windows 10 音量控制界面样式显示
-            GroupBox16.Enabled = False             '检查版本控制Windows 10 及以上版本控制面板隐藏项目显示
-            GroupBox3.Enabled = False             '检查版本控制WWindows 10 电池界面样式显示
-            GroupBox2.Enabled = False             '检查版本控制WWindows 10 通知显示
-            GroupBox5.Enabled = False             '检查版本控制Win10 网络面板显示
-            Button16.Enabled = False            '检查版本控制Windows 10 任务栏透明度设置教程显示
-        End If
-        '下面是win11隐藏win10专属功能
-        If CurrentBuild > "21390" Then
-            GroupBox6.Enabled = False              '检查版本控制Windows 10 音量控制界面样式显示
-            GroupBox3.Enabled = False            '检查版本控制WWindows 10 电池界面样式显示
-            GroupBox2.Enabled = False             '检查版本控制WWindows 10 通知显示
-            GroupBox5.Enabled = False            '检查版本控制Win10 网络面板显示
-            Button16.Enabled = False            '检查版本控制Windows 10 任务栏透明度设置教程显示
-        End If
-        If CurrentBuild >= "22621" Then              '检查版本控制旧版任务栏图标选项显示(由于win11 21h2 支持所以不屏蔽win11 21h2)
-            'Button33.Enabled = False          '暂时不屏蔽
-        End If
-        '分界线
-        If CurrentBuild < "10240" Then              '检查版本控制Windows 10 桌面上下文菜单显示(小于win10部分)
-            GroupBox7.Enabled = False
-        ElseIf CurrentBuild >= "18362" Then              '检查版本控制Windows 10 桌面上下文菜单显示(大于win10 1903部分)
-            GroupBox7.Enabled = False
-        End If
-        If CurrentBuild < "22000" Then
-            Button25.Enabled = False              '检查版本控制Windows 11 explorer xaml菜单显示
-            Button15.Enabled = False              '检查版本控制Windows 11 explorer win32菜单显示
-        End If
-    End Sub
 End Class
