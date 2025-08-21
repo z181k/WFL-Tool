@@ -44,6 +44,7 @@ Partial Class Form9
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel10 = New System.Windows.Forms.LinkLabel()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -203,9 +204,9 @@ Partial Class Form9
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(510, 280)
         Me.Label5.TabIndex = 13
-        Me.Label5.Text = "WFL Tool 让修改系统变得更加容易，让系统附件更加" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "易于寻找" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "版权所有 © 2021-2025 董博涛 保留所有权利." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "电脑功能启动器是 WF" &
-    "L Tool 的中文名" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "本应用中所有链接均为非本团队运营（包括更新本程" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "序的链接），其中大部分为我们注册了相关平台账户" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "上传的信息，我们对这些内容提供" &
-    "有限的支持。"
+        Me.Label5.Text = "WFL Tool 让修改系统变得更加容易，让系统附件更加" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "易于寻找" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "版权所有 © 2021-2025 董博涛 保留所有权利." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "本软件是 Apache" &
+    "-2.0 许可证的开源软件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "使用本软件源码需同时遵守 WFL Tool 软件许可协议" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "和 Apache-2.0 许可证" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "应用中部分链接为非本团队运营，" &
+    "详见软件许可协议"
         '
         'LinkLabel7
         '
@@ -213,7 +214,7 @@ Partial Class Form9
         Me.LinkLabel7.AutoSize = True
         Me.LinkLabel7.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LinkLabel7.Location = New System.Drawing.Point(510, 441)
+        Me.LinkLabel7.Location = New System.Drawing.Point(623, 441)
         Me.LinkLabel7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel7.Name = "LinkLabel7"
         Me.LinkLabel7.Size = New System.Drawing.Size(96, 28)
@@ -289,6 +290,20 @@ Partial Class Form9
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'LinkLabel10
+        '
+        Me.LinkLabel10.ActiveLinkColor = System.Drawing.Color.DarkRed
+        Me.LinkLabel10.AutoSize = True
+        Me.LinkLabel10.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.LinkLabel10.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel10.Location = New System.Drawing.Point(510, 441)
+        Me.LinkLabel10.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LinkLabel10.Name = "LinkLabel10"
+        Me.LinkLabel10.Size = New System.Drawing.Size(96, 28)
+        Me.LinkLabel10.TabIndex = 14
+        Me.LinkLabel10.TabStop = True
+        Me.LinkLabel10.Text = "开源地址"
+        '
         'Form9
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
@@ -297,6 +312,7 @@ Partial Class Form9
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(831, 516)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.Controls.Add(Me.LinkLabel10)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.LinkLabel5)
         Me.Controls.Add(Me.LinkLabel9)
@@ -347,4 +363,5 @@ Partial Class Form9
     Friend WithEvents 退出程序ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LinkLabel5 As LinkLabel
     Friend WithEvents Label6 As Label
+    Friend WithEvents LinkLabel10 As LinkLabel
 End Class
