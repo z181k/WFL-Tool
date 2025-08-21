@@ -93,7 +93,7 @@ legacy:
     End Sub
 
     Private Sub LinkLabel9_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel9.LinkClicked
-        Label5.Text = "WFL Tool 让修改系统变得更加容易，让系统附件更加” & vbCrLf & “易于寻找” & vbCrLf & ““ & vbCrLf & “版权所有 © 2021-2025 董博涛. 保留所有权利.” & vbCrLf & ““ & vbCrLf & “电脑功能启动器为 WFL Tool 的中文名” & vbCrLf & ““ & vbCrLf & “本应用中所有链接均为非本团队运营（包括更新本程” & vbCrLf & “序的链接），其中大部分为我们注册了相关平台账户” & vbCrLf & “上传的信息，我们对这些内容提供有限的支持。"
+        Label5.Text = "WFL Tool 让修改系统变得更加容易，让系统附件更加” & vbCrLf & “易于寻找” & vbCrLf & ““ & vbCrLf & “版权所有 © 2021-2025 董博涛. 保留所有权利.” & vbCrLf & ““ & vbCrLf & “本软件是 Apache-2.0 许可证的开源软件” & vbCrLf & “使用本软件源码需同时遵守 WFL Tool 软件许可协议“ & vbCrLf & “和 Apache-2.0 许可证” & vbCrLf & vbCrLf & “应用中部分链接为非本团队运营，详见软件许可协议"
         LinkLabel8.Visible = True               '下一页
         LinkLabel9.Visible = False
     End Sub
