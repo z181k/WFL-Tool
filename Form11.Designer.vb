@@ -29,6 +29,7 @@ Partial Class Form11
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.退出程序ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -67,6 +68,17 @@ Partial Class Form11
         Me.Button1.Text = "清除数据"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button2.Location = New System.Drawing.Point(246, 308)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(160, 54)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "取消协议授权"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form11
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
@@ -74,6 +86,7 @@ Partial Class Form11
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(653, 670)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
@@ -91,4 +104,5 @@ Partial Class Form11
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents 退出程序ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

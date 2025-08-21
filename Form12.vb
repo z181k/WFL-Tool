@@ -16,7 +16,5 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Form11.Show()
-        'Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v License /T REG_SZ /d 无 /f", AppWinStyle.Hide, True, -1)
-        'End
     End Sub
 End Class
