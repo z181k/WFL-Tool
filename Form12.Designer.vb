@@ -92,7 +92,7 @@ Partial Class Form12
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form12"
-        Me.Text = "软件许可协议 - 内容更新日期：2024/05/20 - WFL Tool"
+        Me.Text = "软件许可协议 - 内容更新日期：2025/08/21 - WFL Tool"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -79,10 +79,10 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""全名: WFL Tool (x64)                                      版本类别: 安装版" & vbCrLf & "分支: RTM64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持"" ""更多信息"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""全名: WFL Tool (x64)                                      版本类别: 安装版" & vbCrLf & "分支: RTM64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"" ""更多信息"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("全名: WFL Tool (x64)                                      版本类别: 安装版" & vbCrLf & "分支: RTM64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持", MsgBoxStyle.OkOnly, "更多信息")
+            MsgBox("全名: WFL Tool (x64)                                      版本类别: 安装版" & vbCrLf & "分支: RTM64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名", MsgBoxStyle.OkOnly, "更多信息")
         End If
     End Sub
 
@@ -115,8 +115,8 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""请仔细阅读本协议。若安装或使用本软件之全部或其任何部分,就等于接受本协议内之所有条款。" & vbCrLf & "本软件所含文字材料和软件程序以及附属文件受到世界范围内的版权法保护。" & vbCrLf & vbCrLf & "1.特许使用" & vbCrLf & "董博涛及其团队(以下简称""""我们"""")授于在一台计算机(依据协议的具体系统要求)上使用本软件的非专有不可转让的权利。" & vbCrLf & vbCrLf & "2.软件的使用" & vbCrLf & "2.1在无损任何法定权利下及除本协议允许的权利外,不得修改、改编、分发、传输、转让、出版、复制或更改软件及其附属文件。" & vbCrLf & "2.2鉴于盗版使用本软件会对我们造成损害,在本协议有效期内及终止后,必尽一切努力确保软件和附属文件的安全。本软件的正版以我们签署的数字签名并且从官方渠道下载为准。" & vbCrLf & vbCrLf & "3.终止" & vbCrLf & "任何时候毁掉软件及附属文件即是对本协议的终止。若违反任何条款,本协议亦将终止" & vbCrLf & vbCrLf & "4.保证" & vbCrLf & "4.1我们不保证本软件不会出现损坏您的数据的情况。" & vbCrLf & "4.2以上保证取代其他明示或默示的保证和陈述,特别但不仅限于：" & vbCrLf & "4.2.1我们未做出处上方内容之外关于本软件适用于任何目的或可在任何条件下使用的保证或陈述,即使该目的或条件可能为我们所知"" ""WFL Tool 软件许可协议 - 更新日期：2024/05/20" & vbCrLf & "第一页/共二页 - 关闭此窗口以前往下一页" & vbCrLf & "取消授权请前往 WFL Tool 选项"" 99 99 99", AppWinStyle.NormalFocus, True, -1)
-            Shell(InstallLocation + "\MessageBox.exe ""4.2.2我们不为软件的滥用和恶意使用承担任何责任;" & vbCrLf & "4.2.3我们不保证软件运行不中断或无差错。" & vbCrLf & "4.2.4我们不为软件的运算和技术缺陷承担任何的责任" & vbCrLf & vbCrLf & "5.责任的有限性" & vbCrLf & "5.1我们的全部责任和对客户的唯一补救方法是提供正版软件并尝试恢复您的数据(可能会失败及损坏更多数据)；" & vbCrLf & "5.2我们在任何情况下都不对任何因使用或无能力使用本软件及附属文件造成的损害负责(包括但不仅限于使用者死亡、人身伤害、数据丢失业务提失、收入亏损、声誉损失或其他任何相应损害)。" & vbCrLf & "5.3我们提供的第三方网址仅供查阅,我们不对第三方网站的任何内容负责，虽然他们可能承担了一些重要功能并且在本应用提供的窗口打开(所有在本应用提供的窗口打开的第三方功能：检查更新、更新本程序、获取帮助(窗口标题为""""WFL Tool 帮助"""")" & vbCrLf & vbCrLf & "6.隐私权" & vbCrLf & "本软件收集和产生的所有数据（可能包括隐私信息）均不会上传，不会共享。但应用所需的运行库所产生的数据请遵守相关条款" & vbCrLf & vbCrLf & "7.管辖法律" & vbCrLf & "本协议受中国内地法律管据,中国内地法院拥有司法权。我们有权更新协议后不通知您，因此请定期查看协议的最新版本，如您无法接受，请立刻停止使用本软件"" ""WFL Tool 软件许可协议 - 更新日期：2024/05/20" & vbCrLf & "第二页/共二页 - 所有内容已全部展示" & vbCrLf & "取消授权请前往 WFL Tool 选项"" 99 99 99", AppWinStyle.NormalFocus, True, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""请仔细阅读本协议。若安装或使用本软件之全部或其任何部分,就等于接受本协议内之所有条款。" & vbCrLf & "本软件所含文字材料和软件程序以及附属文件受到世界范围内的版权法保护。" & vbCrLf & vbCrLf & "1.特许使用" & vbCrLf & "董博涛及其团队(以下简称""""我们"""")授于在一台计算机(依据协议的具体系统要求)上使用本软件的非专有不可转让的权利。" & vbCrLf & vbCrLf & "2.软件的使用" & vbCrLf & "2.1在无损任何法定权利下及除本协议允许的权利外,不得修改、改编、分发、传输、转让、出版、复制或更改软件及其附属文件。" & vbCrLf & "2.2鉴于盗版使用本软件会对我们造成损害,在本协议有效期内及终止后,必尽一切努力确保软件和附属文件的安全。本软件的正版以我们签署的数字签名并且从官方渠道下载为准。" & vbCrLf & vbCrLf & "3.终止" & vbCrLf & "任何时候毁掉软件及附属文件即是对本协议的终止。若违反任何条款,本协议亦将终止" & vbCrLf & vbCrLf & "4.保证" & vbCrLf & "4.1我们不保证本软件不会出现损坏您的数据的情况。" & vbCrLf & "4.2以上保证取代其他明示或默示的保证和陈述,特别但不仅限于：" & vbCrLf & "4.2.1我们未做出处上方内容之外关于本软件适用于任何目的或可在任何条件下使用的保证或陈述,即使该目的或条件可能为我们所知" & vbCrLf & "4.2.2我们不为软件的滥用和恶意使用承担任何责任;"" ""WFL Tool 软件许可协议 - 更新日期：2025/08/21" & vbCrLf & "第一页/共二页 - 关闭此窗口以前往下一页" & vbCrLf & "取消授权请前往 WFL Tool 选项"" 99 99 99", AppWinStyle.NormalFocus, True, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""4.2.3我们不保证软件运行不中断或无差错。" & vbCrLf & "4.2.4我们不为软件的运算和技术缺陷承担任何的责任" & vbCrLf & vbCrLf & "5.责任的有限性" & vbCrLf & "5.1我们的全部责任和对客户的唯一补救方法是提供正版软件并尝试恢复您的数据(可能会失败及损坏更多数据)；" & vbCrLf & "5.2我们在任何情况下都不对任何因使用或无能力使用本软件及附属文件造成的损害负责(包括但不仅限于使用者死亡、人身伤害、数据丢失业务提失、收入亏损、声誉损失或其他任何相应损害)。" & vbCrLf & "5.3我们提供的第三方网址仅供查阅,我们不对第三方网站的任何内容负责，虽然他们可能承担了一些重要功能并且在本应用提供的窗口打开(所有在本应用提供的窗口打开的第三方功能：检查更新、更新本程序、获取帮助、开源地址" & vbCrLf & vbCrLf & "6.隐私权" & vbCrLf & "本软件收集和产生的所有数据（可能包括隐私信息）均不会上传，不会共享。但应用所需的运行库所产生的数据请遵守相关条款" & vbCrLf & vbCrLf & "7.管辖法律与开源许可证" & vbCrLf & "7.1本协议受中国内地法律管据,中国内地法院拥有司法权。我们有权更新协议后不通知您，因此请定期查看协议的最新版本，如您无法接受，请立刻停止使用本软件" & vbCrLf & "7.2本软件为开源软件，使用我们的源码需遵守 Apache-2.0 许可证和本协议，Apache-2.0 许可证详细内容见开源项目页面"" ""WFL Tool 软件许可协议 - 更新日期：2025/08/21" & vbCrLf & "第二页/共二页 - 所有内容已全部展示" & vbCrLf & "取消授权请前往 WFL Tool 选项"" 99 99 99", AppWinStyle.NormalFocus, True, -1)
         Else              '旧版弹窗
 legacy:
             Dim NF12 As New Form12()
@@ -137,4 +137,18 @@ legacy:
         Label6.Visible = False        '彩蛋-介绍
     End Sub
 
+    Private Sub LinkLabel10_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel10.LinkClicked
+        On Error GoTo legacy
+        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+            GoTo legacy
+        End If
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""WFL Tool 项目开源页面 - Github"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d https://github.com/z181k/WFL-Tool /f", AppWinStyle.Hide, True, -1)
+        Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
+        Exit Sub
+legacy:
+        Shell("cmd.exe /c start https://github.com/z181k/WFL-Tool", AppWinStyle.Hide, True, -1)
+    End Sub
 End Class
