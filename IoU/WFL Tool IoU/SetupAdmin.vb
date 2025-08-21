@@ -36,7 +36,7 @@ Errorchk:
         SetupUserInstall.PB1.Value = 40
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) Admin"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayVersion /T REG_SZ /d 11.0.8352.1 /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayVersion /T REG_SZ /d 12.0.8416.1 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 60
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 60
