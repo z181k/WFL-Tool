@@ -119,7 +119,7 @@ Partial Class SetupUserInstall
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(123, 32)
         Me.Label5.TabIndex = 48
-        Me.Label5.Text = "版本 12.0"
+        Me.Label5.Text = "版本 11.0"
         '
         'PictureBox2
         '

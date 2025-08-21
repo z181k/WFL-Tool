@@ -383,7 +383,7 @@ starttask:
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         End If
         'MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
-        MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
+        'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
         Exit Sub
 openreg:
         '辅助打开软件
@@ -574,16 +574,31 @@ legacy:
     End Sub
 
     Private Sub 清除数据并退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除数据并退出程序ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""该功能请到新版选项使用，新版选项已经为您打开"" ""清除数据并退出程序"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("")
+        'On Error GoTo legacy
+        ' Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        'If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
+        'Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+        'Shell(InstallLocation + "\MessageBox.exe ""该功能请到新版选项使用，新版选项已经为您打开"" ""清除数据并退出程序"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
+        ' Else              '旧版弹窗
+        'legacy:
+        ' MsgBox("")
+        ' End If
+        'Form11.Show()
+        On Error GoTo nexttap
+        If MsgBox("是否要清除数据？此操作会清除应用所有设置并关闭应用。", 308, "清除数据并关闭程序") = vbYes Then
+            Dim CreateWinAppSdkUi As String = "False"
+            Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+            If WinAppSdkUi = "1" Then
+                CreateWinAppSdkUi = "True"
+            End If
+nexttap:
+            Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /va /f", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c rd ""%localappdata%\WFL Tool\EWV2viewer\EWV2viewer.exe.webview2"" /s /q", AppWinStyle.Hide, True, -1)
+            If CreateWinAppSdkUi = "True" Then
+                Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+            End If
+            End
         End If
-        Form11.Show()
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click  '主界面右上角文字点击
@@ -621,5 +636,10 @@ wflttext:
 
     Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
         Form11.Show()
+    End Sub
+
+    Private Sub 取消授权并退出ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 取消授权并退出ToolStripMenuItem.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v License /T REG_SZ /d 无 /f", AppWinStyle.Hide, True, -1)
+        End
     End Sub
 End Class
