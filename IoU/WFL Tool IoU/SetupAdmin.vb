@@ -53,4 +53,7 @@ Errorchk:
             Application.Exit()       '检查企业自动化安装
         End If
     End Sub
+    Private Sub SetupAdmin_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        Me.Visible = False
+    End Sub
 End Class
