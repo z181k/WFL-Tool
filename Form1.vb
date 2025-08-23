@@ -377,9 +377,13 @@ starttask:
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 7600 Then              '检查版本控制系统修改显示
+            系统修改ToolStripMenuItem.Enabled = False
+        End If
         If CurrentBuild < 18362 Then              '检查版本控制UWP应用显示
             UWP应用ToolStripMenuItem.Enabled = False
-        ElseIf CurrentBuild < 21390 Then              '检查版本控制Win11IE名字
+        End If
+        If CurrentBuild < 21390 Then              '检查版本控制Win11IE名字
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         End If
         MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
