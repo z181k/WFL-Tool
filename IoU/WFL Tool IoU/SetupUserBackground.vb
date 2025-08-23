@@ -35,7 +35,7 @@
         Shell("cmd.EXE /c copy udl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 50
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild >= "17763" Then              '检查版本写入WinAppSdkUi注册表
+        If CurrentBuild >= "26100" Then              '检查版本写入WinAppSdkUi注册表
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
         End If
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v PaintDesktopVersion /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
