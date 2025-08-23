@@ -1,5 +1,5 @@
 ﻿Public Class SetupUserBackground
-    Private Sub UninstAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub SetupUserBackground_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer2.Start()
         SetupUserInstall.Show()
         SetupUserInstall.Text = "WFL Tool (x64) 安装程序"
@@ -12,7 +12,7 @@
         End
     End Sub
 
-    Private Sub UninstAdmin_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+    Private Sub SetupUserBackground_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         Me.Visible = False
     End Sub
 
