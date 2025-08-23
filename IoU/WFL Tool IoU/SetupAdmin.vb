@@ -23,35 +23,24 @@ Errorchk:
         Shell("cmd.EXE /c md ""%programfiles%\WFL Tool""", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 20
         Shell("cmd.EXE /c copy pga.bin ""%programfiles%\WFL Tool\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 20
         Shell("cmd.EXE /c copy aiu.bin ""%programfiles%\WFL Tool\uninstall.exe"" /y", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 20
         Shell("cmd.exe /c reg.exe delete ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 20       '上面那条是删除build8320的安装信息
+        '上面那条是删除build8320的安装信息
         Shell("cmd.EXE /c copy adl.bin ""%programdata%\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v PaintDesktopVersion /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 40
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayIcon /T REG_SZ /d ""%programfiles%\WFL Tool\WFL Tool.exe"" /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 40
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) Admin"" /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 40
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayVersion /T REG_SZ /d 12.0.8416.1 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 60
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 60
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v UninstallString /T REG_SZ /d ""%programfiles%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 60
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v NoModify /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 60
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v NoRepair /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 80
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v EstimatedSize /T REG_DWORD /d 6451 /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 80
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v Publisher /T REG_SZ /d ""(c) 2021-2025 董博涛"" /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 80
         Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v InstallLocation /T REG_SZ /d ""%programfiles%\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 80
         Shell("cmd.EXE /c copy adl.bin ""%homedrive%\users\public\desktop\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 100
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 4 /f", AppWinStyle.Hide, True, -1)
