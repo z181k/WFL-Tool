@@ -35,10 +35,8 @@
         Shell("cmd.EXE /c copy udl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 50
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild >= "17763" Then              '检查版本写入WinAppSdkUi注册表
+        If CurrentBuild >= "17763" Then              '检查版本配置WinAppSdk项目
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-        End If
-        If CurrentBuild >= "17763" Then              '检查版本安装winappsdk
             CreateObject("shell.application").shellexecute("3RDparty\wari17x64.exe", "", "", "", 0)
         End If
         SetupUserInstall.PB1.Value = 60
