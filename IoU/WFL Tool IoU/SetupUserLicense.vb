@@ -28,7 +28,7 @@ jump:
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         SetupUser.Show()
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v License /T REG_SZ /d SetupUser /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EULA /T REG_SZ /d SetupUser /f", AppWinStyle.Hide, True, -1)
         Close()
     End Sub
 End Class

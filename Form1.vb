@@ -344,8 +344,8 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
         End
 starttask:
         '读取设置并调整界面（注册表读取）
-        Dim License As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("License", "无")
-        If License = "无" Then
+        Dim License As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("EULA", "无")
+        If License = "无" Then                                                                       '以前是License键值，不是EULA
             Dim frm As New Form12
             'frm.StartPosition = FormStartPosition.Manual '这个很重要，必须设置为Manual，Location才能有用
             'Dim StartPoint As New System.Drawing.Point
