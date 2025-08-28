@@ -135,7 +135,7 @@
     End Sub
 
     Private Sub 退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 退出程序ToolStripMenuItem.Click
-        End
+        Application.Exit()
     End Sub
 
     Private Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click

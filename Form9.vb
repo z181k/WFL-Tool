@@ -107,7 +107,7 @@ legacy:
     End Sub
 
     Private Sub 退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 退出程序ToolStripMenuItem.Click
-        End
+        Application.Exit()
     End Sub
 
     Private Sub LinkLabel5_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel5.LinkClicked

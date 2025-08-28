@@ -12,7 +12,7 @@ defaultstart:
         Dim license As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("license", "无")
         If license = "无" Then
             MsgBox("您未接受我们的软件许可协议，所以该功能暂不能使用，请谅解。", MsgBoxStyle.Exclamation, "WFL Tool")
-            End
+            Application.Exit()
         End If
         Dim EWV2webpageShow As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("EWV2webpageShow", "nothing")
         If EWV2webpageShow = "True" Then

@@ -9,7 +9,7 @@
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        End
+        Application.Exit()
     End Sub
 
     Private Sub SetupUserBackground_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
