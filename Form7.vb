@@ -184,13 +184,14 @@
             Button16.Enabled = False            '检查版本控制Windows 10 任务栏透明度设置教程显示
         End If
         If CurrentBuild >= 22621 Then              '检查版本控制旧版任务栏图标选项显示(由于win11 21h2 支持所以不屏蔽win11 21h2)
-            'Button33.Enabled = False          '暂时不屏蔽
+            'Button33.Enabled = False          '该功能暂时不屏蔽
         End If
         '分界线
         If CurrentBuild < 10240 Then              '检查版本控制Windows 10 桌面上下文菜单显示(小于win10部分)
             GroupBox7.Enabled = False
-        ElseIf CurrentBuild >= "18362" Then              '检查版本控制Windows 10 桌面上下文菜单显示(大于win10 1903部分)
-            GroupBox7.Enabled = False
+        ElseIf CurrentBuild >= 18362 Then
+            GroupBox7.Enabled = False             '检查版本控制Windows 10 桌面上下文菜单显示(大于win10 1903部分)
+            GroupBox17.Enabled = True             '检查版本显示Windows 19/11 (大于1903)登录模糊
         End If
         If CurrentBuild < 22000 Then
             Button25.Enabled = False              '检查版本控制Windows 11 explorer xaml菜单显示
@@ -201,5 +202,13 @@
     Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device"" /v DevicePasswordLessBuildVersion /T REG_DWORD /d 2 /f", "", "runas", 0)
         CreateObject("shell.application").shellexecute("reg.exe", "add ""HKEY_LOCAL_MACHINE\SOFTWARE\wow6432node\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device"" /v DevicePasswordLessBuildVersion /T REG_DWORD /d 2 /f", "", "runas", 0)
+    End Sub
+
+    Private Sub Button35_Click(sender As Object, e As EventArgs) Handles Button35.Click
+        CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System /v DisableAcrylicBackgroundOnLogon /t REG_DWORD /d 0 /f", "", "runas", 0)
+    End Sub
+
+    Private Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
+        CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System /v DisableAcrylicBackgroundOnLogon /t REG_DWORD /d 1 /f", "", "runas", 0)
     End Sub
 End Class
