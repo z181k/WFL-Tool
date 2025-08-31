@@ -1,50 +1,62 @@
 ﻿Public Class Form2
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Shell("cmd.exe /c start %windir%\system32\iscsicpl.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\iscsicpl.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Shell("cmd.exe /c start %windir%\system32\odbcad32.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\odbcad32.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Shell("cmd.exe /c start %windir%\syswow64\odbcad32.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\syswow64\odbcad32.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Shell("cmd.exe /c start %windir%\system32\cleanmgr.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\cleanmgr.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Shell("cmd.exe /c start %windir%\system32\mmc.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\mmc.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        Shell("cmd.exe /c start %windir%\system32\RecoveryDrive.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\RecoveryDrive.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Shell("cmd.exe /c start %windir%\system32\WF.msc", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\WF.msc", "", "", "", 0)
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Shell("cmd.exe /c start %windir%\system32\dfrgui.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\dfrgui.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        Shell("cmd.exe /c start %windir%\system32\perfmon.msc /s", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\perfmon.msc", "/s", "", "", 0)
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        Shell("cmd.exe /c start %windir%\system32\perfmon.exe /res", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\perfmon.exe", "/res", "", "", 1)
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        Shell("cmd.exe /c start msconfig.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\msconfig.exe", "", "", "", 0)
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        Shell("cmd.exe /c start taskmgr.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\taskmgr.exe", "", "", "", 0)
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
@@ -82,7 +94,8 @@ legacy:
             CreateObject("shell.application").shellexecute("C:\Windows\Syswow64\Taskmgr.exe", "", "", "runas", 1)
             Exit Sub
         End If
-        Shell("cmd.exe /c start %windir%\system32\compmgmt.msc /s", AppWinStyle.Hide, True, -1)  '计算机管理
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\compmgmt.msc", "/s", "", "", 0)  '计算机管理
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
@@ -98,7 +111,8 @@ legacy:
     End Sub
 
     Private Sub WindowsPowershellx86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsPowershellx86ToolStripMenuItem.Click
-        CreateObject("shell.application").shellexecute("C:\Windows\Syswow64\WindowsPowershell\v1.0\powershell.exe", "", "", "", 1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\Syswow64\WindowsPowershell\v1.0\powershell.exe", "", "", "", 1)
     End Sub
 
     Private Sub WindowsPowershellISE管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsPowershellISE管理员ToolStripMenuItem.Click
@@ -106,7 +120,8 @@ legacy:
     End Sub
 
     Private Sub WindowsPowershellISEx86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsPowershellISEx86ToolStripMenuItem.Click
-        CreateObject("shell.application").shellexecute("C:\Windows\Syswow64\windowspowershell\v1.0\powershell_ise.exe", "", "", "", 1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\Syswow64\windowspowershell\v1.0\powershell_ise.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
@@ -136,11 +151,13 @@ legacy:
     End Sub
 
     Private Sub WindowsPowershellISEx86管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsPowershellISEx86管理员ToolStripMenuItem.Click
-        CreateObject("shell.application").shellexecute("C:\Windows\Syswow64\WindowsPowershell\v1.0\powershell_ise.exe", "", "", "runas", 1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\Syswow64\WindowsPowershell\v1.0\powershell_ise.exe", "", "", "runas", 1)
     End Sub
 
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
-        CreateObject("shell.application").shellexecute("C:\Windows\Syswow64\WindowsPowershell\v1.0\powershell.exe", "", "", "runas", 1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\Syswow64\WindowsPowershell\v1.0\powershell.exe", "", "", "runas", 1)
         'WindowsPowershellx86管理员
     End Sub
 

@@ -3,7 +3,7 @@
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         'MsgBox("测试版不提供更新日志", 0, "WFL Tool")
-        Dim upginfo As String = """RTM 版本(8416.1):" & vbCrLf & "新功能：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & "3." & vbCrLf & "4." & vbCrLf & "修复：" & vbCrLf & "1." & vbCrLf & "2."""
+        Dim upginfo As String = """RTM 版本(8416.1):" & vbCrLf & "新功能：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & "3." & vbCrLf & "4." & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题" & vbCrLf & "3."""
         On Error GoTo legacy
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗

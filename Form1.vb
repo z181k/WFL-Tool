@@ -16,7 +16,8 @@
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
-        CreateObject("shell.application").shellexecute("c:\windows\regedit.exe", "-m", "", "", 1)    '注册表编辑器
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\regedit.exe", "-m", "", "", 1)    '注册表编辑器
     End Sub
 
     Private Sub 切换用户ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 切换用户ToolStripMenuItem.Click
@@ -148,7 +149,8 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        Shell("cmd.exe /c start %windir%\system32\compmgmt.msc /s", AppWinStyle.Hide, True, -1)  '计算机管理
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\compmgmt.msc", "/s", "", "", 0)  '计算机管理
     End Sub
 
 
@@ -192,7 +194,8 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click  '内存诊断
-        Shell("cmd.exe /c start c:\windows\system32\MdSched.exe", AppWinStyle.Hide, True, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\MdSched.exe", "", "", "", 0)
     End Sub
 
     Private Sub 设置ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 设置ToolStripMenuItem.Click
@@ -263,7 +266,8 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        Shell("cmd.exe /c start gpedit.msc", AppWinStyle.Hide, True, -1)         '组策略
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\gpedit.msc", "", "", "", 0)        '组策略
     End Sub
 
     Private Sub 打开Win11IE浏览器ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开Win11IE浏览器ToolStripMenuItem.Click
@@ -550,11 +554,13 @@ legacy:
     End Sub
 
     Private Sub 命令提示符x86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 命令提示符x86ToolStripMenuItem.Click
-        Shell("c:\windows\syswow64\cmd.exe", AppWinStyle.NormalFocus, False, -1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        Shell(SystemRoot + "\syswow64\cmd.exe", AppWinStyle.NormalFocus, False, -1)
     End Sub
 
     Private Sub 命令提示符x86管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 命令提示符x86管理员ToolStripMenuItem.Click
-        CreateObject("shell.application").shellexecute("c:\windows\syswow64\cmd.exe", "goto :Admin", "", "runas", 1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\syswow64\cmd.exe", "goto :Admin", "", "runas", 1)
     End Sub
 
     Private Sub 发送反馈邮箱ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 发送反馈邮箱ToolStripMenuItem.Click
@@ -612,15 +618,18 @@ wflttext:
     End Sub
 
     Private Sub 注册表编辑器多开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 注册表编辑器多开ToolStripMenuItem.Click
-        CreateObject("shell.application").shellexecute("c:\windows\regedit.exe", "-m", "", "", 1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\regedit.exe", "-m", "", "", 1)
     End Sub
 
     Private Sub 注册表编辑器不多开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 注册表编辑器不多开ToolStripMenuItem.Click
-        CreateObject("shell.application").shellexecute("c:\windows\regedit.exe", "", "", "", 1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\regedit.exe", "", "", "", 1)
     End Sub
 
     Private Sub 注册表编辑器多开x86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 注册表编辑器多开x86ToolStripMenuItem.Click
-        CreateObject("shell.application").shellexecute("c:\windows\syswow64\regedit.exe", "-m", "", "", 1)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\syswow64\regedit.exe", "-m", "", "", 1)
     End Sub
 
     Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
