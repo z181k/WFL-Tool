@@ -635,4 +635,8 @@ wflttext:
     Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
         Form11.Show()
     End Sub
+
+    Private Sub 电池健康ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 电池健康ToolStripMenuItem.Click
+        CreateObject("shell.application").shellexecute("cmd.exe", "/c powercfg.exe /batteryreport&start C:\Windows\System32\battery-report.html", "", "runas", 0)
+    End Sub
 End Class

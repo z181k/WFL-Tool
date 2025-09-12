@@ -42,7 +42,7 @@ Partial Class Form12
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox1.Size = New System.Drawing.Size(686, 681)
         Me.TextBox1.TabIndex = 4
-        Me.TextBox1.Text = "由代码控制内容"
+        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
         'Button1
         '
@@ -82,13 +82,12 @@ Partial Class Form12
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(40, 730)
+        Me.Label1.Location = New System.Drawing.Point(43, 730)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 28)
+        Me.Label1.Size = New System.Drawing.Size(180, 28)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Label1"
-        Me.Label1.Visible = False
+        Me.Label1.Text = "我在仔细阅读后："
         '
         'Form12
         '
@@ -106,7 +105,7 @@ Partial Class Form12
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form12"
-        Me.Text = "软件许可协议 - 内容更新日期：2025/08/30 - WFL Tool"
+        Me.Text = "软件许可协议 - WFL Tool"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

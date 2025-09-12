@@ -131,7 +131,7 @@ Partial Class SetupUserLicense
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox1.Size = New System.Drawing.Size(549, 290)
         Me.TextBox1.TabIndex = 45
-        Me.TextBox1.Text = "由代码控制内容"
+        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
         'Label2
         '
