@@ -34,19 +34,19 @@ Partial Class SetupUser
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.关于WFLTool安装程序ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ContextMenuStrip1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LinkLabel5
         '
         Me.LinkLabel5.AutoSize = True
         Me.LinkLabel5.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.LinkLabel5.Location = New System.Drawing.Point(545, 326)
+        Me.LinkLabel5.Location = New System.Drawing.Point(545, 311)
         Me.LinkLabel5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel5.Name = "LinkLabel5"
         Me.LinkLabel5.Size = New System.Drawing.Size(243, 28)
@@ -57,7 +57,7 @@ Partial Class SetupUser
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(325, 222)
+        Me.Button1.Location = New System.Drawing.Point(325, 214)
         Me.Button1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(475, 74)
@@ -68,7 +68,7 @@ Partial Class SetupUser
         '为当前用户安装
         '
         Me.为当前用户安装.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.为当前用户安装.Location = New System.Drawing.Point(325, 123)
+        Me.为当前用户安装.Location = New System.Drawing.Point(325, 119)
         Me.为当前用户安装.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.为当前用户安装.Name = "为当前用户安装"
         Me.为当前用户安装.Size = New System.Drawing.Size(475, 74)
@@ -120,9 +120,9 @@ Partial Class SetupUser
         Me.Label5.Location = New System.Drawing.Point(77, 294)
         Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(123, 32)
+        Me.Label5.Size = New System.Drawing.Size(122, 32)
         Me.Label5.TabIndex = 38
-        Me.Label5.Text = "版本 11.0"
+        Me.Label5.Text = "版本 12.0"
         '
         'Label7
         '
@@ -151,23 +151,12 @@ Partial Class SetupUser
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(332, 326)
+        Me.Label1.Location = New System.Drawing.Point(332, 311)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(201, 28)
         Me.Label1.TabIndex = 44
         Me.Label1.Text = "不想安装？你还可以"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.WFL_Tool_IoU.My.Resources.Resources.logo256
-        Me.PictureBox2.Location = New System.Drawing.Point(81, 77)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(117, 112)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 35
-        Me.PictureBox2.TabStop = False
         '
         'ContextMenuStrip1
         '
@@ -187,12 +176,23 @@ Partial Class SetupUser
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(346, 385)
+        Me.Label2.Location = New System.Drawing.Point(346, 364)
         Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(442, 56)
+        Me.Label2.Size = New System.Drawing.Size(442, 84)
         Me.Label2.TabIndex = 46
-        Me.Label2.Text = "注意：为所有用户安装和仅复制主程序时不会" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "安装 WFL Tool 的 Edge Webview 2 支持组件"
+        Me.Label2.Text = "注意：为所有用户安装和仅复制主程序时不会" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "安装 WFL Tool 的 Edge Webview 2 支持组件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "以及 WinAppSdk 支持组件等第三方组件"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.WFL_Tool_IoU.My.Resources.Resources.logo256
+        Me.PictureBox2.Location = New System.Drawing.Point(81, 77)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(117, 112)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 35
+        Me.PictureBox2.TabStop = False
         '
         'SetupUser
         '
@@ -219,8 +219,8 @@ Partial Class SetupUser
         Me.Name = "SetupUser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "WFL Tool (x64) 安装程序"
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
