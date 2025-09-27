@@ -334,7 +334,7 @@ Partial Class Form5
         Me.返回主界面.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.返回主界面.Name = "返回主界面"
         Me.返回主界面.Size = New System.Drawing.Size(150, 28)
-        Me.返回主界面.TabIndex = 200
+        Me.返回主界面.TabIndex = 50
         Me.返回主界面.TabStop = True
         Me.返回主界面.Text = "◀ 返回主页 (B)"
         '
