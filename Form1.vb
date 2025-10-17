@@ -370,7 +370,7 @@ starttask:
         End If
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
-            Label1.Text = "欢迎使用"                      '主界面右上角wfltool
+            ToolStripMenuItem3.Text = "欢迎使用"                      '主界面右上角wfltool
             现代当前ToolStripMenuItem.Text = "现代"
             伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         End If
@@ -458,14 +458,14 @@ legacy:
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-            Label1.Text = "WFL Tool"                      '判断并且改为wfltool
+            ToolStripMenuItem3.Text = "WFL Tool  v12.0"                      '判断并且改为wfltool
             现代当前ToolStripMenuItem.Text = "现代 (当前)"
             伪旧ToolStripMenuItem.Text = "伪旧"
             Exit Sub     '结束事件防止执行下面
         End If
 wflttext:
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Label1.Text = "欢迎使用"
+        ToolStripMenuItem3.Text = "欢迎使用  v12.0"
         现代当前ToolStripMenuItem.Text = "现代"              '例外：改为欢迎使用
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         'Label1.Font = New Font("新宋体", 12, FontStyle.Bold, Font.Style.Italic)   ’废弃的字体代码
@@ -495,14 +495,14 @@ wflttext:
 
     Private Sub 现代当前ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 现代当前ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-        Label1.Text = "WFL Tool"                   '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "WFL Tool"                   '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代 (当前)"
         伪旧ToolStripMenuItem.Text = "伪旧"
     End Sub
 
     Private Sub 伪旧ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 伪旧ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Label1.Text = "欢迎使用"                      '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "欢迎使用"                      '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代"
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
     End Sub
@@ -596,23 +596,6 @@ legacy:
         Form11.Show()
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click  '主界面右上角文字点击
-        On Error GoTo wflttext      '防止没有相关注册表项
-        Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
-        If LegacyHomeUI = "True" Then
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-            Label1.Text = "WFL Tool"                      '判断并且改为wfltool
-            现代当前ToolStripMenuItem.Text = "现代 (当前)"
-            伪旧ToolStripMenuItem.Text = "伪旧"
-            Exit Sub     '结束事件防止执行下面
-        End If
-wflttext:
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Label1.Text = "欢迎使用"
-        现代当前ToolStripMenuItem.Text = "现代"              '例外：改为欢迎使用
-        伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
-    End Sub
-
     Private Sub UUPDump不忘初心ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UUPDump不忘初心ToolStripMenuItem.Click
         Shell("cmd.exe /c start https://www.uupdump.cn/", AppWinStyle.Hide, True, -1)
     End Sub
@@ -638,5 +621,19 @@ wflttext:
 
     Private Sub 电池健康ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 电池健康ToolStripMenuItem.Click
         CreateObject("shell.application").shellexecute("cmd.exe", "/c powercfg.exe /batteryreport&start C:\Windows\System32\battery-report.html", "", "runas", 0)
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        On Error GoTo legacy        '重启explorer
+        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
+            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+            Shell(InstallLocation + "\MessageBox.exe ""请保存数据，所有打开的文件夹将关闭(包括文件复制)。"" ""Microsoft Windows"" 0 0 0", AppWinStyle.NormalFocus, True, -1)
+        Else              '旧版弹窗
+legacy:
+            MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
+        End If
+        Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
     End Sub
 End Class
