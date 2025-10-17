@@ -9,7 +9,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         On Error GoTo nexttap
-        If MsgBox("是否要清除数据？此操作会清除应用所有设置并关闭应用。", 308, "清除数据并关闭程序") = vbYes Then
+        If MsgBox("是否要清除数据？清除时会同时撤回协议同意。此操作会清除应用所有设置并关闭应用。", 308, "清除数据并关闭程序") = vbYes Then
             Dim CreateWinAppSdkUi As String = "False"
             Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
             If WinAppSdkUi = "1" Then

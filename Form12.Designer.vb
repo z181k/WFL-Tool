@@ -74,7 +74,7 @@ Partial Class Form12
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(332, 56)
         Me.Button3.TabIndex = 3
-        Me.Button3.Text = "前往 WFL Tool 选项取消授权"
+        Me.Button3.Text = "前往取消授权页"
         Me.Button3.UseVisualStyleBackColor = True
         Me.Button3.Visible = False
         '

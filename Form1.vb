@@ -390,7 +390,7 @@ starttask:
         If CurrentBuild < 22000 Then              '检查版本控制Win11IE名字
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         End If
-        MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
+        'MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
         'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
         Exit Sub
 openreg:
@@ -584,15 +584,6 @@ legacy:
     End Sub
 
     Private Sub 清除数据并退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除数据并退出程序ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""该功能请到新版选项使用，新版选项已经为您打开"" ""清除数据并退出程序"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("")
-        End If
         Form11.Show()
     End Sub
 
