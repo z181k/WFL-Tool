@@ -57,14 +57,12 @@ Partial Class Form1
         Me.禁用ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.恢复ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WFLTool应用设置ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem20 = New System.Windows.Forms.ToolStripSeparator()
         Me.查看更多和系统附件弹出方式ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.新版覆盖返回方式ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.旧版ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem25 = New System.Windows.Forms.ToolStripMenuItem()
         Me.主界面右上角显示样式ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.现代当前ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.伪旧ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -143,8 +141,6 @@ Partial Class Form1
         Me.ContextMenuStrip4 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.注册表编辑器多开ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.注册表编辑器不多开ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem27 = New System.Windows.Forms.ToolStripSeparator()
-        Me.注册表编辑器多开x86ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
@@ -158,13 +154,15 @@ Partial Class Form1
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.命令提示符ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.命令提示符管理员ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem23 = New System.Windows.Forms.ToolStripSeparator()
-        Me.命令提示符x86ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.命令提示符x86管理员ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button16 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -174,6 +172,7 @@ Partial Class Form1
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -191,7 +190,7 @@ Partial Class Form1
         '
         '文件FToolStripMenuItem
         '
-        Me.文件FToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.所有任务ToolStripMenuItem, Me.查看系统位数ToolStripMenuItem, Me.ToolStripMenuItem1, Me.系统更新UToolStripMenuItem, Me.系统修改ToolStripMenuItem, Me.ToolStripMenuItem15, Me.测试功能ToolStripMenuItem, Me.ToolStripMenuItem2, Me.ToolStripMenuItem6, Me.ToolStripMenuItem18, Me.ToolStripMenuItem19, Me.退出XToolStripMenuItem})
+        Me.文件FToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.所有任务ToolStripMenuItem, Me.查看系统位数ToolStripMenuItem, Me.ToolStripMenuItem1, Me.系统更新UToolStripMenuItem, Me.系统修改ToolStripMenuItem, Me.ToolStripMenuItem15, Me.测试功能ToolStripMenuItem, Me.ToolStripMenuItem2, Me.ToolStripMenuItem18, Me.ToolStripMenuItem19, Me.退出XToolStripMenuItem})
         Me.文件FToolStripMenuItem.Name = "文件FToolStripMenuItem"
         Me.文件FToolStripMenuItem.Size = New System.Drawing.Size(97, 33)
         Me.文件FToolStripMenuItem.Text = "文件(&F)"
@@ -224,7 +223,7 @@ Partial Class Form1
         '
         Me.WindowsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Windows1011ToolStripMenuItem, Me.ToolStripMenuItem7, Me.更新有关帮助ToolStripMenuItem, Me.离线更新下载ToolStripMenuItem})
         Me.WindowsToolStripMenuItem.Name = "WindowsToolStripMenuItem"
-        Me.WindowsToolStripMenuItem.Size = New System.Drawing.Size(270, 40)
+        Me.WindowsToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
         Me.WindowsToolStripMenuItem.Text = "Windows 更新"
         '
         'Windows1011ToolStripMenuItem
@@ -254,7 +253,7 @@ Partial Class Form1
         '
         Me.下载WindowsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.官网下载ToolStripMenuItem, Me.MSDN我告诉你ToolStripMenuItem, Me.UUPDump不忘初心ToolStripMenuItem})
         Me.下载WindowsToolStripMenuItem.Name = "下载WindowsToolStripMenuItem"
-        Me.下载WindowsToolStripMenuItem.Size = New System.Drawing.Size(270, 40)
+        Me.下载WindowsToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
         Me.下载WindowsToolStripMenuItem.Text = "下载 Windows"
         '
         '官网下载ToolStripMenuItem
@@ -278,12 +277,12 @@ Partial Class Form1
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(267, 6)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(312, 6)
         '
         '更新本程序ToolStripMenuItem
         '
         Me.更新本程序ToolStripMenuItem.Name = "更新本程序ToolStripMenuItem"
-        Me.更新本程序ToolStripMenuItem.Size = New System.Drawing.Size(270, 40)
+        Me.更新本程序ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
         Me.更新本程序ToolStripMenuItem.Text = "更新本程序"
         '
         '系统修改ToolStripMenuItem
@@ -384,16 +383,9 @@ Partial Class Form1
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(312, 6)
         '
-        'ToolStripMenuItem6
-        '
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(315, 40)
-        Me.ToolStripMenuItem6.Text = "新选项(&S)"
-        Me.ToolStripMenuItem6.Visible = False
-        '
         'ToolStripMenuItem18
         '
-        Me.ToolStripMenuItem18.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WFLTool应用设置ToolStripMenuItem, Me.ToolStripMenuItem20, Me.查看更多和系统附件弹出方式ToolStripMenuItem, Me.ToolStripMenuItem25, Me.主界面右上角显示样式ToolStripMenuItem, Me.ToolStripMenuItem16, Me.通知区域托盘图标ToolStripMenuItem, Me.ToolStripMenuItem26, Me.清除数据并退出程序ToolStripMenuItem})
+        Me.ToolStripMenuItem18.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WFLTool应用设置ToolStripMenuItem, Me.ToolStripMenuItem20, Me.查看更多和系统附件弹出方式ToolStripMenuItem, Me.主界面右上角显示样式ToolStripMenuItem, Me.ToolStripMenuItem16, Me.通知区域托盘图标ToolStripMenuItem, Me.ToolStripMenuItem26, Me.清除数据并退出程序ToolStripMenuItem})
         Me.ToolStripMenuItem18.Name = "ToolStripMenuItem18"
         Me.ToolStripMenuItem18.Size = New System.Drawing.Size(315, 40)
         Me.ToolStripMenuItem18.Text = "选项(&S)"
@@ -429,13 +421,6 @@ Partial Class Form1
         Me.旧版ToolStripMenuItem.Size = New System.Drawing.Size(401, 40)
         Me.旧版ToolStripMenuItem.Text = "旧版弹出窗口方式"
         '
-        'ToolStripMenuItem25
-        '
-        Me.ToolStripMenuItem25.Name = "ToolStripMenuItem25"
-        Me.ToolStripMenuItem25.Size = New System.Drawing.Size(360, 40)
-        Me.ToolStripMenuItem25.Text = "查看更多内部功能"
-        Me.ToolStripMenuItem25.Visible = False
-        '
         '主界面右上角显示样式ToolStripMenuItem
         '
         Me.主界面右上角显示样式ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.现代当前ToolStripMenuItem, Me.伪旧ToolStripMenuItem})
@@ -446,13 +431,13 @@ Partial Class Form1
         '现代当前ToolStripMenuItem
         '
         Me.现代当前ToolStripMenuItem.Name = "现代当前ToolStripMenuItem"
-        Me.现代当前ToolStripMenuItem.Size = New System.Drawing.Size(233, 40)
+        Me.现代当前ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
         Me.现代当前ToolStripMenuItem.Text = "现代 (当前)"
         '
         '伪旧ToolStripMenuItem
         '
         Me.伪旧ToolStripMenuItem.Name = "伪旧ToolStripMenuItem"
-        Me.伪旧ToolStripMenuItem.Size = New System.Drawing.Size(233, 40)
+        Me.伪旧ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
         Me.伪旧ToolStripMenuItem.Text = "伪旧"
         '
         'ToolStripMenuItem16
@@ -798,7 +783,7 @@ Partial Class Form1
         Me.ToolStripMenuItem3.ForeColor = System.Drawing.SystemColors.GrayText
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(187, 33)
-        Me.ToolStripMenuItem3.Text = "WFL Tool  v12.0"
+        Me.ToolStripMenuItem3.Text = "WFL Tool  v9.20"
         '
         'Button1
         '
@@ -807,7 +792,7 @@ Partial Class Form1
         Me.Button1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(188, 52)
-        Me.Button1.TabIndex = 1
+        Me.Button1.TabIndex = 2
         Me.Button1.Text = "关闭资源管理器"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -818,7 +803,7 @@ Partial Class Form1
         Me.Button2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(188, 52)
-        Me.Button2.TabIndex = 2
+        Me.Button2.TabIndex = 1
         Me.Button2.Text = "启动资源管理器"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -927,7 +912,7 @@ Partial Class Form1
         Me.Button20.Name = "Button20"
         Me.Button20.Size = New System.Drawing.Size(658, 52)
         Me.Button20.TabIndex = 50
-        Me.Button20.Text = "打开被 Windows 11 隐藏的 Internet Explorer 浏览器"
+        Me.Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         Me.Button20.UseVisualStyleBackColor = True
         '
         'Button19
@@ -970,33 +955,22 @@ Partial Class Form1
         'ContextMenuStrip4
         '
         Me.ContextMenuStrip4.ImageScalingSize = New System.Drawing.Size(28, 28)
-        Me.ContextMenuStrip4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.注册表编辑器多开ToolStripMenuItem, Me.注册表编辑器不多开ToolStripMenuItem, Me.ToolStripMenuItem27, Me.注册表编辑器多开x86ToolStripMenuItem})
+        Me.ContextMenuStrip4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.注册表编辑器多开ToolStripMenuItem, Me.注册表编辑器不多开ToolStripMenuItem})
         Me.ContextMenuStrip4.Name = "ContextMenuStrip4"
-        Me.ContextMenuStrip4.Size = New System.Drawing.Size(313, 112)
+        Me.ContextMenuStrip4.Size = New System.Drawing.Size(294, 72)
         '
         '注册表编辑器多开ToolStripMenuItem
         '
         Me.注册表编辑器多开ToolStripMenuItem.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.注册表编辑器多开ToolStripMenuItem.Name = "注册表编辑器多开ToolStripMenuItem"
-        Me.注册表编辑器多开ToolStripMenuItem.Size = New System.Drawing.Size(312, 34)
+        Me.注册表编辑器多开ToolStripMenuItem.Size = New System.Drawing.Size(293, 34)
         Me.注册表编辑器多开ToolStripMenuItem.Text = "注册表编辑器 (多开)"
         '
         '注册表编辑器不多开ToolStripMenuItem
         '
         Me.注册表编辑器不多开ToolStripMenuItem.Name = "注册表编辑器不多开ToolStripMenuItem"
-        Me.注册表编辑器不多开ToolStripMenuItem.Size = New System.Drawing.Size(312, 34)
+        Me.注册表编辑器不多开ToolStripMenuItem.Size = New System.Drawing.Size(293, 34)
         Me.注册表编辑器不多开ToolStripMenuItem.Text = "注册表编辑器 (不多开)"
-        '
-        'ToolStripMenuItem27
-        '
-        Me.ToolStripMenuItem27.Name = "ToolStripMenuItem27"
-        Me.ToolStripMenuItem27.Size = New System.Drawing.Size(309, 6)
-        '
-        '注册表编辑器多开x86ToolStripMenuItem
-        '
-        Me.注册表编辑器多开x86ToolStripMenuItem.Name = "注册表编辑器多开x86ToolStripMenuItem"
-        Me.注册表编辑器多开x86ToolStripMenuItem.Size = New System.Drawing.Size(312, 34)
-        Me.注册表编辑器多开x86ToolStripMenuItem.Text = "注册表编辑器 (多开,x86)"
         '
         'Button17
         '
@@ -1104,39 +1078,22 @@ Partial Class Form1
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(28, 28)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.命令提示符ToolStripMenuItem, Me.命令提示符管理员ToolStripMenuItem, Me.ToolStripMenuItem23, Me.命令提示符x86ToolStripMenuItem, Me.命令提示符x86管理员ToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.命令提示符ToolStripMenuItem, Me.命令提示符管理员ToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(328, 146)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(273, 72)
         '
         '命令提示符ToolStripMenuItem
         '
         Me.命令提示符ToolStripMenuItem.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.命令提示符ToolStripMenuItem.Name = "命令提示符ToolStripMenuItem"
-        Me.命令提示符ToolStripMenuItem.Size = New System.Drawing.Size(327, 34)
+        Me.命令提示符ToolStripMenuItem.Size = New System.Drawing.Size(272, 34)
         Me.命令提示符ToolStripMenuItem.Text = "命令提示符"
         '
         '命令提示符管理员ToolStripMenuItem
         '
         Me.命令提示符管理员ToolStripMenuItem.Name = "命令提示符管理员ToolStripMenuItem"
-        Me.命令提示符管理员ToolStripMenuItem.Size = New System.Drawing.Size(327, 34)
+        Me.命令提示符管理员ToolStripMenuItem.Size = New System.Drawing.Size(272, 34)
         Me.命令提示符管理员ToolStripMenuItem.Text = "命令提示符 (管理员)"
-        '
-        'ToolStripMenuItem23
-        '
-        Me.ToolStripMenuItem23.Name = "ToolStripMenuItem23"
-        Me.ToolStripMenuItem23.Size = New System.Drawing.Size(324, 6)
-        '
-        '命令提示符x86ToolStripMenuItem
-        '
-        Me.命令提示符x86ToolStripMenuItem.Name = "命令提示符x86ToolStripMenuItem"
-        Me.命令提示符x86ToolStripMenuItem.Size = New System.Drawing.Size(327, 34)
-        Me.命令提示符x86ToolStripMenuItem.Text = "命令提示符 (x86)"
-        '
-        '命令提示符x86管理员ToolStripMenuItem
-        '
-        Me.命令提示符x86管理员ToolStripMenuItem.Name = "命令提示符x86管理员ToolStripMenuItem"
-        Me.命令提示符x86管理员ToolStripMenuItem.Size = New System.Drawing.Size(327, 34)
-        Me.命令提示符x86管理员ToolStripMenuItem.Text = "命令提示符 (x86) (管理员)"
         '
         'Button8
         '
@@ -1181,6 +1138,62 @@ Partial Class Form1
         Me.Button16.Text = "重启资源管理器"
         Me.Button16.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.PaleGoldenrod
+        Me.Panel1.Controls.Add(Me.LinkLabel3)
+        Me.Panel1.Controls.Add(Me.LinkLabel2)
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.ForeColor = System.Drawing.Color.Red
+        Me.Panel1.Location = New System.Drawing.Point(0, 493)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(726, 55)
+        Me.Panel1.TabIndex = 10
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(398, 28)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "注意：x86 版本的 WFL Tool 已停止支持"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(434, 14)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(96, 28)
+        Me.LinkLabel1.TabIndex = 1
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "了解更多"
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.LinkLabel2.Location = New System.Drawing.Point(658, 14)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(54, 28)
+        Me.LinkLabel2.TabIndex = 3
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "关闭"
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.LinkLabel3.Location = New System.Drawing.Point(545, 14)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(96, 28)
+        Me.LinkLabel3.TabIndex = 4
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "不再提示"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
@@ -1188,6 +1201,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(726, 548)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button16)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -1214,6 +1228,8 @@ Partial Class Form1
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1338,26 +1354,24 @@ Partial Class Form1
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents 命令提示符ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 命令提示符管理员ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem23 As ToolStripSeparator
-    Friend WithEvents 命令提示符x86ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents 命令提示符x86管理员ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 发送反馈邮箱ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 微软商店 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem24 As ToolStripSeparator
     Friend WithEvents UWP资源管理器 As ToolStripMenuItem
     Friend WithEvents 时钟app As ToolStripMenuItem
     Friend WithEvents 媒体播放器 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem25 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem26 As ToolStripSeparator
     Friend WithEvents 清除数据并退出程序ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UUPDump不忘初心ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip4 As ContextMenuStrip
     Friend WithEvents 注册表编辑器多开ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 注册表编辑器不多开ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem27 As ToolStripSeparator
-    Friend WithEvents 注册表编辑器多开x86ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents 电池健康ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem28 As ToolStripSeparator
     Friend WithEvents Button16 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents LinkLabel2 As LinkLabel
 End Class

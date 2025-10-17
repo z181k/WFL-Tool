@@ -110,7 +110,7 @@ legacy:
         CreateObject("shell.application").shellexecute("powershell.exe", "", "", "runas", 1)
     End Sub
 
-    Private Sub WindowsPowershellx86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsPowershellx86ToolStripMenuItem.Click
+    Private Sub WindowsPowershellx86ToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
         CreateObject("shell.application").shellexecute(SystemRoot + "\Syswow64\WindowsPowershell\v1.0\powershell.exe", "", "", "", 1)
     End Sub
@@ -119,7 +119,7 @@ legacy:
         CreateObject("shell.application").shellexecute("powershell_ise.exe", "", "", "runas", 1)
     End Sub
 
-    Private Sub WindowsPowershellISEx86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsPowershellISEx86ToolStripMenuItem.Click
+    Private Sub WindowsPowershellISEx86ToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
         CreateObject("shell.application").shellexecute(SystemRoot + "\Syswow64\windowspowershell\v1.0\powershell_ise.exe", "", "", "", 1)
     End Sub
@@ -144,18 +144,29 @@ legacy:
             Button15.Text = "任务管理器 (x86)"
             ToolTip1.Active = True
         End If
+        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 5033 Then
+            Button1.Enabled = False
+            Button6.Enabled = False
+            Button7.Enabled = False
+            Button8.Enabled = False
+            Button10.Enabled = False
+            Button13.Enabled = False
+            Button17.Enabled = False
+            WindowsPowershellISEToolStripMenuItem1.Enabled = False
+        End If
     End Sub
 
     Private Sub 打开主页ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开主页ToolStripMenuItem.Click
         Form1.Show()
     End Sub
 
-    Private Sub WindowsPowershellISEx86管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsPowershellISEx86管理员ToolStripMenuItem.Click
+    Private Sub WindowsPowershellISEx86管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
         CreateObject("shell.application").shellexecute(SystemRoot + "\Syswow64\WindowsPowershell\v1.0\powershell_ise.exe", "", "", "runas", 1)
     End Sub
 
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) 
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
         CreateObject("shell.application").shellexecute(SystemRoot + "\Syswow64\WindowsPowershell\v1.0\powershell.exe", "", "", "runas", 1)
         'WindowsPowershellx86管理员

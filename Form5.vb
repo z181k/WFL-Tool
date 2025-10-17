@@ -92,6 +92,15 @@
         ElseIf CurrentBuild < 14393 Then
             LinkLabel2.Enabled = False              '检查版本控制可选功能显示
         End If
+        If CurrentBuild < 5033 Then
+            Button5.Enabled = False
+            Button8.Enabled = False
+            Button9.Enabled = False
+            Button13.Enabled = False
+            Button14.Enabled = False
+            Button15.Enabled = False
+            LinkLabel1.Enabled = False
+        End If
     End Sub
 
     Private Sub 打开主页ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开主页ToolStripMenuItem.Click

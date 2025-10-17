@@ -44,15 +44,9 @@ Partial Class Form2
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowsPowershell管理员ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.WindowsPowershellx86ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.WindowsPowershellISEToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowsPowershellISEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowsPowershellISE管理员ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.WindowsPowershellISEx86ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WindowsPowershellISEx86管理员ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.打开主页ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -91,6 +85,7 @@ Partial Class Form2
         '
         'Button3
         '
+        Me.Button3.Enabled = False
         Me.Button3.Font = New System.Drawing.Font("微软雅黑", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Button3.Location = New System.Drawing.Point(680, 47)
         Me.Button3.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
@@ -249,80 +244,46 @@ Partial Class Form2
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(28, 28)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.WindowsPowershell管理员ToolStripMenuItem, Me.ToolStripMenuItem1, Me.WindowsPowershellx86ToolStripMenuItem, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.WindowsPowershellISEToolStripMenuItem1})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.WindowsPowershell管理员ToolStripMenuItem, Me.ToolStripMenuItem1, Me.WindowsPowershellISEToolStripMenuItem1})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(432, 186)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(377, 150)
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(431, 34)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(376, 34)
         Me.ToolStripMenuItem2.Text = "Windows Powershell"
         '
         'WindowsPowershell管理员ToolStripMenuItem
         '
         Me.WindowsPowershell管理员ToolStripMenuItem.Name = "WindowsPowershell管理员ToolStripMenuItem"
-        Me.WindowsPowershell管理员ToolStripMenuItem.Size = New System.Drawing.Size(431, 34)
+        Me.WindowsPowershell管理员ToolStripMenuItem.Size = New System.Drawing.Size(376, 34)
         Me.WindowsPowershell管理员ToolStripMenuItem.Text = "Windows Powershell (管理员)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(428, 6)
-        '
-        'WindowsPowershellx86ToolStripMenuItem
-        '
-        Me.WindowsPowershellx86ToolStripMenuItem.Name = "WindowsPowershellx86ToolStripMenuItem"
-        Me.WindowsPowershellx86ToolStripMenuItem.Size = New System.Drawing.Size(431, 34)
-        Me.WindowsPowershellx86ToolStripMenuItem.Text = "Windows Powershell (x86)"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(431, 34)
-        Me.ToolStripMenuItem3.Text = "Windows Powershell (x86) (管理员)"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(428, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(373, 6)
         '
         'WindowsPowershellISEToolStripMenuItem1
         '
-        Me.WindowsPowershellISEToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WindowsPowershellISEToolStripMenuItem, Me.WindowsPowershellISE管理员ToolStripMenuItem, Me.ToolStripMenuItem5, Me.WindowsPowershellISEx86ToolStripMenuItem, Me.WindowsPowershellISEx86管理员ToolStripMenuItem})
+        Me.WindowsPowershellISEToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WindowsPowershellISEToolStripMenuItem, Me.WindowsPowershellISE管理员ToolStripMenuItem})
         Me.WindowsPowershellISEToolStripMenuItem1.Name = "WindowsPowershellISEToolStripMenuItem1"
-        Me.WindowsPowershellISEToolStripMenuItem1.Size = New System.Drawing.Size(431, 34)
+        Me.WindowsPowershellISEToolStripMenuItem1.Size = New System.Drawing.Size(376, 34)
         Me.WindowsPowershellISEToolStripMenuItem1.Text = "Windows Powershell ISE"
         '
         'WindowsPowershellISEToolStripMenuItem
         '
         Me.WindowsPowershellISEToolStripMenuItem.Name = "WindowsPowershellISEToolStripMenuItem"
-        Me.WindowsPowershellISEToolStripMenuItem.Size = New System.Drawing.Size(512, 40)
+        Me.WindowsPowershellISEToolStripMenuItem.Size = New System.Drawing.Size(457, 40)
         Me.WindowsPowershellISEToolStripMenuItem.Text = "Windows Powershell ISE"
         '
         'WindowsPowershellISE管理员ToolStripMenuItem
         '
         Me.WindowsPowershellISE管理员ToolStripMenuItem.Name = "WindowsPowershellISE管理员ToolStripMenuItem"
-        Me.WindowsPowershellISE管理员ToolStripMenuItem.Size = New System.Drawing.Size(512, 40)
+        Me.WindowsPowershellISE管理员ToolStripMenuItem.Size = New System.Drawing.Size(457, 40)
         Me.WindowsPowershellISE管理员ToolStripMenuItem.Text = "Windows Powershell ISE (管理员)"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(509, 6)
-        '
-        'WindowsPowershellISEx86ToolStripMenuItem
-        '
-        Me.WindowsPowershellISEx86ToolStripMenuItem.Name = "WindowsPowershellISEx86ToolStripMenuItem"
-        Me.WindowsPowershellISEx86ToolStripMenuItem.Size = New System.Drawing.Size(512, 40)
-        Me.WindowsPowershellISEx86ToolStripMenuItem.Text = "Windows Powershell ISE (x86)"
-        '
-        'WindowsPowershellISEx86管理员ToolStripMenuItem
-        '
-        Me.WindowsPowershellISEx86管理员ToolStripMenuItem.Name = "WindowsPowershellISEx86管理员ToolStripMenuItem"
-        Me.WindowsPowershellISEx86管理员ToolStripMenuItem.Size = New System.Drawing.Size(512, 40)
-        Me.WindowsPowershellISEx86管理员ToolStripMenuItem.Text = "Windows Powershell ISE (x86) (管理员)"
         '
         'Button17
         '
@@ -447,7 +408,7 @@ Partial Class Form2
         Me.MaximizeBox = False
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "更多功能 - WFL Tool"
+        Me.Text = "更多功能 - Windows XP 下 Powershell 功能需要安装补丁 - WFL Tool"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
@@ -475,20 +436,14 @@ Partial Class Form2
     Friend WithEvents Button16 As Button
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents WindowsPowershell管理员ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents WindowsPowershellx86ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents Button17 As Button
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents 打开主页ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
     Friend WithEvents WindowsPowershellISEToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents WindowsPowershellISEToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents WindowsPowershellISEx86管理员ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WindowsPowershellISE管理员ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As ToolStripSeparator
-    Friend WithEvents WindowsPowershellISEx86ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 返回主界面 As LinkLabel
     Friend WithEvents 碎片整理和优化驱动器功能说明 As LinkLabel
     Friend WithEvents ToolTip1 As ToolTip

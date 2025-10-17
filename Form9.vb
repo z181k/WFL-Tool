@@ -3,7 +3,7 @@
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         'MsgBox("测试版不提供更新日志", 0, "WFL Tool")
-        Dim upginfo As String = """RTM 版本(9024.1):" & vbCrLf & "新功能：" & vbCrLf & "1.关机选项更名为电源选项并且增加电池健康信息功能" & vbCrLf & "2.系统修改增加 win10/11 显示清楚的登录背景选项" & vbCrLf & "3.首页增加重启资源管理器按钮" & vbCrLf & "4.部分功能界面细节微调" & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题"""
+        Dim upginfo As String = """RTM 版本(8512.1):" & vbCrLf & "新功能：" & vbCrLf & "1.关机选项更名为电源选项并且增加电池健康信息功能" & vbCrLf & "2.系统修改增加 win10/11 显示清楚的登录背景选项" & vbCrLf & "3.首页增加重启资源管理器按钮" & vbCrLf & "4.部分功能界面细节微调" & vbCrLf & "5.安装界面换新，欢迎体验" & vbCrLf & "6.将部分系统不支持的功能屏蔽" & vbCrLf & "7.netplwiz 增加不显示更多" & vbCrLf & "8.该版本重新支持 Windows XP (仅限 SP3)" & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题" & vbCrLf & "3.修复关闭 UAC 功能的一些问题" & vbCrLf & "4.修复没有 Edge Webview 2 但部分界面会尝试用其渲染问题" & vbCrLf & "5.解决系统修改相关功能显示的问题"""
         On Error GoTo legacy
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
@@ -23,7 +23,7 @@ legacy:
             Shell(InstallLocation + "\MessageBox.exe ""本应用只提供 x64 和 x86 版本。对最新版本提供支持。我们曾提供过 Win XP 可用 x86 版本，并且开源，但是目前已不再提供，并且已结束支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本更新会比较慢。"" ""版本声明"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("本应用只提供 x64 和 x86 版本。对最新版本提供支持。我们曾提供过 Win XP 可用 x86 版本，并且开源，但是目前已不再提供，并且已结束支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本更新会比较慢。", MsgBoxStyle.OkOnly, "版本声明")
+            MsgBox("本应用只提供 x64 和 x86 版本。对最新版本提供支持。我们曾提供过其他框架可用的 x86 版本，并且开源，但是目前已不再提供，并且已结束支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本更新会比较慢。", MsgBoxStyle.OkOnly, "版本声明")
         End If
     End Sub
 
@@ -32,7 +32,7 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况。注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""最低支持 Windows XP SP3 X86，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况。注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
             MsgBox("最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况" & vbCrLf & "注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。", MsgBoxStyle.OkOnly, "系统要求")
@@ -79,10 +79,10 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""全名: WFL Tool (x64)                                      版本类别: 安装版" & vbCrLf & "分支: RTM64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"" ""更多信息"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""全名: WFL Tool (x86)                                      版本类别: 安装版" & vbCrLf & "分支: Dev_Tree3-Main.Release-32-1" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"" ""更多信息"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("全名: WFL Tool (x64)                                      版本类别: 安装版" & vbCrLf & "分支: RTM64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名", MsgBoxStyle.OkOnly, "更多信息")
+            MsgBox("全名: WFL Tool (x86)                                      版本类别: 安装版" & vbCrLf & "分支: Dev_Tree3-Main.Release-32-1" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名", MsgBoxStyle.OkOnly, "更多信息")
         End If
     End Sub
 

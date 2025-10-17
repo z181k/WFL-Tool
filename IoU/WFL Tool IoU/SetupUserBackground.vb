@@ -24,27 +24,18 @@
         Shell("cmd.EXE /c Xcopy.EXE EWV2viewer ""%localappdata%\WFL Tool\EWV2viewer\"" /Y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c md ""%localappdata%\WFL Tool\EWV2viewer\runtimes\win-x64\native""", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 20
-        Shell("cmd.EXE /c copy 3RDparty\wv2l.bin ""%localappdata%\WFL Tool\EWV2viewer\runtimes\win-x64\native\WebView2Loader.dll"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy wv2l86.bin ""%localappdata%\WFL Tool\EWV2viewer\runtimes\win-x86\native\WebView2Loader.dll"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy uiu.bin ""%localappdata%\WFL Tool\uninstall.exe"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 30
-        Shell("cmd.EXE /c copy 3RDparty\pri.bin ""%localappdata%\WFL Tool\resources.pri"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy 3RDparty\arb.bin ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
-        Shell("cmd.EXE /c copy 3RDparty\amb.bin ""%localappdata%\WFL Tool\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy 3RDparty\mbp.bin ""%localappdata%\WFL Tool\MessageBox.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy udl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 50
-        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild >= 17763 Then              '检查版本配置WinAppSdk项目
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-            CreateObject("shell.application").shellexecute("3RDparty\wari17x64.exe", "", "", "", 0)
-        End If
         SetupUserInstall.PB1.Value = 60
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v PaintDesktopVersion /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayIcon /T REG_SZ /d ""%localappdata%\WFL Tool\WFL Tool.exe"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) User"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 70
-        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 12.0.9024.1 /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 9.20.8512.1 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v UninstallString /T REG_SZ /d ""%localappdata%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 80

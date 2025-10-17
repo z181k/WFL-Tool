@@ -341,10 +341,10 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         On Error GoTo openreg       '防止注册表不存在
         Dim PROCESSOR_ARCHITECTURE As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PROCESSOR_ARCHITECTURE", Nothing)
-        If PROCESSOR_ARCHITECTURE = "AMD64" Then
+        If PROCESSOR_ARCHITECTURE = "x86" Then
             GoTo starttask                   '判断兼容性
         End If
-        MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
+        MsgBox("此版本仅为 x86 架构处理器提供, x64 架构请使用 x64 版本,我们没有提供 arm64 架构版本,请关注我们的网站,我们可能会在将来提供基于 arm64 的本软件。", MsgBoxStyle.Critical, "WFL Tool")
         End
 starttask:
         '读取设置并调整界面（注册表读取）
@@ -380,15 +380,23 @@ starttask:
             启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
+        Dim x86EndSupport As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("x86EndSupport", "无")
+        If x86EndSupport = "DoNotShow" Then
+            Panel1.Visible = False
+        End If
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 7600 Then              '检查版本控制系统修改显示
+        If CurrentBuild < 5033 Then
+            ToolStripMenuItem15.Enabled = False
+            所有任务ToolStripMenuItem.Enabled = False
+            查看系统位数ToolStripMenuItem.Enabled = False
+            Windows1011ToolStripMenuItem.Enabled = False
+            Button3.Enabled = False
+            Button11.Enabled = False
+        ElseIf CurrentBuild < 7600 Then              '检查版本控制系统修改显示
             系统修改ToolStripMenuItem.Enabled = False
         End If
         If CurrentBuild < 18362 Then              '检查版本控制UWP应用显示
             UWP应用ToolStripMenuItem.Enabled = False
-        End If
-        If CurrentBuild < 22000 Then              '检查版本控制Win11IE名字
-            Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         End If
         'MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
         'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
@@ -458,14 +466,14 @@ legacy:
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-            ToolStripMenuItem3.Text = "WFL Tool  v12.0"                      '判断并且改为wfltool
+            ToolStripMenuItem3.Text = "WFL Tool  v9.20"                      '判断并且改为wfltool
             现代当前ToolStripMenuItem.Text = "现代 (当前)"
             伪旧ToolStripMenuItem.Text = "伪旧"
             Exit Sub     '结束事件防止执行下面
         End If
 wflttext:
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "欢迎使用  v12.0"
+        ToolStripMenuItem3.Text = "欢迎使用  v9.20"
         现代当前ToolStripMenuItem.Text = "现代"              '例外：改为欢迎使用
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         'Label1.Font = New Font("新宋体", 12, FontStyle.Bold, Font.Style.Italic)   ’废弃的字体代码
@@ -495,14 +503,14 @@ wflttext:
 
     Private Sub 现代当前ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 现代当前ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "WFL Tool"                   '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "WFL Tool  v9.20"                   '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代 (当前)"
         伪旧ToolStripMenuItem.Text = "伪旧"
     End Sub
 
     Private Sub 伪旧ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 伪旧ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "欢迎使用"                      '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "欢迎使用  v9.20"                      '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代"
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
     End Sub
@@ -553,12 +561,12 @@ legacy:
         CreateObject("shell.application").shellexecute("cmd.exe", "", "", "", 1)
     End Sub
 
-    Private Sub 命令提示符x86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 命令提示符x86ToolStripMenuItem.Click
+    Private Sub 命令提示符x86ToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
         Shell(SystemRoot + "\syswow64\cmd.exe", AppWinStyle.NormalFocus, False, -1)
     End Sub
 
-    Private Sub 命令提示符x86管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 命令提示符x86管理员ToolStripMenuItem.Click
+    Private Sub 命令提示符x86管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
         CreateObject("shell.application").shellexecute(SystemRoot + "\syswow64\cmd.exe", "goto :Admin", "", "runas", 1)
     End Sub
@@ -601,12 +609,12 @@ legacy:
         CreateObject("shell.application").shellexecute(SystemRoot + "\regedit.exe", "", "", "", 1)
     End Sub
 
-    Private Sub 注册表编辑器多开x86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 注册表编辑器多开x86ToolStripMenuItem.Click
+    Private Sub 注册表编辑器多开x86ToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
         CreateObject("shell.application").shellexecute(SystemRoot + "\syswow64\regedit.exe", "-m", "", "", 1)
     End Sub
 
-    Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
+    Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs)
         Form11.Show()
     End Sub
 
@@ -626,5 +634,19 @@ legacy:
         End If
         Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        MsgBox("x86 版本的 WFL Tool 已于 2025/10/17 停止支持，这个版本是在停止当天发布的最后一个版本。很抱歉我们通知的很仓促，但希望您尽快将系统升级至 64 位继续获得支持，或更换您的设备以继续获得支持，获取最新的更新、问题修复和功能。使用停止支持版本所带来的一切后果自负。", "WFL Tool (x86)")
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        MsgBox("使用停止支持版本所带来的一切后果自负。", "WFL Tool (x86)")
+        Panel1.Visible = False
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v x86EndSupport /T REG_SZ /d DoNotShow /f", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        Panel1.Visible = False
     End Sub
 End Class

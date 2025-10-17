@@ -76,6 +76,9 @@ Partial Class Form7
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.GroupBox14 = New System.Windows.Forms.GroupBox()
         Me.GroupBox15 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox17 = New System.Windows.Forms.GroupBox()
+        Me.Button36 = New System.Windows.Forms.Button()
+        Me.Button35 = New System.Windows.Forms.Button()
         Me.GroupBox16 = New System.Windows.Forms.GroupBox()
         Me.Button33 = New System.Windows.Forms.Button()
         Me.Button32 = New System.Windows.Forms.Button()
@@ -84,9 +87,6 @@ Partial Class Form7
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button34 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Button35 = New System.Windows.Forms.Button()
-        Me.GroupBox17 = New System.Windows.Forms.GroupBox()
-        Me.Button36 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -103,9 +103,9 @@ Partial Class Form7
         Me.GroupBox8.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
         Me.GroupBox15.SuspendLayout()
+        Me.GroupBox17.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox17.SuspendLayout()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
@@ -147,6 +147,7 @@ Partial Class Form7
         '
         Me.Label4.AutoSize = True
         Me.Label4.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.Label4.Enabled = False
         Me.Label4.Location = New System.Drawing.Point(20, 352)
         Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
@@ -156,6 +157,7 @@ Partial Class Form7
         '
         'Button25
         '
+        Me.Button25.Enabled = False
         Me.Button25.Location = New System.Drawing.Point(11, 196)
         Me.Button25.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button25.Name = "Button25"
@@ -275,6 +277,7 @@ Partial Class Form7
         '
         'Button15
         '
+        Me.Button15.Enabled = False
         Me.Button15.Location = New System.Drawing.Point(11, 273)
         Me.Button15.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button15.Name = "Button15"
@@ -685,6 +688,40 @@ Partial Class Form7
         Me.GroupBox15.TabStop = False
         Me.GroupBox15.Text = "其他选项"
         '
+        'GroupBox17
+        '
+        Me.GroupBox17.Controls.Add(Me.Button36)
+        Me.GroupBox17.Controls.Add(Me.Button35)
+        Me.GroupBox17.Enabled = False
+        Me.GroupBox17.Location = New System.Drawing.Point(9, 465)
+        Me.GroupBox17.Name = "GroupBox17"
+        Me.GroupBox17.Size = New System.Drawing.Size(627, 122)
+        Me.GroupBox17.TabIndex = 36
+        Me.GroupBox17.TabStop = False
+        Me.GroupBox17.Text = "Windows 10/11 (1903 及以上) 登录界面模糊"
+        '
+        'Button36
+        '
+        Me.Button36.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button36.Location = New System.Drawing.Point(325, 36)
+        Me.Button36.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Button36.Name = "Button36"
+        Me.Button36.Size = New System.Drawing.Size(286, 66)
+        Me.Button36.TabIndex = 36
+        Me.Button36.Text = "无模糊"
+        Me.Button36.UseVisualStyleBackColor = True
+        '
+        'Button35
+        '
+        Me.Button35.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button35.Location = New System.Drawing.Point(20, 36)
+        Me.Button35.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.Button35.Name = "Button35"
+        Me.Button35.Size = New System.Drawing.Size(290, 66)
+        Me.Button35.TabIndex = 35
+        Me.Button35.Text = "有模糊 (默认)"
+        Me.Button35.UseVisualStyleBackColor = True
+        '
         'GroupBox16
         '
         Me.GroupBox16.Controls.Add(Me.Button33)
@@ -762,40 +799,6 @@ Partial Class Form7
         Me.Button34.Text = "重启资源管理器"
         Me.Button34.UseVisualStyleBackColor = True
         '
-        'Button35
-        '
-        Me.Button35.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button35.Location = New System.Drawing.Point(20, 36)
-        Me.Button35.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.Button35.Name = "Button35"
-        Me.Button35.Size = New System.Drawing.Size(290, 66)
-        Me.Button35.TabIndex = 35
-        Me.Button35.Text = "有模糊 (默认)"
-        Me.Button35.UseVisualStyleBackColor = True
-        '
-        'GroupBox17
-        '
-        Me.GroupBox17.Controls.Add(Me.Button36)
-        Me.GroupBox17.Controls.Add(Me.Button35)
-        Me.GroupBox17.Enabled = False
-        Me.GroupBox17.Location = New System.Drawing.Point(9, 465)
-        Me.GroupBox17.Name = "GroupBox17"
-        Me.GroupBox17.Size = New System.Drawing.Size(627, 122)
-        Me.GroupBox17.TabIndex = 36
-        Me.GroupBox17.TabStop = False
-        Me.GroupBox17.Text = "Windows 10/11 (1903 及以上) 登录界面模糊"
-        '
-        'Button36
-        '
-        Me.Button36.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button36.Location = New System.Drawing.Point(325, 36)
-        Me.Button36.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.Button36.Name = "Button36"
-        Me.Button36.Size = New System.Drawing.Size(286, 66)
-        Me.Button36.TabIndex = 36
-        Me.Button36.Text = "无模糊"
-        Me.Button36.UseVisualStyleBackColor = True
-        '
         'Form7
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(168.0!, 168.0!)
@@ -840,9 +843,9 @@ Partial Class Form7
         Me.GroupBox14.ResumeLayout(False)
         Me.GroupBox14.PerformLayout()
         Me.GroupBox15.ResumeLayout(False)
+        Me.GroupBox17.ResumeLayout(False)
         Me.GroupBox16.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox17.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
