@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.WFL_Tool_IoU.UninstAdmin
+            Me.MainForm = Global.WFL_Tool_IoU.SetupUserLicense
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

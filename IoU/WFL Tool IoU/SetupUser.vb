@@ -16,4 +16,10 @@
         End
     End Sub
 
+    Private Sub SetupUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 5033 Then         '拒绝在Windows Longhorn重置前版本、WindowsXP及更低版本系统的X64版本上运行
+            MsgBox("本软件仅支持 Windows Vista 及以上版本 x64 架构 Windows 系统！")
+        End If
+    End Sub
 End Class

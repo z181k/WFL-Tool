@@ -36,7 +36,7 @@
 
     Private Sub Windows1011ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Windows1011ToolStripMenuItem.Click
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild >= "10240" Then   'Win10/11更新
+        If CurrentBuild >= 10240 Then   'Win10/11更新
             Shell("cmd.exe /c start ms-settings:windowsupdate", AppWinStyle.Hide, True, -1)
             Exit Sub
         End If
@@ -342,7 +342,7 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
         On Error GoTo openreg       '防止注册表不存在
         Dim PROCESSOR_ARCHITECTURE As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PROCESSOR_ARCHITECTURE", Nothing)
         If PROCESSOR_ARCHITECTURE = "AMD64" Then
-            GoTo starttask                   '判断兼容性
+            GoTo starttask                   '判断兼容性，拒绝在非x64版本运行
         End If
         MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
         End
@@ -370,7 +370,7 @@ starttask:
         End If
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
-            ToolStripMenuItem3.Text = "欢迎使用"                      '主界面右上角wfltool
+            ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text                      '主界面右上角wfltool
             现代当前ToolStripMenuItem.Text = "现代"
             伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         End If
@@ -381,7 +381,9 @@ starttask:
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 7600 Then              '检查版本控制系统修改显示
+        If CurrentBuild < 5033 Then         '拒绝在Windows Longhorn重置前版本、WindowsXP及更低版本系统的X64版本上运行
+            MsgBox("本软件仅支持 Windows Vista 及以上版本 x64 架构 Windows 系统！")
+        ElseIf CurrentBuild < 7000 Then              '检查版本控制系统修改显示
             系统修改ToolStripMenuItem.Enabled = False
         End If
         If CurrentBuild < 18362 Then              '检查版本控制UWP应用显示
@@ -458,14 +460,14 @@ legacy:
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-            ToolStripMenuItem3.Text = "WFL Tool  v12.0"                      '判断并且改为wfltool
+            ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text                       '判断并且改为wfltool
             现代当前ToolStripMenuItem.Text = "现代 (当前)"
             伪旧ToolStripMenuItem.Text = "伪旧"
             Exit Sub     '结束事件防止执行下面
         End If
 wflttext:
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "欢迎使用  v12.0"
+        ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text
         现代当前ToolStripMenuItem.Text = "现代"              '例外：改为欢迎使用
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         'Label1.Font = New Font("新宋体", 12, FontStyle.Bold, Font.Style.Italic)   ’废弃的字体代码
@@ -495,14 +497,14 @@ wflttext:
 
     Private Sub 现代当前ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 现代当前ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "WFL Tool"                   '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text                    '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代 (当前)"
         伪旧ToolStripMenuItem.Text = "伪旧"
     End Sub
 
     Private Sub 伪旧ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 伪旧ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "欢迎使用"                      '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text                       '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代"
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
     End Sub
@@ -584,6 +586,15 @@ legacy:
     End Sub
 
     Private Sub 清除数据并退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除数据并退出程序ToolStripMenuItem.Click
+        On Error GoTo legacy
+        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
+            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+            Shell(InstallLocation + "\MessageBox.exe ""该功能请到新版选项使用，新版选项已经为您打开"" ""清除数据并退出程序"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
+        Else              '旧版弹窗
+legacy:
+            MsgBox("")
+        End If
         Form11.Show()
     End Sub
 

@@ -3,7 +3,7 @@
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         'MsgBox("测试版不提供更新日志", 0, "WFL Tool")
-        Dim upginfo As String = """RTM 版本(9024.1):" & vbCrLf & "新功能：" & vbCrLf & "1.关机选项更名为电源选项并且增加电池健康信息功能" & vbCrLf & "2.系统修改增加 win10/11 显示清楚的登录背景选项" & vbCrLf & "3.首页增加重启资源管理器按钮" & vbCrLf & "4.部分功能界面细节微调" & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题"""
+        Dim upginfo As String = """RTM 版本(9024.1):" & vbCrLf & "新功能：" & vbCrLf & "1.关机选项更名为电源选项并且增加电池健康信息功能" & vbCrLf & "2.系统修改增加 win10/11 显示清楚的登录背景选项" & vbCrLf & "3.首页增加重启资源管理器按钮" & vbCrLf & "4.部分功能界面细节微调" & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题" & vbCrLf & vbCrLf & "修补版本(9024.3):" & vbCrLf & "修复部分情况下主页右上角文字没有版本号问题"""
         On Error GoTo legacy
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
@@ -20,10 +20,10 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""本应用只提供 x64 和 x86 版本。对最新版本提供支持。我们曾提供过 Win XP 可用 x86 版本，并且开源，但是目前已不再提供，并且已结束支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本更新会比较慢。"" ""版本声明"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""本应用提供 x64 版本，对最新版本提供支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本从 2025/10/17 起停止支持。不提供 arm 架构版本。"" ""版本声明"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("本应用只提供 x64 和 x86 版本。对最新版本提供支持。我们曾提供过 Win XP 可用 x86 版本，并且开源，但是目前已不再提供，并且已结束支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本更新会比较慢。", MsgBoxStyle.OkOnly, "版本声明")
+            MsgBox("本应用只提供 x64 版本。对最新版本提供支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本从 2025/10/17 起停止支持。不提供 arm 架构版本。", MsgBoxStyle.OkOnly, "版本声明")
         End If
     End Sub
 
