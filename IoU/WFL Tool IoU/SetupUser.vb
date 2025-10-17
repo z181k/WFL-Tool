@@ -16,4 +16,19 @@
         End
     End Sub
 
+    Private Sub SetupUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        On Error GoTo 1
+        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 5033 Then
+            为当前用户安装.Enabled = False
+            Button1.Enabled = False
+        End If
+        Exit Sub
+
+
+1:
+        为当前用户安装.Enabled = False
+        Button1.Enabled = False
+        Label2.Text = "Windows XP 请使用将主程序放到用户文件夹"
+    End Sub
 End Class

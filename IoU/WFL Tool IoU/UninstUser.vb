@@ -58,4 +58,8 @@ Public Class UninstUser
     Private Sub UninstUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
+
+    Private Sub UninstUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

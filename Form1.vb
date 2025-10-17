@@ -340,6 +340,7 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         On Error GoTo openreg       '防止注册表不存在
+        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         Dim PROCESSOR_ARCHITECTURE As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PROCESSOR_ARCHITECTURE", Nothing)
         If PROCESSOR_ARCHITECTURE = "x86" Then
             GoTo starttask                   '判断兼容性
@@ -370,7 +371,7 @@ starttask:
         End If
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
-            ToolStripMenuItem3.Text = "欢迎使用"                      '主界面右上角wfltool
+            ToolStripMenuItem3.Text = "欢迎使用  v9.20"                      '主界面右上角wfltool
             现代当前ToolStripMenuItem.Text = "现代"
             伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         End If
@@ -384,7 +385,7 @@ starttask:
         If x86EndSupport = "DoNotShow" Then
             Panel1.Visible = False
         End If
-        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        On Error GoTo 2
         If CurrentBuild < 5033 Then
             ToolStripMenuItem15.Enabled = False
             所有任务ToolStripMenuItem.Enabled = False
@@ -405,6 +406,17 @@ openreg:
         '辅助打开软件
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v OPEN /T REG_SZ /d x64 /f", AppWinStyle.Hide, True, -1)
         GoTo starttask
+        Exit Sub
+2:
+        ToolStripMenuItem15.Enabled = False
+        所有任务ToolStripMenuItem.Enabled = False
+            查看系统位数ToolStripMenuItem.Enabled = False
+            Windows1011ToolStripMenuItem.Enabled = False
+            Button3.Enabled = False
+            Button11.Enabled = False
+            系统修改ToolStripMenuItem.Enabled = False
+            系统修改ToolStripMenuItem.Enabled = False
+            UWP应用ToolStripMenuItem.Enabled = False
     End Sub
 
     Private Sub Button19_MouseClick(sender As Object, e As MouseEventArgs) Handles Button19.MouseClick
@@ -637,11 +649,11 @@ legacy:
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        MsgBox("x86 版本的 WFL Tool 已于 2025/10/17 停止支持，这个版本是在停止当天发布的最后一个版本。很抱歉我们通知的很仓促，但希望您尽快将系统升级至 64 位继续获得支持，或更换您的设备以继续获得支持，获取最新的更新、问题修复和功能。使用停止支持版本所带来的一切后果自负。", "WFL Tool (x86)")
+        MsgBox("x86 版本的 WFL Tool 已于 2025/10/17 停止支持，这个版本是在停止当天发布的最后一个版本。很抱歉我们通知的很仓促，但希望您尽快将系统升级至 64 位继续获得支持，或更换您的设备以继续获得支持，获取最新的更新、问题修复和功能。使用停止支持版本所带来的一切后果自负。")
     End Sub
 
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
-        MsgBox("使用停止支持版本所带来的一切后果自负。", "WFL Tool (x86)")
+        MsgBox("使用停止支持版本所带来的一切后果自负。")
         Panel1.Visible = False
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v x86EndSupport /T REG_SZ /d DoNotShow /f", AppWinStyle.Hide, True, -1)
     End Sub

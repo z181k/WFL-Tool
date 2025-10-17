@@ -129,6 +129,7 @@ legacy:
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        On Error GoTo 1
         '读取设置
         Dim LegacyMoreUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("LegacyMoreUI", "无")
         If LegacyMoreUI = "True" Then
@@ -155,6 +156,16 @@ legacy:
             Button17.Enabled = False
             WindowsPowershellISEToolStripMenuItem1.Enabled = False
         End If
+        Exit Sub
+1:
+        Button1.Enabled = False
+        Button6.Enabled = False
+        Button7.Enabled = False
+        Button8.Enabled = False
+        Button10.Enabled = False
+        Button13.Enabled = False
+        Button17.Enabled = False
+        WindowsPowershellISEToolStripMenuItem1.Enabled = False
     End Sub
 
     Private Sub 打开主页ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开主页ToolStripMenuItem.Click

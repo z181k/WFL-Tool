@@ -50,4 +50,8 @@
         SetupUserInstall.ControlBox = True
         SetupUserInstall.Text = "WFL Tool (x64) 卸载程序"
     End Sub
+
+    Private Sub UninstAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
