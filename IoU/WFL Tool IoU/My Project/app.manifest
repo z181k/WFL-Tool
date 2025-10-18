@@ -7,9 +7,9 @@
         <!-- UAC 清单选项
              如果想要更改 Windows 用户帐户控制级别，请使用
              以下节点之一替换 requestedExecutionLevel 节点。n
-        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
-        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
-        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />             这个给用户模式安装卸载
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />  这个给管理员安装卸载
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />      这个给功能启用更新
 
             指定 requestedExecutionLevel 元素将禁用文件和注册表虚拟化。
             如果你的应用程序需要此虚拟化来实现向后兼容性，则删除此
@@ -17,7 +17,7 @@
 			
 			此APPMANIFEST为安装卸载程序的
         -->
-		  <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+		  <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
   </trustInfo>

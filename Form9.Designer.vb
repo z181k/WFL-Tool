@@ -110,7 +110,7 @@ Partial Class Form9
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(122, 32)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "版本 12.1"
+        Me.Label3.Text = "版本 13.0"
         '
         'Label4
         '
@@ -123,7 +123,7 @@ Partial Class Form9
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(118, 24)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Build 9024.3"
+        Me.Label4.Text = "Build 9072.1"
         '
         'LinkLabel1
         '
@@ -205,7 +205,7 @@ Partial Class Form9
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(510, 280)
         Me.Label5.TabIndex = 13
-        Me.Label5.Text = "WFL Tool 让修改系统变得更加容易，让系统附件更加" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "易于寻找" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "版权所有 © 2021-2025 董博涛 保留所有权利." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "本软件是 Apache" &
+        Me.Label5.Text = "WFL Tool 让修改系统变得更加容易，让系统附件更加" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "易于寻找" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "版权所有 © 2021-2026 董博涛 保留所有权利." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "本软件是 Apache" &
     "-2.0 许可证的开源软件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "使用本软件源码需同时遵守 WFL Tool 软件许可协议" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "和 Apache-2.0 许可证" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "应用中部分链接为非本团队运营，" &
     "详见软件许可协议"
         '
@@ -347,7 +347,7 @@ Partial Class Form9
         Me.MinimizeBox = False
         Me.Name = "Form9"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "关于 WFL Tool"
+        Me.Text = "关于 WFL Tool  -  我诞生 5 周年啦！"
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

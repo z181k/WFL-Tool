@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("WFL Tool")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("© 2025 董博涛")>
+<Assembly: AssemblyCompany("© 2026 董博涛")>
 <Assembly: AssemblyProduct("电脑功能启动器 (x64)")>
-<Assembly: AssemblyCopyright("版权所有 © 2025 董博涛 保留所有权利.")>
+<Assembly: AssemblyCopyright("版权所有 © 2026 董博涛 保留所有权利.")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 '通过使用 "*"，如下所示:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("12.1.9024.3")>
-<Assembly: AssemblyFileVersion("12.1.9024.3")>
+<Assembly: AssemblyVersion("13.0.9072.1")>
+<Assembly: AssemblyFileVersion("13.0.9072.1")>

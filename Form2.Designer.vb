@@ -420,9 +420,9 @@ Partial Class Form2
         Me.FeatureControlLabel1.AutoSize = True
         Me.FeatureControlLabel1.Location = New System.Drawing.Point(60, 19)
         Me.FeatureControlLabel1.Name = "FeatureControlLabel1"
-        Me.FeatureControlLabel1.Size = New System.Drawing.Size(87, 21)
+        Me.FeatureControlLabel1.Size = New System.Drawing.Size(76, 21)
         Me.FeatureControlLabel1.TabIndex = 110
-        Me.FeatureControlLabel1.Text = "disable"
+        Me.FeatureControlLabel1.Text = "enable"
         Me.FeatureControlLabel1.Visible = False
         '
         'Form2

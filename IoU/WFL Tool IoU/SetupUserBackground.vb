@@ -44,7 +44,7 @@
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayIcon /T REG_SZ /d ""%localappdata%\WFL Tool\WFL Tool.exe"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) User"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 70
-        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 12.1.9024.3 /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 13.0.9072.1 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v UninstallString /T REG_SZ /d ""%localappdata%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 80
@@ -52,7 +52,7 @@
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v NoRepair /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v EstimatedSize /T REG_DWORD /d 26316 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 90
-        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v Publisher /T REG_SZ /d ""(c) 2021-2025 董博涛"" /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v Publisher /T REG_SZ /d ""(c) 2021-2026 董博涛"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v InstallLocation /T REG_SZ /d ""%localappdata%\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
         Dim dpf As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", True).GetValue("Desktop", "%homedrive%%homepath%\desktop")
         Shell("cmd.EXE /c copy udl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)

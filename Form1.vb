@@ -380,17 +380,17 @@ starttask:
             启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
-        Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
-        If v122 = "ture" Then
-            FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
-        End If
-        Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
-        If v122a = "True" Then
-            FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
-        End If
+        'Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
+        'If v122 = "ture" Then
+        '   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
+        'End If
+        'Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
+        'If v122a = "True" Then
+        '   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
+        'End If
         If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
             查看更多内部功能ToolStripMenuItem.Visible = True
-            VerLabel.Text = "  v12.2"
+            'VerLabel.Text = "  v12.2"
             Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "无")
             If cctButton = "1" Then
                 计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - admin cmd
@@ -431,7 +431,7 @@ CBcheck:
         If CurrentBuild < 22000 Then              '检查版本控制Win11IE名字
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         End If
-        'MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
+        MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
         'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
         Exit Sub
 openreg:

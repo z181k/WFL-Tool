@@ -21,6 +21,6 @@ end1:
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 12.2.9024.3 /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v v122 /T REG_SZ /d true /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v v122 /T REG_SZ /d ture /f", AppWinStyle.Hide, True, -1)     'true拼写错误，为兼容保留
     End Sub
 End Class
