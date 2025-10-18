@@ -45,6 +45,7 @@ Partial Class Form9
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LinkLabel10 = New System.Windows.Forms.LinkLabel()
+        Me.FeatureControlLabel1 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -304,6 +305,16 @@ Partial Class Form9
         Me.LinkLabel10.TabStop = True
         Me.LinkLabel10.Text = "开源地址"
         '
+        'FeatureControlLabel1
+        '
+        Me.FeatureControlLabel1.AutoSize = True
+        Me.FeatureControlLabel1.Location = New System.Drawing.Point(73, 35)
+        Me.FeatureControlLabel1.Name = "FeatureControlLabel1"
+        Me.FeatureControlLabel1.Size = New System.Drawing.Size(87, 21)
+        Me.FeatureControlLabel1.TabIndex = 111
+        Me.FeatureControlLabel1.Text = "disable"
+        Me.FeatureControlLabel1.Visible = False
+        '
         'Form9
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
@@ -312,6 +323,7 @@ Partial Class Form9
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(831, 516)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.Controls.Add(Me.FeatureControlLabel1)
         Me.Controls.Add(Me.LinkLabel10)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.LinkLabel5)
@@ -364,4 +376,5 @@ Partial Class Form9
     Friend WithEvents LinkLabel5 As LinkLabel
     Friend WithEvents Label6 As Label
     Friend WithEvents LinkLabel10 As LinkLabel
+    Friend WithEvents FeatureControlLabel1 As Label
 End Class

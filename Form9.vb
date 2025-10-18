@@ -1,9 +1,14 @@
-﻿Public Class Form9
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         'MsgBox("测试版不提供更新日志", 0, "WFL Tool")
         Dim upginfo As String = """RTM 版本(9024.1):" & vbCrLf & "新功能：" & vbCrLf & "1.关机选项更名为电源选项并且增加电池健康信息功能" & vbCrLf & "2.系统修改增加 win10/11 显示清楚的登录背景选项" & vbCrLf & "3.首页增加重启资源管理器按钮" & vbCrLf & "4.部分功能界面细节微调" & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题" & vbCrLf & vbCrLf & "修补版本(9024.3):" & vbCrLf & "新的：" & vbCrLf & "1.添加企业可以屏蔽软件界面自定义功能" & vbCrLf & "2.主页右上角文字增加仅软件名和仅版本号" & vbCrLf & "修复：" & vbCrLf & "修复主页右上角文字相关问题"""
+        If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
+            upginfo = """RTM 版本(9024.1):" & vbCrLf & "新功能：" & vbCrLf & "1.关机选项更名为电源选项并且增加电池健康信息功能" & vbCrLf & "2.系统修改增加 win10/11 显示清楚的登录背景选项" & vbCrLf & "3.首页增加重启资源管理器按钮" & vbCrLf & "4.部分功能界面细节微调" & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题" & vbCrLf & vbCrLf & "修补版本(9024.3):" & vbCrLf & "新的：" & vbCrLf & "1.添加企业可以屏蔽软件界面自定义功能" & vbCrLf & "2.主页右上角文字增加仅软件名和仅版本号" & vbCrLf & "修复：" & vbCrLf & "修复主页右上角文字相关问题" & vbCrLf & vbCrLf & "启用更新(v12.2)：" & vbCrLf & "增加查看更多内部功能调整选项"""
+        End If
         On Error GoTo legacy
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
@@ -128,7 +133,7 @@ legacy:
         '        End If
     End Sub
 
-    Private Sub LinkLabel10_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) 
+    Private Sub LinkLabel10_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Dim NF11 As New Form11()
         NF11.Show()
     End Sub
@@ -151,5 +156,20 @@ legacy:
         Exit Sub
 legacy:
         Shell("cmd.exe /c start https://github.com/z181k/WFL-Tool", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
+        Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
+        If v122a = "True" Then
+            FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
+        End If
+        If v122 = "ture" Then
+            FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
+        End If
+        If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
+            Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "0")
+            Label3.Text = "版本 12.2"     '修改版本
+        End If
     End Sub
 End Class

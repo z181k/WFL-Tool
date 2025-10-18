@@ -46,7 +46,7 @@ Partial Class SetupEnableFeatureUpdate
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(122, 32)
         Me.Label5.TabIndex = 54
-        Me.Label5.Text = "版本 00.0"
+        Me.Label5.Text = "版本 12.2"
         '
         'Label3
         '
@@ -109,8 +109,9 @@ Partial Class SetupEnableFeatureUpdate
         '
         'Button2
         '
+        Me.Button2.Enabled = False
         Me.Button2.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button2.Location = New System.Drawing.Point(334, 132)
+        Me.Button2.Location = New System.Drawing.Point(334, 118)
         Me.Button2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(414, 72)
@@ -120,21 +121,21 @@ Partial Class SetupEnableFeatureUpdate
         '
         'Button1
         '
+        Me.Button1.Enabled = False
         Me.Button1.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(334, 219)
+        Me.Button1.Location = New System.Drawing.Point(334, 204)
         Me.Button1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(414, 72)
         Me.Button1.TabIndex = 62
         Me.Button1.Text = "为当前用户更新"
         Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(273, 51)
+        Me.Label1.Location = New System.Drawing.Point(273, 41)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(566, 45)
@@ -146,12 +147,12 @@ Partial Class SetupEnableFeatureUpdate
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(269, 315)
+        Me.Label6.Location = New System.Drawing.Point(269, 296)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(569, 140)
+        Me.Label6.Size = New System.Drawing.Size(569, 168)
         Me.Label6.TabIndex = 66
-        Me.Label6.Text = "注意事项：" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "为所有用户更新后更新将为所有安装了 00.0 版本的用户生效" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "撤回更新请卸载并且尝试重新安装需要回退到的版本" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "更新后的版本与旧版本共用相同的二进" &
-    "制文件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "安装后 00.0 版本将在以任何方式运行时被替换为 00.0 版本"
+        Me.Label6.Text = "注意事项：" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "更新前需安装 WFL Tool 的 12.1 版本" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "为所有用户更新后更新将为所有安装了 12.1 版本的用户生效" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "撤回更新请卸载并且尝试重新安装" &
+    "需要回退到的版本" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "更新后的版本与旧版本共用相同的二进制文件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "安装后 12.1 版本将在以任何方式运行时被替换为 12.2 版本"
         '
         'SetupEnableFeatureUpdate
         '

@@ -62,9 +62,11 @@ Partial Class Form2
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.快捷键返回BToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.FeatureControlLabel1 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -406,11 +408,22 @@ Partial Class Form2
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.FeatureControlLabel1)
         Me.Panel1.Location = New System.Drawing.Point(220, -5)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(189, 49)
         Me.Panel1.TabIndex = 109
+        '
+        'FeatureControlLabel1
+        '
+        Me.FeatureControlLabel1.AutoSize = True
+        Me.FeatureControlLabel1.Location = New System.Drawing.Point(60, 19)
+        Me.FeatureControlLabel1.Name = "FeatureControlLabel1"
+        Me.FeatureControlLabel1.Size = New System.Drawing.Size(87, 21)
+        Me.FeatureControlLabel1.TabIndex = 110
+        Me.FeatureControlLabel1.Text = "disable"
+        Me.FeatureControlLabel1.Visible = False
         '
         'Form2
         '
@@ -452,6 +465,8 @@ Partial Class Form2
         Me.ContextMenuStrip2.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -495,4 +510,5 @@ Partial Class Form2
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents 快捷键返回BToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents FeatureControlLabel1 As Label
 End Class

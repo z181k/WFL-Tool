@@ -374,6 +374,32 @@ starttask:
             新版覆盖返回方式ToolStripMenuItem.Text = "新版覆盖加返回键方式"
             旧版ToolStripMenuItem.Text = "旧版弹出窗口方式 (当前)"
         End If
+        Dim TrayIcon As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("TrayIcon", "无")
+        If TrayIcon = "True" Then
+            Form13.Show()                       '托盘图标
+            启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
+            启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
+        End If
+        Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
+        If v122 = "ture" Then
+            FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
+        End If
+        Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
+        If v122a = "True" Then
+            FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
+        End If
+        If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
+            查看更多内部功能ToolStripMenuItem.Visible = True
+            VerLabel.Text = "  v12.2"
+            Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "无")
+            If cctButton = "1" Then
+                计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - admin cmd
+                命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符 (当前)"
+            ElseIf cctButton = "2" Then
+                计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - taskmger x86
+                任务管理器x86ToolStripMenuItem.Text = "任务管理器 x86 (当前)"
+            End If
+        End If
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
             ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text
@@ -387,12 +413,8 @@ starttask:
             ToolStripMenuItem3.Text = "WFL Tool"
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
             仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
-        End If
-        Dim TrayIcon As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("TrayIcon", "无")
-        If TrayIcon = "True" Then
-            Form13.Show()                       '托盘图标
-            启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
-            启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
+        Else
+            ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text  '主界面右上角wfltool - 现代
         End If
 CBcheck:
         On Error GoTo xp
@@ -409,7 +431,7 @@ CBcheck:
         If CurrentBuild < 22000 Then              '检查版本控制Win11IE名字
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         End If
-        MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
+        'MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
         'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
         Exit Sub
 openreg:
@@ -670,5 +692,26 @@ legacy:
         伪旧ToolStripMenuItem.Text = "伪旧"
         仅版本号ToolStripMenuItem.Text = "仅版本号 (当前)"
         仅软件名ToolStripMenuItem.Text = "仅软件名"
+    End Sub
+
+    Private Sub 计算机管理当前ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 计算机管理当前ToolStripMenuItem.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v cctButton /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
+        计算机管理当前ToolStripMenuItem.Text = "计算机管理 (当前)"
+        任务管理器x86ToolStripMenuItem.Text = "任务管理器 x86"           '查看更多内部功能
+        命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符"
+    End Sub
+
+    Private Sub 命令提示符管理员ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 命令提示符管理员ToolStripMenuItem1.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v cctButton /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+        计算机管理当前ToolStripMenuItem.Text = "计算机管理"
+        任务管理器x86ToolStripMenuItem.Text = "任务管理器 x86"           '查看更多内部功能
+        命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符 (当前)"
+    End Sub
+
+    Private Sub 任务管理器x86ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 任务管理器x86ToolStripMenuItem.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v cctButton /T REG_SZ /d 2 /f", AppWinStyle.Hide, True, -1)
+        计算机管理当前ToolStripMenuItem.Text = "计算机管理"
+        任务管理器x86ToolStripMenuItem.Text = "任务管理器 x86 (当前)"           '查看更多内部功能
+        命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符"
     End Sub
 End Class

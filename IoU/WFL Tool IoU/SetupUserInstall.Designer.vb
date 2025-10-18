@@ -31,7 +31,6 @@ Partial Class SetupUserInstall
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,18 +108,6 @@ Partial Class SetupUserInstall
         '
         Me.Timer1.Interval = 300
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("微软雅黑", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(77, 306)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(123, 32)
-        Me.Label5.TabIndex = 48
-        Me.Label5.Text = "版本 12.0"
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.WFL_Tool_IoU.My.Resources.Resources.logo256
@@ -152,7 +139,6 @@ Partial Class SetupUserInstall
         Me.ClientSize = New System.Drawing.Size(862, 490)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
@@ -180,6 +166,5 @@ Partial Class SetupUserInstall
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Label5 As Label
     Friend WithEvents Button1 As Button
 End Class
