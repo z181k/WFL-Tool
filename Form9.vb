@@ -3,7 +3,7 @@
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         'MsgBox("测试版不提供更新日志", 0, "WFL Tool")
-        Dim upginfo As String = """RTM 版本(9024.1):" & vbCrLf & "新功能：" & vbCrLf & "1.关机选项更名为电源选项并且增加电池健康信息功能" & vbCrLf & "2.系统修改增加 win10/11 显示清楚的登录背景选项" & vbCrLf & "3.首页增加重启资源管理器按钮" & vbCrLf & "4.部分功能界面细节微调" & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题" & vbCrLf & vbCrLf & "修补版本(9024.3):" & vbCrLf & "新的：" & vbCrLf & "1.添加企业可以屏蔽软件界面自定义功能" & vbCrLf & "2.主页右上角文字增加仅软件名和仅版本号" & vbCrLf & "修复：" & vbCrLf & "修复主页右上角文字相关问题"""
+        Dim upginfo As String = """RTM 版本(9024.1):" & vbCrLf & "新功能：" & vbCrLf & "1.关机选项更名为电源选项并且增加电池健康信息功能" & vbCrLf & "2.系统修改增加 win10/11 显示清楚的登录背景选项" & vbCrLf & "3.首页增加重启资源管理器按钮" & vbCrLf & "4.部分功能界面细节微调" & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能中部分功能 UAC 弹出后自动最小化问题" & vbCrLf & "2.解决部分功能在系统盘不是 C 盘时无法打开问题" & vbCrLf & vbCrLf & "修补版本(9024.3):" & vbCrLf & "1." & vbCrLf & "2.修复主页右上角文字相关问题"""
         On Error GoTo legacy
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
