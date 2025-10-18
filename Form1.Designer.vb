@@ -200,25 +200,25 @@ Partial Class Form1
         '所有任务ToolStripMenuItem
         '
         Me.所有任务ToolStripMenuItem.Name = "所有任务ToolStripMenuItem"
-        Me.所有任务ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.所有任务ToolStripMenuItem.Size = New System.Drawing.Size(290, 40)
         Me.所有任务ToolStripMenuItem.Text = "所有任务(&A)"
         '
         '查看系统位数ToolStripMenuItem
         '
         Me.查看系统位数ToolStripMenuItem.Name = "查看系统位数ToolStripMenuItem"
-        Me.查看系统位数ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.查看系统位数ToolStripMenuItem.Size = New System.Drawing.Size(290, 40)
         Me.查看系统位数ToolStripMenuItem.Text = "打开系统属性(&W)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(312, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(287, 6)
         '
         '系统更新UToolStripMenuItem
         '
         Me.系统更新UToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WindowsToolStripMenuItem, Me.下载WindowsToolStripMenuItem, Me.ToolStripMenuItem5, Me.更新本程序ToolStripMenuItem})
         Me.系统更新UToolStripMenuItem.Name = "系统更新UToolStripMenuItem"
-        Me.系统更新UToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.系统更新UToolStripMenuItem.Size = New System.Drawing.Size(290, 40)
         Me.系统更新UToolStripMenuItem.Text = "系统更新(&U)"
         '
         'WindowsToolStripMenuItem
@@ -290,20 +290,20 @@ Partial Class Form1
         '系统修改ToolStripMenuItem
         '
         Me.系统修改ToolStripMenuItem.Name = "系统修改ToolStripMenuItem"
-        Me.系统修改ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.系统修改ToolStripMenuItem.Size = New System.Drawing.Size(290, 40)
         Me.系统修改ToolStripMenuItem.Text = "系统修改(&C)"
         '
         'ToolStripMenuItem15
         '
         Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(315, 40)
+        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(290, 40)
         Me.ToolStripMenuItem15.Text = "密钥管理服务(&K)"
         '
         '测试功能ToolStripMenuItem
         '
         Me.测试功能ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.功能说明帮助ToolStripMenuItem, Me.ToolStripMenuItem8, Me.修复Win1011开始菜单卡死ToolStripMenuItem, Me.禁用恢复命令提示符ToolStripMenuItem, Me.禁用恢复控制面板ToolStripMenuItem, Me.禁用恢复taskmgrToolStripMenuItem})
         Me.测试功能ToolStripMenuItem.Name = "测试功能ToolStripMenuItem"
-        Me.测试功能ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.测试功能ToolStripMenuItem.Size = New System.Drawing.Size(290, 40)
         Me.测试功能ToolStripMenuItem.Text = "高级功能"
         '
         '功能说明帮助ToolStripMenuItem
@@ -383,12 +383,12 @@ Partial Class Form1
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(312, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(287, 6)
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(315, 40)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(290, 40)
         Me.ToolStripMenuItem6.Text = "新选项(&S)"
         Me.ToolStripMenuItem6.Visible = False
         '
@@ -396,7 +396,7 @@ Partial Class Form1
         '
         Me.ToolStripMenuItem18.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WFLTool应用设置ToolStripMenuItem, Me.ToolStripMenuItem20, Me.查看更多和系统附件弹出方式ToolStripMenuItem, Me.ToolStripMenuItem25, Me.主界面右上角显示样式ToolStripMenuItem, Me.ToolStripMenuItem16, Me.通知区域托盘图标ToolStripMenuItem, Me.ToolStripMenuItem26, Me.清除数据并退出程序ToolStripMenuItem})
         Me.ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(315, 40)
+        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(290, 40)
         Me.ToolStripMenuItem18.Text = "选项(&S)"
         '
         'WFLTool应用设置ToolStripMenuItem
@@ -447,13 +447,13 @@ Partial Class Form1
         '现代当前ToolStripMenuItem
         '
         Me.现代当前ToolStripMenuItem.Name = "现代当前ToolStripMenuItem"
-        Me.现代当前ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.现代当前ToolStripMenuItem.Size = New System.Drawing.Size(233, 40)
         Me.现代当前ToolStripMenuItem.Text = "现代 (当前)"
         '
         '伪旧ToolStripMenuItem
         '
         Me.伪旧ToolStripMenuItem.Name = "伪旧ToolStripMenuItem"
-        Me.伪旧ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.伪旧ToolStripMenuItem.Size = New System.Drawing.Size(233, 40)
         Me.伪旧ToolStripMenuItem.Text = "伪旧"
         '
         'ToolStripMenuItem16
@@ -505,12 +505,12 @@ Partial Class Form1
         'ToolStripMenuItem19
         '
         Me.ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        Me.ToolStripMenuItem19.Size = New System.Drawing.Size(312, 6)
+        Me.ToolStripMenuItem19.Size = New System.Drawing.Size(287, 6)
         '
         '退出XToolStripMenuItem
         '
         Me.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem"
-        Me.退出XToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.退出XToolStripMenuItem.Size = New System.Drawing.Size(290, 40)
         Me.退出XToolStripMenuItem.Text = "退出(&X)"
         '
         'UWP应用ToolStripMenuItem
@@ -798,8 +798,8 @@ Partial Class Form1
         Me.ToolStripMenuItem3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripMenuItem3.ForeColor = System.Drawing.SystemColors.GrayText
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(187, 32)
-        Me.ToolStripMenuItem3.Text = "WFL Tool  v12.1"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(181, 32)
+        Me.ToolStripMenuItem3.Text = "WFL Tool v12.1"
         '
         'Button1
         '
@@ -1187,9 +1187,9 @@ Partial Class Form1
         Me.VerLabel.AutoSize = True
         Me.VerLabel.Location = New System.Drawing.Point(586, 95)
         Me.VerLabel.Name = "VerLabel"
-        Me.VerLabel.Size = New System.Drawing.Size(87, 21)
+        Me.VerLabel.Size = New System.Drawing.Size(76, 21)
         Me.VerLabel.TabIndex = 10
-        Me.VerLabel.Text = "  v12.1"
+        Me.VerLabel.Text = " v12.1"
         Me.VerLabel.Visible = False
         '
         'Form1
