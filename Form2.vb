@@ -130,6 +130,10 @@ legacy:
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '读取设置
+        Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
+        If EnterpriseNotShow = 1 Then
+            Exit Sub                        '企业自定义屏蔽
+        End If
         Dim LegacyMoreUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("LegacyMoreUI", "无")
         If LegacyMoreUI = "True" Then
             返回主界面.Visible = False

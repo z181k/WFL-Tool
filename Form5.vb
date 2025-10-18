@@ -77,13 +77,6 @@
     End Sub
 
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        '读取设置
-        Dim LegacyMoreUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("LegacyMoreUI", "无")
-        If LegacyMoreUI = "True" Then
-            Me.ContextMenuStrip = ContextMenuStrip2
-            返回主界面.Visible = False
-            返回没有关闭窗口就行.Visible = True
-        End If
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild < 22621 Then              '检查版本控制WIN11conhost显示
             Button12.Enabled = False
@@ -91,6 +84,17 @@
             Button6.Enabled = False              '检查版本控制写字板显示
         ElseIf CurrentBuild < 14393 Then
             LinkLabel2.Enabled = False              '检查版本控制可选功能显示
+        End If
+        Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
+        If EnterpriseNotShow = 1 Then
+            Exit Sub                        '企业自定义屏蔽
+        End If
+        '读取设置
+        Dim LegacyMoreUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("LegacyMoreUI", "无")
+        If LegacyMoreUI = "True" Then
+            Me.ContextMenuStrip = ContextMenuStrip2
+            返回主界面.Visible = False
+            返回没有关闭窗口就行.Visible = True
         End If
     End Sub
 
