@@ -384,7 +384,7 @@ starttask:
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅版本号
             仅版本号ToolStripMenuItem.Text = "仅版本号 (当前)"
         ElseIf LegacyHomeUI = "OnlyAppName" Then
-            ToolStripMenuItem3.Text = VerLabel.Text
+            ToolStripMenuItem3.Text = "WFL Tool"
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
             仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
         End If
@@ -610,15 +610,6 @@ legacy:
     End Sub
 
     Private Sub 清除数据并退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除数据并退出程序ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""该功能请到新版选项使用，新版选项已经为您打开"" ""清除数据并退出程序"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("")
-        End If
         Form11.Show()
     End Sub
 
