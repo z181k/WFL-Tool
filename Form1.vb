@@ -359,6 +359,12 @@ starttask:
             frm.Show()
             Close()                             '确认阅读协议
         End If
+        Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
+        If EnterpriseNotShow = 1 Then
+            ToolStripMenuItem18.Visible = False
+            ToolStripMenuItem6.Visible = False
+            GoTo CBcheck                        '企业自定义屏蔽
+        End If
         Dim LegacyMoreUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("LegacyMoreUI", "无")
         If LegacyMoreUI = "True" Then
             Button19.Visible = False
@@ -370,9 +376,17 @@ starttask:
         End If
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
-            ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text                      '主界面右上角wfltool
-            现代当前ToolStripMenuItem.Text = "现代"
+            ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text
+            现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 欢迎使用
             伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
+        ElseIf LegacyHomeUI = "OnlyVersion" Then
+            ToolStripMenuItem3.Text = VerLabel.Text
+            现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅版本号
+            仅版本号ToolStripMenuItem.Text = "仅版本号 (当前)"
+        ElseIf LegacyHomeUI = "OnlyAppName" Then
+            ToolStripMenuItem3.Text = VerLabel.Text
+            现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
+            仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
         End If
         Dim TrayIcon As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("TrayIcon", "无")
         If TrayIcon = "True" Then
@@ -380,6 +394,7 @@ starttask:
             启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
+CBcheck:
         On Error GoTo xp
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild < 5033 Then         '拒绝在Windows Longhorn重置前版本、WindowsXP及更低版本系统的X64版本上运行
@@ -514,6 +529,8 @@ wflttext:
         ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text                       '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代"
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
+        仅版本号ToolStripMenuItem.Text = "仅版本号"
+        仅软件名ToolStripMenuItem.Text = "仅软件名"
     End Sub
 
     Private Sub 所有应用ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 所有应用ToolStripMenuItem.Click
@@ -644,5 +661,23 @@ legacy:
         End If
         Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub 仅软件名ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 仅软件名ToolStripMenuItem.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d OnlyAppName /f", AppWinStyle.Hide, True, -1)
+        ToolStripMenuItem3.Text = "WFL Tool"                       '主界面右上角wfltool
+        现代当前ToolStripMenuItem.Text = "现代"
+        伪旧ToolStripMenuItem.Text = "伪旧"
+        仅版本号ToolStripMenuItem.Text = "仅版本号"
+        仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
+    End Sub
+
+    Private Sub 仅版本号ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 仅版本号ToolStripMenuItem.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d OnlyVersion /f", AppWinStyle.Hide, True, -1)
+        ToolStripMenuItem3.Text = VerLabel.Text                       '主界面右上角wfltool
+        现代当前ToolStripMenuItem.Text = "现代"
+        伪旧ToolStripMenuItem.Text = "伪旧"
+        仅版本号ToolStripMenuItem.Text = "仅版本号 (当前)"
+        仅软件名ToolStripMenuItem.Text = "仅软件名"
     End Sub
 End Class
