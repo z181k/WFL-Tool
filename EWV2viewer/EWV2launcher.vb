@@ -9,7 +9,7 @@
 defaultstart:
         '下方代码为根据注册表信息调整网页界面内容代码
         On Error GoTo no3info2
-        Dim license As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("license", "无")
+        Dim license As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("EULA", "无")
         If license = "无" Then
             MsgBox("您未接受我们的软件许可协议，所以该功能暂不能使用，请谅解。", MsgBoxStyle.Exclamation, "WFL Tool")
             Application.Exit()
