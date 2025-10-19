@@ -72,9 +72,9 @@ Partial Class Form12
         Me.Button3.Location = New System.Drawing.Point(22, 716)
         Me.Button3.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(332, 56)
+        Me.Button3.Size = New System.Drawing.Size(290, 56)
         Me.Button3.TabIndex = 3
-        Me.Button3.Text = "前往取消授权页"
+        Me.Button3.Text = "取消协议授权"
         Me.Button3.UseVisualStyleBackColor = True
         Me.Button3.Visible = False
         '
