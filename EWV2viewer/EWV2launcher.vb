@@ -21,7 +21,7 @@ defaultstart:
             Exit Sub
         End If
 no3info2:
-        MsgBox("非常抱歉，出了一点小问题，请重试。", MsgBoxStyle.Critical, "WFL Tool WebPageView")
+        MsgBox("非常抱歉，出了一点小问题，请重试。", MsgBoxStyle.Critical, "WFL Tool WebPageViewer")
         Close()
     End Sub
 

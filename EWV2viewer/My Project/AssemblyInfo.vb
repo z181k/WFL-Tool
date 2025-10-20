@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -8,7 +9,7 @@ Imports System.Runtime.InteropServices
 
 '查看程序集特性的值
 
-<Assembly: AssemblyTitle("EWV2viewer")>
+<Assembly: AssemblyTitle("WFL Tool WebPageViewer")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("© 2026 董博涛")>
 <Assembly: AssemblyProduct("电脑功能启动器 (x64)")>
@@ -33,3 +34,4 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("13.0.9072.1")>
 <Assembly: AssemblyFileVersion("13.0.9072.1")>
+<Assembly: NeutralResourcesLanguage("zh-Hans-HK")>
