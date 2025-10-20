@@ -723,4 +723,8 @@ legacy:
         任务管理器x86ToolStripMenuItem.Text = "任务管理器 x86 (当前)"           '查看更多内部功能
         命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符"
     End Sub
+
+    Private Sub WFLTool5周年ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WFLTool5周年ToolStripMenuItem.Click
+        Form3.Show()
+    End Sub
 End Class
