@@ -56,7 +56,7 @@
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
-        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\taskmgr.exe", "", "", "", 0)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\taskmgr.exe", "", "", "", 1)
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click

@@ -5,7 +5,7 @@ Public Class Form9
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         'MsgBox("测试版不提供更新日志", 0, "WFL Tool")
-        Dim upginfo As String = """RTM 版本(9072.1):" & vbCrLf & "新功能：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & "3." & vbCrLf & "4." & vbCrLf & "修复：" & vbCrLf & "1." & vbCrLf & "2."""
+        Dim upginfo As String = """RTM 版本(9072.1):" & vbCrLf & "新功能：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & "3." & vbCrLf & "4." & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能任务管理器无法打开造成任务管理器假死问题" & vbCrLf & "2."""
         'If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         '   此处放启用后日志
         'End If
