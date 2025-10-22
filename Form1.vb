@@ -347,6 +347,7 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
         MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
         End
 starttask:
+        ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text  '主界面右上角wfltool - 现代
         '读取设置并调整界面（注册表读取）
         Dim License As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("EULA", "无")
         If License = "无" Then                                                                       '以前是License键值，不是EULA
@@ -390,7 +391,7 @@ starttask:
         'End If
         If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
             查看更多内部功能ToolStripMenuItem.Visible = True
-            'VerLabel.Text = "  v12.2"
+            ''VerLabel.Text = "  v12.2"
             Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "无")
             If cctButton = "1" Then
                 计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - admin cmd
@@ -413,8 +414,6 @@ starttask:
             ToolStripMenuItem3.Text = "WFL Tool"
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
             仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
-        Else
-            ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text  '主界面右上角wfltool - 现代
         End If
 CBcheck:
         On Error GoTo xp
