@@ -381,14 +381,15 @@ starttask:
             启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
-        'Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
-        'If v122 = "ture" Then
-        '   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
-        'End If
-        'Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
-        'If v122a = "True" Then
-        '   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
-        'End If
+        '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
+        ''Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
+        ''If v122 = "ture" Then
+        ''   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
+        ''End If
+        ''Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
+        ''If v122a = "True" Then
+        ''   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
+        ''End If
         If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
             查看更多内部功能ToolStripMenuItem.Visible = True
             ''VerLabel.Text = "  v12.2"

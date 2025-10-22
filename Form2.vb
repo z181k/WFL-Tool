@@ -140,14 +140,15 @@ legacy:
             快捷键返回BToolStripMenuItem.Enabled = False
             Me.ContextMenuStrip = ContextMenuStrip2
         End If
-        'Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
-        'Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
-        'If v122a = "True" Then
-        '   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
-        'End If
-        'If v122 = "ture" Then
-        '   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
-        'End If
+        '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
+        ''Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
+        ''Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
+        ''If v122a = "True" Then
+        ''   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
+        ''End If
+        ''If v122 = "ture" Then
+        ''   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
+        ''End If
         If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
             Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "0")
             If cctButton = "1" Then

@@ -5,10 +5,11 @@ Public Class Form9
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         'MsgBox("测试版不提供更新日志", 0, "WFL Tool")
-        Dim upginfo As String = """RTM 版本(9072.1):" & vbCrLf & "新功能：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & "3." & vbCrLf & "4." & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能任务管理器无法打开造成任务管理器假死问题" & vbCrLf & "2.解决企业屏蔽应用选项时右上角文字异常问题"""
-        'If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
-        '   此处放启用后日志
-        'End If
+        Dim upginfo As String = """RTM 版本(9072.1):" & vbCrLf & "新功能：" & vbCrLf & "1.切换框架到受支持且更安全的 .netFx 4.6.2 和 4.8" & vbCrLf & "2." & vbCrLf & "3." & vbCrLf & "4." & vbCrLf & "修复：" & vbCrLf & "1.解决更多功能任务管理器无法打开造成任务管理器假死问题" & vbCrLf & "2.解决企业屏蔽应用选项时右上角文字异常问题"""
+        '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
+        ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
+        ''   此处放启用后日志
+        ''End If
         On Error GoTo legacy
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
@@ -159,17 +160,18 @@ legacy:
     End Sub
 
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
-        'Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
-        'If v122a = "True" Then
-        '    FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
-        'End If
-        'If v122 = "ture" Then
-        '    FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
-        'End If
-        'If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
-        '    Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "0")
-        '    Label3.Text = "版本 12.2"     '修改版本
-        'End If
+        '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
+        ''Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
+        ''Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
+        ''If v122a = "True" Then
+        ''    FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
+        ''End If
+        ''If v122 = "ture" Then
+        ''    FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
+        ''End If
+        ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
+        ''    Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "0")
+        ''    Label3.Text = "版本 12.2"     '修改版本
+        ''End If
     End Sub
 End Class
