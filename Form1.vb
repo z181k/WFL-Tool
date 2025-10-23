@@ -426,8 +426,9 @@ CBcheck:
         ElseIf CurrentBuild < 7000 Then              '检查版本控制系统修改显示
             系统修改ToolStripMenuItem.Enabled = False
         End If
-        If CurrentBuild < 18362 Then              '检查版本控制UWP应用显示
+        If CurrentBuild < 18362 Then              '检查版本控制UWP应用和电池健康显示
             UWP应用ToolStripMenuItem.Enabled = False
+            电池健康ToolStripMenuItem.Enabled = False
         End If
         If CurrentBuild < 22000 Then              '检查版本控制Win11IE名字
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
