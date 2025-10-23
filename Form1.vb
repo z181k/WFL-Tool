@@ -363,6 +363,7 @@ starttask:
         Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
         If EnterpriseNotShow = 1 Then
             ToolStripMenuItem18.Visible = False
+            ToolStripMenuItem19.Visible = False
             ToolStripMenuItem6.Visible = False
             GoTo CBcheck                        '企业自定义屏蔽
         End If
