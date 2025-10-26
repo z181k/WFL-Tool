@@ -30,12 +30,10 @@ Partial Class Form8
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -108,17 +106,6 @@ Partial Class Form8
         Me.LinkLabel6.Text = "继续"
         Me.LinkLabel6.VisitedLinkColor = System.Drawing.Color.Gray
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.PictureBox1.Image = Global.电脑功能启动器.My.Resources.Resources.警告big
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1012, 181)
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -128,7 +115,7 @@ Partial Class Form8
         Me.Label2.Location = New System.Drawing.Point(33, 133)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(674, 25)
+        Me.Label2.Size = New System.Drawing.Size(638, 24)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "修改后重启生效，若要重新打开，请选择""更改弹出设置""选项或到控制面板设置"
         '
@@ -155,7 +142,6 @@ Partial Class Form8
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -165,7 +151,6 @@ Partial Class Form8
         Me.Text = "警告"
         Me.TransparencyKey = System.Drawing.Color.LightGray
         Me.ContextMenuStrip1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -174,7 +159,6 @@ Partial Class Form8
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents LinkLabel6 As LinkLabel
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip

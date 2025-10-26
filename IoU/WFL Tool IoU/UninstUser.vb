@@ -35,6 +35,19 @@ Public Class UninstUser
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Stop()
+        '下面是终止正在运行的wfltool相关代码
+        Dim TargetName As String = "WFL Tool" '存储进程名为文本型，注：进程名不加扩展名
+        Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
+        Dim TargetPath As String '存储进程路径为文本型
+        If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
+            For i = 0 To TargetKill.Length - 1
+                TargetPath = TargetKill(i).MainModule.FileName
+                TargetKill(i).Kill()
+            Next
+        ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
+            TargetKill(0).Kill()
+        End If
+        '-------------分割线--------------
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\EWV2viewer\*.*"" /s /q", AppWinStyle.Hide, False, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)

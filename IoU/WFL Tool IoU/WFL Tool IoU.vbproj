@@ -225,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo256.png" />
+    <Content Include="Resources\背景.png" />
     <Content Include="setup.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

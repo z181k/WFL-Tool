@@ -19,8 +19,21 @@
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Timer2.Stop()
         Shell("cmd.EXE /c md ""%localappdata%\WFL Tool""", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy pga.bin ""%localappdata%\WFL Tool\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
+        '下面是终止正在运行的wfltool相关代码
+        Dim TargetName As String = "WFL Tool" '存储进程名为文本型，注：进程名不加扩展名
+        Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
+        Dim TargetPath As String '存储进程路径为文本型
+        If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
+            For i = 0 To TargetKill.Length - 1
+                TargetPath = TargetKill(i).MainModule.FileName
+                TargetKill(i).Kill()
+            Next
+        ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
+            TargetKill(0).Kill()
+        End If
+        '-------------分割线--------------
         SetupUserInstall.PB1.Value = 10
+        Shell("cmd.EXE /c copy pga.bin ""%localappdata%\WFL Tool\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c Xcopy.EXE EWV2viewer ""%localappdata%\WFL Tool\EWV2viewer\"" /Y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c md ""%localappdata%\WFL Tool\EWV2viewer\runtimes\win-x64\native""", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 20

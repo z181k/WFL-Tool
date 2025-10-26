@@ -343,7 +343,6 @@
     <Content Include="xinlogo.ico" />
     <None Include="IoU\WFL Tool IoU\Resources\logo64.png" />
     <None Include="Resources\logo256.png" />
-    <None Include="Resources\警告big.png" />
     <None Include="Resources\logo64.png" />
   </ItemGroup>
   <ItemGroup>
