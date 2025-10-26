@@ -33,10 +33,11 @@ Partial Class Form6
         Me.TextBox1.AllowDrop = True
         Me.TextBox1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(0, 0)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBox1.Size = New System.Drawing.Size(556, 455)
+        Me.TextBox1.Size = New System.Drawing.Size(1027, 779)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         Me.TextBox1.WordWrap = False
@@ -44,14 +45,14 @@ Partial Class Form6
         'Form6
         '
         Me.AllowDrop = True
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(556, 455)
+        Me.ClientSize = New System.Drawing.Size(1005, 752)
         Me.Controls.Add(Me.TextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(572, 494)
-        Me.MinimumSize = New System.Drawing.Size(572, 494)
+        Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.MaximumSize = New System.Drawing.Size(1029, 816)
+        Me.MinimumSize = New System.Drawing.Size(1029, 816)
         Me.Name = "Form6"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Windows 10 任务栏透明度设置教程"

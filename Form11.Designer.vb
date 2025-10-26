@@ -98,7 +98,7 @@ Partial Class Form11
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(376, 123)
+        Me.ClientSize = New System.Drawing.Size(636, 719)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -106,7 +106,7 @@ Partial Class Form11
         Me.MaximizeBox = False
         Me.Name = "Form11"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "清除数据"
+        Me.Text = "WFL Tool 选项"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
