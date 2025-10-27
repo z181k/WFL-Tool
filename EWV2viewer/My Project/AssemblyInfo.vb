@@ -34,4 +34,4 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("13.0.9088.1")>
 <Assembly: AssemblyFileVersion("13.0.9088.1")>
-<Assembly: NeutralResourcesLanguage("zh-Hans-HK")>
+<Assembly: NeutralResourcesLanguage("zh-SG")>

@@ -14,7 +14,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCompany("© 2026 董博涛")>
 <Assembly: AssemblyProduct("电脑功能启动器 (x64)")>
 <Assembly: AssemblyCopyright("版权所有 © 2026 董博涛 保留所有权利.")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyTrademark("此版本是 Beta 公测版本")>
 
 <Assembly: ComVisible(False)>
 
