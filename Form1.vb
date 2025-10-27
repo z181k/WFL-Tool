@@ -360,6 +360,31 @@ starttask:
             frm.Show()
             Close()                             '确认阅读协议
         End If
+        '启动时显示指定界面
+        Dim ShowSpecifyPage As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "ShowSpecifyPage", Nothing)
+        If ShowSpecifyPage = "More" Then
+            Form2.Show()
+            Form2.打开主页ToolStripMenuItem.Enabled = False
+            Form2.返回主界面.Visible = False                     '显示更多
+            Form2.快捷键返回BToolStripMenuItem.Enabled = False
+            Close()
+        ElseIf ShowSpecifyPage = "Accessories" Then
+            Form5.Show()
+            Form5.打开主页ToolStripMenuItem.Enabled = False
+            Form5.返回主界面.Visible = False                     '附件
+            Form5.快捷键返回BToolStripMenuItem.Enabled = False
+            Close()
+        ElseIf ShowSpecifyPage = "SystemModifications" Then
+            Form7.Show()
+            Form7.返回主界面ToolStripMenuItem.Visible = False    '系统修改
+            Form7.ToolStripMenuItem1.Visible = False
+            Close()
+        ElseIf ShowSpecifyPage = "ActiveTool" Then
+            Form10.Show()
+            Form10.打开主界面ToolStripMenuItem.Enabled = False   '激活工具
+            Close()
+        End If
+        '
         Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
         If EnterpriseNotShow = 1 Then
             ToolStripMenuItem18.Visible = False
@@ -433,8 +458,19 @@ CBcheck:
         If CurrentBuild < 22000 Then              '检查版本控制Win11IE名字
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         End If
-        MsgBox("此版本仅供内部测试，Alpha 版本未经我们允许不得外泄，属于内部机密，如你意外获得此版本，请立即删除并下载正式版，并可以向我们举报泄露行为")
-        'MsgBox("Beta 版本仅用于公测，如你意外获得此版本，请立即删除并下载正式版", 0, "WFL Tool")
+        '测试版提示文字
+        Panel1.Show()
+        'Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
+        Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
+        LinkLabel2.Visible = False
+        Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
+        'beta不显示横幅
+        Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
+        If Beta = "9072" Then
+            Panel1.Visible = False
+            Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        End If
+        '
         Exit Sub
 openreg:
         '辅助打开软件
@@ -728,5 +764,15 @@ legacy:
 
     Private Sub WFLTool5周年ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WFLTool5周年ToolStripMenuItem.Click
         Form3.Show()
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        Panel1.Visible = False
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        Panel1.Visible = False
+        Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Beta /T REG_SZ /d 9072 /f", AppWinStyle.Hide, True, -1)
     End Sub
 End Class
