@@ -22,14 +22,17 @@ Partial Class EWV2launcher
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EWV2launcher))
         Me.SuspendLayout()
         '
         'EWV2launcher
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(123, 30)
+        Me.ClientSize = New System.Drawing.Size(226, 52)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Name = "EWV2launcher"
         Me.ShowIcon = False
         Me.Text = "EWV2launcher - WFL Tool"

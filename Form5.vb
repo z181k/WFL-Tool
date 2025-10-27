@@ -78,8 +78,10 @@
 
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 22621 Then              '检查版本控制WIN11conhost显示
+        If CurrentBuild < 22621 Then              '检查版本控制WIN11conhost显示和WMPL文字及提示
             Button12.Enabled = False
+            Button7.Text = "Windows Media Player"
+            ToolTip1.Active = False
         ElseIf CurrentBuild > 26020 Then
             Button6.Enabled = False              '检查版本控制写字板显示
         ElseIf CurrentBuild < 14393 Then

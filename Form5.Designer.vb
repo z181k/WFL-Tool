@@ -55,6 +55,7 @@ Partial Class Form5
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.快捷键返回BToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -135,6 +136,7 @@ Partial Class Form5
         Me.Button7.Size = New System.Drawing.Size(422, 61)
         Me.Button7.TabIndex = 6
         Me.Button7.Text = "旧版 Windows 媒体播放器"
+        Me.ToolTip1.SetToolTip(Me.Button7, "新版媒体播放器请去 UWP 应用中寻找。")
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button8
@@ -469,4 +471,5 @@ Partial Class Form5
     Friend WithEvents Panel1 As Panel
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents 快捷键返回BToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

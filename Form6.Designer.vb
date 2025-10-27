@@ -37,7 +37,7 @@ Partial Class Form6
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBox1.Size = New System.Drawing.Size(1027, 779)
+        Me.TextBox1.Size = New System.Drawing.Size(1004, 751)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         Me.TextBox1.WordWrap = False
@@ -50,6 +50,7 @@ Partial Class Form6
         Me.ClientSize = New System.Drawing.Size(1005, 752)
         Me.Controls.Add(Me.TextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.MaximumSize = New System.Drawing.Size(1029, 816)
         Me.MinimumSize = New System.Drawing.Size(1029, 816)
