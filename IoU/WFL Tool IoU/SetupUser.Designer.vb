@@ -38,6 +38,7 @@ Partial Class SetupUser
         Me.关于WFLTool安装程序ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -194,6 +195,16 @@ Partial Class SetupUser
         Me.PictureBox2.TabIndex = 35
         Me.PictureBox2.TabStop = False
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label6.Location = New System.Drawing.Point(2, 1)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(264, 28)
+        Me.Label6.TabIndex = 47
+        Me.Label6.Text = "你在安装测试版，请注意！"
+        '
         'SetupUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
@@ -201,6 +212,7 @@ Partial Class SetupUser
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(862, 490)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LinkLabel5)
         Me.Controls.Add(Me.Button1)
@@ -239,4 +251,5 @@ Partial Class SetupUser
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents 关于WFLTool安装程序ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label6 As Label
 End Class
