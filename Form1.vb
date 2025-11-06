@@ -195,7 +195,7 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click  '内存诊断
         Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
-        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\MdSched.exe", "", "", "", 0)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\MdSched.exe", "", "", "", 1)
     End Sub
 
     Private Sub 设置ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 设置ToolStripMenuItem.Click
