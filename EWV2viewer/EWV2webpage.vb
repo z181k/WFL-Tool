@@ -11,18 +11,28 @@ Public Class EWV2webpage
         'Size = New Size(900, 550) '调整窗口大小
 
         '下方代码为根据注册表信息调整网页界面内容代码
+        '显示图标
+        Dim EWV2webpageSicon As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("EWV2webpageShowIcon", "True")
+        If EWV2webpageSicon = "False" Then
+            Me.ShowIcon = False
+        End If
+        '标题
         Dim EWV2webpageTitle As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("EWV2webpageTitle", "WFL Tool 帮助")
         Me.Text = EWV2webpageTitle
+        'url地址
         Dim EWV2webpageURL As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("EWV2webpageURL", "https://kdocs.cn/l/sqxx3d4vumUT")
         WebView21.Source = New Uri(EWV2webpageURL)
+        '清理信息
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 6 /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShowIcon /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d default /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d ""https://liulanmi.com/core"" /f", AppWinStyle.Hide, True, -1)
     End Sub
     Private Sub HelpEWV2_sizechange(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.SizeChanged
         If SizeChangeFlg Then
             asc.ControlAutoSize(Me)
         End If
         'Button5.Text = Me.Width & ":" & Me.Height '利用控件名称显示的窗体大小，可删
-
     End Sub
 
 End Class
