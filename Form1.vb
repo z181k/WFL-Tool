@@ -406,6 +406,12 @@ starttask:
             Form10.打开主界面ToolStripMenuItem.Enabled = False   '激活工具
             Close()
         End If
+        '在有WEBVIEW2的设备上停止显示系统更新里的更新本程序
+        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+            更新本程序ToolStripMenuItem.Visible = True
+            ToolStripMenuItem5.Visible = True
+        End If
         '
         Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
         If EnterpriseNotShow = 1 Then

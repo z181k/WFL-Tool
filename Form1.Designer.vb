@@ -244,24 +244,24 @@ Partial Class Form1
         'Windows1011ToolStripMenuItem
         '
         Me.Windows1011ToolStripMenuItem.Name = "Windows1011ToolStripMenuItem"
-        Me.Windows1011ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.Windows1011ToolStripMenuItem.Size = New System.Drawing.Size(276, 40)
         Me.Windows1011ToolStripMenuItem.Text = "检查更新"
         '
         'ToolStripMenuItem7
         '
         Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(312, 6)
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(273, 6)
         '
         '更新有关帮助ToolStripMenuItem
         '
         Me.更新有关帮助ToolStripMenuItem.Name = "更新有关帮助ToolStripMenuItem"
-        Me.更新有关帮助ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.更新有关帮助ToolStripMenuItem.Size = New System.Drawing.Size(276, 40)
         Me.更新有关帮助ToolStripMenuItem.Text = "更新有关帮助"
         '
         '离线更新下载ToolStripMenuItem
         '
         Me.离线更新下载ToolStripMenuItem.Name = "离线更新下载ToolStripMenuItem"
-        Me.离线更新下载ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.离线更新下载ToolStripMenuItem.Size = New System.Drawing.Size(276, 40)
         Me.离线更新下载ToolStripMenuItem.Text = "离线更新包下载"
         '
         '下载WindowsToolStripMenuItem
@@ -293,12 +293,14 @@ Partial Class Form1
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
         Me.ToolStripMenuItem5.Size = New System.Drawing.Size(312, 6)
+        Me.ToolStripMenuItem5.Visible = False
         '
         '更新本程序ToolStripMenuItem
         '
         Me.更新本程序ToolStripMenuItem.Name = "更新本程序ToolStripMenuItem"
         Me.更新本程序ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
         Me.更新本程序ToolStripMenuItem.Text = "更新本程序"
+        Me.更新本程序ToolStripMenuItem.Visible = False
         '
         '系统修改ToolStripMenuItem
         '
