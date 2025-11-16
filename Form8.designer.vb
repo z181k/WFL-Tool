@@ -41,7 +41,6 @@ Partial Class Form8
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Red
-        Me.Label1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Label1.Font = New System.Drawing.Font("微软雅黑", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(22, 66)
@@ -136,6 +135,7 @@ Partial Class Form8
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(946, 279)
+        Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.ControlBox = False
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LinkLabel6)
