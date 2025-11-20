@@ -803,4 +803,38 @@ legacy:
         Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Beta /T REG_SZ /d 9088 /f", AppWinStyle.Hide, True, -1)
     End Sub
+
+    Private Sub 设备管理器错误代码帮助helpmenu_Click(sender As Object, e As EventArgs) Handles 设备管理器错误代码帮助helpmenu.Click
+        On Error GoTo legacy
+        Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+            GoTo legacy
+        End If
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""Windows 中""""设备管理器""""中的错误代码 - Microsoft 支持"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShowIcon /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d """ + InstallLocation + "\EWV2viewer\deverrcodehlp.html"" /f", AppWinStyle.Hide, True, -1)
+        Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
+        Exit Sub
+legacy:
+        Shell("cmd.exe /c start https://go.microsoft.com/fwlink/?LinkID=2004354", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub 关于设备管理器错误代码的帮助ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于设备管理器错误代码的帮助ToolStripMenuItem.Click
+        On Error GoTo legacy
+        Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+            GoTo legacy
+        End If
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""Windows 中""""设备管理器""""中的错误代码 - Microsoft 支持"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShowIcon /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d """ + InstallLocation + "\EWV2viewer\deverrcodehlp.html"" /f", AppWinStyle.Hide, True, -1)
+        Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
+        Exit Sub
+legacy:
+        Shell("cmd.exe /c start https://go.microsoft.com/fwlink/?LinkID=2004354", AppWinStyle.Hide, True, -1)
+    End Sub
 End Class
