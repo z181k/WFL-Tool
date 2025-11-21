@@ -59,7 +59,7 @@
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayIcon /T REG_SZ /d ""%localappdata%\WFL Tool\WFL Tool.exe"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) User"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 70
-        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 13.0.9088.1 /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 13.0.9120.1 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v UninstallString /T REG_SZ /d ""%localappdata%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 80

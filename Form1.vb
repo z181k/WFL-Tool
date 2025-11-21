@@ -435,7 +435,7 @@ starttask:
             启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
-        '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
+        '此处标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
         ''If v122 = "ture" Then
         ''   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
@@ -487,17 +487,18 @@ CBcheck:
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
         End If
         '测试版提示文字
-        Panel1.Show()
-        Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
+        'Panel1.Show()
+        'Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
         'Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
         'LinkLabel2.Visible = False
         'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
+        '
         'beta不显示横幅
-        Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
-        If Beta = "9088" Then
-            Panel1.Visible = False
-            Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        End If
+        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
+        'If Beta = "9088" Then
+        '    Panel1.Visible = False
+        '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        'End If
         '
         Exit Sub
 openreg:

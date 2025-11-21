@@ -14,7 +14,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCompany("© 2026 董博涛")>
 <Assembly: AssemblyProduct("电脑功能启动器 (x64)")>
 <Assembly: AssemblyCopyright("版权所有 © 2026 董博涛 保留所有权利.")>
-<Assembly: AssemblyTrademark("此版本是 Beta 公测版本")>
+<Assembly: AssemblyTrademark("此版本是正式发行版本")>
 
 <Assembly: ComVisible(False)>
 
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 '通过使用 "*"，如下所示:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("13.0.9088.1")>
-<Assembly: AssemblyFileVersion("13.0.9088.1")>
+<Assembly: AssemblyVersion("13.0.9120.1")>
+<Assembly: AssemblyFileVersion("13.0.9120.1")>
 <Assembly: NeutralResourcesLanguage("zh-CN")>

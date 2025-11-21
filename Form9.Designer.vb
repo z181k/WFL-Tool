@@ -123,7 +123,7 @@ Partial Class Form9
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(118, 24)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Build 9088.1"
+        Me.Label4.Text = "Build 9120.1"
         '
         'LinkLabel1
         '
@@ -347,7 +347,7 @@ Partial Class Form9
         Me.MinimizeBox = False
         Me.Name = "Form9"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "关于 WFL Tool"
+        Me.Text = "关于 WFL Tool  -  我诞生 5 周年啦！"
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
