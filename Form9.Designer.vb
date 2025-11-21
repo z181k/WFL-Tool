@@ -347,7 +347,7 @@ Partial Class Form9
         Me.MinimizeBox = False
         Me.Name = "Form9"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "关于 WFL Tool  -  我诞生 5 周年啦！"
+        Me.Text = "关于 WFL Tool"
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
