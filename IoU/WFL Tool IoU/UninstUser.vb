@@ -51,8 +51,9 @@ Public Class UninstUser
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\EWV2viewer\*.*"" /s /q", AppWinStyle.Hide, False, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 25
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\MessageBox.exe""", AppWinStyle.Hide, True, -1)
+        SetupUserInstall.PB1.Value = 25
+        Shell("cmd.EXE /c timeout.exe /t 2 &rd ""%localappdata%\WFL Tool\EWV2viewer\deverrcodehlp_files"" /s /q", AppWinStyle.Hide, False, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\resources.pri""", AppWinStyle.Hide, True, -1)
@@ -60,8 +61,11 @@ Public Class UninstUser
         Shell("cmd.EXE /c del ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
         Dim dpfu As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", True).GetValue("Desktop", "%homedrive%%homepath%\desktop")
         Shell("cmd.EXE /c del """ + dpfu + "\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
-        SetupUserInstall.PB1.Value = 75
         Shell("cmd.EXE /c timeout.exe /t 2 &rd ""%localappdata%\WFL Tool\EWV2viewer\runtimes"" /s /q", AppWinStyle.Hide, False, -1)
+        SetupUserInstall.PB1.Value = 75
+        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.dll""", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFLToolDark.exe""", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.runtimeconfig.json""", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe delete ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 100
         NewUninstUserFinish.Show()

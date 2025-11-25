@@ -110,7 +110,7 @@ Partial Class Form9
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(122, 32)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "版本 13.0"
+        Me.Label3.Text = "版本 14.0"
         '
         'Label4
         '
@@ -123,7 +123,7 @@ Partial Class Form9
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(118, 24)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Build 9120.1"
+        Me.Label4.Text = "Build 9168.1"
         '
         'LinkLabel1
         '

@@ -4,7 +4,7 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo As String = "RTM 版本(9120.1):" & vbCrLf & vbCrLf & "-新功能：" & vbCrLf & "1.切换框架到受支持且更安全的 .netFx 4.6.2 和 4.8" & vbCrLf & "2.增加自定义应用启动界面功能 (没有设置界面，去帮助看怎么用)" & vbCrLf & "3.正在测试将更新本程序从系统更新菜单中删除" & vbCrLf & "　因此您可能会在不同设备看到该功能有不同的呈现效果" & vbCrLf & "　如果您的设备较新，应可以很快看到此更改" & vbCrLf & "4.添加设备管理器错误代码的帮助" & vbCrLf & "5.部分在线界面改为由 Webview2 渲染" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决更多功能任务管理器无法打开造成任务管理器假死问题" & vbCrLf & "2.解决企业屏蔽应用选项时右上角文字异常问题" & vbCrLf & "3.移除了上个版本在 Win7/Vista 存在严重兼容性问题的功能" & vbCrLf & "4.解决在已有 WFL Tool 运行的情况下安装/卸载失败问题" & vbCrLf & "5.解决内存诊断无法打开问题" & vbCrLf & "6.修复更新日志界面可能会意外出现引号问题"
+        Dim upginfo As String = "RTM 版本(9168.1/9568.1):" & vbCrLf & vbCrLf & "-新功能：" & vbCrLf & "1.WFL Tool 现已支持暗色模式！" & vbCrLf & "　该功能初次上线，有问题及时和我们反馈" & vbCrLf & "　仅为当前用户安装可用，需安装 .NET 10 框架" & vbCrLf & "2." & vbCrLf & "3." & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & "3."
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         ''   此处放启用后日志
@@ -84,15 +84,15 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""全名: WFL Tool (x64)                                      版本类别: 正式版" & vbCrLf & "分支: AMD64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"" ""更多信息"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""全名: WFL Tool (x64)                                      版本类别: 正式版" & vbCrLf & "分支: AMD64.Tree4-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"" ""更多信息"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("全名: WFL Tool (x64)                                      版本类别: 正式版" & vbCrLf & "分支: AMD64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名", MsgBoxStyle.OkOnly, "更多信息")
+            MsgBox("全名: WFL Tool (x64)                                      版本类别: 正式版" & vbCrLf & "分支: AMD64.Tree4-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名", MsgBoxStyle.OkOnly, "更多信息")
         End If
     End Sub
 
     Private Sub LinkLabel8_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel8.LinkClicked
-        Label5.Text = "大事记：" & vbCrLf & "2021/5/9 发布第一个版本(V2.0.0)" & vbCrLf & "2022/7/7 发布第一个64位版本(V7.0.0.0)" & vbCrLf & "2023/1/10 (更新日期) 基于.NET Framework 4.5.2" & vbCrLf & "重构 x64 版本" & vbCrLf & "2022/12/6 (更新日期:2023/01/22) x64 版本源码丢" & vbCrLf & "失，应用重写" & vbCrLf & "2023/05/25 编译 主要名字更名英文 WFL Tool" & vbCrLf & "2024/01/01 编译 应用界面翻新工作基本完成" & vbCrLf & "2025/08/06 编译 更换新图标"
+        Label5.Text = "大事记：" & vbCrLf & "2021/5/9 发布第一个版本(V2.0.0)" & vbCrLf & "2022/7/7 发布第一个64位版本(V7.0.0.0)" & vbCrLf & "2023/1/10 (更新日期) 基于.NET Fx 4.5.2 重构" & vbCrLf & "2022/12/6 (更新日期:2023/01/22) x64 版本源码丢" & vbCrLf & "失，应用重写" & vbCrLf & "2023/05/25 编译 主要名字更名英文 WFL Tool" & vbCrLf & "2024/01/01 编译 应用界面翻新工作基本完成" & vbCrLf & "2025/08/06 编译 更换新图标" & vbCrLf & "2025/11/25 推出 .net 10 版本支持暗色"
         LinkLabel9.Visible = True               '上一页
         LinkLabel8.Visible = False
     End Sub

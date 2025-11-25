@@ -131,9 +131,7 @@
     <Compile Include="SetupUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SetupUserLicense.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="SetupUserLicense.vb" />
     <Compile Include="SetupUserLicense.Designer.vb">
       <DependentUpon>SetupUserLicense.vb</DependentUpon>
       <SubType>Form</SubType>

@@ -369,6 +369,20 @@ legacy:
         MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
         End
 starttask:
+        '启动基于.net 10的软件
+        On Error GoTo Write
+        Dim Napp As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "Napp", Nothing)
+        If Napp = "True" Then
+            'Me.FormBorderStyle = 0
+            Shell("WFLToolDark.exe", AppWinStyle.NormalFocus, False, -1)
+            Application.Exit()
+        ElseIf Napp = "Temp" Then
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+            Shell("WFLToolDark.exe", AppWinStyle.NormalFocus, False, -1)
+            Close()
+        End If
+Write:
+        On Error GoTo openreg       '防止注册表不存在
         ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text  '主界面右上角wfltool - 现代
         '读取设置并调整界面（注册表读取）
         Dim License As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("EULA", "无")
@@ -483,8 +497,12 @@ CBcheck:
             UWP应用ToolStripMenuItem.Enabled = False
             电池健康ToolStripMenuItem.Enabled = False
         End If
-        If CurrentBuild < 22000 Then              '检查版本控制Win11IE名字
+        If CurrentBuild < 19041 Then        '检查版本控制Win11IE名字和自动切换颜色(主题)
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
+            ToolStripMenuItem25.Enabled = False
+        ElseIf CurrentBuild < 22000 Then
+            Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
+            自动ToolStripMenuItem.Enabled = False
         End If
         '测试版提示文字
         'Panel1.Show()
@@ -540,7 +558,7 @@ xp:
             Shell(InstallLocation + "\MessageBox.exe ""好用请推荐给别人"" ""温馨提示"" 0 64 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("好用请推荐给别人", MsgBoxStyle.Information, "温馨提示")
+            MsgBox("好用请推荐给别人", 0, "温馨提示")
         End If
     End Sub
 
@@ -837,5 +855,53 @@ legacy:
         Exit Sub
 legacy:
         Shell("cmd.exe /c start https://go.microsoft.com/fwlink/?LinkID=2004354", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub 使用net10框架新版应用ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 使用net10框架新版应用ToolStripMenuItem.Click
+        On Error GoTo msg1
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("WFLToolDark.exe", AppWinStyle.NormalFocus, False, -1)
+        Close()
+        Exit Sub
+msg1:
+        MsgBox("主题颜色切换功能仅支持以""为当前用户安装""的安装模式下安装的本应用!", MsgBoxStyle.Critical, "WFL Tool")
+    End Sub
+
+    Private Sub 自动ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 自动ToolStripMenuItem.Click
+        On Error GoTo legacy
+        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
+            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+            Shell(InstallLocation + "\MessageBox.exe ""该功能尚不稳定，如有异常，请及时换回亮色模式。"" ""WFL Tool"" 0 64 0", AppWinStyle.NormalFocus, True, -1)
+        Else              '旧版弹窗
+legacy:
+            MsgBox("该功能尚不稳定，如有异常，请及时换回亮色模式。", MsgBoxStyle.Information, "WFL Tool")
+        End If
+        On Error GoTo msg1
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Auto /f", AppWinStyle.Hide, True, -1)
+        Shell("WFLToolDark.exe", AppWinStyle.NormalFocus, False, -1)
+        Close()
+msg1:
+        MsgBox("主题颜色切换仅支持以""为当前用户安装""的安装模式下安装的本应用!", MsgBoxStyle.Critical, "WFL Tool")
+    End Sub
+
+    Private Sub 暗色ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 暗色ToolStripMenuItem.Click
+        On Error GoTo legacy
+        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
+            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+            Shell(InstallLocation + "\MessageBox.exe ""该功能尚不稳定，如有异常，请及时换回亮色模式。"" ""WFL Tool"" 0 64 0", AppWinStyle.NormalFocus, True, -1)
+        Else              '旧版弹窗
+legacy:
+            MsgBox("该功能尚不稳定，如有异常，请及时换回亮色模式。", MsgBoxStyle.Information, "WFL Tool")
+        End If
+        On Error GoTo msg1
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Dark /f", AppWinStyle.Hide, True, -1)
+        Shell("WFLToolDark.exe", AppWinStyle.NormalFocus, False, -1)
+        Close()
+msg1:
+        MsgBox("主题颜色切换仅支持以""为当前用户安装""的安装模式下安装的本应用!", MsgBoxStyle.Critical, "WFL Tool")
     End Sub
 End Class

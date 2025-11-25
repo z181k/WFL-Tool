@@ -123,7 +123,7 @@ Partial Class SetupUser
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(122, 32)
         Me.Label5.TabIndex = 38
-        Me.Label5.Text = "版本 13.0"
+        Me.Label5.Text = "版本 14.0"
         '
         'Label7
         '
@@ -204,6 +204,7 @@ Partial Class SetupUser
         Me.Label6.Size = New System.Drawing.Size(264, 28)
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "你在安装测试版，请注意！"
+        Me.Label6.Visible = False
         '
         'SetupUser
         '
