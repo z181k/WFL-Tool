@@ -63,8 +63,14 @@
         Shell("msinfo32.exe", AppWinStyle.NormalFocus, False, -1)
     End Sub
 
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
-
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click 'msdt功能
+        Dim LegacyMoreUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("LegacyMoreUI", "无")
+        If LegacyMoreUI = "True" Then
+            Form14.Show()           '不关form2
+        Else
+            Form14.Show()           '关form2
+            Close()
+        End If
     End Sub
 
     Private Sub 返回主界面_LinkClicked(sender As Object, e As EventArgs) Handles 返回主界面.LinkClicked
@@ -184,5 +190,9 @@ legacy:
     Private Sub 快捷键返回BToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 快捷键返回BToolStripMenuItem.Click
         Form1.Show()
         Close()
+    End Sub
+
+    Private Sub 返回主界面_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 返回主界面.LinkClicked
+
     End Sub
 End Class
