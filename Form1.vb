@@ -882,6 +882,8 @@ legacy:
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Auto /f", AppWinStyle.Hide, True, -1)
         Shell("WFLToolDark.exe", AppWinStyle.NormalFocus, False, -1)
         Close()
+        Application.Exit()
+        Exit Sub
 msg1:
         MsgBox("主题颜色切换仅支持以""为当前用户安装""的安装模式下安装的本应用!", MsgBoxStyle.Critical, "WFL Tool")
     End Sub
@@ -900,7 +902,8 @@ legacy:
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Dark /f", AppWinStyle.Hide, True, -1)
         Shell("WFLToolDark.exe", AppWinStyle.NormalFocus, False, -1)
-        Close()
+        Application.Exit()
+        Exit Sub
 msg1:
         MsgBox("主题颜色切换仅支持以""为当前用户安装""的安装模式下安装的本应用!", MsgBoxStyle.Critical, "WFL Tool")
     End Sub
