@@ -127,8 +127,8 @@ Partial Class Form1
         Me.进入WinREToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem25 = New System.Windows.Forms.ToolStripMenuItem()
         Me.亮色ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.自动ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.暗色ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.自动ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem30 = New System.Windows.Forms.ToolStripSeparator()
         Me.使用net10框架新版应用ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.帮助HToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -829,31 +829,31 @@ Partial Class Form1
         '
         Me.亮色ToolStripMenuItem.Enabled = False
         Me.亮色ToolStripMenuItem.Name = "亮色ToolStripMenuItem"
-        Me.亮色ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.亮色ToolStripMenuItem.Size = New System.Drawing.Size(255, 40)
         Me.亮色ToolStripMenuItem.Text = "亮色 (当前)"
-        '
-        '自动ToolStripMenuItem
-        '
-        Me.自动ToolStripMenuItem.Name = "自动ToolStripMenuItem"
-        Me.自动ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
-        Me.自动ToolStripMenuItem.Text = "跟随系统"
         '
         '暗色ToolStripMenuItem
         '
         Me.暗色ToolStripMenuItem.Name = "暗色ToolStripMenuItem"
-        Me.暗色ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.暗色ToolStripMenuItem.Size = New System.Drawing.Size(255, 40)
         Me.暗色ToolStripMenuItem.Text = "暗色"
+        '
+        '自动ToolStripMenuItem
+        '
+        Me.自动ToolStripMenuItem.Name = "自动ToolStripMenuItem"
+        Me.自动ToolStripMenuItem.Size = New System.Drawing.Size(255, 40)
+        Me.自动ToolStripMenuItem.Text = "跟随系统"
         '
         'ToolStripMenuItem30
         '
         Me.ToolStripMenuItem30.Name = "ToolStripMenuItem30"
-        Me.ToolStripMenuItem30.Size = New System.Drawing.Size(312, 6)
+        Me.ToolStripMenuItem30.Size = New System.Drawing.Size(252, 6)
         Me.ToolStripMenuItem30.Visible = False
         '
         '使用net10框架新版应用ToolStripMenuItem
         '
         Me.使用net10框架新版应用ToolStripMenuItem.Name = "使用net10框架新版应用ToolStripMenuItem"
-        Me.使用net10框架新版应用ToolStripMenuItem.Size = New System.Drawing.Size(315, 40)
+        Me.使用net10框架新版应用ToolStripMenuItem.Size = New System.Drawing.Size(255, 40)
         Me.使用net10框架新版应用ToolStripMenuItem.Text = "使用新版应用"
         Me.使用net10框架新版应用ToolStripMenuItem.Visible = False
         '
@@ -904,7 +904,6 @@ Partial Class Form1
         Me.WFLTool5周年ToolStripMenuItem.Name = "WFLTool5周年ToolStripMenuItem"
         Me.WFLTool5周年ToolStripMenuItem.Size = New System.Drawing.Size(360, 40)
         Me.WFLTool5周年ToolStripMenuItem.Text = "WFL Tool &5 周年"
-        Me.WFLTool5周年ToolStripMenuItem.Visible = False
         '
         '关于AToolStripMenuItem
         '
