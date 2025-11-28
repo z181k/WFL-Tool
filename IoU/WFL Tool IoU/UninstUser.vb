@@ -54,6 +54,7 @@ Public Class UninstUser
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\MessageBox.exe""", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 25
         Shell("cmd.EXE /c timeout.exe /t 2 &rd ""%localappdata%\WFL Tool\EWV2viewer\deverrcodehlp_files"" /s /q", AppWinStyle.Hide, False, -1)
+        Shell("cmd.EXE /c timeout.exe /t 2 &rd ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate_files"" /s /q", AppWinStyle.Hide, False, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\resources.pri""", AppWinStyle.Hide, True, -1)
