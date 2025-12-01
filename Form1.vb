@@ -907,4 +907,41 @@ legacy:
 msg1:
         MsgBox("主题颜色切换仅支持以""为当前用户安装""的安装模式下安装的本应用!", MsgBoxStyle.Critical, "WFL Tool")
     End Sub
+
+    Private Sub ToolStripMenuItem31_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem31.Click
+        '   On Error GoTo legacy2
+        '   Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+        '   Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        '   If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
+        '       Shell(InstallLocation + "\MessageBox.exe ""该功能在基于 .Net Framework 4.6.1 的 WFL Tool 上不完整，无法显示隐藏的文件，你可以考虑在受支持的电脑上切换到基于 .NET 10 的 WFL Tool。切换版本请到软件主界面的主题菜单中"" ""WFL Tool"" 0 64 0", AppWinStyle.NormalFocus, True, -1)
+        '   Else              '旧版弹窗
+        'legacy2:
+        '       MsgBox("该功能在基于 .Net Framework 4.6.1 的 WFL Tool 上不完整，无法显示隐藏的文件，你可以考虑在受支持的电脑上切换到基于 .NET 10 的 WFL Tool。切换版本请到软件主界面的主题菜单中。", MsgBoxStyle.Information, "WFL Tool")
+        '   End If
+        '上面是.net fx版本兼容性提示
+        OpenFileDialog1.ShowDialog()    '启动文件浏览
+    End Sub
+
+    Private Sub ToolStripMenuItem32_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem32.Click
+        On Error GoTo legacy
+        Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
+        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+            GoTo legacy
+        End If
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""沉浸式网页预览工具 - WFL Tool WebPageViewer"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d """ + InstallLocation + "\EWV2viewer\iwpt.html"" /f", AppWinStyle.Hide, True, -1)
+        Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
+        Exit Sub
+legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
+        On Error GoTo legacy2
+        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
+            Shell(InstallLocation + "\MessageBox.exe ""使用该功能需先在你的电脑上以用户模式安装 WFL Tool 并安装有以管理员身份安装的的 Edge Webview2"" ""WFL Tool"" 0 64 0", AppWinStyle.NormalFocus, False, -1)
+        Else              '旧版弹窗
+legacy2:
+            MsgBox("使用该功能需先在你的电脑上以用户模式安装 WFL Tool 并安装有以管理员身份安装的的 Edge Webview2", MsgBoxStyle.Information, "WFL Tool")
+        End If
+    End Sub
 End Class
