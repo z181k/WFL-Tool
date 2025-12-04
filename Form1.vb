@@ -54,20 +54,15 @@
     End Sub
 
     Private Sub 更新本程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 更新本程序ToolStripMenuItem.Click
-        On Error GoTo legacy
         Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
         If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
-            GoTo legacy
+            Exit Sub
         End If
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""更新本程序 - 下载密码: down"" /f", AppWinStyle.Hide, True, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d https://dbtpan.lanzouq.com/b0205vf6f /f", AppWinStyle.Hide, True, -1)
         Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
         Exit Sub
-legacy:
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
-        'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
-        Shell("mshta.exe http://dbtpan.lanzoux.com/b0205vf6f", AppWinStyle.NormalFocus, False, -1)
     End Sub
 
     Private Sub 功能说明帮助ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 功能说明帮助ToolStripMenuItem.Click
@@ -420,12 +415,6 @@ Write:
             Form10.打开主界面ToolStripMenuItem.Enabled = False   '激活工具
             Close()
         End If
-        '在有WEBVIEW2的设备上停止显示系统更新里的更新本程序
-        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
-        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
-            更新本程序ToolStripMenuItem.Visible = True
-            ToolStripMenuItem5.Visible = True
-        End If
         '
         Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
         If EnterpriseNotShow = 1 Then
@@ -497,12 +486,20 @@ CBcheck:
             UWP应用ToolStripMenuItem.Enabled = False
             电池健康ToolStripMenuItem.Enabled = False
         End If
-        If CurrentBuild < 19041 Then        '检查版本控制Win11IE名字和自动切换颜色(主题)
+        If CurrentBuild < 19041 Then
+            '检查版本控制Win11IE名字和自动切换颜色(主题)
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
             ToolStripMenuItem25.Enabled = False
-        ElseIf CurrentBuild < 22000 Then
-            Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
+        End If
+        If CurrentBuild < 22000 Then
+            '检查版本控制自动切换颜色
             自动ToolStripMenuItem.Enabled = False
+            '在有WEBVIEW2的设备上停止显示系统更新里的更新本程序
+            Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+            If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+                更新本程序ToolStripMenuItem.Visible = True
+                ToolStripMenuItem5.Visible = True
+            End If
         End If
         '测试版提示文字
         'Panel1.Show()
@@ -753,7 +750,9 @@ legacy:
     End Sub
 
     Private Sub 电池健康ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 电池健康ToolStripMenuItem.Click
-        CreateObject("shell.application").shellexecute("cmd.exe", "/c powercfg.exe /batteryreport&start C:\Windows\System32\battery-report.html", "", "runas", 0)
+        Shell("powercfg.exe /batteryreport /OUTPUT ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, True, -1)
+        '上面是生成电池使用时间报告，下面是加载电池使用时间报告
+        Shell("cmd.exe /c mshta.exe ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
