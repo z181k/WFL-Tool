@@ -859,7 +859,6 @@ Partial Class Form1
         Me.WFLTool5周年ToolStripMenuItem.Name = "WFLTool5周年ToolStripMenuItem"
         Me.WFLTool5周年ToolStripMenuItem.Size = New System.Drawing.Size(360, 40)
         Me.WFLTool5周年ToolStripMenuItem.Text = "WFL Tool &5 周年"
-        Me.WFLTool5周年ToolStripMenuItem.Visible = False
         '
         '关于AToolStripMenuItem
         '

@@ -120,6 +120,14 @@
   <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>参与方式：你可以向 z181k@outlook.com 发送主题为 "WFL Tool 5 周年" 的邮件，分享你和 WFL Tool 的故事，
+也可以选择去帮助中心评论区分享您与 WFL Tool 的故事，我们会随机抽取幸运网友送出 WFL Tool v14.0 版本的实体安装光盘一张。
+
+活动期限：WFL Tool 5 周年全年 (2026全年) ，奖品只有 25 份，送完为止。
+
+重要提示：请关注您发送的邮箱，我们会通过邮件联系获奖者确认信息，未及时确认视为自动放弃获奖机会。</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

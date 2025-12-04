@@ -204,6 +204,7 @@ Partial Class SetupUser
         Me.Label6.Size = New System.Drawing.Size(264, 28)
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "你在安装测试版，请注意！"
+        Me.Label6.Visible = False
         '
         'SetupUser
         '

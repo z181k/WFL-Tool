@@ -71,6 +71,8 @@
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v InstallLocation /T REG_SZ /d ""%localappdata%\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
         Dim dpf As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", True).GetValue("Desktop", "%homedrive%%homepath%\desktop")
         Shell("cmd.EXE /c copy udl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c Xcopy.EXE 5THcelebrate_files ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy 5thc.bin ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate.html"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 100
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 4 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.Label1.Text = "安装完成"
