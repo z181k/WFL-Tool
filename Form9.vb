@@ -4,7 +4,7 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo As String = "RTM 版本(9168.1/9568.1):" & vbCrLf & vbCrLf & "-新功能：" & vbCrLf & "1.WFL Tool 现已支持暗色模式！" & vbCrLf & "　该功能初次上线，有问题及时和我们反馈" & vbCrLf & "　仅为当前用户安装可用，需安装 .NET 10 框架" & vbCrLf & "2." & vbCrLf & "3." & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & "3."
+        Dim upginfo As String = "RTM 版本(9168.1/9568.1):" & vbCrLf & vbCrLf & "此版本包含 13.0.9120.1 的所有功能和改进，即使 13.0.9120.1 可能会在该版本之后才会发布" & vbCrLf & "-新功能：" & vbCrLf & "1.WFL Tool 现已支持暗色模式！" & vbCrLf & "　该功能初次上线，有问题及时和我们反馈" & vbCrLf & "　仅为当前用户安装可用，需安装 .NET 10 框架" & vbCrLf & "2.文件菜单增加文件浏览功能" & vbCrLf & "3.文件菜单增加沉浸式网页预览功能" & vbCrLf & "4.添加 Win11 恢复旧版打印界面功能" & vbCrLf & "5.添加 mmc 强制适配高 dpi 功能" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决电池健康功能需要管理员权限问题" & vbCrLf & "2.解决 设备管理器错误代码帮助 窗口可能标题显示异常问题"
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         ''   此处放启用后日志
@@ -37,11 +37,10 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况。注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况。注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。暗色模式需要 .net 10 框架，仅支持 Windows 10 v2004 及更高版本的系统。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况" & vbCrLf & "注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。", MsgBoxStyle.OkOnly, "系统要求")
-        End If
+            MsgBox("最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况" & vbCrLf & "注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。暗色模式需要 .net 10 框架，仅支持 Windows 10 v2004 及更高版本的系统。", MsgBoxStyle.OkOnly, "系统要求")        End If
     End Sub
 
     Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
