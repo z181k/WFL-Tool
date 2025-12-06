@@ -87,7 +87,7 @@ legacy:
             Shell(InstallLocation + "\MessageBox.exe ""全名: WFL Tool (x64)                                      版本类别: 正式版" & vbCrLf & "分支: AMD64.Tree3-Main.Release.130Branch" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"" ""更多信息"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("全名: WFL Tool (x64)                                      版本类别: 正式版" & vbCrLf & "分支: AMD64.Tree3-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名", MsgBoxStyle.OkOnly, "更多信息")
+            MsgBox("全名: WFL Tool (x64)                                      版本类别: 正式版" & vbCrLf & "分支: AMD64.Tree3-Main.Release.130Branch" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名", MsgBoxStyle.OkOnly, "更多信息")
         End If
     End Sub
 
