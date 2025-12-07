@@ -51,8 +51,8 @@
         Shell("cmd.EXE /c copy udl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
         Shell("cmd.EXE /c copy npga.bin ""%localappdata%\WFL Tool\WFLToolDark.exe"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy ndll.bin ""%localappdata%\WFL Tool\WFL Tool.dll"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy nrtc.bin ""%localappdata%\WFL Tool\WFL Tool.runtimeconfig.json"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy ndll.bin ""%localappdata%\WFL Tool\WFL Tool Dark.dll"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy nrtc.bin ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 50
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild >= 17763 Then              '检查版本配置WinAppSdk项目
