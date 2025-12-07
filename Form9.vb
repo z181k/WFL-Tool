@@ -40,7 +40,8 @@ legacy:
             Shell(InstallLocation + "\MessageBox.exe ""最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况。注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。暗色模式需要 .net 10 框架，仅支持 Windows 10 v2004 及更高版本的系统。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况" & vbCrLf & "注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。暗色模式需要 .net 10 框架，仅支持 Windows 10 v2004 及更高版本的系统。", MsgBoxStyle.OkOnly, "系统要求")        End If
+            MsgBox("最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况" & vbCrLf & "注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。暗色模式需要 .net 10 框架，仅支持 Windows 10 v2004 及更高版本的系统。", MsgBoxStyle.OkOnly, "系统要求")
+        End If
     End Sub
 
     Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
