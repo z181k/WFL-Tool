@@ -221,4 +221,12 @@
     Private Sub Button38_Click(sender As Object, e As EventArgs) Handles Button38.Click
         Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers"" /v ""C:\Windows\System32\mmc.exe"" /f", AppWinStyle.Hide, True, -1)
     End Sub
+
+    Private Sub Button40_Click(sender As Object, e As EventArgs) Handles Button40.Click
+        Shell("reg.exe add HKEY_CURRENT_USER\SOFTWARE\Microsoft\Print\UnifiedPrintDialog /v PreferLegacyPrintDialog /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub Button39_Click(sender As Object, e As EventArgs) Handles Button39.Click
+        Shell("reg.exe delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Print\UnifiedPrintDialog /v PreferLegacyPrintDialog /f", AppWinStyle.Hide, True, -1)
+    End Sub
 End Class

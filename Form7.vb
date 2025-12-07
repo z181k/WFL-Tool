@@ -183,12 +183,14 @@
             GroupBox5.Enabled = False            '检查版本控制Win10 网络面板显示
             Button16.Enabled = False            '检查版本控制Windows 10 任务栏透明度设置教程显示
         End If
-        If CurrentBuild >= 22621 Then              '检查版本控制旧版任务栏图标选项显示(由于win11 21h2 支持所以不屏蔽win11 21h2)
-            'Button33.Enabled = False          '该功能暂时不屏蔽
+        If CurrentBuild >= 22621 Then
+            '该功能暂时不屏蔽'Button33.Enabled = False          '检查版本控制旧版任务栏图标选项显示(由于win11 21h2 支持所以不屏蔽win11 21h2)'该功能暂时不屏蔽
+            GroupBox19.Enabled = True       '检查版本控制Win11恢复打印界面显示（win11 21h2还是旧版所以剔除win11 21h2）
         End If
         '分界线
-        If CurrentBuild < 10240 Then              '检查版本控制Windows 10 桌面上下文菜单显示(小于win10部分)
-            GroupBox7.Enabled = False
+        If CurrentBuild < 10240 Then
+            GroupBox7.Enabled = False               '检查版本控制Windows 10 桌面上下文菜单显示(小于win10部分)
+            GroupBox18.Enabled = False              '检查版本控制MMC适配高DPI显示（小于win10部分）
         ElseIf CurrentBuild >= 18362 Then
             GroupBox7.Enabled = False             '检查版本控制Windows 10 桌面上下文菜单显示(大于win10 1903部分)
             GroupBox17.Enabled = True             '检查版本显示Windows 19/11 (大于1903)登录模糊
@@ -210,5 +212,21 @@
 
     Private Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
         CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System /v DisableAcrylicBackgroundOnLogon /t REG_DWORD /d 1 /f", "", "runas", 0)
+    End Sub
+
+    Private Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers"" /v ""C:\Windows\System32\mmc.exe"" /t REG_SZ /d ""~ HIGHDPIAWARE"" /f", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub Button38_Click(sender As Object, e As EventArgs) Handles Button38.Click
+        Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers"" /v ""C:\Windows\System32\mmc.exe"" /f", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub Button40_Click(sender As Object, e As EventArgs) Handles Button40.Click
+        Shell("reg.exe add HKEY_CURRENT_USER\SOFTWARE\Microsoft\Print\UnifiedPrintDialog /v PreferLegacyPrintDialog /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub Button39_Click(sender As Object, e As EventArgs) Handles Button39.Click
+        Shell("reg.exe delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Print\UnifiedPrintDialog /v PreferLegacyPrintDialog /f", AppWinStyle.Hide, True, -1)
     End Sub
 End Class

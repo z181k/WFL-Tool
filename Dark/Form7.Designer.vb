@@ -748,6 +748,7 @@ Partial Class Form7
         Button39.Name = "Button39"
         Button39.Size = New Size(286, 66)
         Button39.TabIndex = 36
+        Button39.Text = "传统 Win32"
         Button39.UseVisualStyleBackColor = True
         ' 
         ' Button40
@@ -758,6 +759,7 @@ Partial Class Form7
         Button40.Name = "Button40"
         Button40.Size = New Size(290, 66)
         Button40.TabIndex = 35
+        Button40.Text = "新 WinUI (默认)"
         Button40.UseVisualStyleBackColor = True
         ' 
         ' GroupBox17
