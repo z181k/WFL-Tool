@@ -17,8 +17,9 @@
         Me.Visible = False
     End Sub
 
-    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
-        Form1.Show()
+    Private Sub NotifyIcon1_Click(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.Click
+        If e.Button = MouseButtons.Left Then
+            Form1.Show()            '识别左键单击事件并弹出窗口
+        End If
     End Sub
-
 End Class

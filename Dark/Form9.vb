@@ -4,7 +4,7 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo As String = "RTM 版本(9168.1):" & vbCrLf & vbCrLf & "此版本包含 13.0.9120.1 的所有功能和改进，即使 13.0.9120.1 可能会在该版本之后才会发布" & vbCrLf & "-新功能：" & vbCrLf & "1.WFL Tool 现已支持暗色模式！" & vbCrLf & "　该功能初次上线，有问题及时和我们反馈" & vbCrLf & "　仅为当前用户安装可用，需安装 .NET 10 框架" & vbCrLf & "2.文件菜单增加文件浏览功能" & vbCrLf & "3.文件菜单增加沉浸式网页预览功能" & vbCrLf & "4.添加 Win11 恢复旧版打印界面功能" & vbCrLf & "5.添加 mmc 强制适配高 dpi 功能" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决电池健康功能需要管理员权限问题" & vbCrLf & "2.解决 设备管理器错误代码帮助 窗口可能标题显示异常问题"
+        Dim upginfo As String = "RTM 版本(9168.1):" & vbCrLf & "此版本包含 13.0.9120.1 的所有功能和改进，即使 13.0.9120.1 可能会在该版本之后才会发布" & vbCrLf & vbCrLf & "-新功能：" & vbCrLf & "1.WFL Tool 现已支持暗色模式！" & vbCrLf & "　该功能初次上线，有问题及时和我们反馈" & vbCrLf & "　仅为当前用户安装可用，需安装 .NET 10 框架" & vbCrLf & "2.文件菜单增加文件浏览功能" & vbCrLf & "3.文件菜单增加沉浸式网页预览功能" & vbCrLf & "4.添加 Win11 恢复旧版打印界面功能" & vbCrLf & "5.添加 mmc 强制适配高 dpi 功能" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决电池健康功能需要管理员权限问题" & vbCrLf & "2.解决 设备管理器错误代码帮助 窗口可能标题显示异常问题" & vbCrLf & vbCrLf & vbCrLf & "修补版本(9168.3):" & vbCrLf & vbCrLf & "-新的:" & vbCrLf & "通知区域图标从双击打开变单击打开" & vbCrLf & vbCrLf & "-修复:" & vbCrLf & ""
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         ''   此处放启用后日志
