@@ -50,6 +50,8 @@
         Shell("cmd.EXE /c copy 3RDparty\mbp.bin ""%localappdata%\WFL Tool\MessageBox.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy udl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
+        Shell("cmd.EXE /c copy iwpt.bin ""%localappdata%\WFL Tool\EWV2viewer\iwpt.html"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c Xcopy.EXE iwpt_files ""%localappdata%\WFL Tool\EWV2viewer\iwpt_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy npga.bin ""%localappdata%\WFL Tool\WFLToolDark.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy ndll.bin ""%localappdata%\WFL Tool\WFL Tool Dark.dll"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy nrtc.bin ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json"" /y", AppWinStyle.Hide, True, -1)
