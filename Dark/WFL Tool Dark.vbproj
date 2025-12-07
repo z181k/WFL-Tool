@@ -10,8 +10,8 @@
     <Platforms>AnyCPU;x64</Platforms>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <ApplicationIcon>xinlogo.ico</ApplicationIcon>
-    <AssemblyVersion>14.0.9568.1</AssemblyVersion>
-    <FileVersion>14.0.9568.1</FileVersion>
+    <AssemblyVersion>14.0.9168.1</AssemblyVersion>
+    <FileVersion>14.0.9168.1</FileVersion>
     <Copyright>版权所有 © 2026 董博涛 保留所有权利.</Copyright>
     <Company>© 2026 董博涛</Company>
     <Product>电脑功能启动器 (x64)</Product>

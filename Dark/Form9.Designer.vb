@@ -123,7 +123,7 @@ Partial Class Form9
         Label4.Name = "Label4"
         Label4.Size = New Size(118, 24)
         Label4.TabIndex = 4
-        Label4.Text = "Build 9568.1"
+        Label4.Text = "Build 9168.1"
         ' 
         ' LinkLabel1
         ' 
