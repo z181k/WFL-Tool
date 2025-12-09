@@ -41,8 +41,8 @@
         Shell("cmd.EXE /c copy uiu.bin ""%localappdata%\WFL Tool\uninstall.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c Xcopy.EXE 3RDparty\deverrcodehlp_files ""%localappdata%\WFL Tool\EWV2viewer\deverrcodehlp_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\dech.bin ""%localappdata%\WFL Tool\EWV2viewer\deverrcodehlp.html"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c Xcopy.EXE 5THcelebrate_files ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy 5thc.bin ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate.html"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c Xcopy.EXE HtmlPages\5THcelebrate_files ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy HtmlPages\5thc.bin ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate.html"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\pri.bin ""%localappdata%\WFL Tool\resources.pri"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 30
         Shell("cmd.EXE /c copy 3RDparty\arb.bin ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll"" /y", AppWinStyle.Hide, True, -1)
@@ -50,11 +50,11 @@
         Shell("cmd.EXE /c copy 3RDparty\mbp.bin ""%localappdata%\WFL Tool\MessageBox.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy udl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
-        Shell("cmd.EXE /c copy iwpt.bin ""%localappdata%\WFL Tool\EWV2viewer\iwpt.html"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c Xcopy.EXE iwpt_files ""%localappdata%\WFL Tool\EWV2viewer\iwpt_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy npga.bin ""%localappdata%\WFL Tool\WFLToolDark.exe"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy ndll.bin ""%localappdata%\WFL Tool\WFL Tool Dark.dll"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy nrtc.bin ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy HtmlPages\iwpt.bin ""%localappdata%\WFL Tool\EWV2viewer\iwpt.html"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c Xcopy.EXE HtmlPages\iwpt_files ""%localappdata%\WFL Tool\EWV2viewer\iwpt_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy DotNet10Pga\npga.bin ""%localappdata%\WFL Tool\WFLToolDark.exe"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy DotNet10Pga\ndll.bin ""%localappdata%\WFL Tool\WFL Tool Dark.dll"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy DotNet10Pga\nrtc.bin ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 50
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild >= 17763 Then              '检查版本配置WinAppSdk项目
