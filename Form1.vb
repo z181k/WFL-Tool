@@ -921,7 +921,7 @@ msg1:
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild < 8000 Then
             '检查版本控制Win8DevelopPreview及更低版本不显示标题，为了美观
-            OpenFileDialog1.Title = ""
+            OpenFileDialog1.Title = "‌﻿"
         End If
         OpenFileDialog1.ShowDialog()    '启动文件浏览
     End Sub
