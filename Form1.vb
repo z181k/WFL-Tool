@@ -918,6 +918,11 @@ msg1:
         '       MsgBox("该功能在基于 .Net Framework 4.6.1 的 WFL Tool 上不完整，无法显示隐藏的文件，你可以考虑在受支持的电脑上切换到基于 .NET 10 的 WFL Tool。切换版本请到软件主界面的主题菜单中。", MsgBoxStyle.Information, "WFL Tool")
         '   End If
         '上面是.net fx版本兼容性提示
+        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 8000 Then
+            '检查版本控制Win8DevelopPreview及更低版本不显示标题，为了美观
+            OpenFileDialog1.Title = ""
+        End If
         OpenFileDialog1.ShowDialog()    '启动文件浏览
     End Sub
 
