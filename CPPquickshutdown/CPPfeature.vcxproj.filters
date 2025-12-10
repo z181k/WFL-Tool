@@ -19,4 +19,17 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\dark\form12.designer.vb">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\dark\form12.vb">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\dark\form12.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

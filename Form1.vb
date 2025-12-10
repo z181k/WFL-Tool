@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.Runtime.InteropServices
+
+Public Class Form1
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Shell("cmd.exe", AppWinStyle.NormalFocus, False, -1)       '命令提示符
     End Sub
@@ -948,4 +950,116 @@ legacy2:
             MsgBox("使用该功能需先在你的电脑上以用户模式安装 WFL Tool 并安装有以管理员身份安装的的 Edge Webview2", MsgBoxStyle.Information, "WFL Tool")
         End If
     End Sub
+
+    Private Sub ToolStripMenuItem33_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem33.Click
+        RunFileDialog.ShowRunDialog(Me, "", "运行  -  WFL Tool", "WFL Tool 将根据你所输入的名称,为你打开相应的程序、文件夹、文档、Internet 资源以及 Intranet 资源。")
+    End Sub
 End Class
+
+
+'下面的代码由 DeepSeek 生成，是 AIGC 内容
+
+Public Class RunFileDialog
+    ' ============================================
+    ' Windows API 常量声明
+    ' ============================================
+    Public Class RunFileDlgFlags
+        Public Const RFF_NOBROWSE As UInteger = &H1           ' 移除"浏览"按钮
+        Public Const RFF_NODEFAULT As UInteger = &H2          ' 没有默认项
+        Public Const RFF_CALCDIRECTORY As UInteger = &H4      ' 基于lpstrDirectory计算目录
+        Public Const RFF_NOLABEL As UInteger = &H8            ' 移除"打开"标签
+        Public Const RFF_NOSEPARATEMEM As UInteger = &H20     ' 不单独记忆
+    End Class
+
+    ' ============================================
+    ' 方法1：使用序号直接声明（最推荐）
+    ' ============================================
+
+    ''' <summary>
+    ''' 直接声明 RunFileDlg 函数（序号61）
+    ''' </summary>
+    <DllImport("shell32.dll", EntryPoint:="#61", CharSet:=CharSet.Unicode, CallingConvention:=CallingConvention.StdCall)>
+    Private Shared Sub RunFileDlg_Ordinal(
+        ByVal hwndOwner As IntPtr,
+        ByVal hIcon As IntPtr,
+        <MarshalAs(UnmanagedType.LPWStr)> ByVal lpstrDirectory As String,
+        <MarshalAs(UnmanagedType.LPWStr)> ByVal lpstrTitle As String,
+        <MarshalAs(UnmanagedType.LPWStr)> ByVal lpstrDescription As String,
+        ByVal uFlags As UInteger
+    )
+    End Sub
+
+    ''' <summary>
+    ''' 方法1：最简单的调用方式
+    ''' </summary>
+    Public Shared Sub ShowRunDialogSimple()
+        Try
+            ' 显示标准的运行对话框
+            RunFileDlg_Ordinal(
+                IntPtr.Zero,                                    ' hwndOwner: 无父窗口
+                IntPtr.Zero,                                    ' hIcon: 使用默认图标
+                Nothing,                                        ' lpstrDirectory: 默认目录
+                "运行",                                          ' lpstrTitle: 对话框标题
+                "输入程序、文件夹、文档或 Internet 资源名称，我们将为您打开它。", ' lpstrDescription: 描述文本
+                0                                               ' uFlags: 默认选项
+            )
+        Catch ex As Exception
+            MessageBox.Show("无法显示运行对话框: " & ex.Message, "错误",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' 方法1扩展：使用更多参数
+    ''' </summary>
+    Public Shared Sub ShowRunDialogAdvanced(ByVal parentWindow As IWin32Window,
+                                           ByVal defaultDirectory As String,
+                                           ByVal flags As UInteger)
+        Dim hwnd As IntPtr = IntPtr.Zero
+        If parentWindow IsNot Nothing Then
+            hwnd = parentWindow.Handle
+        End If
+
+        RunFileDlg_Ordinal(
+            hwnd,
+            IntPtr.Zero,
+            defaultDirectory,
+            "运行程序",
+            "请输入要运行的程序名称:",
+            flags
+        )
+    End Sub
+    ''' <summary>
+    ''' 显示运行对话框（推荐使用）
+    ''' </summary>
+    ''' <param name="owner">父窗口（可选）</param>
+    ''' <param name="defaultDirectory">默认目录（可选）</param>
+    ''' <param name="title">对话框标题（可选）</param>
+    ''' <param name="description">描述文本（可选）</param>
+    ''' <param name="showBrowseButton">是否显示浏览按钮</param>
+    Public Shared Sub ShowRunDialog(
+        Optional ByVal owner As IWin32Window = Nothing,
+        Optional ByVal defaultDirectory As String = Nothing,
+        Optional ByVal title As String = "运行",
+        Optional ByVal description As String = "输入程序、文件夹、文档或 Internet 资源名称，我们将为您打开它。",
+        Optional ByVal showBrowseButton As Boolean = True
+    )
+        Dim hwnd As IntPtr = IntPtr.Zero
+        If owner IsNot Nothing Then
+            hwnd = owner.Handle
+        End If
+
+        Dim flags As UInteger = 0
+        If Not showBrowseButton Then
+            flags = flags Or RunFileDlgFlags.RFF_NOBROWSE
+        End If
+
+        Try
+            RunFileDlg_Ordinal(hwnd, IntPtr.Zero, defaultDirectory, title, description, flags)
+        Catch ex As Exception
+            ' 备选方案
+            'ShowRunDialogViaRundll32()
+        End Try
+    End Sub
+End Class
+

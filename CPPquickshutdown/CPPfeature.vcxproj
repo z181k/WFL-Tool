@@ -130,6 +130,13 @@
   <ItemGroup>
     <ClCompile Include="QuickShutdown.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\dark\form12.designer.vb" />
+    <None Include="..\dark\form12.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\dark\form12.resx" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
