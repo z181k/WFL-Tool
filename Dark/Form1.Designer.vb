@@ -185,7 +185,6 @@ Partial Class Form1
         命令提示符x86管理员ToolStripMenuItem = New ToolStripMenuItem()
         Button8 = New Button()
         PictureBox2 = New PictureBox()
-        PictureBox1 = New PictureBox()
         Button16 = New Button()
         VerLabel = New Label()
         FeatureControlLabel1 = New Label()
@@ -203,7 +202,6 @@ Partial Class Form1
         ContextMenuStrip5.SuspendLayout()
         ContextMenuStrip1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -215,7 +213,7 @@ Partial Class Form1
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Padding = New Padding(11, 4, 0, 4)
-        MenuStrip1.Size = New Size(726, 41)
+        MenuStrip1.Size = New Size(726, 40)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -223,48 +221,48 @@ Partial Class Form1
         ' 
         文件FToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem25, ToolStripMenuItem30, ToolStripSeparator2, 所有任务ToolStripMenuItem, 查看系统位数ToolStripMenuItem, ToolStripMenuItem1, 系统更新UToolStripMenuItem, 系统修改ToolStripMenuItem, ToolStripMenuItem15, 测试功能ToolStripMenuItem, ToolStripMenuItem2, ToolStripMenuItem6, ToolStripMenuItem18, ToolStripMenuItem19, 退出XToolStripMenuItem})
         文件FToolStripMenuItem.Name = "文件FToolStripMenuItem"
-        文件FToolStripMenuItem.Size = New Size(97, 33)
+        文件FToolStripMenuItem.Size = New Size(97, 32)
         文件FToolStripMenuItem.Text = "文件(&F)"
         ' 
         ' ToolStripMenuItem25
         ' 
         ToolStripMenuItem25.Name = "ToolStripMenuItem25"
-        ToolStripMenuItem25.Size = New Size(315, 40)
+        ToolStripMenuItem25.Size = New Size(290, 40)
         ToolStripMenuItem25.Text = "浏览文件(&B)"
         ' 
         ' ToolStripMenuItem30
         ' 
         ToolStripMenuItem30.Name = "ToolStripMenuItem30"
-        ToolStripMenuItem30.Size = New Size(315, 40)
+        ToolStripMenuItem30.Size = New Size(290, 40)
         ToolStripMenuItem30.Text = "网页预览工具(&O)"
         ' 
         ' ToolStripSeparator2
         ' 
         ToolStripSeparator2.Name = "ToolStripSeparator2"
-        ToolStripSeparator2.Size = New Size(312, 6)
+        ToolStripSeparator2.Size = New Size(287, 6)
         ' 
         ' 所有任务ToolStripMenuItem
         ' 
         所有任务ToolStripMenuItem.Name = "所有任务ToolStripMenuItem"
-        所有任务ToolStripMenuItem.Size = New Size(315, 40)
+        所有任务ToolStripMenuItem.Size = New Size(290, 40)
         所有任务ToolStripMenuItem.Text = "所有任务(&A)"
         ' 
         ' 查看系统位数ToolStripMenuItem
         ' 
         查看系统位数ToolStripMenuItem.Name = "查看系统位数ToolStripMenuItem"
-        查看系统位数ToolStripMenuItem.Size = New Size(315, 40)
+        查看系统位数ToolStripMenuItem.Size = New Size(290, 40)
         查看系统位数ToolStripMenuItem.Text = "打开系统属性(&W)"
         ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(312, 6)
+        ToolStripMenuItem1.Size = New Size(287, 6)
         ' 
         ' 系统更新UToolStripMenuItem
         ' 
         系统更新UToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {WindowsToolStripMenuItem, 下载WindowsToolStripMenuItem, ToolStripMenuItem5, 更新本程序ToolStripMenuItem})
         系统更新UToolStripMenuItem.Name = "系统更新UToolStripMenuItem"
-        系统更新UToolStripMenuItem.Size = New Size(315, 40)
+        系统更新UToolStripMenuItem.Size = New Size(290, 40)
         系统更新UToolStripMenuItem.Text = "系统更新(&U)"
         ' 
         ' WindowsToolStripMenuItem
@@ -338,20 +336,20 @@ Partial Class Form1
         ' 系统修改ToolStripMenuItem
         ' 
         系统修改ToolStripMenuItem.Name = "系统修改ToolStripMenuItem"
-        系统修改ToolStripMenuItem.Size = New Size(315, 40)
+        系统修改ToolStripMenuItem.Size = New Size(290, 40)
         系统修改ToolStripMenuItem.Text = "系统修改(&C)"
         ' 
         ' ToolStripMenuItem15
         ' 
         ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        ToolStripMenuItem15.Size = New Size(315, 40)
+        ToolStripMenuItem15.Size = New Size(290, 40)
         ToolStripMenuItem15.Text = "密钥管理服务(&K)"
         ' 
         ' 测试功能ToolStripMenuItem
         ' 
         测试功能ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {功能说明帮助ToolStripMenuItem, ToolStripMenuItem8, 修复Win1011开始菜单卡死ToolStripMenuItem, 禁用恢复命令提示符ToolStripMenuItem, 禁用恢复控制面板ToolStripMenuItem, 禁用恢复taskmgrToolStripMenuItem})
         测试功能ToolStripMenuItem.Name = "测试功能ToolStripMenuItem"
-        测试功能ToolStripMenuItem.Size = New Size(315, 40)
+        测试功能ToolStripMenuItem.Size = New Size(290, 40)
         测试功能ToolStripMenuItem.Text = "高级功能"
         ' 
         ' 功能说明帮助ToolStripMenuItem
@@ -431,12 +429,12 @@ Partial Class Form1
         ' ToolStripMenuItem2
         ' 
         ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        ToolStripMenuItem2.Size = New Size(312, 6)
+        ToolStripMenuItem2.Size = New Size(287, 6)
         ' 
         ' ToolStripMenuItem6
         ' 
         ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        ToolStripMenuItem6.Size = New Size(315, 40)
+        ToolStripMenuItem6.Size = New Size(290, 40)
         ToolStripMenuItem6.Text = "新选项(&S)"
         ToolStripMenuItem6.Visible = False
         ' 
@@ -444,7 +442,7 @@ Partial Class Form1
         ' 
         ToolStripMenuItem18.DropDownItems.AddRange(New ToolStripItem() {WFLTool应用设置ToolStripMenuItem, ToolStripMenuItem20, 查看更多和系统附件弹出方式ToolStripMenuItem, 查看更多内部功能ToolStripMenuItem, 主界面右上角显示样式ToolStripMenuItem, ToolStripMenuItem16, 通知区域托盘图标ToolStripMenuItem, ToolStripMenuItem26, 清除数据并退出程序ToolStripMenuItem})
         ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        ToolStripMenuItem18.Size = New Size(315, 40)
+        ToolStripMenuItem18.Size = New Size(290, 40)
         ToolStripMenuItem18.Text = "选项(&S)"
         ' 
         ' WFLTool应用设置ToolStripMenuItem
@@ -589,19 +587,19 @@ Partial Class Form1
         ' ToolStripMenuItem19
         ' 
         ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        ToolStripMenuItem19.Size = New Size(312, 6)
+        ToolStripMenuItem19.Size = New Size(287, 6)
         ' 
         ' 退出XToolStripMenuItem
         ' 
         退出XToolStripMenuItem.Name = "退出XToolStripMenuItem"
-        退出XToolStripMenuItem.Size = New Size(315, 40)
+        退出XToolStripMenuItem.Size = New Size(290, 40)
         退出XToolStripMenuItem.Text = "退出(&X)"
         ' 
         ' UWP应用ToolStripMenuItem
         ' 
         UWP应用ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {设置ToolStripMenuItem, WindowsDefenderToolStripMenuItem, 微软商店, UWP资源管理器, ToolStripMenuItem24, 媒体播放器, 相机ToolStripMenuItem, 相册ToolStripMenuItem, 时钟app, ToolStripMenuItem21, 所有应用ToolStripMenuItem})
         UWP应用ToolStripMenuItem.Name = "UWP应用ToolStripMenuItem"
-        UWP应用ToolStripMenuItem.Size = New Size(128, 33)
+        UWP应用ToolStripMenuItem.Size = New Size(128, 32)
         UWP应用ToolStripMenuItem.Text = "U&WP 应用"
         ' 
         ' 设置ToolStripMenuItem
@@ -672,7 +670,7 @@ Partial Class Form1
         ' 
         关机选项UToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {电池健康ToolStripMenuItem, ToolStripMenuItem28, 切换用户ToolStripMenuItem, 休眠ToolStripMenuItem, 注销ToolStripMenuItem, ToolStripMenuItem9, 关机ToolStripMenuItem, 重启ToolStripMenuItem, 进入WinREToolStripMenuItem})
         关机选项UToolStripMenuItem.Name = "关机选项UToolStripMenuItem"
-        关机选项UToolStripMenuItem.Size = New Size(102, 33)
+        关机选项UToolStripMenuItem.Size = New Size(102, 32)
         关机选项UToolStripMenuItem.Text = "电源(&U)"
         ' 
         ' 电池健康ToolStripMenuItem
@@ -844,38 +842,38 @@ Partial Class Form1
         ' 
         主题与版本ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {亮色ToolStripMenuItem, 暗色ToolStripMenuItem, 自动ToolStripMenuItem, toolStripSeparator5, 旧版程序ToolStripMenuItem})
         主题与版本ToolStripMenuItem.Name = "主题与版本ToolStripMenuItem"
-        主题与版本ToolStripMenuItem.Size = New Size(72, 33)
+        主题与版本ToolStripMenuItem.Size = New Size(72, 32)
         主题与版本ToolStripMenuItem.Text = "主题"
         ' 
         ' 亮色ToolStripMenuItem
         ' 
         亮色ToolStripMenuItem.Name = "亮色ToolStripMenuItem"
-        亮色ToolStripMenuItem.Size = New Size(275, 40)
+        亮色ToolStripMenuItem.Size = New Size(315, 40)
         亮色ToolStripMenuItem.Text = "亮色"
         ' 
         ' 暗色ToolStripMenuItem
         ' 
         暗色ToolStripMenuItem.Name = "暗色ToolStripMenuItem"
-        暗色ToolStripMenuItem.Size = New Size(275, 40)
+        暗色ToolStripMenuItem.Size = New Size(315, 40)
         暗色ToolStripMenuItem.Text = "暗色"
         ' 
         ' 自动ToolStripMenuItem
         ' 
         自动ToolStripMenuItem.Name = "自动ToolStripMenuItem"
-        自动ToolStripMenuItem.Size = New Size(275, 40)
+        自动ToolStripMenuItem.Size = New Size(315, 40)
         自动ToolStripMenuItem.Text = "跟随系统 (当前)"
         ' 
         ' toolStripSeparator5
         ' 
         toolStripSeparator5.Name = "toolStripSeparator5"
-        toolStripSeparator5.Size = New Size(272, 6)
+        toolStripSeparator5.Size = New Size(312, 6)
         toolStripSeparator5.Visible = False
         ' 
         ' 旧版程序ToolStripMenuItem
         ' 
         旧版程序ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {临时返回ToolStripMenuItem, 始终ToolStripMenuItem})
         旧版程序ToolStripMenuItem.Name = "旧版程序ToolStripMenuItem"
-        旧版程序ToolStripMenuItem.Size = New Size(275, 40)
+        旧版程序ToolStripMenuItem.Size = New Size(315, 40)
         旧版程序ToolStripMenuItem.Text = "回到普通版本"
         旧版程序ToolStripMenuItem.Visible = False
         ' 
@@ -895,7 +893,7 @@ Partial Class Form1
         ' 
         帮助HToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {获取帮助GToolStripMenuItem, 发送反馈邮箱ToolStripMenuItem, ToolStripSeparator1, 设备管理器错误代码帮助helpmenu, 打开helpcenterToolStripMenuItem, ToolStripMenuItem4, WFLTool5周年ToolStripMenuItem, 关于AToolStripMenuItem})
         帮助HToolStripMenuItem.Name = "帮助HToolStripMenuItem"
-        帮助HToolStripMenuItem.Size = New Size(102, 33)
+        帮助HToolStripMenuItem.Size = New Size(102, 32)
         帮助HToolStripMenuItem.Text = "帮助(&H)"
         ' 
         ' 获取帮助GToolStripMenuItem
@@ -950,12 +948,12 @@ Partial Class Form1
         ToolStripMenuItem3.Alignment = ToolStripItemAlignment.Right
         ToolStripMenuItem3.ForeColor = SystemColors.GrayText
         ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        ToolStripMenuItem3.Size = New Size(177, 33)
+        ToolStripMenuItem3.Size = New Size(177, 32)
         ToolStripMenuItem3.Text = "右上角文字显示"
         ' 
         ' Button1
         ' 
-        Button1.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button1.Location = New Point(222, 58)
         Button1.Margin = New Padding(6, 5, 6, 5)
         Button1.Name = "Button1"
@@ -966,7 +964,7 @@ Partial Class Form1
         ' 
         ' Button2
         ' 
-        Button2.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button2.Location = New Point(22, 58)
         Button2.Margin = New Padding(6, 5, 6, 5)
         Button2.Name = "Button2"
@@ -981,7 +979,7 @@ Partial Class Form1
         GroupBox1.Controls.Add(Button5)
         GroupBox1.Controls.Add(Button3)
         GroupBox1.Controls.Add(Button4)
-        GroupBox1.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        GroupBox1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         GroupBox1.Location = New Point(22, 121)
         GroupBox1.Margin = New Padding(6, 5, 6, 5)
         GroupBox1.Name = "GroupBox1"
@@ -993,7 +991,7 @@ Partial Class Form1
         ' 
         ' Button6
         ' 
-        Button6.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button6.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button6.Location = New Point(504, 38)
         Button6.Margin = New Padding(6, 5, 6, 5)
         Button6.Name = "Button6"
@@ -1004,7 +1002,7 @@ Partial Class Form1
         ' 
         ' Button5
         ' 
-        Button5.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button5.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button5.Location = New Point(328, 38)
         Button5.Margin = New Padding(6, 5, 6, 5)
         Button5.Name = "Button5"
@@ -1015,7 +1013,7 @@ Partial Class Form1
         ' 
         ' Button3
         ' 
-        Button3.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button3.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button3.Location = New Point(172, 38)
         Button3.Margin = New Padding(6, 5, 6, 5)
         Button3.Name = "Button3"
@@ -1026,7 +1024,7 @@ Partial Class Form1
         ' 
         ' Button4
         ' 
-        Button4.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button4.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button4.Location = New Point(11, 38)
         Button4.Margin = New Padding(6, 5, 6, 5)
         Button4.Name = "Button4"
@@ -1050,7 +1048,7 @@ Partial Class Form1
         GroupBox2.Controls.Add(Button9)
         GroupBox2.Controls.Add(Button7)
         GroupBox2.Controls.Add(Button8)
-        GroupBox2.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        GroupBox2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         GroupBox2.Location = New Point(22, 233)
         GroupBox2.Margin = New Padding(6, 5, 6, 5)
         GroupBox2.Name = "GroupBox2"
@@ -1062,7 +1060,7 @@ Partial Class Form1
         ' 
         ' Button13
         ' 
-        Button13.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button13.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button13.Location = New Point(528, 38)
         Button13.Margin = New Padding(6, 5, 6, 5)
         Button13.Name = "Button13"
@@ -1074,7 +1072,7 @@ Partial Class Form1
         ' 
         ' Button20
         ' 
-        Button20.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button20.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button20.Location = New Point(11, 164)
         Button20.Margin = New Padding(6, 5, 6, 5)
         Button20.Name = "Button20"
@@ -1086,7 +1084,7 @@ Partial Class Form1
         ' Button19
         ' 
         Button19.ContextMenuStrip = ContextMenuStrip3
-        Button19.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button19.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button19.Location = New Point(486, 228)
         Button19.Margin = New Padding(6, 5, 6, 5)
         Button19.Name = "Button19"
@@ -1111,7 +1109,7 @@ Partial Class Form1
         ' Button18
         ' 
         Button18.ContextMenuStrip = ContextMenuStrip4
-        Button18.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button18.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button18.Location = New Point(264, 228)
         Button18.Margin = New Padding(6, 5, 6, 5)
         Button18.Name = "Button18"
@@ -1129,7 +1127,7 @@ Partial Class Form1
         ' 
         ' 注册表编辑器多开ToolStripMenuItem
         ' 
-        注册表编辑器多开ToolStripMenuItem.Font = New Font("Microsoft YaHei UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        注册表编辑器多开ToolStripMenuItem.Font = New Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
         注册表编辑器多开ToolStripMenuItem.Name = "注册表编辑器多开ToolStripMenuItem"
         注册表编辑器多开ToolStripMenuItem.Size = New Size(312, 34)
         注册表编辑器多开ToolStripMenuItem.Text = "注册表编辑器 (多开)"
@@ -1153,7 +1151,7 @@ Partial Class Form1
         ' 
         ' Button17
         ' 
-        Button17.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button17.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button17.Location = New Point(11, 228)
         Button17.Margin = New Padding(6, 5, 6, 5)
         Button17.Name = "Button17"
@@ -1164,7 +1162,7 @@ Partial Class Form1
         ' 
         ' Button15
         ' 
-        Button15.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button15.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button15.Location = New Point(149, 38)
         Button15.Margin = New Padding(6, 5, 6, 5)
         Button15.Name = "Button15"
@@ -1175,7 +1173,7 @@ Partial Class Form1
         ' 
         ' Button14
         ' 
-        Button14.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button14.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button14.Location = New Point(436, 102)
         Button14.Margin = New Padding(6, 5, 6, 5)
         Button14.Name = "Button14"
@@ -1186,7 +1184,7 @@ Partial Class Form1
         ' 
         ' Button12
         ' 
-        Button12.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button12.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button12.Location = New Point(187, 102)
         Button12.Margin = New Padding(6, 5, 6, 5)
         Button12.Name = "Button12"
@@ -1197,7 +1195,7 @@ Partial Class Form1
         ' 
         ' Button11
         ' 
-        Button11.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button11.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button11.Location = New Point(11, 38)
         Button11.Margin = New Padding(6, 5, 6, 5)
         Button11.Name = "Button11"
@@ -1209,7 +1207,7 @@ Partial Class Form1
         ' Button10
         ' 
         Button10.ContextMenuStrip = ContextMenuStrip2
-        Button10.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button10.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button10.Location = New Point(528, 38)
         Button10.Margin = New Padding(6, 5, 6, 5)
         Button10.Name = "Button10"
@@ -1234,7 +1232,7 @@ Partial Class Form1
         ' Button9
         ' 
         Button9.ContextMenuStrip = ContextMenuStrip5
-        Button9.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button9.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button9.Location = New Point(352, 38)
         Button9.Margin = New Padding(6, 5, 6, 5)
         Button9.Name = "Button9"
@@ -1259,7 +1257,7 @@ Partial Class Form1
         ' Button7
         ' 
         Button7.ContextMenuStrip = ContextMenuStrip1
-        Button7.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button7.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button7.Location = New Point(11, 102)
         Button7.Margin = New Padding(6, 5, 6, 5)
         Button7.Name = "Button7"
@@ -1277,7 +1275,7 @@ Partial Class Form1
         ' 
         ' 命令提示符ToolStripMenuItem
         ' 
-        命令提示符ToolStripMenuItem.Font = New Font("Microsoft YaHei UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        命令提示符ToolStripMenuItem.Font = New Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
         命令提示符ToolStripMenuItem.Name = "命令提示符ToolStripMenuItem"
         命令提示符ToolStripMenuItem.Size = New Size(327, 34)
         命令提示符ToolStripMenuItem.Text = "命令提示符"
@@ -1307,7 +1305,7 @@ Partial Class Form1
         ' 
         ' Button8
         ' 
-        Button8.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button8.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button8.Location = New Point(486, 228)
         Button8.Margin = New Padding(6, 5, 6, 5)
         Button8.Name = "Button8"
@@ -1328,18 +1326,9 @@ Partial Class Form1
         PictureBox2.TabIndex = 7
         PictureBox2.TabStop = False
         ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Location = New Point(664, 534)
-        PictureBox1.Margin = New Padding(6, 5, 6, 5)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(62, 14)
-        PictureBox1.TabIndex = 6
-        PictureBox1.TabStop = False
-        ' 
         ' Button16
         ' 
-        Button16.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button16.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button16.Location = New Point(422, 58)
         Button16.Margin = New Padding(6, 5, 6, 5)
         Button16.Name = "Button16"
@@ -1355,7 +1344,7 @@ Partial Class Form1
         VerLabel.Name = "VerLabel"
         VerLabel.Size = New Size(87, 21)
         VerLabel.TabIndex = 10
-        VerLabel.Text = "  v14.0"
+        VerLabel.Text = "  v14.1"
         VerLabel.Visible = False
         ' 
         ' FeatureControlLabel1
@@ -1382,7 +1371,7 @@ Partial Class Form1
         ' LinkLabel3
         ' 
         LinkLabel3.AutoSize = True
-        LinkLabel3.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        LinkLabel3.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel3.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel3.LinkColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
         LinkLabel3.Location = New Point(659, 17)
@@ -1395,7 +1384,7 @@ Partial Class Form1
         ' LinkLabel2
         ' 
         LinkLabel2.AutoSize = True
-        LinkLabel2.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        LinkLabel2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel2.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel2.LinkColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
         LinkLabel2.Location = New Point(494, 17)
@@ -1408,7 +1397,7 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("微软雅黑", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Label1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label1.Location = New Point(17, 17)
         Label1.Name = "Label1"
         Label1.Size = New Size(159, 28)
@@ -1425,9 +1414,10 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(11.0F, 21.0F)
+        AutoScaleDimensions = New SizeF(11F, 21F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
+        AutoSizeMode = AutoSizeMode.GrowAndShrink
         BackColor = SystemColors.Control
         ClientSize = New Size(726, 548)
         Controls.Add(Panel1)
@@ -1435,13 +1425,12 @@ Partial Class Form1
         Controls.Add(VerLabel)
         Controls.Add(Button16)
         Controls.Add(PictureBox2)
-        Controls.Add(PictureBox1)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(MenuStrip1)
-        Font = New Font("宋体", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Font = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ForeColor = SystemColors.MenuText
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
@@ -1460,7 +1449,6 @@ Partial Class Form1
         ContextMenuStrip5.ResumeLayout(False)
         ContextMenuStrip1.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         ResumeLayout(False)
@@ -1512,7 +1500,6 @@ Partial Class Form1
     Friend WithEvents Button10 As Button
     Friend WithEvents Button9 As Button
     Friend WithEvents Button7 As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents WindowsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 下载WindowsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 官网下载ToolStripMenuItem As ToolStripMenuItem

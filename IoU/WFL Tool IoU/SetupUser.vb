@@ -13,8 +13,8 @@
         Me.Hide()
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v InstallAdmin /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
         Me.Visible = False
-        'CreateObject("shell.application").shellexecute("InAdmin.exe", "", "", "runas", 1)        '所有用户
-        Shell("InAdmin.exe", AppWinStyle.NormalFocus, False, -1)   '防止单文件安装包清理不干净
+        CreateObject("shell.application").shellexecute("InAdmin.exe", "", "", "runas", 1)        '所有用户
+        'Shell("InAdmin.exe", AppWinStyle.NormalFocus, False, -1)   '防止单文件安装包清理不干净
         Application.Exit()
     End Sub
 

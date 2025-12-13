@@ -47,6 +47,18 @@ Public Class UninstUser
         ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
             TargetKill(0).Kill()
         End If
+        '下面是终止正在运行的wfltooldark相关代码
+        Dim TargetName2 As String = "WFLToolDark" '存储进程名为文本型，注：进程名不加扩展名
+        Dim TargetKill2() As Process = Process.GetProcessesByName(TargetName2) '从进程名获取进程
+        Dim TargetPath2 As String '存储进程路径为文本型
+        If TargetKill2.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
+            For i = 0 To TargetKill2.Length - 1
+                TargetPath2 = TargetKill2(i).MainModule.FileName
+                TargetKill2(i).Kill()
+            Next
+        ElseIf TargetKill2.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
+            TargetKill2(0).Kill()
+        End If
         '-------------分割线--------------
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\EWV2viewer\*.*"" /s /q", AppWinStyle.Hide, False, -1)

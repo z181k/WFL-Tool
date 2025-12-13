@@ -854,8 +854,8 @@ legacy:
     End Sub
 
     Private Sub 亮色ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 亮色ToolStripMenuItem.Click
-        'Application.SetColorMode(SystemColorMode.Classic)
-        'Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d White /f", AppWinStyle.Hide, True, -1)
+        Application.SetColorMode(SystemColorMode.Classic)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d White /f", AppWinStyle.Hide, True, -1)
         'Loadpga.Show()
         'Close()
 
