@@ -720,10 +720,10 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""该功能请到新版选项使用，新版选项已经为您打开"" ""清除数据并退出程序"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
+            'Shell(InstallLocation + "\MessageBox.exe ""该功能请到新版选项使用，新版选项已经为您打开"" ""清除数据并退出程序"" 0 48 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("")
+            'MsgBox("")
         End If
         Form11.Show()
     End Sub
@@ -754,7 +754,7 @@ legacy:
     Private Sub 电池健康ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 电池健康ToolStripMenuItem.Click
         Shell("cmd.exe /c powercfg.exe /batteryreport /OUTPUT ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, True, -1)
         '上面是生成电池使用时间报告，下面是加载电池使用时间报告
-        Shell("cmd.exe /c mshta.exe ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c mshta.exe ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, False, -1)
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click

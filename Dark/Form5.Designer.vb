@@ -199,7 +199,7 @@ Partial Class Form5
         LinkLabel1.AutoSize = True
         LinkLabel1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel1.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel1.LinkColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        LinkLabel1.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
         LinkLabel1.Location = New Point(207, 44)
         LinkLabel1.Margin = New Padding(6, 0, 6, 0)
         LinkLabel1.Name = "LinkLabel1"
@@ -358,7 +358,7 @@ Partial Class Form5
         LinkLabel2.AutoSize = True
         LinkLabel2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel2.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel2.LinkColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        LinkLabel2.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
         LinkLabel2.Location = New Point(550, 44)
         LinkLabel2.Margin = New Padding(6, 0, 6, 0)
         LinkLabel2.Name = "LinkLabel2"

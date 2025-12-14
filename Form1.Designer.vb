@@ -591,7 +591,7 @@ Partial Class Form1
         '
         Me.清除数据并退出程序ToolStripMenuItem.Name = "清除数据并退出程序ToolStripMenuItem"
         Me.清除数据并退出程序ToolStripMenuItem.Size = New System.Drawing.Size(360, 40)
-        Me.清除数据并退出程序ToolStripMenuItem.Text = "清除数据并退出程序"
+        Me.清除数据并退出程序ToolStripMenuItem.Text = "清除数据相关选项"
         '
         'ToolStripMenuItem19
         '
@@ -1350,7 +1350,7 @@ Partial Class Form1
         Me.VerLabel.Name = "VerLabel"
         Me.VerLabel.Size = New System.Drawing.Size(87, 21)
         Me.VerLabel.TabIndex = 10
-        Me.VerLabel.Text = "  v14.1"
+        Me.VerLabel.Text = "  v14.2"
         Me.VerLabel.Visible = False
         '
         'FeatureControlLabel1

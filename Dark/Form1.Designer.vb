@@ -582,7 +582,7 @@ Partial Class Form1
         ' 
         清除数据并退出程序ToolStripMenuItem.Name = "清除数据并退出程序ToolStripMenuItem"
         清除数据并退出程序ToolStripMenuItem.Size = New Size(360, 40)
-        清除数据并退出程序ToolStripMenuItem.Text = "清除数据并退出程序"
+        清除数据并退出程序ToolStripMenuItem.Text = "清除数据相关选项"
         ' 
         ' ToolStripMenuItem19
         ' 
@@ -848,32 +848,32 @@ Partial Class Form1
         ' 亮色ToolStripMenuItem
         ' 
         亮色ToolStripMenuItem.Name = "亮色ToolStripMenuItem"
-        亮色ToolStripMenuItem.Size = New Size(315, 40)
+        亮色ToolStripMenuItem.Size = New Size(275, 40)
         亮色ToolStripMenuItem.Text = "亮色"
         ' 
         ' 暗色ToolStripMenuItem
         ' 
         暗色ToolStripMenuItem.Name = "暗色ToolStripMenuItem"
-        暗色ToolStripMenuItem.Size = New Size(315, 40)
+        暗色ToolStripMenuItem.Size = New Size(275, 40)
         暗色ToolStripMenuItem.Text = "暗色"
         ' 
         ' 自动ToolStripMenuItem
         ' 
         自动ToolStripMenuItem.Name = "自动ToolStripMenuItem"
-        自动ToolStripMenuItem.Size = New Size(315, 40)
+        自动ToolStripMenuItem.Size = New Size(275, 40)
         自动ToolStripMenuItem.Text = "跟随系统 (当前)"
         ' 
         ' toolStripSeparator5
         ' 
         toolStripSeparator5.Name = "toolStripSeparator5"
-        toolStripSeparator5.Size = New Size(312, 6)
+        toolStripSeparator5.Size = New Size(272, 6)
         toolStripSeparator5.Visible = False
         ' 
         ' 旧版程序ToolStripMenuItem
         ' 
         旧版程序ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {临时返回ToolStripMenuItem, 始终ToolStripMenuItem})
         旧版程序ToolStripMenuItem.Name = "旧版程序ToolStripMenuItem"
-        旧版程序ToolStripMenuItem.Size = New Size(315, 40)
+        旧版程序ToolStripMenuItem.Size = New Size(275, 40)
         旧版程序ToolStripMenuItem.Text = "回到普通版本"
         旧版程序ToolStripMenuItem.Visible = False
         ' 
@@ -1344,7 +1344,7 @@ Partial Class Form1
         VerLabel.Name = "VerLabel"
         VerLabel.Size = New Size(87, 21)
         VerLabel.TabIndex = 10
-        VerLabel.Text = "  v14.1"
+        VerLabel.Text = "  v14.2"
         VerLabel.Visible = False
         ' 
         ' FeatureControlLabel1

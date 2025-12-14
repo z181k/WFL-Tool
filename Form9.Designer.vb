@@ -110,7 +110,7 @@ Partial Class Form9
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(122, 32)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "版本 14.1"
+        Me.Label3.Text = "版本 14.2"
         '
         'Label4
         '
@@ -123,7 +123,7 @@ Partial Class Form9
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(118, 24)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Build 9168.3"
+        Me.Label4.Text = "Build 9168.5"
         '
         'LinkLabel1
         '
@@ -131,6 +131,7 @@ Partial Class Form9
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel1.Location = New System.Drawing.Point(282, 392)
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
@@ -145,6 +146,7 @@ Partial Class Form9
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel2.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel2.Location = New System.Drawing.Point(396, 392)
         Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel2.Name = "LinkLabel2"
@@ -159,6 +161,7 @@ Partial Class Form9
         Me.LinkLabel3.AutoSize = True
         Me.LinkLabel3.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel3.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel3.Location = New System.Drawing.Point(510, 392)
         Me.LinkLabel3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel3.Name = "LinkLabel3"
@@ -173,6 +176,7 @@ Partial Class Form9
         Me.LinkLabel4.AutoSize = True
         Me.LinkLabel4.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel4.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel4.Location = New System.Drawing.Point(623, 392)
         Me.LinkLabel4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel4.Name = "LinkLabel4"
@@ -187,6 +191,7 @@ Partial Class Form9
         Me.LinkLabel6.AutoSize = True
         Me.LinkLabel6.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel6.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel6.Location = New System.Drawing.Point(282, 441)
         Me.LinkLabel6.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel6.Name = "LinkLabel6"
@@ -215,6 +220,7 @@ Partial Class Form9
         Me.LinkLabel7.AutoSize = True
         Me.LinkLabel7.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel7.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel7.Location = New System.Drawing.Point(623, 441)
         Me.LinkLabel7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel7.Name = "LinkLabel7"
@@ -258,6 +264,7 @@ Partial Class Form9
         Me.LinkLabel5.AutoSize = True
         Me.LinkLabel5.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel5.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel5.Location = New System.Drawing.Point(396, 441)
         Me.LinkLabel5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel5.Name = "LinkLabel5"
@@ -297,6 +304,7 @@ Partial Class Form9
         Me.LinkLabel10.AutoSize = True
         Me.LinkLabel10.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel10.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel10.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel10.Location = New System.Drawing.Point(510, 441)
         Me.LinkLabel10.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel10.Name = "LinkLabel10"

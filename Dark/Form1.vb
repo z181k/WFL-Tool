@@ -742,7 +742,7 @@ legacy:
     Private Sub 电池健康ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 电池健康ToolStripMenuItem.Click
         Shell("cmd /c powercfg.exe /batteryreport /OUTPUT ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, True, -1)
         '上面是生成电池使用时间报告，下面是加载电池使用时间报告
-        Shell("cmd.exe /c mshta.exe ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c mshta.exe ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, False, -1)
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click

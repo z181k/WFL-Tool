@@ -199,6 +199,7 @@ Partial Class Form5
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel1.Location = New System.Drawing.Point(207, 44)
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
@@ -357,6 +358,7 @@ Partial Class Form5
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel2.LinkColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.LinkLabel2.Location = New System.Drawing.Point(550, 44)
         Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.LinkLabel2.Name = "LinkLabel2"
@@ -384,7 +386,7 @@ Partial Class Form5
         Me.MenuStrip1.Location = New System.Drawing.Point(271, -4)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(11, 4, 0, 4)
-        Me.MenuStrip1.Size = New System.Drawing.Size(107, 29)
+        Me.MenuStrip1.Size = New System.Drawing.Size(107, 42)
         Me.MenuStrip1.TabIndex = 201
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -392,7 +394,7 @@ Partial Class Form5
         '
         Me.快捷键返回BToolStripMenuItem.Font = New System.Drawing.Font("Microsoft YaHei UI", 5.0!)
         Me.快捷键返回BToolStripMenuItem.Name = "快捷键返回BToolStripMenuItem"
-        Me.快捷键返回BToolStripMenuItem.Size = New System.Drawing.Size(94, 21)
+        Me.快捷键返回BToolStripMenuItem.Size = New System.Drawing.Size(94, 34)
         Me.快捷键返回BToolStripMenuItem.Text = "快捷键返回&B"
         '
         'Form5
