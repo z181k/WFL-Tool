@@ -21,19 +21,10 @@
             NF1.Show()
             TextBox1.Text = ""
             Exit Sub
-        ElseIf TextBox1.Text = "OPENwflT8312f479018" Then          '任务管理器x86
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v cctButton /T REG_SZ /d 2 /f", AppWinStyle.Hide, True, -1)
-            TextBox1.Text = ""
-            Exit Sub
-        ElseIf TextBox1.Text = "OPENwflT8312f479034" Then           '命令提示符管理员
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v cctButton /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
-            TextBox1.Text = ""
-            Exit Sub
-        ElseIf TextBox1.Text = "ENDwflT8312f479018" Then         '计算机管理
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v cctButton /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
-            Exit Sub
-        ElseIf TextBox1.Text = "OPENwflT8312f519340" Then          '5周年页面
-            Form3.Show()
+        ElseIf TextBox1.Text = "OPENwflT9168f562741" Then          '重新初始化应用
+            Form1.Close()
+            Loadpga.Show()
+            Me.Close()
             TextBox1.Text = ""
             Exit Sub
         ElseIf TextBox1.Text = " " Then
