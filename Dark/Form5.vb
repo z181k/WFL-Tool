@@ -82,9 +82,11 @@
             Button12.Enabled = False
             Button7.Text = "Windows Media Player"
             ToolTip1.Active = False
-        ElseIf CurrentBuild > 26020 Then
+        End If
+        If CurrentBuild > 26020 Then
             Button6.Enabled = False              '检查版本控制写字板显示
-        ElseIf CurrentBuild < 14393 Then
+        End If
+        If CurrentBuild < 14393 Then
             LinkLabel2.Enabled = False              '检查版本控制可选功能显示
         End If
         Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
