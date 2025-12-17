@@ -273,25 +273,25 @@ Partial Class Form1
         ' Windows1011ToolStripMenuItem
         ' 
         Windows1011ToolStripMenuItem.Name = "Windows1011ToolStripMenuItem"
-        Windows1011ToolStripMenuItem.Size = New Size(315, 40)
+        Windows1011ToolStripMenuItem.Size = New Size(438, 40)
         Windows1011ToolStripMenuItem.Text = "检查更新"
         ' 
         ' ToolStripMenuItem7
         ' 
         ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        ToolStripMenuItem7.Size = New Size(312, 6)
+        ToolStripMenuItem7.Size = New Size(435, 6)
         ' 
         ' 更新有关帮助ToolStripMenuItem
         ' 
         更新有关帮助ToolStripMenuItem.Name = "更新有关帮助ToolStripMenuItem"
-        更新有关帮助ToolStripMenuItem.Size = New Size(315, 40)
+        更新有关帮助ToolStripMenuItem.Size = New Size(438, 40)
         更新有关帮助ToolStripMenuItem.Text = "更新有关帮助"
         ' 
         ' 离线更新下载ToolStripMenuItem
         ' 
         离线更新下载ToolStripMenuItem.Name = "离线更新下载ToolStripMenuItem"
-        离线更新下载ToolStripMenuItem.Size = New Size(315, 40)
-        离线更新下载ToolStripMenuItem.Text = "离线更新包下载"
+        离线更新下载ToolStripMenuItem.Size = New Size(438, 40)
+        离线更新下载ToolStripMenuItem.Text = "Windows 更新日志及离线更新包"
         ' 
         ' 下载WindowsToolStripMenuItem
         ' 

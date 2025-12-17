@@ -38,9 +38,9 @@
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild >= 10240 Then   'Win10/11更新
             Shell("cmd.exe /c start ms-settings:windowsupdate", AppWinStyle.Hide, True, -1)
-            Exit Sub
+        Else
+            Shell("wuapp.exe", AppWinStyle.NormalFocus, False, -1)   'win7/8/vista更新
         End If
-        Shell("wuapp.exe", AppWinStyle.NormalFocus, False, -1)   'win7/8/vista更新
     End Sub
 
     Private Sub WindowsDefenderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsDefenderToolStripMenuItem.Click
@@ -149,25 +149,22 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
 
     Private Sub 离线更新下载ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 离线更新下载ToolStripMenuItem.Click
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild = "26100" Then   'Win11 24h2/win server 2025更新日志及离线更新包
+        If CurrentBuild = 26100 Then   'Win11 24h2/win server 2025更新日志及离线更新包
             Dim InstallationType As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "InstallationType", Nothing)
             If InstallationType = "Client" Then
                 Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-11%E7%89%88%E6%9C%AC-24h2-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-0929c747-1815-4543-8461-0160d16f15e5", AppWinStyle.Hide, True, -1)
-                Exit Sub
+            Else
+                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-server-2025-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
             End If
-            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-server-2025-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
-            Exit Sub
-        ElseIf CurrentBuild >= "21380" Then   'Win11其他版本更新日志及离线更新包
+        ElseIf CurrentBuild >= 21380 Then   'Win11其他版本更新日志及离线更新包
             Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-11%E7%89%88%E6%9C%AC-23h2-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-59875222-b990-4bd9-932f-91a5954de434", AppWinStyle.Hide, True, -1)
-            Exit Sub
-        ElseIf CurrentBuild = "20348" Then       'win server 2022更新日志及离线更新包
+        ElseIf CurrentBuild = 20348 Then       'win server 2022更新日志及离线更新包
             Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-server-2022-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-e1caa597-00c5-4ab9-9f3e-8212fe80b2ee", AppWinStyle.Hide, True, -1)
-            Exit Sub
-        ElseIf CurrentBuild >= "10240" Then  'win10更新日志及离线更新包
+        ElseIf CurrentBuild >= 10240 Then  'win10更新日志及离线更新包
             Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-10-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-8127c2c6-6edf-4fdf-8b9f-0f7be1ef3562", AppWinStyle.Hide, True, -1)
-            Exit Sub
-        End If                 '其他版本
-        Shell("cmd.exe /c start https://www.catalog.update.microsoft.com/Home.aspx", AppWinStyle.Hide, True, -1)
+        Else '其他版本
+            Shell("cmd.exe /c start https://www.catalog.update.microsoft.com/Home.aspx", AppWinStyle.Hide, True, -1)
+        End If
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click  '内存诊断
@@ -459,12 +456,6 @@ starttask:
 CBcheck:
         On Error GoTo xp
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 5033 Then         '拒绝在Windows Longhorn重置前版本、WindowsXP及更低版本系统的X64版本上运行
-            MsgBox("本软件仅支持 Windows Vista 及以上版本 x64 架构 Windows 系统！")
-            End
-        ElseIf CurrentBuild < 7000 Then              '检查版本控制系统修改显示
-            系统修改ToolStripMenuItem.Enabled = False
-        End If
         If CurrentBuild < 19041 Then              '检查版本控制应用启动
             GoTo xp
         End If
