@@ -76,7 +76,7 @@ Partial Class Form11
         Me.Button2.Location = New System.Drawing.Point(181, 32)
         Me.Button2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(160, 54)
+        Me.Button2.Size = New System.Drawing.Size(207, 54)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "取消协议授权"
         Me.Button2.UseVisualStyleBackColor = True
@@ -88,7 +88,7 @@ Partial Class Form11
         Me.GroupBox1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(352, 98)
+        Me.GroupBox1.Size = New System.Drawing.Size(397, 98)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "清除数据与撤回协议同意"
@@ -98,7 +98,7 @@ Partial Class Form11
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(636, 719)
+        Me.ClientSize = New System.Drawing.Size(421, 125)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
