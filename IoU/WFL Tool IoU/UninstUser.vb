@@ -77,9 +77,7 @@ Public Class UninstUser
         Shell("cmd.EXE /c del """ + dpfu + "\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c rd ""%localappdata%\WFL Tool\EWV2viewer\runtimes"" /s /q", AppWinStyle.Hide, False, -1)
         SetupUserInstall.PB1.Value = 75
-        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool Dark.dll""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFLToolDark.exe""", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json""", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe delete ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 100
         NewUninstUserFinish.Show()
