@@ -53,8 +53,8 @@
         Shell("cmd.EXE /c copy HtmlPages\iwpt.bin ""%localappdata%\WFL Tool\EWV2viewer\iwpt.html"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c Xcopy.EXE HtmlPages\iwpt_files ""%localappdata%\WFL Tool\EWV2viewer\iwpt_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy DotNet10Pga\npga.bin ""%localappdata%\WFL Tool\WFLToolDark.exe"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy DotNet10Pga\ndll.bin ""%localappdata%\WFL Tool\WFL Tool Dark.dll"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy DotNet10Pga\nrtc.bin ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool Dark.dll""", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json""", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 50
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild >= 17763 Then              '检查版本配置WinAppSdk项目
@@ -72,7 +72,7 @@
         SetupUserInstall.PB1.Value = 80
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v NoModify /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v NoRepair /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v EstimatedSize /T REG_DWORD /d 26316 /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v EstimatedSize /T REG_DWORD /d 133120 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 90
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v Publisher /T REG_SZ /d ""(c) 2021-2026 董博涛"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v InstallLocation /T REG_SZ /d ""%localappdata%\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
