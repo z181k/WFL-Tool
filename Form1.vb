@@ -850,15 +850,6 @@ msg1:
     End Sub
 
     Private Sub 自动ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 自动ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""该功能尚不稳定，如有异常，请及时换回亮色模式。"" ""WFL Tool"" 0 64 0", AppWinStyle.NormalFocus, True, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("该功能尚不稳定，如有异常，请及时换回亮色模式。", MsgBoxStyle.Information, "WFL Tool")
-        End If
         On Error GoTo msg1
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Auto /f", AppWinStyle.Hide, True, -1)
@@ -871,15 +862,6 @@ msg1:
     End Sub
 
     Private Sub 暗色ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 暗色ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""该功能尚不稳定，如有异常，请及时换回亮色模式。"" ""WFL Tool"" 0 64 0", AppWinStyle.NormalFocus, True, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("该功能尚不稳定，如有异常，请及时换回亮色模式。", MsgBoxStyle.Information, "WFL Tool")
-        End If
         On Error GoTo msg1
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Dark /f", AppWinStyle.Hide, True, -1)

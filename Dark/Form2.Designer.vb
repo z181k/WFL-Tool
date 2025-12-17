@@ -214,6 +214,7 @@ Partial Class Form2
         ' 
         ' Button14
         ' 
+        Button14.Enabled = False
         Button14.Font = New Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button14.Location = New Point(680, 348)
         Button14.Margin = New Padding(6, 5, 6, 5)
