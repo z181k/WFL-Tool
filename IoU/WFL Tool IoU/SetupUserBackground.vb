@@ -42,6 +42,8 @@
         Shell("cmd.EXE /c Xcopy.EXE 3RDparty\deverrcodehlp_files ""%localappdata%\WFL Tool\EWV2viewer\deverrcodehlp_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 30
         Shell("cmd.EXE /c copy 3RDparty\dech.bin ""%localappdata%\WFL Tool\EWV2viewer\deverrcodehlp.html"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c Xcopy.EXE 5THcelebrate_files ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy 5thc.bin ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate.html"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\pri.bin ""%localappdata%\WFL Tool\resources.pri"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\arb.bin ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
