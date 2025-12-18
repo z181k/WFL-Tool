@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows7.0</TargetFramework>
+    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
     <RootNamespace>WFL_Tool</RootNamespace>
     <StartupObject>WFL_Tool.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <Platforms>AnyCPU;x64</Platforms>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
     <ApplicationIcon>xinlogo.ico</ApplicationIcon>
     <AssemblyVersion>14.4.9168.9</AssemblyVersion>
     <FileVersion>14.4.9168.9</FileVersion>

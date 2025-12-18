@@ -7,6 +7,6 @@
   <EnableVisualStyles>true</EnableVisualStyles>
   <AuthenticationMode>0</AuthenticationMode>
   <SaveMySettingsOnExit>false</SaveMySettingsOnExit>
-  <HighDpiMode>2</HighDpiMode>
+  <HighDpiMode>3</HighDpiMode>
   <SplashScreen></SplashScreen>
 </MyApplicationData>

@@ -468,6 +468,9 @@ CBcheck:
         ElseIf CurrentBuild < 7000 Then              '检查版本控制系统修改显示
             系统修改ToolStripMenuItem.Enabled = False
         End If
+        If CurrentBuild < 9600 Then
+            Panel1.Visible = True   'eos提示
+        End If
         If CurrentBuild > 10240 Then
             离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
         End If
@@ -492,11 +495,11 @@ CBcheck:
         'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
         '
         'beta不显示横幅
-        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
-        'If Beta = "9088" Then
-        '    Panel1.Visible = False
-        '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        'End If
+        Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
+        If Beta = "EOS" Then
+            Panel1.Visible = False
+            '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        End If
         '
         Exit Sub
 openreg:
@@ -801,8 +804,8 @@ legacy:
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Panel1.Visible = False
-        Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Beta /T REG_SZ /d 9088 /f", AppWinStyle.Hide, True, -1)
+        'Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Beta /T REG_SZ /d EOS /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 设备管理器错误代码帮助helpmenu_Click(sender As Object, e As EventArgs) Handles 设备管理器错误代码帮助helpmenu.Click
@@ -912,6 +915,10 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
 legacy2:
             MsgBox("使用该功能需先在你的电脑上以用户模式安装 WFL Tool 并安装有以管理员身份安装的的 Edge Webview2", MsgBoxStyle.Information, "WFL Tool")
         End If
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Shell("cmd.exe /c start https://medbt-my.sharepoint.cn/:u:/g/personal/dbtob_medbt_partner_onmschina_cn/IQBVv2V8AKksS71cNXC8zJbzAaPuoW0O4E3gsTj6bWsylM8?e=iImeCT", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub ToolStripMenuItem33_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem33.Click

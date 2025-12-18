@@ -343,11 +343,11 @@ legacy:
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         On Error GoTo openreg       '防止注册表不存在
         Dim PROCESSOR_ARCHITECTURE As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PROCESSOR_ARCHITECTURE", Nothing)
-        If PROCESSOR_ARCHITECTURE = "AMD64" Then
-            GoTo starttask                   '判断兼容性，拒绝在非x64版本运行
+        If PROCESSOR_ARCHITECTURE <> "AMD64" Then
+            MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
+            End
+            '判断兼容性，拒绝在非x64版本运行
         End If
-        MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
-        End
 starttask:
         ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text  '主界面右上角wfltool - 现代
         '读取设置并调整界面（注册表读取）
@@ -387,12 +387,57 @@ starttask:
             Close()
         End If
         '
+        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 9600 Then              '检查版本控制应用启动
+            MsgBox("WFL Tool 仅支持 Windows 8.1 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", 0, "WFL Tool without Dark Theme")
+            End
+            '拒绝在比Windows 8.1更低版本系统的X64版本上运行
+        End If
+        If CurrentBuild > 10240 Then
+            离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
+        End If
+        If CurrentBuild < 18362 Then              '检查版本控制UWP应用和电池健康显示
+            UWP应用ToolStripMenuItem.Enabled = False
+            电池健康ToolStripMenuItem.Enabled = False
+        End If
+        If CurrentBuild < 19041 Then
+            '检查版本控制主题显示
+            主题与版本ToolStripMenuItem.Enabled = False
+        End If
+        If CurrentBuild < 22000 Then
+            '检查版本控制Win11IE名字和自动切换颜色
+            Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
+            自动ToolStripMenuItem.Enabled = False
+        End If
+        '测试版提示文字
+        'Panel1.Show()
+        'Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
+        'Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
+        'LinkLabel2.Visible = False
+        'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
+        '
+        'beta不显示横幅
+        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
+        'If Beta = "9088" Then
+        '    Panel1.Visible = False
+        '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        'End If
+        '
+        '主题菜单文本显示
+        Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
+        If NColor = "White" Then
+            亮色ToolStripMenuItem.Text = "亮色 (当前)"
+            自动ToolStripMenuItem.Text = "跟随系统"
+        ElseIf NColor = "Dark" Then
+            暗色ToolStripMenuItem.Text = "暗色 (当前)"
+            自动ToolStripMenuItem.Text = "跟随系统"
+        End If
         Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
         If EnterpriseNotShow = 1 Then
             ToolStripMenuItem18.Visible = False
             ToolStripMenuItem19.Visible = False
             ToolStripMenuItem6.Visible = False
-            GoTo CBcheck                        '企业自定义屏蔽
+            Exit Sub                        '企业自定义屏蔽
         End If
         Dim LegacyMoreUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WFL Tool", True).GetValue("LegacyMoreUI", "无")
         If LegacyMoreUI = "True" Then
@@ -444,50 +489,12 @@ starttask:
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
             仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
         End If
-        '主题菜单文本显示
-        Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
-        If NColor = "White" Then
-            亮色ToolStripMenuItem.Text = "亮色 (当前)"
-            自动ToolStripMenuItem.Text = "跟随系统"
-        ElseIf NColor = "Dark" Then
-            暗色ToolStripMenuItem.Text = "暗色 (当前)"
-            自动ToolStripMenuItem.Text = "跟随系统"
-        End If
-CBcheck:
-        On Error GoTo xp
-        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 19041 Then              '检查版本控制应用启动
-            GoTo xp
-        End If
-        If CurrentBuild < 22000 Then
-            '检查版本控制Win11IE名字和自动切换颜色
-            Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
-            自动ToolStripMenuItem.Enabled = False
-        End If
-        '测试版提示文字
-        'Panel1.Show()
-        'Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
-        'Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
-        'LinkLabel2.Visible = False
-        'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
-        '
-        'beta不显示横幅
-        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
-        'If Beta = "9088" Then
-        '    Panel1.Visible = False
-        '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        'End If
-        '
         Exit Sub
 openreg:
         '辅助打开软件
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v OPEN /T REG_SZ /d x64 /f", AppWinStyle.Hide, True, -1)
         GoTo starttask
         Exit Sub
-xp:
-        MsgBox("本软件的该版本仅支持 Windows 10 v2004 及以上版本 x64 架构 Windows 系统，请重新下载支持你的系统的版本。", 0, "WFL Tool without Dark Theme")
-        End
-        '拒绝在比Windows 10 19041更低版本系统的X64版本上运行
     End Sub
 
     Private Sub Button19_MouseClick(sender As Object, e As MouseEventArgs) Handles Button19.MouseClick
@@ -706,7 +713,7 @@ legacy:
     Private Sub 电池健康ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 电池健康ToolStripMenuItem.Click
         Shell("cmd /c powercfg.exe /batteryreport /OUTPUT ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, True, -1)
         '上面是生成电池使用时间报告，下面是加载电池使用时间报告
-        Shell("cmd.exe /c mshta.exe ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, False, -1)
+        Shell("cmd.exe /c ""%Temp%\batteryreport_formWFLt.html""", AppWinStyle.Hide, False, -1)
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
@@ -820,13 +827,13 @@ legacy:
     Private Sub 亮色ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 亮色ToolStripMenuItem.Click
         Application.SetColorMode(SystemColorMode.Classic)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d White /f", AppWinStyle.Hide, True, -1)
-        'Loadpga.Show()
-        'Close()
-
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
-        Shell("WFL Tool.exe", AppWinStyle.NormalFocus, False, -1)
-        Application.Exit()
-        Exit Sub
+        Loadpga.Show()
+        Close()
+        '下面是之前浅色会跳到旧net fx4.8框架的代码
+        'Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
+        'Shell("WFL Tool.exe", AppWinStyle.NormalFocus, False, -1)
+        'Application.Exit()
+        'Exit Sub
     End Sub
 
     Private Sub 自动切换ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 自动ToolStripMenuItem.Click

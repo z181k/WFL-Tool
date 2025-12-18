@@ -28,7 +28,7 @@ Namespace My
             Me.EnableVisualStyles = true
             Me.SaveMySettingsOnExit = false
             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterAllFormsClose
-            Me.HighDpiMode = HighDpiMode.PerMonitor
+            Me.HighDpiMode = HighDpiMode.PerMonitorV2
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

@@ -833,32 +833,32 @@ Partial Class Form1
         ' 亮色ToolStripMenuItem
         ' 
         亮色ToolStripMenuItem.Name = "亮色ToolStripMenuItem"
-        亮色ToolStripMenuItem.Size = New Size(275, 40)
+        亮色ToolStripMenuItem.Size = New Size(315, 40)
         亮色ToolStripMenuItem.Text = "亮色"
         ' 
         ' 暗色ToolStripMenuItem
         ' 
         暗色ToolStripMenuItem.Name = "暗色ToolStripMenuItem"
-        暗色ToolStripMenuItem.Size = New Size(275, 40)
+        暗色ToolStripMenuItem.Size = New Size(315, 40)
         暗色ToolStripMenuItem.Text = "暗色"
         ' 
         ' 自动ToolStripMenuItem
         ' 
         自动ToolStripMenuItem.Name = "自动ToolStripMenuItem"
-        自动ToolStripMenuItem.Size = New Size(275, 40)
+        自动ToolStripMenuItem.Size = New Size(315, 40)
         自动ToolStripMenuItem.Text = "跟随系统 (当前)"
         ' 
         ' toolStripSeparator5
         ' 
         toolStripSeparator5.Name = "toolStripSeparator5"
-        toolStripSeparator5.Size = New Size(272, 6)
+        toolStripSeparator5.Size = New Size(312, 6)
         toolStripSeparator5.Visible = False
         ' 
         ' 旧版程序ToolStripMenuItem
         ' 
         旧版程序ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {临时返回ToolStripMenuItem, 始终ToolStripMenuItem})
         旧版程序ToolStripMenuItem.Name = "旧版程序ToolStripMenuItem"
-        旧版程序ToolStripMenuItem.Size = New Size(275, 40)
+        旧版程序ToolStripMenuItem.Size = New Size(315, 40)
         旧版程序ToolStripMenuItem.Text = "回到普通版本"
         旧版程序ToolStripMenuItem.Visible = False
         ' 
@@ -1358,7 +1358,7 @@ Partial Class Form1
         LinkLabel3.AutoSize = True
         LinkLabel3.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel3.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel3.LinkColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        LinkLabel3.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
         LinkLabel3.Location = New Point(659, 17)
         LinkLabel3.Name = "LinkLabel3"
         LinkLabel3.Size = New Size(54, 28)
@@ -1371,7 +1371,7 @@ Partial Class Form1
         LinkLabel2.AutoSize = True
         LinkLabel2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel2.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel2.LinkColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        LinkLabel2.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
         LinkLabel2.Location = New Point(494, 17)
         LinkLabel2.Name = "LinkLabel2"
         LinkLabel2.Size = New Size(159, 28)

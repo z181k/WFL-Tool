@@ -78,7 +78,7 @@
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v InstallLocation /T REG_SZ /d ""%localappdata%\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
         Dim dpf As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", True).GetValue("Desktop", "%homedrive%%homepath%\desktop")
         Shell("cmd.EXE /c copy udl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
-        If CurrentBuild >= 19041 Then              '检查版本配置.net10应用图标
+        If CurrentBuild >= 9600 Then              '检查版本配置.net10应用图标
             Shell("cmd.EXE /c del """ + dpf + "\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
             Shell("cmd.EXE /c del ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
             Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
