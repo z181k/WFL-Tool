@@ -349,6 +349,13 @@ legacy:
             '判断兼容性，拒绝在非x64版本运行
         End If
 starttask:
+        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 9600 Then              '检查版本控制应用启动
+            MsgBox("WFL Tool 仅支持 Windows 8.1 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", 0, "WFL Tool without Dark Theme")
+            End
+            '拒绝在比Windows 8.1更低版本系统的X64版本上运行
+        End If
+        '
         ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text  '主界面右上角wfltool - 现代
         '读取设置并调整界面（注册表读取）
         Dim License As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("EULA", "无")
@@ -387,12 +394,6 @@ starttask:
             Close()
         End If
         '
-        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 9600 Then              '检查版本控制应用启动
-            MsgBox("WFL Tool 仅支持 Windows 8.1 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", 0, "WFL Tool without Dark Theme")
-            End
-            '拒绝在比Windows 8.1更低版本系统的X64版本上运行
-        End If
         If CurrentBuild > 10240 Then
             离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
         End If

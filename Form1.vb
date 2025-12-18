@@ -350,6 +350,13 @@ legacy:
         MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
         End
 starttask:
+        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 5033 Then         '拒绝在Windows Longhorn重置前版本、WindowsXP及更低版本系统的X64版本上运行
+            MsgBox("本软件仅支持 Windows Vista 及以上版本 x64 架构 Windows 系统！")
+            End
+        ElseIf CurrentBuild < 7000 Then              '检查版本控制系统修改显示
+            系统修改ToolStripMenuItem.Enabled = False
+        End If
         '启动基于.net 10的软件
         On Error GoTo Write
         Dim Napp As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "Napp", Nothing)
@@ -461,13 +468,6 @@ Write:
         End If
 CBcheck:
         On Error GoTo xp
-        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 5033 Then         '拒绝在Windows Longhorn重置前版本、WindowsXP及更低版本系统的X64版本上运行
-            MsgBox("本软件仅支持 Windows Vista 及以上版本 x64 架构 Windows 系统！")
-            End
-        ElseIf CurrentBuild < 7000 Then              '检查版本控制系统修改显示
-            系统修改ToolStripMenuItem.Enabled = False
-        End If
         If CurrentBuild < 9600 Then
             Panel1.Visible = True   'eos提示
         End If
