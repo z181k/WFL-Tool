@@ -21,7 +21,7 @@ defaultstart:
             Exit Sub
         End If
 no3info2:
-        MsgBox("请从应用中访问此功能。", MsgBoxStyle.Exclamation, "WFL Tool WebPageViewer")
+        MsgBox("请从应用中访问此功能!", MsgBoxStyle.Exclamation, "WFL Tool WebPageViewer")
         Close()
     End Sub
 

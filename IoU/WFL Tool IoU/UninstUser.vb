@@ -61,7 +61,7 @@ Public Class UninstUser
         End If
         '-------------分割线--------------
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\EWV2viewer\*.*"" /s /q", AppWinStyle.Hide, False, -1)
+        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\EWV2viewer\*.*"" /q", AppWinStyle.Hide, False, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\MessageBox.exe""", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 25
