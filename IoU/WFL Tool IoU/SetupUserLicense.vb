@@ -5,12 +5,12 @@
 
     Private Sub SetupUserLicense_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim PROCESSOR_ARCHITECTURE As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PROCESSOR_ARCHITECTURE", Nothing)
-        If PROCESSOR_ARCHITECTURE = "AMD64" Then
-            GoTo defaultstart                   '判断兼容性
+        If PROCESSOR_ARCHITECTURE <> "AMD64" Then
+            MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
+            End
+            '判断架构兼容性
         End If
-        MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
-        End
-defaultstart:
+
         On Error GoTo jump               '企业自动化安装
         Dim EAI As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseAutoInstall", Nothing)
         If EAI = "1" Then

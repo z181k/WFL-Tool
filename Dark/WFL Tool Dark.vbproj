@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+    <TargetFramework>net10.0-windows8.0</TargetFramework>
     <RootNamespace>WFL_Tool</RootNamespace>
     <StartupObject>WFL_Tool.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
@@ -19,6 +19,8 @@
     <AssemblyTitle>WFL Tool Without Dark Theme</AssemblyTitle>
     <Description>WFL Tool Without Dark Theme</Description>
     <Version>14.4.9168.9</Version>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <NeutralLanguage>zh-Hans-HK</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

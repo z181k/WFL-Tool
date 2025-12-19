@@ -148,22 +148,31 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     End Sub
 
     Private Sub 离线更新下载ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 离线更新下载ToolStripMenuItem.Click
+        Dim InstallationType As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "InstallationType", Nothing)
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild = 26100 Then   'Win11 24h2/win server 2025更新日志及离线更新包
-            Dim InstallationType As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "InstallationType", Nothing)
+        If CurrentBuild > 26100 Then   '兼容未来版本的Win11和win server更新日志及离线更新包
             If InstallationType = "Client" Then
-                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-11%E7%89%88%E6%9C%AC-24h2-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-0929c747-1815-4543-8461-0160d16f15e5", AppWinStyle.Hide, True, -1)
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/99c7f493-df2a-4832-bd2d-6706baa0dec0", AppWinStyle.Hide, True, -1)
             Else
-                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-server-2025-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
+                '没有新的win server链接，拿server2025的顶一下，毕竟server 2022/v23h2/2025都被放在了一起，估计新版本也在一起
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
             End If
+        ElseIf CurrentBuild = 26100 Then   'Win11 24h2/win server 2025更新日志及离线更新包
+            If InstallationType = "Client" Then
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/0929c747-1815-4543-8461-0160d16f15e5", AppWinStyle.Hide, True, -1)
+            Else
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
+            End If
+        ElseIf CurrentBuild = 25398 Then  'win server v23h2更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/68c851ff-825a-4dbc-857b-51c5aa0ab248", AppWinStyle.Hide, True, -1)
         ElseIf CurrentBuild >= 21380 Then   'Win11其他版本更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-11%E7%89%88%E6%9C%AC-23h2-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-59875222-b990-4bd9-932f-91a5954de434", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/59875222-b990-4bd9-932f-91a5954de434", AppWinStyle.Hide, True, -1)
         ElseIf CurrentBuild = 20348 Then       'win server 2022更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-server-2022-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-e1caa597-00c5-4ab9-9f3e-8212fe80b2ee", AppWinStyle.Hide, True, -1)
-        ElseIf CurrentBuild >= 10240 Then  'win10更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-10-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-8127c2c6-6edf-4fdf-8b9f-0f7be1ef3562", AppWinStyle.Hide, True, -1)
-        Else '其他版本
-            Shell("cmd.exe /c start https://www.catalog.update.microsoft.com/Home.aspx", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/e1caa597-00c5-4ab9-9f3e-8212fe80b2ee", AppWinStyle.Hide, True, -1)
+        Else
+            'win10及Server2016/2019更新日志及离线更新包
+            '还有些版本也有更新日志页，但.net10版的此应用人为不兼容它们了，所以不列出，旧框架版本中是有的
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/8127c2c6-6edf-4fdf-8b9f-0f7be1ef3562", AppWinStyle.Hide, True, -1)
         End If
     End Sub
 
@@ -342,19 +351,8 @@ legacy:
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         On Error GoTo openreg       '防止注册表不存在
-        Dim PROCESSOR_ARCHITECTURE As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PROCESSOR_ARCHITECTURE", Nothing)
-        If PROCESSOR_ARCHITECTURE <> "AMD64" Then
-            MsgBox("此版本仅为 x64 架构处理器提供，我们没有提供 arm64 基于架构的版本，请关注我们的网站，我们可能会在将来提供基于 arm64 的 WFL Tool。", MsgBoxStyle.Critical, "WFL Tool")
-            End
-            '判断兼容性，拒绝在非x64版本运行
-        End If
 starttask:
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 9600 Then              '检查版本控制应用启动
-            MsgBox("WFL Tool 仅支持 Windows 8.1 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", 0, "WFL Tool without Dark Theme")
-            End
-            '拒绝在比Windows 8.1更低版本系统的X64版本上运行
-        End If
         '
         ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text  '主界面右上角wfltool - 现代
         '读取设置并调整界面（注册表读取）
@@ -394,9 +392,6 @@ starttask:
             Close()
         End If
         '
-        If CurrentBuild > 10240 Then
-            离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
-        End If
         If CurrentBuild < 18362 Then              '检查版本控制UWP应用和电池健康显示
             UWP应用ToolStripMenuItem.Enabled = False
             电池健康ToolStripMenuItem.Enabled = False
@@ -526,7 +521,7 @@ openreg:
             Shell(InstallLocation + "\MessageBox.exe ""好用请推荐给别人"" ""温馨提示"" 0 64 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("好用请推荐给别人", MsgBoxStyle.Information, "温馨提示")
+            MsgBox("好用请推荐给别人", 0, "温馨提示")
         End If
     End Sub
 

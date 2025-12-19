@@ -149,20 +149,48 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     End Sub
 
     Private Sub 离线更新下载ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 离线更新下载ToolStripMenuItem.Click
+        Dim InstallationType As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "InstallationType", Nothing)
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild = 26100 Then   'Win11 24h2/win server 2025更新日志及离线更新包
-            Dim InstallationType As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "InstallationType", Nothing)
+        If CurrentBuild > 26100 Then   '兼容未来版本的Win11和win server更新日志及离线更新包
             If InstallationType = "Client" Then
-                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-11%E7%89%88%E6%9C%AC-24h2-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-0929c747-1815-4543-8461-0160d16f15e5", AppWinStyle.Hide, True, -1)
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/99c7f493-df2a-4832-bd2d-6706baa0dec0", AppWinStyle.Hide, True, -1)
             Else
-                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-server-2025-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
+                '没有新的win server链接，拿server2025的顶一下，毕竟server 2022/v23h2/2025都被放在了一起，估计新版本也在一起
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
             End If
+        ElseIf CurrentBuild = 26100 Then   'Win11 24h2/win server 2025更新日志及离线更新包
+            If InstallationType = "Client" Then
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/0929c747-1815-4543-8461-0160d16f15e5", AppWinStyle.Hide, True, -1)
+            Else
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
+            End If
+        ElseIf CurrentBuild = 25398 Then  'win server v23h2更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/68c851ff-825a-4dbc-857b-51c5aa0ab248", AppWinStyle.Hide, True, -1)
         ElseIf CurrentBuild >= 21380 Then   'Win11其他版本更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-11%E7%89%88%E6%9C%AC-23h2-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-59875222-b990-4bd9-932f-91a5954de434", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/59875222-b990-4bd9-932f-91a5954de434", AppWinStyle.Hide, True, -1)
         ElseIf CurrentBuild = 20348 Then       'win server 2022更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-server-2022-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-e1caa597-00c5-4ab9-9f3e-8212fe80b2ee", AppWinStyle.Hide, True, -1)
-        ElseIf CurrentBuild >= 10240 Then  'win10更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/topic/windows-10-%E6%9B%B4%E6%96%B0%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-8127c2c6-6edf-4fdf-8b9f-0f7be1ef3562", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/e1caa597-00c5-4ab9-9f3e-8212fe80b2ee", AppWinStyle.Hide, True, -1)
+        ElseIf CurrentBuild >= 10240 Then  'win10及Server2016/2019更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/8127c2c6-6edf-4fdf-8b9f-0f7be1ef3562", AppWinStyle.Hide, True, -1)
+        ElseIf CurrentBuild = 9600 Then  'win8.1及Server 2012 R2更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/47d81dd2-6804-b6ae-4112-20089467c7a6", AppWinStyle.Hide, True, -1)
+        ElseIf CurrentBuild = 9200 Then   'win server 2012更新日志及离线更新包
+            If InstallationType = "Server" Then
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/abfb9afd-2ebf-1c19-4224-ad86f8741edd", AppWinStyle.Hide, True, -1)
+            Else
+                'win8没有官方日志合集页。。。
+                Shell("cmd.exe /c start https://www.catalog.update.microsoft.com/Home.aspx", AppWinStyle.Hide, True, -1)
+            End If
+        ElseIf CurrentBuild = 7601 Then  'win7SP1及Server2008r2更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/720c2590-fd58-26ba-16cc-6d8f3b547599", AppWinStyle.Hide, True, -1)
+            'win7rtm没有官方日志合集页
+        ElseIf CurrentBuild = 6003 Then  'win server 2008 sp2更新日志及离线更新包
+            If InstallationType = "Server" Then
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/9197740a-7430-f69f-19ff-4998a4e8b25b", AppWinStyle.Hide, True, -1)
+            Else
+                'win vista也是没有官方日志合集页
+                Shell("cmd.exe /c start https://www.catalog.update.microsoft.com/Home.aspx", AppWinStyle.Hide, True, -1)
+            End If
         Else '其他版本
             Shell("cmd.exe /c start https://www.catalog.update.microsoft.com/Home.aspx", AppWinStyle.Hide, True, -1)
         End If
@@ -468,7 +496,24 @@ Write:
         End If
 CBcheck:
         On Error GoTo xp
-        If CurrentBuild < 9600 Then
+        '
+        If CurrentBuild = 9600 Then  'win8.1及Server 2012 R2更新日志及离线更新包
+            离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
+        ElseIf CurrentBuild = 9200 Then   'win server 2012更新日志及离线更新包
+            Dim InstallationType As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "InstallationType", Nothing)
+            If InstallationType = "Server" Then
+                离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
+            End If
+        ElseIf CurrentBuild = 7601 Then  'win7SP1及Server2008r2更新日志及离线更新包
+            离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
+        ElseIf CurrentBuild = 6003 Then  'win server 2008 sp2更新日志及离线更新包
+            Dim InstallationType As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "InstallationType", Nothing)
+            If InstallationType = "Server" Then
+                离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
+            End If
+        End If
+        '
+        If CurrentBuild < 16299 Then
             Panel1.Visible = True   'eos提示
         End If
         If CurrentBuild > 10240 Then
@@ -495,6 +540,7 @@ CBcheck:
         'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
         '
         'beta不显示横幅
+        'beta横幅借用显示eos提示去了
         Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
         If Beta = "EOS" Then
             Panel1.Visible = False
