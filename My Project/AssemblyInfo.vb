@@ -9,12 +9,12 @@ Imports System.Runtime.InteropServices
 
 '查看程序集特性的值
 
-<Assembly: AssemblyTitle("WFL Tool")>
+<Assembly: AssemblyTitle("WFL Tool for EOS OS")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("© 2026 董博涛")>
 <Assembly: AssemblyProduct("电脑功能启动器 (x64)")>
 <Assembly: AssemblyCopyright("版权所有 © 2026 董博涛 保留所有权利.")>
-<Assembly: AssemblyTrademark("此版本是正式发行版本")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 

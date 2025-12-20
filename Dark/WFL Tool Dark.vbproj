@@ -15,9 +15,9 @@
     <Copyright>版权所有 © 2026 董博涛 保留所有权利.</Copyright>
     <Company>© 2026 董博涛</Company>
     <Product>电脑功能启动器 (x64)</Product>
-    <Title>WFL Tool Without Dark Theme</Title>
-    <AssemblyTitle>WFL Tool Without Dark Theme</AssemblyTitle>
-    <Description>WFL Tool Without Dark Theme</Description>
+    <Title>WFL Tool</Title>
+    <AssemblyTitle>WFL Tool</AssemblyTitle>
+    <Description>WFL Tool</Description>
     <Version>14.4.9168.9</Version>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <NeutralLanguage>zh-Hans-HK</NeutralLanguage>
