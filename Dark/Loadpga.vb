@@ -7,14 +7,14 @@
             '判断兼容性，拒绝在非x64版本运行
         End If
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 16299 Then              '检查版本控制应用启动
-            MsgBox("WFL Tool 仅支持 Windows 10 1709 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", 0, "WFL Tool without Dark Theme")
+        If CurrentBuild < 10240 Then              '检查版本控制应用启动
+            MsgBox("WFL Tool 仅支持 Windows 10 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", 0, "WFL Tool without Dark Theme")
             End
             '拒绝在比Windows 8.1更低版本系统的X64版本上运行
         End If
         On Error GoTo 1
         Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
-        If CurrentBuild < 9600 Then              '检查版本控制应用启动
+        If CurrentBuild < 19041 Then              '检查版本控制应用启动颜色
             Application.SetColorMode(SystemColorMode.Classic)
         Else
             If NColor = "White" Then

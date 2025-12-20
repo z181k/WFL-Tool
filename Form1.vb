@@ -513,10 +513,8 @@ CBcheck:
             End If
         End If
         '
-        If CurrentBuild < 16299 Then
-            Panel1.Visible = True   'eos提示
-        End If
         If CurrentBuild > 10240 Then
+            Panel1.Visible = False   'eos提示
             离线更新下载ToolStripMenuItem.Text = “Windows 更新日志及离线更新包”
         End If
         If CurrentBuild < 18362 Then              '检查版本控制UWP应用和电池健康显示

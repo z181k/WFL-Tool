@@ -1359,7 +1359,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(720, 55)
         Me.Panel1.TabIndex = 55
-        Me.Panel1.Visible = False
         '
         'LinkLabel1
         '
