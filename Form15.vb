@@ -23,7 +23,7 @@ legacy:
             Shell("cmd.exe /c start ms-settings:startupapps", AppWinStyle.Hide, False, -1)
         Else                                'win8-10打开任务管理器启动选项卡
             Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
-            CreateObject("shell.application").shellexecute(SystemRoot + "\system32\taskmgr.exe", "/Startup", "", "", 1)
+            CreateObject("shell.application").shellexecute(SystemRoot + "\system32\taskmgr.exe", "/7 /Startup", "", "", 1)
         End If
         Close()
     End Sub

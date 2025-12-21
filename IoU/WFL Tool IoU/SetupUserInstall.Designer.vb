@@ -22,7 +22,6 @@ Partial Class SetupUserInstall
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SetupUserInstall))
         Me.PB1 = New System.Windows.Forms.ProgressBar()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -30,7 +29,7 @@ Partial Class SetupUserInstall
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +49,7 @@ Partial Class SetupUserInstall
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("微软雅黑", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(55, 240)
+        Me.Label3.Location = New System.Drawing.Point(57, 236)
         Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(159, 24)
@@ -63,7 +62,7 @@ Partial Class SetupUserInstall
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(72, 354)
+        Me.Label4.Location = New System.Drawing.Point(73, 350)
         Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(127, 36)
@@ -75,7 +74,7 @@ Partial Class SetupUserInstall
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("微软雅黑", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label7.Location = New System.Drawing.Point(55, 240)
+        Me.Label7.Location = New System.Drawing.Point(57, 236)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(159, 24)
@@ -86,7 +85,7 @@ Partial Class SetupUserInstall
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("微软雅黑", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label8.Location = New System.Drawing.Point(44, 196)
+        Me.Label8.Location = New System.Drawing.Point(46, 192)
         Me.Label8.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(176, 46)
@@ -111,7 +110,7 @@ Partial Class SetupUserInstall
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.WFL_Tool_IoU.My.Resources.Resources.logo256
-        Me.PictureBox2.Location = New System.Drawing.Point(79, 80)
+        Me.PictureBox2.Location = New System.Drawing.Point(81, 77)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(117, 112)

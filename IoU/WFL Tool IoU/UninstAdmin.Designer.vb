@@ -22,7 +22,6 @@ Partial Class UninstAdmin
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UninstAdmin))
         Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -34,14 +33,14 @@ Partial Class UninstAdmin
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button2.Location = New System.Drawing.Point(441, 190)
+        Me.Button2.Location = New System.Drawing.Point(444, 187)
         Me.Button2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(227, 72)
@@ -53,7 +52,7 @@ Partial Class UninstAdmin
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(439, 293)
+        Me.CheckBox1.Location = New System.Drawing.Point(442, 290)
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(227, 32)
@@ -65,7 +64,7 @@ Partial Class UninstAdmin
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label2.Location = New System.Drawing.Point(384, 379)
+        Me.Label2.Location = New System.Drawing.Point(387, 376)
         Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(323, 36)
@@ -75,7 +74,7 @@ Partial Class UninstAdmin
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(441, 190)
+        Me.Button1.Location = New System.Drawing.Point(444, 187)
         Me.Button1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(227, 72)
@@ -88,7 +87,7 @@ Partial Class UninstAdmin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(289, 75)
+        Me.Label1.Location = New System.Drawing.Point(292, 72)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(532, 45)
@@ -100,7 +99,7 @@ Partial Class UninstAdmin
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("微软雅黑", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(52, 243)
+        Me.Label3.Location = New System.Drawing.Point(57, 236)
         Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(159, 24)
@@ -113,7 +112,7 @@ Partial Class UninstAdmin
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(69, 357)
+        Me.Label4.Location = New System.Drawing.Point(74, 350)
         Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(127, 36)
@@ -125,7 +124,7 @@ Partial Class UninstAdmin
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("微软雅黑", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label7.Location = New System.Drawing.Point(52, 243)
+        Me.Label7.Location = New System.Drawing.Point(57, 236)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(159, 24)
@@ -136,7 +135,7 @@ Partial Class UninstAdmin
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("微软雅黑", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label8.Location = New System.Drawing.Point(41, 199)
+        Me.Label8.Location = New System.Drawing.Point(46, 192)
         Me.Label8.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(176, 46)
@@ -146,7 +145,7 @@ Partial Class UninstAdmin
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.WFL_Tool_IoU.My.Resources.Resources.logo256
-        Me.PictureBox2.Location = New System.Drawing.Point(76, 83)
+        Me.PictureBox2.Location = New System.Drawing.Point(81, 77)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(117, 112)

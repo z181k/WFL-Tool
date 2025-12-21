@@ -15,15 +15,12 @@ legacy:
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild < 9200 Then         'Windows7及更低版本打开msconfig
-            MsgBox("请在打开的窗口选择启动选项卡。")
-            Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
-            CreateObject("shell.application").shellexecute(SystemRoot + "\system32\msconfig.exe", "", "", "", 1)
-        ElseIf CurrentBuild >= 22621 Then    'win11打开设置app的该页
+        'Windows7及更低版本此版本不管
+        If CurrentBuild >= 22621 Then    'win11打开设置app的该页
             Shell("cmd.exe /c start ms-settings:startupapps", AppWinStyle.Hide, False, -1)
         Else                                'win8-10打开任务管理器启动选项卡
             Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
-            CreateObject("shell.application").shellexecute(SystemRoot + "\system32\taskmgr.exe", "/Startup", "", "", 1)
+            CreateObject("shell.application").shellexecute(SystemRoot + "\system32\taskmgr.exe", "/7 /Startup", "", "", 1)
         End If
         Close()
     End Sub
