@@ -25,10 +25,10 @@
                 Application.SetColorMode(SystemColorMode.System)
             End If
         End If
+1:
         Dim NF1 As New Form1()
         NF1.Show()
         Close()
-1:
     End Sub
 
     Private Sub Loadpga_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint

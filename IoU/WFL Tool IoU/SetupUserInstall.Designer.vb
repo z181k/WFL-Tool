@@ -22,6 +22,7 @@ Partial Class SetupUserInstall
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SetupUserInstall))
         Me.PB1 = New System.Windows.Forms.ProgressBar()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -29,7 +30,7 @@ Partial Class SetupUserInstall
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()

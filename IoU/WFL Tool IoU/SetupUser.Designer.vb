@@ -22,6 +22,7 @@ Partial Class SetupUser
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SetupUser))
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -33,7 +34,7 @@ Partial Class SetupUser
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.关于WFLTool安装程序ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
