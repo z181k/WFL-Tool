@@ -230,6 +230,7 @@ Partial Class SetupUser
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.MaximizeBox = False
         Me.Name = "SetupUser"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "WFL Tool (x64) 安装程序"
         Me.ContextMenuStrip1.ResumeLayout(False)

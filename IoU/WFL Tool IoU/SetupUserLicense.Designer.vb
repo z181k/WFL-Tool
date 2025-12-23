@@ -184,6 +184,7 @@ Partial Class SetupUserLicense
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.MaximizeBox = False
         Me.Name = "SetupUserLicense"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "WFL Tool (x64) 安装程序"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
