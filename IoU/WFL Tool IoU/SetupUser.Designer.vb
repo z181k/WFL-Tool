@@ -22,7 +22,6 @@ Partial Class SetupUser
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SetupUser))
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -34,12 +33,9 @@ Partial Class SetupUser
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.关于WFLTool安装程序ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -159,19 +155,6 @@ Partial Class SetupUser
         Me.Label1.TabIndex = 44
         Me.Label1.Text = "不想安装？你还可以"
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(28, 28)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.关于WFLTool安装程序ToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(316, 38)
-        '
-        '关于WFLTool安装程序ToolStripMenuItem
-        '
-        Me.关于WFLTool安装程序ToolStripMenuItem.Name = "关于WFLTool安装程序ToolStripMenuItem"
-        Me.关于WFLTool安装程序ToolStripMenuItem.Size = New System.Drawing.Size(315, 34)
-        Me.关于WFLTool安装程序ToolStripMenuItem.Text = "关于 WFL Tool 安装程序"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -212,7 +195,6 @@ Partial Class SetupUser
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(862, 490)
-        Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LinkLabel5)
@@ -233,7 +215,6 @@ Partial Class SetupUser
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "WFL Tool (x64) 安装程序"
-        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -250,8 +231,6 @@ Partial Class SetupUser
     Friend WithEvents Label8 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents 关于WFLTool安装程序ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents Label6 As Label
 End Class

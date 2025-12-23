@@ -148,7 +148,9 @@
     <Compile Include="SetupUser.designer.vb">
       <DependentUpon>SetupUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="SetupUser.vb" />
+    <Compile Include="SetupUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SetupUserLicense.vb">
       <SubType>Form</SubType>
     </Compile>
