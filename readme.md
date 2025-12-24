@@ -19,7 +19,7 @@ WFL Tool 是一款针对 Windows 系统的工具软件，可以快速打开及�
 
 ##### 已停止支持的系统及其最后一个版本
 
-* Windows Vista、Windows 7、Windows 8、Windows 8.1：[v14.4](https://github.com/z181k/WFL-Tool/releases/tag/14.4)
+* Windows Vista、Windows 7、Windows 8、Windows 8.1：[v14.5](https://github.com/z181k/WFL-Tool/releases/tag/14.5)
 * Windows XP 及 所有 x86 系统：[v9.20](https://github.com/z181k/WFL-Tool/releases/tag/9.20)
 
 ###### 不支持所有Arm架构的Windows
@@ -28,7 +28,7 @@ WFL Tool 是一款针对 Windows 系统的工具软件，可以快速打开及�
 
 ### 其他下载通道
 
-###### [蓝奏云](https://z181k.lanzoub.com/s/WFL-Tool)			[OneDrive 世纪互联](https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL)
+###### [OneDrive 世纪互联](https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL)
 
 
 
@@ -96,4 +96,6 @@ WFL Tool 是一款针对 Windows 系统的工具软件，可以快速打开及�
 ##### 版权信息
 
 © 2025 董博涛. 保留所有权利。
+
+
 
