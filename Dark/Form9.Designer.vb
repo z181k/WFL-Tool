@@ -46,8 +46,13 @@ Partial Class Form9
         PictureBox1 = New PictureBox()
         LinkLabel10 = New LinkLabel()
         FeatureControlLabel1 = New Label()
+        ContextMenuStrip2 = New ContextMenuStrip(components)
+        检查更新ToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem2 = New ToolStripSeparator()
+        应急下载链接ToolStripMenuItem = New ToolStripMenuItem()
         ContextMenuStrip1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        ContextMenuStrip2.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -189,6 +194,7 @@ Partial Class Form9
         ' 
         LinkLabel6.ActiveLinkColor = Color.DarkRed
         LinkLabel6.AutoSize = True
+        LinkLabel6.ContextMenuStrip = ContextMenuStrip2
         LinkLabel6.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel6.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel6.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
@@ -321,6 +327,31 @@ Partial Class Form9
         FeatureControlLabel1.Text = "disable"
         FeatureControlLabel1.Visible = False
         ' 
+        ' ContextMenuStrip2
+        ' 
+        ContextMenuStrip2.ImageScalingSize = New Size(28, 28)
+        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {检查更新ToolStripMenuItem, ToolStripMenuItem2, 应急下载链接ToolStripMenuItem})
+        ContextMenuStrip2.Name = "ContextMenuStrip2"
+        ContextMenuStrip2.Size = New Size(271, 116)
+        ' 
+        ' 检查更新ToolStripMenuItem
+        ' 
+        检查更新ToolStripMenuItem.Font = New Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        检查更新ToolStripMenuItem.Name = "检查更新ToolStripMenuItem"
+        检查更新ToolStripMenuItem.Size = New Size(270, 34)
+        检查更新ToolStripMenuItem.Text = "检查更新"
+        ' 
+        ' ToolStripMenuItem2
+        ' 
+        ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        ToolStripMenuItem2.Size = New Size(267, 6)
+        ' 
+        ' 应急下载链接ToolStripMenuItem
+        ' 
+        应急下载链接ToolStripMenuItem.Name = "应急下载链接ToolStripMenuItem"
+        应急下载链接ToolStripMenuItem.Size = New Size(270, 34)
+        应急下载链接ToolStripMenuItem.Text = "应急下载链接"
+        ' 
         ' Form9
         ' 
         AutoScaleDimensions = New SizeF(11F, 21F)
@@ -357,6 +388,7 @@ Partial Class Form9
         Text = "关于 WFL Tool  -  我诞生 5 周年啦！"
         ContextMenuStrip1.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        ContextMenuStrip2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
 
@@ -384,4 +416,8 @@ Partial Class Form9
     Friend WithEvents Label6 As Label
     Friend WithEvents LinkLabel10 As LinkLabel
     Friend WithEvents FeatureControlLabel1 As Label
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents 检查更新ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
+    Friend WithEvents 应急下载链接ToolStripMenuItem As ToolStripMenuItem
 End Class

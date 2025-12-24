@@ -28,7 +28,7 @@ WFL Tool 是一款针对 Windows 系统的工具软件，可以快速打开及�
 
 ### 其他下载通道
 
-###### [蓝奏云](https://dbtpan.lanzoub.com/b0205vf6f)			[OneDrive 世纪互联](https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL)
+###### [蓝奏云](https://z181k.lanzoub.com/s/WFL-Tool)			[OneDrive 世纪互联](https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL)
 
 
 
@@ -96,5 +96,4 @@ WFL Tool 是一款针对 Windows 系统的工具软件，可以快速打开及�
 ##### 版权信息
 
 © 2025 董博涛. 保留所有权利。
-
 
