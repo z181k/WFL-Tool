@@ -199,29 +199,10 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
         Shell("explorer.exe shell:::{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}", AppWinStyle.NormalFocus, False, -1)
     End Sub
 
-    Private Sub 更新有关帮助ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 更新有关帮助ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
-        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
-            GoTo legacy
-        End If
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""更新 Windows 的帮助 - Microsoft 帮助与支持中心"" /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShowIcon /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d https://support.microsoft.com/zh-cn/windows/%E6%9B%B4%E6%96%B0-windows-3c5ae7fc-9fb6-9af1-1984-b5e0412c556a /f", AppWinStyle.Hide, True, -1)
-        Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
-        Exit Sub
-legacy:
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
-        'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
-        Shell("hh.exe http://support.microsoft.com/zh-cn/windows/%E6%9B%B4%E6%96%B0-windows-3c5ae7fc-9fb6-9af1-1984-b5e0412c556a", AppWinStyle.NormalFocus, False, -1)
-    End Sub
-
     Private Sub 查看系统位数ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 查看系统位数ToolStripMenuItem.Click
         'MsgBox("在弹出窗口中找到系统类型，后面就是系统和cpu位数。x86 是 x86 平台的 32 位，x64 (全称 x86_64 或 AMD 64)是 x86 平台的 64 位。注：x86 既代表了 x86 CPU 架构集，也代表了 x86 CPU 架构集中的 32 位架构", MsgBoxStyle.OkOnly, "系统位数与架构")
         Shell("explorer.exe shell:::{BB06C0E4-D293-4F75-8A90-CB05B6477EEE}", AppWinStyle.NormalFocus, False, -1)
     End Sub
-
 
     Private Sub 相机ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 相机ToolStripMenuItem.Click
         Shell("cmd.exe /c start Microsoft.windows.camera:5", AppWinStyle.Hide, True, -1)

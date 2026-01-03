@@ -44,6 +44,7 @@ Partial Class EWV2webpage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1851, 1157)
         Me.Controls.Add(Me.WebView21)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
