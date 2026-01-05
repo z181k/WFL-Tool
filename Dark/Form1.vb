@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.InteropServices
+﻿Imports System.ComponentModel
+Imports System.Runtime.InteropServices
 
 Public Class Form1
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -866,6 +867,20 @@ legacy2:
     Private Sub 运行ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 运行ToolStripMenuItem.Click
         '调用运行函数
         RunFileDialog.ShowRunDialog(Me, "", "运行  -  WFL Tool", "WFL Tool 将根据你所输入的名称,为你打开相应的程序、文件夹、文档、Internet 资源以及 Intranet 资源。")
+    End Sub
+
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        '——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+        '该部分代码代码存在 DeepSeek 生成内容
+        '——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+        ' 遍历所有打开的窗体
+        For Each form As Form In Application.OpenForms
+            ' 检查是否为Form13实例
+            If TypeOf form Is Form13 Then
+                Form13.NotifyIcon1.ShowBalloonTip(5000, "WFL Tool 未完全退出", "你配置了在通知区域显示图标，关闭主界面时不会退出 WFL Tool，如需退出，请在通知区域图标上操作。", ToolTipIcon.Info)
+                Exit For
+            End If
+        Next
     End Sub
 End Class
 
