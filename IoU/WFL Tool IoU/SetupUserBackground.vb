@@ -33,7 +33,7 @@
         End If
         '-------------分割线--------------
         SetupUserInstall.PB1.Value = 10
-        Shell("cmd.EXE /c copy pga.bin ""%localappdata%\WFL Tool\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c Xcopy.EXE EWV2viewer ""%localappdata%\WFL Tool\EWV2viewer\"" /Y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c md ""%localappdata%\WFL Tool\EWV2viewer\runtimes\win-x64\native""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\wv2l.bin ""%localappdata%\WFL Tool\EWV2viewer\runtimes\win-x64\native\WebView2Loader.dll"" /y", AppWinStyle.Hide, True, -1)
@@ -48,7 +48,6 @@
         Shell("cmd.EXE /c copy 3RDparty\arb.bin ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\amb.bin ""%localappdata%\WFL Tool\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\mbp.bin ""%localappdata%\WFL Tool\MessageBox.exe"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy udl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
         Shell("cmd.EXE /c copy HtmlPages\iwpt.bin ""%localappdata%\WFL Tool\EWV2viewer\iwpt.html"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c Xcopy.EXE HtmlPages\iwpt_files ""%localappdata%\WFL Tool\EWV2viewer\iwpt_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
@@ -77,13 +76,9 @@
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v Publisher /T REG_SZ /d ""(c) 2021-2026 董博涛"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v InstallLocation /T REG_SZ /d ""%localappdata%\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
         Dim dpf As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", True).GetValue("Desktop", "%homedrive%%homepath%\desktop")
-        Shell("cmd.EXE /c copy udl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
-        If CurrentBuild >= 9600 Then              '检查版本配置.net10应用图标
-            Shell("cmd.EXE /c del """ + dpf + "\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
-            Shell("cmd.EXE /c del ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk""", AppWinStyle.Hide, True, -1)
-            Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
-            Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
-        End If
+        '配置.net10应用图标
+        Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 100
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 4 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.Label1.Text = "安装完成"

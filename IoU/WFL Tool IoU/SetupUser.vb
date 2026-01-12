@@ -1,6 +1,6 @@
 ﻿Public Class SetupUser
     Private Sub LinkLabel5_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel5.LinkClicked
-        Shell("cmd.EXE /c copy pga.bin ""%homedrive%%homepath%\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy DotNet10Pga\npga.bin ""%homedrive%%homepath%\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c start explorer.exe /select,""%homedrive%%homepath%\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
     End Sub
 

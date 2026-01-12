@@ -39,7 +39,7 @@ Partial Class SetupAdmin
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SetupAdmin"
-        Me.Text = "SetupAdmin"
+        Me.Text = " "
         Me.TransparencyKey = System.Drawing.SystemColors.Control
         Me.ResumeLayout(False)
 

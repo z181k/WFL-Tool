@@ -477,17 +477,6 @@ openreg:
         Exit Sub
     End Sub
 
-    Private Sub Button19_MouseClick(sender As Object, e As MouseEventArgs) Handles Button19.MouseClick
-        'If e.Button = MouseButtons.Right Then
-        'Dim OF2 As New Form2()
-        'OF2.Show()                              ‘废弃的查看更多右键菜单代码
-        'Else
-        Dim OF2 As New Form2()
-        OF2.Show()                               '打开查看更多（关闭式）
-        Close()
-        'End If
-    End Sub
-
     Private Sub 打开窗口不关闭原窗口ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开窗口不关闭原窗口MoreToolStripMenuItem.Click
         Dim OF2 As New Form2()
         OF2.Show()                             '查看更多右键菜单1
@@ -881,6 +870,11 @@ legacy2:
                 Exit For
             End If
         Next
+    End Sub
+
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+        Form2.Show()                               '打开查看更多（关闭式）
+        Close()
     End Sub
 End Class
 

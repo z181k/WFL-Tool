@@ -4,7 +4,7 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo As String = "RTM 版本(9472.1):" & vbCrLf & vbCrLf & "-新的：" & vbCrLf & "1.文件菜单布局优化" & vbCrLf & "2.添加在已打开通知区域图标时关闭主界面的提示" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
+        Dim upginfo As String = "RTM 版本(9472.1):" & vbCrLf & vbCrLf & "-新的：" & vbCrLf & "1.文件菜单布局优化" & vbCrLf & "2.添加在已打开通知区域图标时关闭主界面的提示" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "解决纯键盘操作模式下查看更多无法打开问题" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         ''   此处放启用后日志

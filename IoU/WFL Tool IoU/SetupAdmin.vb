@@ -35,7 +35,7 @@ Errorchk:
         End If
         '-------------分割线--------------
         SetupUserInstall.PB1.Value = 20
-        Shell("cmd.EXE /c copy pga.bin ""%programfiles%\WFL Tool\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c copy DotNet10Pga\npga.bin ""%programfiles%\WFL Tool\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy aiu.bin ""%programfiles%\WFL Tool\uninstall.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe delete ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /f", AppWinStyle.Hide, True, -1)
         '上面那条是删除build8320的安装信息

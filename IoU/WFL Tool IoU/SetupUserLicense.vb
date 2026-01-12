@@ -10,6 +10,12 @@
             End
             '判断架构兼容性
         End If
+        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild < 10240 Then              '检查版本控制应用启动
+            MsgBox("WFL Tool 仅支持 Windows 10 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", 0, "WFL Tool without Dark Theme")
+            End
+            '拒绝在比Windows 8.1更低版本系统的X64版本上运行
+        End If
 
         On Error GoTo jump               '企业自动化安装
         Dim EAI As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseAutoInstall", Nothing)
