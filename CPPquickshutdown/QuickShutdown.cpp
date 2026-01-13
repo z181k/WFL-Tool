@@ -88,7 +88,7 @@ int main() {
 	);*/
 	AdjustPrivilege(SE_SHUTDOWN_NAME, TRUE);
 	HHOOK hook = SetWindowsHookEx(WH_CALLWNDPROCRET, messageBoxHookButton, 0, GetCurrentThreadId());
-	int opt = MessageBoxW(NULL, L"请选择您要执行的操作，请注意保存您的文件，因关机造成的文件丢失我们概不负责。", L"WFL Tool", MB_ICONINFORMATION | MB_TOPMOST | MB_ABORTRETRYIGNORE);
+	int opt = MessageBoxW(NULL, L"请选择您要执行的操作，请注意保存您的文件，因关机造成的文件丢失我们概不负责。", L"WFL Tool", /*MB_ICONINFORMATION |*/ MB_TOPMOST | MB_ABORTRETRYIGNORE);
 	UnhookWindowsHookEx(hook);
 	HMODULE hDll = GetModuleHandleA("NtDll.dll");
 

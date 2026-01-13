@@ -876,6 +876,28 @@ legacy2:
         Form2.Show()                               '打开查看更多（关闭式）
         Close()
     End Sub
+
+    Private Sub 下载新版本WFLToolTSMI_Click(sender As Object, e As EventArgs) Handles 下载新版本WFLToolTSMI.Click
+        On Error GoTo legacy
+        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+            GoTo legacy
+        End If
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""下载新版本 WFL Tool - 请手动下载完整最新版安装包 - WFL Tool 下载中心  (无法访问请到关于页面右击检查更新链接选择应急链接重试)"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL /f", AppWinStyle.Hide, True, -1)      'onedrive链接，方便下载
+        Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
+        Exit Sub
+legacy:
+        Dim NF4 As New Form4()
+        NF4.Show()
+        NF4.Text = "下载新版本 WFL Tool - 无法访问请到关于页面右击检查更新链接选择应急链接重试 - WFL Tool"                 'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
+        NF4.MaximizeBox = True
+        NF4.WebBrowser1.Url = New Uri("https://z181k.lanzoui.com/s/WFL-Tool")            '使用了方便分发的定制链接，vip到期就失效
+        NF4.MaximumSize = New Size(0, 0)
+        NF4.MinimumSize = New Size(0, 0)
+        NF4.WebBrowser1.ScriptErrorsSuppressed = True
+    End Sub
 End Class
 
 
