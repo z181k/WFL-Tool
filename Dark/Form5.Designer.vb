@@ -56,9 +56,24 @@ Partial Class Form5
         MenuStrip1 = New MenuStrip()
         快捷键返回BToolStripMenuItem = New ToolStripMenuItem()
         ToolTip1 = New ToolTip(components)
+        Button18 = New Button()
+        ContextMenuStrip3 = New ContextMenuStrip(components)
+        Conhost打开CmdToolStripMenuItem = New ToolStripMenuItem()
+        Conhost打开PowershellToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem1 = New ToolStripSeparator()
+        Conhost执行自定义命令ToolStripMenuItem = New ToolStripMenuItem()
+        ContextMenuStrip4 = New ContextMenuStrip(components)
+        打开终端ToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem2 = New ToolStripSeparator()
+        使用终端打开CmdToolStripMenuItem = New ToolStripMenuItem()
+        使用终端打开PowershellToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem3 = New ToolStripSeparator()
+        在终端执行自定义命令ToolStripMenuItem = New ToolStripMenuItem()
         GroupBox1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         MenuStrip1.SuspendLayout()
+        ContextMenuStrip3.SuspendLayout()
+        ContextMenuStrip4.SuspendLayout()
         SuspendLayout()
         ' 
         ' Button1
@@ -237,7 +252,7 @@ Partial Class Form5
         Button14.Margin = New Padding(6, 5, 6, 5)
         Button14.Name = "Button14"
         Button14.Size = New Size(422, 61)
-        Button14.TabIndex = 16
+        Button14.TabIndex = 17
         Button14.Text = "扫描和传真 (Win11 需要自行下载)"
         Button14.UseVisualStyleBackColor = True
         ' 
@@ -263,7 +278,7 @@ Partial Class Form5
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(6, 5, 6, 5)
         GroupBox1.Size = New Size(88, 485)
-        GroupBox1.TabIndex = 18
+        GroupBox1.TabIndex = 20
         GroupBox1.TabStop = False
         GroupBox1.Text = "辅助功能"
         ' 
@@ -295,9 +310,9 @@ Partial Class Form5
         Button12.Location = New Point(22, 396)
         Button12.Margin = New Padding(6, 5, 6, 5)
         Button12.Name = "Button12"
-        Button12.Size = New Size(205, 133)
+        Button12.Size = New Size(205, 61)
         Button12.TabIndex = 11
-        Button12.Text = "conhost 命令行 (仅 Win11将终端设置默认有效)"
+        Button12.Text = "conhost 命令行"
         Button12.UseVisualStyleBackColor = True
         ' 
         ' 返回主界面ToolStripMenuItem
@@ -396,6 +411,90 @@ Partial Class Form5
         快捷键返回BToolStripMenuItem.Size = New Size(94, 21)
         快捷键返回BToolStripMenuItem.Text = "快捷键返回&B"
         ' 
+        ' Button18
+        ' 
+        Button18.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Button18.Location = New Point(22, 467)
+        Button18.Name = "Button18"
+        Button18.Size = New Size(205, 61)
+        Button18.TabIndex = 16
+        Button18.Text = "新 终端"
+        ToolTip1.SetToolTip(Button18, "此功能默认自带，卸载后需从 Microsoft Store 重新安装")
+        Button18.UseVisualStyleBackColor = True
+        ' 
+        ' ContextMenuStrip3
+        ' 
+        ContextMenuStrip3.ImageScalingSize = New Size(28, 28)
+        ContextMenuStrip3.Items.AddRange(New ToolStripItem() {Conhost打开CmdToolStripMenuItem, Conhost打开PowershellToolStripMenuItem, ToolStripMenuItem1, Conhost执行自定义命令ToolStripMenuItem})
+        ContextMenuStrip3.Name = "ContextMenuStrip3"
+        ContextMenuStrip3.Size = New Size(333, 112)
+        ' 
+        ' Conhost打开CmdToolStripMenuItem
+        ' 
+        Conhost打开CmdToolStripMenuItem.Font = New Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Conhost打开CmdToolStripMenuItem.Name = "Conhost打开CmdToolStripMenuItem"
+        Conhost打开CmdToolStripMenuItem.Size = New Size(332, 34)
+        Conhost打开CmdToolStripMenuItem.Text = "Conhost 打开 cmd"
+        ' 
+        ' Conhost打开PowershellToolStripMenuItem
+        ' 
+        Conhost打开PowershellToolStripMenuItem.Name = "Conhost打开PowershellToolStripMenuItem"
+        Conhost打开PowershellToolStripMenuItem.Size = New Size(332, 34)
+        Conhost打开PowershellToolStripMenuItem.Text = "Conhost 打开 Powershell"
+        ' 
+        ' ToolStripMenuItem1
+        ' 
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        ToolStripMenuItem1.Size = New Size(329, 6)
+        ' 
+        ' Conhost执行自定义命令ToolStripMenuItem
+        ' 
+        Conhost执行自定义命令ToolStripMenuItem.Name = "Conhost执行自定义命令ToolStripMenuItem"
+        Conhost执行自定义命令ToolStripMenuItem.Size = New Size(332, 34)
+        Conhost执行自定义命令ToolStripMenuItem.Text = "Conhost 执行自定义命令"
+        ' 
+        ' ContextMenuStrip4
+        ' 
+        ContextMenuStrip4.ImageScalingSize = New Size(28, 28)
+        ContextMenuStrip4.Items.AddRange(New ToolStripItem() {打开终端ToolStripMenuItem, ToolStripMenuItem2, 使用终端打开CmdToolStripMenuItem, 使用终端打开PowershellToolStripMenuItem, ToolStripMenuItem3, 在终端执行自定义命令ToolStripMenuItem})
+        ContextMenuStrip4.Name = "ContextMenuStrip4"
+        ContextMenuStrip4.Size = New Size(339, 190)
+        ' 
+        ' 打开终端ToolStripMenuItem
+        ' 
+        打开终端ToolStripMenuItem.Font = New Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        打开终端ToolStripMenuItem.Name = "打开终端ToolStripMenuItem"
+        打开终端ToolStripMenuItem.Size = New Size(338, 34)
+        打开终端ToolStripMenuItem.Text = "打开 终端"
+        ' 
+        ' ToolStripMenuItem2
+        ' 
+        ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        ToolStripMenuItem2.Size = New Size(335, 6)
+        ' 
+        ' 使用终端打开CmdToolStripMenuItem
+        ' 
+        使用终端打开CmdToolStripMenuItem.Name = "使用终端打开CmdToolStripMenuItem"
+        使用终端打开CmdToolStripMenuItem.Size = New Size(338, 34)
+        使用终端打开CmdToolStripMenuItem.Text = "使用 终端 打开 cmd"
+        ' 
+        ' 使用终端打开PowershellToolStripMenuItem
+        ' 
+        使用终端打开PowershellToolStripMenuItem.Name = "使用终端打开PowershellToolStripMenuItem"
+        使用终端打开PowershellToolStripMenuItem.Size = New Size(338, 34)
+        使用终端打开PowershellToolStripMenuItem.Text = "使用 终端 打开 powershell"
+        ' 
+        ' ToolStripMenuItem3
+        ' 
+        ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        ToolStripMenuItem3.Size = New Size(335, 6)
+        ' 
+        ' 在终端执行自定义命令ToolStripMenuItem
+        ' 
+        在终端执行自定义命令ToolStripMenuItem.Name = "在终端执行自定义命令ToolStripMenuItem"
+        在终端执行自定义命令ToolStripMenuItem.Size = New Size(338, 34)
+        在终端执行自定义命令ToolStripMenuItem.Text = "在 终端 执行自定义命令"
+        ' 
         ' Form5
         ' 
         AutoScaleDimensions = New SizeF(11F, 21F)
@@ -403,6 +502,7 @@ Partial Class Form5
         AutoSizeMode = AutoSizeMode.GrowAndShrink
         BackColor = SystemColors.Control
         ClientSize = New Size(785, 555)
+        Controls.Add(Button18)
         Controls.Add(Panel1)
         Controls.Add(MenuStrip1)
         Controls.Add(LinkLabel2)
@@ -437,6 +537,8 @@ Partial Class Form5
         ContextMenuStrip2.ResumeLayout(False)
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
+        ContextMenuStrip3.ResumeLayout(False)
+        ContextMenuStrip4.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
 
@@ -474,4 +576,17 @@ Partial Class Form5
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents 快捷键返回BToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
+    Friend WithEvents Conhost打开CmdToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Conhost打开PowershellToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Conhost执行自定义命令ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
+    Friend WithEvents Button18 As Button
+    Friend WithEvents ContextMenuStrip4 As ContextMenuStrip
+    Friend WithEvents 打开终端ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
+    Friend WithEvents 使用终端打开CmdToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents 使用终端打开PowershellToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
+    Friend WithEvents 在终端执行自定义命令ToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -82,6 +82,10 @@
             Button12.Enabled = False
             Button7.Text = "Windows Media Player"
             ToolTip1.Active = False
+            Button18.Enabled = False
+        Else
+            Button12.ContextMenuStrip = ContextMenuStrip3   'conhost右键
+            Button18.ContextMenuStrip = ContextMenuStrip4   '终端右键
         End If
         If CurrentBuild > 26020 Then
             Button6.Enabled = False              '检查版本控制写字板显示
@@ -112,5 +116,49 @@
     Private Sub 快捷键返回BToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 快捷键返回BToolStripMenuItem.Click
         Form1.Show()
         Close()
+    End Sub
+
+    Private Sub Conhost打开CmdToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Conhost打开CmdToolStripMenuItem.Click
+        Shell("conhost.exe", AppWinStyle.NormalFocus, False, -1)
+    End Sub
+
+    Private Sub Conhost打开PowershellToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Conhost打开PowershellToolStripMenuItem.Click
+        Shell("conhost.exe powershell", AppWinStyle.NormalFocus, False, -1)
+    End Sub
+
+    Private Sub Conhost执行自定义命令ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Conhost执行自定义命令ToolStripMenuItem.Click
+        Dim commandline As String
+        commandline = InputBox("输入要在 conhost 执行的命令", "在 Conhost 执行自定义命令 - WFL Tool")
+        If commandline = "" Then
+            '不执行任何命令
+        Else
+            Shell("conhost.exe " + commandline, AppWinStyle.NormalFocus, False, -1)
+        End If
+    End Sub
+
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+        Shell("conhost.exe wt.exe", AppWinStyle.NormalFocus, False, -1)
+    End Sub
+
+    Private Sub 打开终端ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开终端ToolStripMenuItem.Click
+        Shell("conhost.exe wt", AppWinStyle.NormalFocus, False, -1)
+    End Sub
+
+    Private Sub 使用终端打开CmdToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 使用终端打开CmdToolStripMenuItem.Click
+        Shell("conhost.exe wt cmd", AppWinStyle.NormalFocus, False, -1)
+    End Sub
+
+    Private Sub 使用终端打开PowershellToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 使用终端打开PowershellToolStripMenuItem.Click
+        Shell("conhost.exe wt powershell", AppWinStyle.NormalFocus, False, -1)
+    End Sub
+
+    Private Sub 在终端执行自定义命令ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 在终端执行自定义命令ToolStripMenuItem.Click
+        Dim commandline As String
+        commandline = InputBox("输入要在 终端 执行的命令", "在 终端 执行自定义命令 - WFL Tool")
+        If commandline = "" Then
+            '不执行任何命令
+        Else
+            Shell("conhost.exe wt " + commandline, AppWinStyle.NormalFocus, False, -1)
+        End If
     End Sub
 End Class

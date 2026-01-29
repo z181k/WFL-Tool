@@ -127,10 +127,10 @@
     <Compile Include="SetupEnableFeatureUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UninstAdmin.Designer.vb">
-      <DependentUpon>UninstAdmin.vb</DependentUpon>
+    <Compile Include="SetupUserModify.Designer.vb">
+      <DependentUpon>SetupUserModify.vb</DependentUpon>
     </Compile>
-    <Compile Include="UninstAdmin.vb">
+    <Compile Include="SetupUserModify.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SetupAdmin.Designer.vb">
@@ -186,6 +186,12 @@
     <Compile Include="SetupUserBackground.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UninstAdmin.Designer.vb">
+      <DependentUpon>UninstAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UninstAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UninstUser.Designer.vb">
       <DependentUpon>UninstUser.vb</DependentUpon>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SetupUserBackground.resx">
       <DependentUpon>SetupUserBackground.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupUserModify.resx">
+      <DependentUpon>SetupUserModify.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UninstAdmin.resx">
       <DependentUpon>UninstAdmin.vb</DependentUpon>

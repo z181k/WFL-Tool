@@ -45,6 +45,7 @@
         Shell("cmd.EXE /c copy HtmlPages\5thc.bin ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate.html"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\pri.bin ""%localappdata%\WFL Tool\resources.pri"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 30
+        Shell("cmd.EXE /c copy 3RDparty\mu.bin ""%localappdata%\WFL Tool\DBTModernSetupUI-Modify.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\arb.bin ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\amb.bin ""%localappdata%\WFL Tool\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\mbp.bin ""%localappdata%\WFL Tool\MessageBox.exe"" /y", AppWinStyle.Hide, True, -1)
@@ -61,6 +62,7 @@
             CreateObject("shell.application").shellexecute("3RDparty\wari17x64.exe", "", "", "", 0)
         End If
         SetupUserInstall.PB1.Value = 60
+        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v EWV2viewerInsatll /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v PaintDesktopVersion /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayIcon /T REG_SZ /d ""%localappdata%\WFL Tool\WFLToolDark.exe"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) User"" /f", AppWinStyle.Hide, True, -1)
@@ -69,7 +71,7 @@
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v UninstallString /T REG_SZ /d ""%localappdata%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 80
-        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v NoModify /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v ModifyPath /T REG_SZ /d ""%localappdata%\WFL Tool\DBTModernSetupUI-Modify.exe"" /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v NoRepair /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
         Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v EstimatedSize /T REG_DWORD /d 133120 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 90
