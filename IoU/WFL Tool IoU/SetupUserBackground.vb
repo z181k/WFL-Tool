@@ -31,6 +31,18 @@
         ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
             TargetKill(0).Kill()
         End If
+        '下面是终止正在运行的wfltooldark相关代码
+        Dim TargetName2 As String = "WFLToolDark" '存储进程名为文本型，注：进程名不加扩展名
+        Dim TargetKill2() As Process = Process.GetProcessesByName(TargetName2) '从进程名获取进程
+        Dim TargetPath2 As String '存储进程路径为文本型
+        If TargetKill2.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
+            For i = 0 To TargetKill2.Length - 1
+                TargetPath2 = TargetKill2(i).MainModule.FileName
+                TargetKill2(i).Kill()
+            Next
+        ElseIf TargetKill2.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
+            TargetKill2(0).Kill()
+        End If
         '-------------分割线--------------
         SetupUserInstall.PB1.Value = 10
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
@@ -58,7 +70,11 @@
         SetupUserInstall.PB1.Value = 50
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild >= 17763 Then              '检查版本配置WinAppSdk项目
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 4 /f", AppWinStyle.Hide, True, -1)
+            Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+            If WinAppSdkUi <> "0" Then
+                Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+            End If
             CreateObject("shell.application").shellexecute("3RDparty\wari17x64.exe", "", "", "", 0)
         End If
         SetupUserInstall.PB1.Value = 60
@@ -82,7 +98,6 @@
         Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 100
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 4 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.Label1.Text = "安装完成"
         SetupUserInstall.ControlBox = True
         SetupUserInstall.Button1.Text = "关闭"

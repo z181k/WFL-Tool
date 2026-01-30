@@ -60,7 +60,7 @@ Partial Class Form9
         Label1.AutoSize = True
         Label1.ContextMenuStrip = ContextMenuStrip1
         Label1.Font = New Font("微软雅黑", 15F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label1.Location = New Point(40, 226)
+        Label1.Location = New Point(40, 206)
         Label1.Margin = New Padding(6, 0, 6, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(176, 46)
@@ -95,14 +95,14 @@ Partial Class Form9
         ' 
         Label2.AutoSize = True
         Label2.ContextMenuStrip = ContextMenuStrip1
-        Label2.Font = New Font("微软雅黑", 7.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Label2.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label2.ForeColor = SystemColors.ControlDark
-        Label2.Location = New Point(51, 270)
+        Label2.Location = New Point(47, 250)
         Label2.Margin = New Padding(6, 0, 6, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(159, 24)
+        Label2.Size = New Size(164, 24)
         Label2.TabIndex = 2
-        Label2.Text = "暗色模式 清晰护眼"
+        Label2.Text = "方便快捷  一点即达"
         ' 
         ' Label3
         ' 
@@ -110,7 +110,7 @@ Partial Class Form9
         Label3.ContextMenuStrip = ContextMenuStrip1
         Label3.Font = New Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label3.ForeColor = SystemColors.ControlDarkDark
-        Label3.Location = New Point(72, 327)
+        Label3.Location = New Point(72, 352)
         Label3.Margin = New Padding(6, 0, 6, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(122, 32)
@@ -123,7 +123,7 @@ Partial Class Form9
         Label4.ContextMenuStrip = ContextMenuStrip1
         Label4.Font = New Font("微软雅黑", 7.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label4.ForeColor = SystemColors.ControlDark
-        Label4.Location = New Point(73, 362)
+        Label4.Location = New Point(74, 388)
         Label4.Margin = New Padding(6, 0, 6, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(118, 24)
@@ -306,20 +306,20 @@ Partial Class Form9
         ' 
         Label6.AutoSize = True
         Label6.ContextMenuStrip = ContextMenuStrip1
-        Label6.Font = New Font("微软雅黑", 7.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Label6.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label6.ForeColor = SystemColors.ControlDark
-        Label6.Location = New Point(51, 270)
+        Label6.Location = New Point(47, 250)
         Label6.Margin = New Padding(6, 0, 6, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(159, 24)
+        Label6.Size = New Size(164, 24)
         Label6.TabIndex = 18
-        Label6.Text = "暗色模式 清晰护眼"
+        Label6.Text = "方便快捷  一点即达"
         Label6.Visible = False
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.logo256
-        PictureBox1.Location = New Point(75, 110)
+        PictureBox1.Location = New Point(75, 90)
         PictureBox1.Margin = New Padding(6, 5, 6, 5)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(117, 112)

@@ -25,7 +25,6 @@ Partial Class SetupUserInstall
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SetupUserInstall))
         Me.PB1 = New System.Windows.Forms.ProgressBar()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -38,25 +37,12 @@ Partial Class SetupUserInstall
         '
         'PB1
         '
-        Me.PB1.Location = New System.Drawing.Point(339, 215)
+        Me.PB1.Location = New System.Drawing.Point(314, 231)
         Me.PB1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.PB1.Name = "PB1"
-        Me.PB1.Size = New System.Drawing.Size(418, 52)
+        Me.PB1.Size = New System.Drawing.Size(479, 10)
         Me.PB1.TabIndex = 0
         Me.PB1.Value = 10
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("微软雅黑", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(57, 236)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(159, 24)
-        Me.Label3.TabIndex = 46
-        Me.Label3.Text = "你想要的 触手可及"
-        Me.Label3.Visible = False
         '
         'Label4
         '
@@ -73,14 +59,14 @@ Partial Class SetupUserInstall
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("微软雅黑", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 7.714286!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label7.Location = New System.Drawing.Point(57, 236)
+        Me.Label7.Location = New System.Drawing.Point(53, 236)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(159, 24)
+        Me.Label7.Size = New System.Drawing.Size(164, 24)
         Me.Label7.TabIndex = 43
-        Me.Label7.Text = "你想要的 触手可及"
+        Me.Label7.Text = "方便快捷  一点即达"
         '
         'Label8
         '
@@ -96,11 +82,11 @@ Partial Class SetupUserInstall
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("微软雅黑", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(447, 96)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 27.0!)
+        Me.Label1.Location = New System.Drawing.Point(413, 77)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(192, 56)
+        Me.Label1.Size = New System.Drawing.Size(287, 82)
         Me.Label1.TabIndex = 47
         Me.Label1.Text = "正在操作"
         '
@@ -123,7 +109,7 @@ Partial Class SetupUserInstall
         '
         Me.Button1.Enabled = False
         Me.Button1.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(424, 338)
+        Me.Button1.Location = New System.Drawing.Point(429, 338)
         Me.Button1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(257, 68)
@@ -140,7 +126,6 @@ Partial Class SetupUserInstall
         Me.ControlBox = False
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
@@ -159,7 +144,6 @@ Partial Class SetupUserInstall
     End Sub
 
     Friend WithEvents PB1 As ProgressBar
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label

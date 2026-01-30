@@ -25,7 +25,6 @@ Partial Class SetupUserModify
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SetupUserModify))
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -39,38 +38,26 @@ Partial Class SetupUserModify
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Enabled = False
         Me.CheckBox1.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(330, 166)
+        Me.CheckBox1.Location = New System.Drawing.Point(325, 168)
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(479, 88)
         Me.CheckBox1.TabIndex = 69
-        Me.CheckBox1.Text = "删除 Edge WebView2 渲染支持组件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(不会卸载计算机中的 Edge WebView2 运行库)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(删除后只有更新或重新安装本应用才能恢复)"
+        Me.CheckBox1.Text = "卸载 Edge WebView2 渲染支持组件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(不会卸载计算机中的 Edge WebView2 运行库)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(删除后只有更新或重新安装本应用才能恢复)"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(276, 36)
+        Me.Label1.Location = New System.Drawing.Point(271, 38)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(556, 90)
         Me.Label1.TabIndex = 66
-        Me.Label1.Text = "从为当前用户模式安装的 WFL Tool" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "中停用增强功能"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("微软雅黑", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(57, 236)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(159, 24)
-        Me.Label3.TabIndex = 65
-        Me.Label3.Text = "你想要的 触手可及"
-        Me.Label3.Visible = False
+        Me.Label1.Text = "从为当前用户模式安装的 WFL Tool" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "中停用或卸载扩展的增强体验功能"
         '
         'Label4
         '
@@ -87,14 +74,14 @@ Partial Class SetupUserModify
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("微软雅黑", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 7.714286!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label7.Location = New System.Drawing.Point(57, 236)
+        Me.Label7.Location = New System.Drawing.Point(53, 236)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(159, 24)
+        Me.Label7.Size = New System.Drawing.Size(164, 24)
         Me.Label7.TabIndex = 63
-        Me.Label7.Text = "你想要的 触手可及"
+        Me.Label7.Text = "方便快捷  一点即达"
         '
         'Label8
         '
@@ -121,19 +108,20 @@ Partial Class SetupUserModify
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Enabled = False
         Me.CheckBox2.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.CheckBox2.Location = New System.Drawing.Point(330, 268)
+        Me.CheckBox2.Location = New System.Drawing.Point(325, 270)
         Me.CheckBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(409, 88)
+        Me.CheckBox2.Size = New System.Drawing.Size(472, 88)
         Me.CheckBox2.TabIndex = 70
-        Me.CheckBox2.Text = "停用 WinAppSdk 组件提供的消息框" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(停用可以为老设备提供更快的运行速度)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(会影响应用内暗色模式显示效果)"
+        Me.CheckBox2.Text = "停用 WinAppSdk 组件提供的消息框" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(停用此功能可以为老设备提供更快的运行速度)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(停用后会影响应用内暗色模式显示效果)"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 10.71429!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(374, 386)
+        Me.Button1.Location = New System.Drawing.Point(369, 388)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(162, 61)
         Me.Button1.TabIndex = 72
@@ -143,7 +131,7 @@ Partial Class SetupUserModify
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 10.71429!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button2.Location = New System.Drawing.Point(578, 386)
+        Me.Button2.Location = New System.Drawing.Point(573, 388)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(162, 61)
         Me.Button2.TabIndex = 73
@@ -161,7 +149,6 @@ Partial Class SetupUserModify
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
@@ -179,7 +166,6 @@ Partial Class SetupUserModify
     End Sub
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
