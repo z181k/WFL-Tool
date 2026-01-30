@@ -56,9 +56,9 @@ Partial Class SetupUserLicense
         Me.Label5.Location = New System.Drawing.Point(77, 299)
         Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(115, 32)
+        Me.Label5.Size = New System.Drawing.Size(119, 35)
         Me.Label5.TabIndex = 38
-        Me.Label5.Text = "版本 15.2"
+        Me.Label5.Text = "版本 15.3"
         '
         'Label7
         '

@@ -120,6 +120,7 @@ Partial Class SetupUserModify
         '
         'Button1
         '
+        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 10.71429!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Button1.Location = New System.Drawing.Point(369, 388)
         Me.Button1.Name = "Button1"
@@ -140,9 +141,11 @@ Partial Class SetupUserModify
         '
         'SetupUserModify
         '
+        Me.AcceptButton = Me.Button2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.CancelButton = Me.Button1
         Me.ClientSize = New System.Drawing.Size(862, 490)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
