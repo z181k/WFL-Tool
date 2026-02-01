@@ -16,7 +16,7 @@ Public Class Form9
             Shell(InstallLocation + "\MessageBox.exe """ + upginfo + """ ""当前版本更新日志"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox(upginfo, 0, "当前版本更新日志")
+            MsgBox(upginfo, 0, "当前 Build 更新日志")
         End If
     End Sub
 
