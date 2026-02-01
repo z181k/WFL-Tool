@@ -412,7 +412,7 @@ starttask:
             暗色ToolStripMenuItem.Text = "暗色 (当前)"
             自动ToolStripMenuItem.Text = "跟随系统"
         Else
-            If CurrentBuild <= 19045 Then
+            If CurrentBuild < 22000 Then
                 亮色ToolStripMenuItem.Text = "亮色 (当前)"
                 自动ToolStripMenuItem.Text = "跟随系统"
             End If
