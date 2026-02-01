@@ -411,6 +411,11 @@ starttask:
         ElseIf NColor = "Dark" Then
             暗色ToolStripMenuItem.Text = "暗色 (当前)"
             自动ToolStripMenuItem.Text = "跟随系统"
+        Else
+            If CurrentBuild <= 19045 Then
+                亮色ToolStripMenuItem.Text = "亮色 (当前)"
+                自动ToolStripMenuItem.Text = "跟随系统"
+            End If
         End If
         Dim EnterpriseNotShow As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseNotShow", Nothing)
         If EnterpriseNotShow = 1 Then
@@ -810,20 +815,6 @@ legacy:
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Auto /f", AppWinStyle.Hide, True, -1)
         Loadpga.Show()
         Close()
-    End Sub
-
-    Private Sub 临时返回ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 临时返回ToolStripMenuItem.Click
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d Temp /f", AppWinStyle.Hide, True, -1)
-        Shell("WFL Tool.exe", AppWinStyle.NormalFocus, False, -1)
-        Application.Exit()
-        Exit Sub
-    End Sub
-
-    Private Sub 始终ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 始终ToolStripMenuItem.Click
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
-        Shell("WFL Tool.exe", AppWinStyle.NormalFocus, False, -1)
-        Application.Exit()
-        Exit Sub
     End Sub
 
     Private Sub ToolStripMenuItem25_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem25.Click
