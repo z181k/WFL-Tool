@@ -28,6 +28,8 @@ Partial Class Form10
         打开主界面ToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         GroupBox1 = New GroupBox()
+        Button12 = New Button()
+        Button11 = New Button()
         GroupBox4 = New GroupBox()
         Button10 = New Button()
         Button7 = New Button()
@@ -37,15 +39,17 @@ Partial Class Form10
         GroupBox3 = New GroupBox()
         TextBox1 = New TextBox()
         Label3 = New Label()
-        Button5 = New Button()
-        Button4 = New Button()
         Button3 = New Button()
+        Button4 = New Button()
+        Button5 = New Button()
         Button2 = New Button()
         Button1 = New Button()
+        GroupBox2 = New GroupBox()
         ContextMenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox4.SuspendLayout()
         GroupBox3.SuspendLayout()
+        GroupBox2.SuspendLayout()
         SuspendLayout()
         ' 
         ' ContextMenuStrip1
@@ -73,20 +77,37 @@ Partial Class Form10
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(GroupBox2)
+        GroupBox1.Controls.Add(Button12)
         GroupBox1.Controls.Add(GroupBox4)
         GroupBox1.Controls.Add(GroupBox3)
-        GroupBox1.Controls.Add(Button5)
-        GroupBox1.Controls.Add(Button4)
-        GroupBox1.Controls.Add(Button3)
         GroupBox1.Controls.Add(Button2)
         GroupBox1.Controls.Add(Button1)
         GroupBox1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         GroupBox1.Location = New Point(15, 124)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(627, 505)
-        GroupBox1.TabIndex = 2
+        GroupBox1.Size = New Size(627, 597)
+        GroupBox1.TabIndex = 1
         GroupBox1.TabStop = False
         GroupBox1.Text = "Windows"
+        ' 
+        ' Button12
+        ' 
+        Button12.Location = New Point(213, 34)
+        Button12.Name = "Button12"
+        Button12.Size = New Size(113, 140)
+        Button12.TabIndex = 4
+        Button12.Text = "电话" & vbCrLf & "激活"
+        Button12.UseVisualStyleBackColor = True
+        ' 
+        ' Button11
+        ' 
+        Button11.Location = New Point(16, 85)
+        Button11.Name = "Button11"
+        Button11.Size = New Size(230, 46)
+        Button11.TabIndex = 7
+        Button11.Text = "重置激活"
+        Button11.UseVisualStyleBackColor = True
         ' 
         ' GroupBox4
         ' 
@@ -95,10 +116,10 @@ Partial Class Form10
         GroupBox4.Controls.Add(Button9)
         GroupBox4.Controls.Add(Button8)
         GroupBox4.Controls.Add(Button6)
-        GroupBox4.Location = New Point(6, 377)
+        GroupBox4.Location = New Point(6, 464)
         GroupBox4.Name = "GroupBox4"
         GroupBox4.Size = New Size(615, 119)
-        GroupBox4.TabIndex = 6
+        GroupBox4.TabIndex = 12
         GroupBox4.TabStop = False
         GroupBox4.Text = "切换 Windows 10/11 版本并安装相关 KMS 密钥"
         ' 
@@ -107,7 +128,7 @@ Partial Class Form10
         Button10.Location = New Point(502, 34)
         Button10.Name = "Button10"
         Button10.Size = New Size(107, 79)
-        Button10.TabIndex = 4
+        Button10.TabIndex = 17
         Button10.Text = "企业"
         Button10.UseVisualStyleBackColor = True
         ' 
@@ -116,7 +137,7 @@ Partial Class Form10
         Button7.Location = New Point(94, 34)
         Button7.Name = "Button7"
         Button7.Size = New Size(140, 79)
-        Button7.TabIndex = 1
+        Button7.TabIndex = 14
         Button7.Text = "专业教育"
         Button7.UseVisualStyleBackColor = True
         ' 
@@ -125,7 +146,7 @@ Partial Class Form10
         Button9.Location = New Point(400, 34)
         Button9.Name = "Button9"
         Button9.Size = New Size(96, 79)
-        Button9.TabIndex = 3
+        Button9.TabIndex = 16
         Button9.Text = "教育"
         Button9.UseVisualStyleBackColor = True
         ' 
@@ -134,7 +155,7 @@ Partial Class Form10
         Button8.Location = New Point(240, 34)
         Button8.Name = "Button8"
         Button8.Size = New Size(154, 79)
-        Button8.TabIndex = 2
+        Button8.TabIndex = 15
         Button8.Text = "专业工作站"
         Button8.UseVisualStyleBackColor = True
         ' 
@@ -143,7 +164,7 @@ Partial Class Form10
         Button6.Location = New Point(6, 34)
         Button6.Name = "Button6"
         Button6.Size = New Size(82, 79)
-        Button6.TabIndex = 0
+        Button6.TabIndex = 13
         Button6.Text = "专业"
         Button6.UseVisualStyleBackColor = True
         ' 
@@ -151,12 +172,14 @@ Partial Class Form10
         ' 
         GroupBox3.Controls.Add(TextBox1)
         GroupBox3.Controls.Add(Label3)
+        GroupBox3.Controls.Add(Button3)
+        GroupBox3.Controls.Add(Button4)
         GroupBox3.Location = New Point(6, 192)
         GroupBox3.Name = "GroupBox3"
-        GroupBox3.Size = New Size(615, 179)
-        GroupBox3.TabIndex = 5
+        GroupBox3.Size = New Size(615, 255)
+        GroupBox3.TabIndex = 8
         GroupBox3.TabStop = False
-        GroupBox3.Text = "密钥/KMS 地址输入框"
+        GroupBox3.Text = "安装密钥/设置KMS 地址"
         ' 
         ' TextBox1
         ' 
@@ -164,7 +187,7 @@ Partial Class Form10
         TextBox1.Location = New Point(8, 128)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(597, 40)
-        TextBox1.TabIndex = 1
+        TextBox1.TabIndex = 9
         ' 
         ' Label3
         ' 
@@ -175,39 +198,39 @@ Partial Class Form10
         Label3.TabIndex = 0
         Label3.Text = """安装密钥""功能和""设定/更改 KMS 地址""功能需要在这里先输" & vbCrLf & "入需要应用的信息后再点击相关按钮" & vbCrLf & "注意：(IPv6 地址必须以""""[计算机名]:端口""""的格式指定)"
         ' 
-        ' Button5
+        ' Button3
         ' 
-        Button5.Location = New Point(424, 110)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(197, 67)
-        Button5.TabIndex = 4
-        Button5.Text = "卸载密钥"
-        Button5.UseVisualStyleBackColor = True
+        Button3.Location = New Point(8, 177)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(333, 67)
+        Button3.TabIndex = 10
+        Button3.Text = "设定/更改 KMS 地址"
+        Button3.UseVisualStyleBackColor = True
         ' 
         ' Button4
         ' 
-        Button4.Location = New Point(424, 34)
+        Button4.Location = New Point(347, 177)
         Button4.Name = "Button4"
-        Button4.Size = New Size(197, 67)
-        Button4.TabIndex = 3
+        Button4.Size = New Size(258, 67)
+        Button4.TabIndex = 11
         Button4.Text = "安装密钥"
         Button4.UseVisualStyleBackColor = True
         ' 
-        ' Button3
+        ' Button5
         ' 
-        Button3.Location = New Point(213, 34)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(205, 143)
-        Button3.TabIndex = 2
-        Button3.Text = "设定/更改" & vbCrLf & "KMS 地址"
-        Button3.UseVisualStyleBackColor = True
+        Button5.Location = New Point(16, 32)
+        Button5.Name = "Button5"
+        Button5.Size = New Size(230, 48)
+        Button5.TabIndex = 6
+        Button5.Text = "卸载密钥"
+        Button5.UseVisualStyleBackColor = True
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(6, 110)
+        Button2.Location = New Point(6, 107)
         Button2.Name = "Button2"
         Button2.Size = New Size(201, 67)
-        Button2.TabIndex = 1
+        Button2.TabIndex = 3
         Button2.Text = "激活"
         Button2.UseVisualStyleBackColor = True
         ' 
@@ -216,9 +239,20 @@ Partial Class Form10
         Button1.Location = New Point(6, 34)
         Button1.Name = "Button1"
         Button1.Size = New Size(201, 67)
-        Button1.TabIndex = 0
-        Button1.Text = "状态"
+        Button1.TabIndex = 2
+        Button1.Text = "查看状态"
         Button1.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(Button5)
+        GroupBox2.Controls.Add(Button11)
+        GroupBox2.Location = New Point(353, 34)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(258, 140)
+        GroupBox2.TabIndex = 5
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "取消激活"
         ' 
         ' Form10
         ' 
@@ -226,7 +260,7 @@ Partial Class Form10
         AutoScaleMode = AutoScaleMode.Font
         AutoSizeMode = AutoSizeMode.GrowAndShrink
         BackColor = SystemColors.Control
-        ClientSize = New Size(654, 644)
+        ClientSize = New Size(654, 739)
         ContextMenuStrip = ContextMenuStrip1
         Controls.Add(GroupBox1)
         Controls.Add(Label1)
@@ -243,6 +277,7 @@ Partial Class Form10
         GroupBox4.ResumeLayout(False)
         GroupBox3.ResumeLayout(False)
         GroupBox3.PerformLayout()
+        GroupBox2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
 
@@ -265,4 +300,7 @@ Partial Class Form10
     Friend WithEvents Button8 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
+    Friend WithEvents Button11 As Button
+    Friend WithEvents Button12 As Button
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

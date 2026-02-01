@@ -22,118 +22,122 @@ Partial Class Form3
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.返回主界面ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(28, 28)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.返回主界面ToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(169, 38)
-        '
-        '返回主界面ToolStripMenuItem
-        '
-        Me.返回主界面ToolStripMenuItem.Name = "返回主界面ToolStripMenuItem"
-        Me.返回主界面ToolStripMenuItem.Size = New System.Drawing.Size(168, 34)
-        Me.返回主界面ToolStripMenuItem.Text = "返回主页"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 845)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(2, 2)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.WFL_Tool.My.Resources.Resources.logo256
-        Me.PictureBox2.Location = New System.Drawing.Point(44, 50)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(117, 112)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("微软雅黑", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(170, 69)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(534, 75)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "WFL Tool 5 周年了"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("微软雅黑", 14.14286!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label2.Location = New System.Drawing.Point(47, 216)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(401, 43)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "感恩回馈：5周年特别活动"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label3.Location = New System.Drawing.Point(50, 294)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(1246, 168)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = resources.GetString("Label3.Text")
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("微软雅黑 Light", 7.5!)
-        Me.Label4.Location = New System.Drawing.Point(952, 9)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(413, 48)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "以用户模式安装的本软件在有 Edge Webview2 的" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Windows 7 - Windows 11 系统上浏览该页体验更佳"
-        '
-        'Form3
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1377, 527)
-        Me.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.MaximizeBox = False
-        Me.Name = "Form3"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "WFL Tool 五周年"
-        Me.ContextMenuStrip1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        返回主界面ToolStripMenuItem = New ToolStripMenuItem()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
+        Label4 = New Label()
+        ContextMenuStrip1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.ImageScalingSize = New Size(28, 28)
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {返回主界面ToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(169, 38)
+        ' 
+        ' 返回主界面ToolStripMenuItem
+        ' 
+        返回主界面ToolStripMenuItem.Name = "返回主界面ToolStripMenuItem"
+        返回主界面ToolStripMenuItem.Size = New Size(168, 34)
+        返回主界面ToolStripMenuItem.Text = "返回主页"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.White
+        PictureBox1.Location = New Point(0, 1127)
+        PictureBox1.Margin = New Padding(7, 7, 7, 7)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(2, 3)
+        PictureBox1.TabIndex = 2
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = My.Resources.Resources.logo256
+        PictureBox2.Location = New Point(52, 67)
+        PictureBox2.Margin = New Padding(7, 7, 7, 7)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(138, 149)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 3
+        PictureBox2.TabStop = False
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("微软雅黑", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Label1.Location = New Point(201, 92)
+        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(534, 75)
+        Label1.TabIndex = 4
+        Label1.Text = "WFL Tool 5 周年了"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("微软雅黑", 14.14286F, FontStyle.Italic, GraphicsUnit.Point, CByte(134))
+        Label2.Location = New Point(56, 288)
+        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(414, 45)
+        Label2.TabIndex = 5
+        Label2.Text = "感恩回馈：5周年特别活动"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Label3.Location = New Point(59, 392)
+        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(1252, 168)
+        Label3.TabIndex = 6
+        Label3.Text = resources.GetString("Label3.Text")
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("微软雅黑 Light", 7.5F)
+        Label4.Location = New Point(1125, 12)
+        Label4.Margin = New Padding(4, 0, 4, 0)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(413, 48)
+        Label4.TabIndex = 7
+        Label4.Text = "以用户模式安装的本软件在有 Edge Webview2 的" & vbCrLf & "Windows 7 - Windows 11 系统上浏览该页体验更佳"
+        ' 
+        ' Form3
+        ' 
+        AutoScaleDimensions = New SizeF(13F, 28F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(1627, 703)
+        ContextMenuStrip = ContextMenuStrip1
+        Controls.Add(Label4)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(Label1)
+        Controls.Add(PictureBox2)
+        Controls.Add(PictureBox1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
+        Margin = New Padding(7, 7, 7, 7)
+        MaximizeBox = False
+        Name = "Form3"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "WFL Tool 五周年"
+        ContextMenuStrip1.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+        PerformLayout()
 
     End Sub
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip

@@ -46,7 +46,7 @@
             MsgBox("请在下方输入框提供信息", 0, "KMS 地址")
             Exit Sub
         End If                                                               '设置kms地址
-            CreateObject("shell.application").shellexecute("WSCRIPT.EXE", "C:\windows\system32\slmgr.vbs /skms " + TextBox1.Text, "", "runas", 1)
+        CreateObject("shell.application").shellexecute("WSCRIPT.EXE", "C:\windows\system32\slmgr.vbs /skms " + TextBox1.Text, "", "runas", 1)
         TextBox1.Text = ""
     End Sub
 
@@ -68,5 +68,13 @@
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         CreateObject("shell.application").shellexecute("WSCRIPT.EXE", "C:\windows\system32\slmgr.vbs /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43", "", "runas", 1)
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        CreateObject("shell.application").shellexecute("WSCRIPT.EXE", "C:\windows\system32\slmgr.vbs /rearm", "", "runas", 1)
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        CreateObject("shell.application").shellexecute("Slui.EXE", "4", "", "runas", 1)
     End Sub
 End Class
