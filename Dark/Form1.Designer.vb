@@ -1379,7 +1379,6 @@ Partial Class Form1
         AutoScaleDimensions = New SizeF(11F, 21F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
-        AutoSizeMode = AutoSizeMode.GrowAndShrink
         BackColor = SystemColors.Control
         ClientSize = New Size(726, 548)
         Controls.Add(Panel1)
