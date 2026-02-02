@@ -4,7 +4,7 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo As String = "RTM 版本(9504.1):" & vbCrLf & vbCrLf & "-新的：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1." & vbCrLf & "2.解决上个版本修复内容对 WinServer 2022 无效问题" & vbCrLf & "3.解决和卸载程序有关的多个问题" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
+        Dim upginfo As String = "RTM 版本(9504.1):" & vbCrLf & vbCrLf & "-新的：" & vbCrLf & "1." & vbCrLf & "2." & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1." & vbCrLf & "2.解决上个版本修复内容对 WinServer 2022 无效问题" & vbCrLf & "3.解决和卸载程序有关的多个问题" & vbCrLf & "4.解决使用 Webview2 页面在部分低分辨率屏幕下的显示问题" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         ''   此处放启用后日志
