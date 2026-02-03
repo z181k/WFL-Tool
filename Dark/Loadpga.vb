@@ -26,8 +26,7 @@
             End If
         End If
 1:
-        Dim NF1 As New Form1()
-        NF1.Show()
+        Form1.Show()
         Close()
     End Sub
 
