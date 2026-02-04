@@ -815,16 +815,14 @@ legacy:
     Private Sub 暗色ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 暗色ToolStripMenuItem.Click
         Application.SetColorMode(SystemColorMode.Dark)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Dark /f", AppWinStyle.Hide, True, -1)
-        Dim NF1 As New Form1()
-        NF1.Show()
+        Loadpga.Show()
         Close()
     End Sub
 
     Private Sub 亮色ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 亮色ToolStripMenuItem.Click
         Application.SetColorMode(SystemColorMode.Classic)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d White /f", AppWinStyle.Hide, True, -1)
-        Dim NF1 As New Form1()
-        NF1.Show()
+        Loadpga.Show()
         Close()
         '下面是之前浅色会跳到旧net fx4.8框架的代码
         'Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Napp /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
@@ -836,8 +834,7 @@ legacy:
     Private Sub 自动切换ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 自动ToolStripMenuItem.Click
         Application.SetColorMode(SystemColorMode.System)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NColor /T REG_SZ /d Auto /f", AppWinStyle.Hide, True, -1)
-        Dim NF1 As New Form1()
-        NF1.Show()
+        Loadpga.Show()
         Close()
     End Sub
 
