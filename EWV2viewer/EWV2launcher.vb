@@ -2,14 +2,14 @@
     Private Sub EWV2launcher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 defaultstart:
         On Error GoTo no3info2
-        Dim EWV2webpageShow As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("EWV2webpageShow", "nothing")
-        If EWV2webpageShow = "True" Then
+        Dim EWV2webpageShow As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("Show", "nothing")
+        If EWV2webpageShow <> "False" Then
             EWV2webpage.Show()
             Close()
             Exit Sub
         End If
 no3info2:
-        MsgBox("此应用暂不能使用。", MsgBoxStyle.Exclamation, "WFL Tool WebPageViewer")
+        MsgBox("此应用暂不能使用。", MsgBoxStyle.Exclamation, "DBT WebPageViewer")
         Close()
     End Sub
 
