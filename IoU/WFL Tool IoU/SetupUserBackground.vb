@@ -70,7 +70,7 @@
         SetupUserInstall.PB1.Value = 50
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild >= 17763 Then              '检查版本配置WinAppSdk项目
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 4 /f", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
             Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "WinAppSdkUi", Nothing)
             If WinAppSdkUi <> "0" Then
                 Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)

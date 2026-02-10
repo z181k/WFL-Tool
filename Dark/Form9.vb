@@ -151,9 +151,9 @@ legacy:
         If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
             GoTo legacy
         End If
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""WFL Tool 项目开源页面 - Github"" /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d https://github.com/z181k/WFL-Tool /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""WFL Tool 项目开源页面 - Github"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageURL /T REG_SZ /d https://github.com/z181k/WFL-Tool /f", AppWinStyle.Hide, True, -1)
         Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
         Exit Sub
 legacy:
@@ -182,9 +182,9 @@ legacy:
         If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
             GoTo legacy
         End If
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""检查更新 - 请手动下载完整最新版安装包 - WFL Tool 下载中心  (无法访问请右击检查更新选择应急链接重试)"" /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL /f", AppWinStyle.Hide, True, -1)      'onedrive链接，方便下载
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""检查更新 - 请手动下载完整最新版安装包 - WFL Tool 下载中心  (无法访问请右击检查更新选择应急链接重试)"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageURL /T REG_SZ /d https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL /f", AppWinStyle.Hide, True, -1)      'onedrive链接，方便下载
         Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
         Exit Sub
 legacy:

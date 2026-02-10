@@ -16,22 +16,15 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        If TextBox1.Text = "OPENwflT8304f392801" Then
-            Dim NF1 As New Form1()                               '新建主窗体
-            NF1.Show()
-            TextBox1.Text = ""
-            Exit Sub
-        ElseIf TextBox1.Text = "OPENwflT9168f562741" Then          '重新初始化应用
-            Form1.Close()
-            Loadpga.Show()
-            Me.Close()
+        If TextBox1.Text = "OPENwflT9504f260210" Then          '打开MSDT
+            Form14.Show()
             TextBox1.Text = ""
             Exit Sub
         ElseIf TextBox1.Text = " " Then
-            MsgBox("请在下方输入框提供信息", 0, "密钥安装")
+            MsgBox("请在输入框提供信息", 0, "密钥安装")
             Exit Sub
         ElseIf TextBox1.Text = "" Then                                 '保证不为空
-            MsgBox("请在下方输入框提供信息", 0, "密钥安装")
+            MsgBox("请在输入框提供信息", 0, "密钥安装")
             Exit Sub
         End If
         CreateObject("shell.application").shellexecute("WSCRIPT.EXE", "C:\windows\system32\slmgr.vbs /ipk " + TextBox1.Text, "", "runas", 1)
