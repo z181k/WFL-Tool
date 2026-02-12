@@ -88,12 +88,12 @@ int main() {
 	);*/
 	AdjustPrivilege(SE_SHUTDOWN_NAME, TRUE);
 	HHOOK hook = SetWindowsHookEx(WH_CALLWNDPROCRET, messageBoxHookButton, 0, GetCurrentThreadId());
-	int opt = MessageBoxW(NULL, L"请选择您要执行的操作，请注意保存您的文件，因关机造成的文件丢失我们概不负责。", L"WFL Tool", /*MB_ICONINFORMATION |*/ MB_TOPMOST | MB_ABORTRETRYIGNORE);
+	//int opt = MessageBoxW(NULL, L"请选择您要执行的操作，请注意保存您的文件，因关机造成的文件丢失我们概不负责。", L"WFL Tool", /*MB_ICONINFORMATION |*/ MB_TOPMOST | MB_ABORTRETRYIGNORE);
 	/*manifest的视觉样式，部分情况下添加可能会导致程序异常，比如对话框有图标，所以使用需要测试！！！*/
 	UnhookWindowsHookEx(hook);
 	HMODULE hDll = GetModuleHandleA("NtDll.dll");
 
-	if (opt == IDIGNORE) return 0;
+	//if (opt == IDIGNORE) return 0;
 
 	/*if (opt == IDIGNORE) {
 		lpIgnoreBtn = L"退出(&E)";
@@ -110,7 +110,8 @@ int main() {
 		return 0;
 	}*/
 
-	SHUTDOWN_ACTION sa = opt == IDABORT ? ShutdownNoReboot : ShutdownReboot;
+	//SHUTDOWN_ACTION sa = opt == IDABORT ? ShutdownNoReboot : ShutdownReboot;
+		SHUTDOWN_ACTION sa = ShutdownNoReboot;
 
 
 	TYPE_NtShutdownSystem NtShutdownSystem = (TYPE_NtShutdownSystem)GetProcAddress(hDll, "NtShutdownSystem");

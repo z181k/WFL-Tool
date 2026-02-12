@@ -172,7 +172,7 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild > 26100 Then   '兼容未来版本的Win11和win server更新日志及离线更新包
             If InstallationType = "Client" Then
-                Shell("cmd.exe /c start https://support.microsoft.com/topic/99c7f493-df2a-4832-bd2d-6706baa0dec0", AppWinStyle.Hide, True, -1)
+                Shell("cmd.exe /c start https://support.microsoft.com/topic/253c73cd-cab1-4bfd-94dc-76c452273fc9", AppWinStyle.Hide, True, -1)
             Else
                 '没有新的win server链接，拿server2025的顶一下，毕竟server 2022/v23h2/2025都被放在了一起，估计新版本也在一起
                 Shell("cmd.exe /c start https://support.microsoft.com/topic/10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
