@@ -16,9 +16,20 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        If TextBox1.Text = "OPENwflT9504f260210" Then          '打开MSDT
-            Form14.Show()
+        If TextBox1.Text = "OPENwflT9504f260214" Then
             TextBox1.Text = ""
+            Dim WebBrowserTitle As String
+            WebBrowserTitle = InputBox("", "WebBrowserTitle")
+            Dim WebBrowserURL As String
+            WebBrowserURL = InputBox("", "WebBrowserURL")
+            Dim NF4 As New Form4()
+            NF4.Show()
+            NF4.Text = WebBrowserTitle
+            NF4.MaximizeBox = True
+            NF4.WebBrowser1.Url = New Uri(WebBrowserURL)
+            NF4.MaximumSize = New Size(0, 0)
+            NF4.MinimumSize = New Size(0, 0)
+            NF4.WebBrowser1.ScriptErrorsSuppressed = True
             Exit Sub
         ElseIf TextBox1.Text = " " Then
             MsgBox("请在输入框提供信息", 0, "密钥安装")

@@ -96,7 +96,7 @@ Partial Class SetupUserInstall
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.WFL_Tool_IoU.My.Resources.Resources.logo256
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(81, 77)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.PictureBox2.Name = "PictureBox2"

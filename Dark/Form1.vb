@@ -13,9 +13,9 @@ Public Class Form1
     End Sub
 
 
-    '---------------------------------------------------------------------------------------
-    '=======================================================================================
-    '———————————————————————————————————————————————————————————————————————————————————————
+    '-----------------------------------------------------------------------------------------------------------------------------------------
+    '=========================================================================================================================================
+    '—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -413,18 +413,20 @@ starttask:
         'Size = New Size(900, 550) '调整窗口大小
         '
         '测试版提示文字
-        'Panel1.Show()
+        Panel1.Show()
         'Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
+        Label1.Text = "新版本,新征程！WFL Tool 团队祝大家 2026 春节快乐！"
         'Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
-        'LinkLabel2.Visible = False
+        'LinkLabel2.Visible = False     '不再显示
+        LinkLabel3.Visible = False      '关闭
         'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
         '
         'beta不显示横幅
-        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
-        'If Beta = "9088" Then
-        '    Panel1.Visible = False
-        '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        'End If
+        Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
+        If Beta = "9504.1" Then
+            Panel1.Visible = False
+            '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        End If
         '
         '主题菜单文本显示
         Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
@@ -776,8 +778,8 @@ legacy:
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Panel1.Visible = False
-        Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Beta /T REG_SZ /d 9088 /f", AppWinStyle.Hide, True, -1)
+        'Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Beta /T REG_SZ /d 9504.1 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 设备管理器错误代码帮助helpmenu_Click(sender As Object, e As EventArgs) Handles 设备管理器错误代码帮助helpmenu.Click
@@ -1023,10 +1025,10 @@ Partial Class AutoSizeFormClass
 End Class
 
 
+
 '——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 '==================================================================================================================================================================================================
 '——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
 
 
 '下面是调用位于shell32.dll的运行函数

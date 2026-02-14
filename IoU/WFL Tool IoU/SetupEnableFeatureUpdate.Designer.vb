@@ -99,7 +99,6 @@ Partial Class SetupEnableFeatureUpdate
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.WFL_Tool_IoU.My.Resources.Resources.logo256
         Me.PictureBox2.Location = New System.Drawing.Point(80, 84)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.PictureBox2.Name = "PictureBox2"

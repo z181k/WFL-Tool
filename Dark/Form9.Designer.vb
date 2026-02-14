@@ -136,7 +136,7 @@ Partial Class Form9
         LinkLabel1.AutoSize = True
         LinkLabel1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel1.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel1.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
+        LinkLabel1.LinkColor = Color.FromArgb(CByte(192), CByte(64), CByte(0))
         LinkLabel1.Location = New Point(282, 392)
         LinkLabel1.Margin = New Padding(6, 0, 6, 0)
         LinkLabel1.Name = "LinkLabel1"
@@ -151,7 +151,7 @@ Partial Class Form9
         LinkLabel2.AutoSize = True
         LinkLabel2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel2.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel2.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
+        LinkLabel2.LinkColor = Color.FromArgb(CByte(192), CByte(64), CByte(0))
         LinkLabel2.Location = New Point(396, 392)
         LinkLabel2.Margin = New Padding(6, 0, 6, 0)
         LinkLabel2.Name = "LinkLabel2"
@@ -166,7 +166,7 @@ Partial Class Form9
         LinkLabel3.AutoSize = True
         LinkLabel3.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel3.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel3.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
+        LinkLabel3.LinkColor = Color.FromArgb(CByte(192), CByte(64), CByte(0))
         LinkLabel3.Location = New Point(510, 392)
         LinkLabel3.Margin = New Padding(6, 0, 6, 0)
         LinkLabel3.Name = "LinkLabel3"
@@ -181,7 +181,7 @@ Partial Class Form9
         LinkLabel4.AutoSize = True
         LinkLabel4.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel4.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel4.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
+        LinkLabel4.LinkColor = Color.FromArgb(CByte(192), CByte(64), CByte(0))
         LinkLabel4.Location = New Point(623, 392)
         LinkLabel4.Margin = New Padding(6, 0, 6, 0)
         LinkLabel4.Name = "LinkLabel4"
@@ -197,7 +197,7 @@ Partial Class Form9
         LinkLabel6.ContextMenuStrip = ContextMenuStrip2
         LinkLabel6.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel6.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel6.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
+        LinkLabel6.LinkColor = Color.FromArgb(CByte(192), CByte(64), CByte(0))
         LinkLabel6.Location = New Point(282, 441)
         LinkLabel6.Margin = New Padding(6, 0, 6, 0)
         LinkLabel6.Name = "LinkLabel6"
@@ -249,7 +249,7 @@ Partial Class Form9
         LinkLabel7.AutoSize = True
         LinkLabel7.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel7.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel7.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
+        LinkLabel7.LinkColor = Color.FromArgb(CByte(192), CByte(64), CByte(0))
         LinkLabel7.Location = New Point(623, 441)
         LinkLabel7.Margin = New Padding(6, 0, 6, 0)
         LinkLabel7.Name = "LinkLabel7"
@@ -293,7 +293,7 @@ Partial Class Form9
         LinkLabel5.AutoSize = True
         LinkLabel5.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel5.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel5.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
+        LinkLabel5.LinkColor = Color.FromArgb(CByte(192), CByte(64), CByte(0))
         LinkLabel5.Location = New Point(396, 441)
         LinkLabel5.Margin = New Padding(6, 0, 6, 0)
         LinkLabel5.Name = "LinkLabel5"
@@ -318,7 +318,7 @@ Partial Class Form9
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Image = My.Resources.Resources.logo256
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(75, 90)
         PictureBox1.Margin = New Padding(6, 5, 6, 5)
         PictureBox1.Name = "PictureBox1"
@@ -333,7 +333,7 @@ Partial Class Form9
         LinkLabel10.AutoSize = True
         LinkLabel10.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel10.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel10.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
+        LinkLabel10.LinkColor = Color.FromArgb(CByte(192), CByte(64), CByte(0))
         LinkLabel10.Location = New Point(510, 441)
         LinkLabel10.Margin = New Padding(6, 0, 6, 0)
         LinkLabel10.Name = "LinkLabel10"

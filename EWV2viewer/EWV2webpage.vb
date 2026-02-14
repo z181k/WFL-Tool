@@ -27,7 +27,7 @@ Public Class EWV2webpage
         Else
             '显示图标
             Dim Sicon2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("ShowIcon", "True")
-            If Sicon2 = "False" Then
+            If Sicon2 <> "True" Then
                 Me.ShowIcon = False
             End If
             '标题

@@ -126,8 +126,9 @@ Partial Class Form1
         取消定时关机ToolStripMenuItem = New ToolStripMenuItem()
         关机ToolStripMenuItem = New ToolStripMenuItem()
         重启ToolStripMenuItem = New ToolStripMenuItem()
-        快速关机ToolStripMenuItem = New ToolStripMenuItem()
         进入WinREToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem31 = New ToolStripSeparator()
+        快速关机ToolStripMenuItem = New ToolStripMenuItem()
         主题与版本ToolStripMenuItem = New ToolStripMenuItem()
         亮色ToolStripMenuItem = New ToolStripMenuItem()
         暗色ToolStripMenuItem = New ToolStripMenuItem()
@@ -142,6 +143,7 @@ Partial Class Form1
         WFLTool5周年ToolStripMenuItem = New ToolStripMenuItem()
         关于AToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem3 = New ToolStripMenuItem()
+        ToolStripMenuItem32 = New ToolStripMenuItem()
         Button1 = New Button()
         Button2 = New Button()
         GroupBox1 = New GroupBox()
@@ -189,8 +191,6 @@ Partial Class Form1
         LinkLabel2 = New LinkLabel()
         Label1 = New Label()
         OpenFileDialog1 = New OpenFileDialog()
-        ToolStripMenuItem31 = New ToolStripSeparator()
-        ToolStripMenuItem32 = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -211,7 +211,7 @@ Partial Class Form1
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Padding = New Padding(11, 4, 0, 4)
-        MenuStrip1.Size = New Size(726, 41)
+        MenuStrip1.Size = New Size(726, 40)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -219,7 +219,7 @@ Partial Class Form1
         ' 
         文件FToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem25, 运行ToolStripMenuItem, ToolStripMenuItem1, 系统更新UToolStripMenuItem, 系统修改ToolStripMenuItem, ToolStripMenuItem15, 更多ToolStripMenuItem, ToolStripMenuItem2, ToolStripMenuItem6, ToolStripMenuItem18, ToolStripMenuItem19, 退出XToolStripMenuItem})
         文件FToolStripMenuItem.Name = "文件FToolStripMenuItem"
-        文件FToolStripMenuItem.Size = New Size(97, 33)
+        文件FToolStripMenuItem.Size = New Size(97, 32)
         文件FToolStripMenuItem.Text = "文件(&F)"
         ' 
         ' ToolStripMenuItem25
@@ -590,7 +590,7 @@ Partial Class Form1
         ' 
         UWP应用ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {设置ToolStripMenuItem, WindowsDefenderToolStripMenuItem, 微软商店, UWP资源管理器, ToolStripMenuItem24, 媒体播放器, 相机ToolStripMenuItem, 相册ToolStripMenuItem, 时钟app, ToolStripMenuItem21, 所有应用ToolStripMenuItem})
         UWP应用ToolStripMenuItem.Name = "UWP应用ToolStripMenuItem"
-        UWP应用ToolStripMenuItem.Size = New Size(128, 33)
+        UWP应用ToolStripMenuItem.Size = New Size(128, 32)
         UWP应用ToolStripMenuItem.Text = "U&WP 应用"
         ' 
         ' 设置ToolStripMenuItem
@@ -661,7 +661,7 @@ Partial Class Form1
         ' 
         关机选项UToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {电池健康ToolStripMenuItem, ToolStripMenuItem28, 切换用户ToolStripMenuItem, 休眠ToolStripMenuItem, 注销ToolStripMenuItem, ToolStripMenuItem9, 关机ToolStripMenuItem, 重启ToolStripMenuItem, 进入WinREToolStripMenuItem, ToolStripMenuItem31, 快速关机ToolStripMenuItem})
         关机选项UToolStripMenuItem.Name = "关机选项UToolStripMenuItem"
-        关机选项UToolStripMenuItem.Size = New Size(102, 33)
+        关机选项UToolStripMenuItem.Size = New Size(102, 32)
         关机选项UToolStripMenuItem.Text = "电源(&U)"
         ' 
         ' 电池健康ToolStripMenuItem
@@ -823,6 +823,18 @@ Partial Class Form1
         重启ToolStripMenuItem.Size = New Size(282, 40)
         重启ToolStripMenuItem.Text = "重启"
         ' 
+        ' 进入WinREToolStripMenuItem
+        ' 
+        进入WinREToolStripMenuItem.Name = "进入WinREToolStripMenuItem"
+        进入WinREToolStripMenuItem.Size = New Size(282, 40)
+        进入WinREToolStripMenuItem.Text = "进入 WinRE"
+        ' 
+        ' ToolStripMenuItem31
+        ' 
+        ToolStripMenuItem31.Name = "ToolStripMenuItem31"
+        ToolStripMenuItem31.Size = New Size(279, 6)
+        ToolStripMenuItem31.Visible = False
+        ' 
         ' 快速关机ToolStripMenuItem
         ' 
         快速关机ToolStripMenuItem.Name = "快速关机ToolStripMenuItem"
@@ -830,17 +842,11 @@ Partial Class Form1
         快速关机ToolStripMenuItem.Text = "快速关机"
         快速关机ToolStripMenuItem.Visible = False
         ' 
-        ' 进入WinREToolStripMenuItem
-        ' 
-        进入WinREToolStripMenuItem.Name = "进入WinREToolStripMenuItem"
-        进入WinREToolStripMenuItem.Size = New Size(282, 40)
-        进入WinREToolStripMenuItem.Text = "进入 WinRE"
-        ' 
         ' 主题与版本ToolStripMenuItem
         ' 
         主题与版本ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {亮色ToolStripMenuItem, 暗色ToolStripMenuItem, 自动ToolStripMenuItem})
         主题与版本ToolStripMenuItem.Name = "主题与版本ToolStripMenuItem"
-        主题与版本ToolStripMenuItem.Size = New Size(72, 33)
+        主题与版本ToolStripMenuItem.Size = New Size(72, 32)
         主题与版本ToolStripMenuItem.Text = "主题"
         ' 
         ' 亮色ToolStripMenuItem
@@ -865,7 +871,7 @@ Partial Class Form1
         ' 
         帮助HToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {获取帮助GToolStripMenuItem, 发送反馈邮箱ToolStripMenuItem, ToolStripSeparator1, 设备管理器错误代码帮助helpmenu, 打开helpcenterToolStripMenuItem, ToolStripMenuItem4, WFLTool5周年ToolStripMenuItem, 关于AToolStripMenuItem})
         帮助HToolStripMenuItem.Name = "帮助HToolStripMenuItem"
-        帮助HToolStripMenuItem.Size = New Size(102, 33)
+        帮助HToolStripMenuItem.Size = New Size(102, 32)
         帮助HToolStripMenuItem.Text = "帮助(&H)"
         ' 
         ' 获取帮助GToolStripMenuItem
@@ -920,8 +926,13 @@ Partial Class Form1
         ToolStripMenuItem3.Alignment = ToolStripItemAlignment.Right
         ToolStripMenuItem3.ForeColor = SystemColors.GrayText
         ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        ToolStripMenuItem3.Size = New Size(177, 33)
+        ToolStripMenuItem3.Size = New Size(177, 32)
         ToolStripMenuItem3.Text = "右上角文字显示"
+        ' 
+        ' ToolStripMenuItem32
+        ' 
+        ToolStripMenuItem32.Name = "ToolStripMenuItem32"
+        ToolStripMenuItem32.Size = New Size(18, 32)
         ' 
         ' Button1
         ' 
@@ -1289,11 +1300,11 @@ Partial Class Form1
         ' 
         ' PictureBox2
         ' 
-        PictureBox2.Image = My.Resources.Resources.logo256
-        PictureBox2.Location = New Point(640, 53)
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(637, 53)
         PictureBox2.Margin = New Padding(6, 5, 6, 5)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(57, 57)
+        PictureBox2.Size = New Size(61, 61)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 7
         PictureBox2.TabStop = False
@@ -1346,10 +1357,10 @@ Partial Class Form1
         LinkLabel3.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel3.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel3.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
-        LinkLabel3.Location = New Point(659, 17)
+        LinkLabel3.Location = New Point(490, 17)
         LinkLabel3.Name = "LinkLabel3"
         LinkLabel3.Size = New Size(54, 28)
-        LinkLabel3.TabIndex = 3
+        LinkLabel3.TabIndex = 1
         LinkLabel3.TabStop = True
         LinkLabel3.Text = "关闭"
         ' 
@@ -1359,7 +1370,7 @@ Partial Class Form1
         LinkLabel2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel2.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel2.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
-        LinkLabel2.Location = New Point(494, 17)
+        LinkLabel2.Location = New Point(550, 17)
         LinkLabel2.Name = "LinkLabel2"
         LinkLabel2.Size = New Size(159, 28)
         LinkLabel2.TabIndex = 2
@@ -1383,17 +1394,6 @@ Partial Class Form1
         OpenFileDialog1.ReadOnlyChecked = True
         OpenFileDialog1.ShowHiddenFiles = True
         OpenFileDialog1.Title = "文件浏览 - WFL Tool"
-        ' 
-        ' ToolStripMenuItem31
-        ' 
-        ToolStripMenuItem31.Name = "ToolStripMenuItem31"
-        ToolStripMenuItem31.Size = New Size(279, 6)
-        ToolStripMenuItem31.Visible = False
-        ' 
-        ' ToolStripMenuItem32
-        ' 
-        ToolStripMenuItem32.Name = "ToolStripMenuItem32"
-        ToolStripMenuItem32.Size = New Size(18, 33)
         ' 
         ' Form1
         ' 

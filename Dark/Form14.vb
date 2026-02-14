@@ -37,4 +37,99 @@
 legacy:
         Shell("cmd.exe /c start https://aka.ms/msdtretire", AppWinStyle.Hide, True, -1)
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Apps\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Audio\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\BITS\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Power\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\PCW\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\IEBrowseWEB\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\IESecurity\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Keyboard\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Networking\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Device\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Bluetooth\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Printer\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Search\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Speech\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\WindowsUpdate\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\WindowsMediaPlayerMediaLibrary\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\WindowsMediaPlayerConfiguration\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\Video\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
+
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+        CreateObject("shell.application").shellexecute(SystemRoot + "\diagnostics\system\DeviceCenter\DiagPackage.diagpkg", "", "", "", 1)
+    End Sub
 End Class

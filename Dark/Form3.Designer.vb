@@ -54,7 +54,7 @@ Partial Class Form3
         ' 
         PictureBox1.BackColor = Color.White
         PictureBox1.Location = New Point(0, 1127)
-        PictureBox1.Margin = New Padding(7, 7, 7, 7)
+        PictureBox1.Margin = New Padding(7)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(2, 3)
         PictureBox1.TabIndex = 2
@@ -62,11 +62,11 @@ Partial Class Form3
         ' 
         ' PictureBox2
         ' 
-        PictureBox2.Image = My.Resources.Resources.logo256
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(52, 67)
-        PictureBox2.Margin = New Padding(7, 7, 7, 7)
+        PictureBox2.Margin = New Padding(7)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(138, 149)
+        PictureBox2.Size = New Size(138, 138)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 3
         PictureBox2.TabStop = False
@@ -128,7 +128,7 @@ Partial Class Form3
         Controls.Add(PictureBox2)
         Controls.Add(PictureBox1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
-        Margin = New Padding(7, 7, 7, 7)
+        Margin = New Padding(7)
         MaximizeBox = False
         Name = "Form3"
         StartPosition = FormStartPosition.CenterScreen
