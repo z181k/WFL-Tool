@@ -143,7 +143,6 @@ Partial Class Form1
         WFLTool5周年ToolStripMenuItem = New ToolStripMenuItem()
         关于AToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem3 = New ToolStripMenuItem()
-        ToolStripMenuItem32 = New ToolStripMenuItem()
         Button1 = New Button()
         Button2 = New Button()
         GroupBox1 = New GroupBox()
@@ -207,7 +206,7 @@ Partial Class Form1
         ' 
         MenuStrip1.BackColor = SystemColors.Control
         MenuStrip1.ImageScalingSize = New Size(28, 28)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {文件FToolStripMenuItem, UWP应用ToolStripMenuItem, 关机选项UToolStripMenuItem, 主题与版本ToolStripMenuItem, 帮助HToolStripMenuItem, ToolStripMenuItem3, ToolStripMenuItem32})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {文件FToolStripMenuItem, UWP应用ToolStripMenuItem, 关机选项UToolStripMenuItem, 主题与版本ToolStripMenuItem, 帮助HToolStripMenuItem, ToolStripMenuItem3})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Padding = New Padding(11, 4, 0, 4)
@@ -225,25 +224,25 @@ Partial Class Form1
         ' ToolStripMenuItem25
         ' 
         ToolStripMenuItem25.Name = "ToolStripMenuItem25"
-        ToolStripMenuItem25.Size = New Size(282, 40)
+        ToolStripMenuItem25.Size = New Size(315, 40)
         ToolStripMenuItem25.Text = "浏览文件(&B)"
         ' 
         ' 运行ToolStripMenuItem
         ' 
         运行ToolStripMenuItem.Name = "运行ToolStripMenuItem"
-        运行ToolStripMenuItem.Size = New Size(282, 40)
+        运行ToolStripMenuItem.Size = New Size(315, 40)
         运行ToolStripMenuItem.Text = "运行(&R)"
         ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(279, 6)
+        ToolStripMenuItem1.Size = New Size(312, 6)
         ' 
         ' 系统更新UToolStripMenuItem
         ' 
         系统更新UToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {Windows1011ToolStripMenuItem, 离线更新下载ToolStripMenuItem, 下载WindowsToolStripMenuItem, ToolStripMenuItem7, 下载新版本WFLToolTSMI})
         系统更新UToolStripMenuItem.Name = "系统更新UToolStripMenuItem"
-        系统更新UToolStripMenuItem.Size = New Size(282, 40)
+        系统更新UToolStripMenuItem.Size = New Size(315, 40)
         系统更新UToolStripMenuItem.Text = "系统更新(&U)"
         ' 
         ' Windows1011ToolStripMenuItem
@@ -297,20 +296,20 @@ Partial Class Form1
         ' 系统修改ToolStripMenuItem
         ' 
         系统修改ToolStripMenuItem.Name = "系统修改ToolStripMenuItem"
-        系统修改ToolStripMenuItem.Size = New Size(282, 40)
+        系统修改ToolStripMenuItem.Size = New Size(315, 40)
         系统修改ToolStripMenuItem.Text = "系统修改(&C)"
         ' 
         ' ToolStripMenuItem15
         ' 
         ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        ToolStripMenuItem15.Size = New Size(282, 40)
+        ToolStripMenuItem15.Size = New Size(315, 40)
         ToolStripMenuItem15.Text = "密钥管理服务(&K)"
         ' 
         ' 更多ToolStripMenuItem
         ' 
         更多ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {所有任务ToolStripMenuItem, 查看系统位数ToolStripMenuItem, ToolStripMenuItem30, ToolStripMenuItem5, 测试功能ToolStripMenuItem})
         更多ToolStripMenuItem.Name = "更多ToolStripMenuItem"
-        更多ToolStripMenuItem.Size = New Size(282, 40)
+        更多ToolStripMenuItem.Size = New Size(315, 40)
         更多ToolStripMenuItem.Text = "更多(&M)"
         ' 
         ' 所有任务ToolStripMenuItem
@@ -420,12 +419,12 @@ Partial Class Form1
         ' ToolStripMenuItem2
         ' 
         ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        ToolStripMenuItem2.Size = New Size(279, 6)
+        ToolStripMenuItem2.Size = New Size(312, 6)
         ' 
         ' ToolStripMenuItem6
         ' 
         ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        ToolStripMenuItem6.Size = New Size(282, 40)
+        ToolStripMenuItem6.Size = New Size(315, 40)
         ToolStripMenuItem6.Text = "新选项(&S)"
         ToolStripMenuItem6.Visible = False
         ' 
@@ -433,7 +432,7 @@ Partial Class Form1
         ' 
         ToolStripMenuItem18.DropDownItems.AddRange(New ToolStripItem() {WFLTool应用设置ToolStripMenuItem, ToolStripMenuItem20, 查看更多和系统附件弹出方式ToolStripMenuItem, 查看更多内部功能ToolStripMenuItem, 主界面右上角显示样式ToolStripMenuItem, ToolStripMenuItem16, 通知区域托盘图标ToolStripMenuItem, ToolStripMenuItem26, 清除数据并退出程序ToolStripMenuItem})
         ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        ToolStripMenuItem18.Size = New Size(282, 40)
+        ToolStripMenuItem18.Size = New Size(315, 40)
         ToolStripMenuItem18.Text = "选项(&S)"
         ' 
         ' WFLTool应用设置ToolStripMenuItem
@@ -578,12 +577,12 @@ Partial Class Form1
         ' ToolStripMenuItem19
         ' 
         ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        ToolStripMenuItem19.Size = New Size(279, 6)
+        ToolStripMenuItem19.Size = New Size(312, 6)
         ' 
         ' 退出XToolStripMenuItem
         ' 
         退出XToolStripMenuItem.Name = "退出XToolStripMenuItem"
-        退出XToolStripMenuItem.Size = New Size(282, 40)
+        退出XToolStripMenuItem.Size = New Size(315, 40)
         退出XToolStripMenuItem.Text = "退出(&X)"
         ' 
         ' UWP应用ToolStripMenuItem
@@ -667,178 +666,178 @@ Partial Class Form1
         ' 电池健康ToolStripMenuItem
         ' 
         电池健康ToolStripMenuItem.Name = "电池健康ToolStripMenuItem"
-        电池健康ToolStripMenuItem.Size = New Size(282, 40)
+        电池健康ToolStripMenuItem.Size = New Size(315, 40)
         电池健康ToolStripMenuItem.Text = "电池健康信息(&B)"
         ' 
         ' ToolStripMenuItem28
         ' 
         ToolStripMenuItem28.Name = "ToolStripMenuItem28"
-        ToolStripMenuItem28.Size = New Size(279, 6)
+        ToolStripMenuItem28.Size = New Size(312, 6)
         ' 
         ' 切换用户ToolStripMenuItem
         ' 
         切换用户ToolStripMenuItem.Name = "切换用户ToolStripMenuItem"
-        切换用户ToolStripMenuItem.Size = New Size(282, 40)
+        切换用户ToolStripMenuItem.Size = New Size(315, 40)
         切换用户ToolStripMenuItem.Text = "切换用户"
         ' 
         ' 休眠ToolStripMenuItem
         ' 
         休眠ToolStripMenuItem.Name = "休眠ToolStripMenuItem"
-        休眠ToolStripMenuItem.Size = New Size(282, 40)
+        休眠ToolStripMenuItem.Size = New Size(315, 40)
         休眠ToolStripMenuItem.Text = "休眠"
         ' 
         ' 注销ToolStripMenuItem
         ' 
         注销ToolStripMenuItem.Name = "注销ToolStripMenuItem"
-        注销ToolStripMenuItem.Size = New Size(282, 40)
+        注销ToolStripMenuItem.Size = New Size(315, 40)
         注销ToolStripMenuItem.Text = "注销"
         ' 
         ' ToolStripMenuItem9
         ' 
         ToolStripMenuItem9.DropDownItems.AddRange(New ToolStripItem() {设置定时关机ToolStripMenuItem, ToolStripMenuItem10, 取消定时关机ToolStripMenuItem})
         ToolStripMenuItem9.Name = "ToolStripMenuItem9"
-        ToolStripMenuItem9.Size = New Size(282, 40)
+        ToolStripMenuItem9.Size = New Size(315, 40)
         ToolStripMenuItem9.Text = "定时关机"
         ' 
         ' 设置定时关机ToolStripMenuItem
         ' 
         设置定时关机ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {分钟后ToolStripMenuItem, 分钟后ToolStripMenuItem1, 分钟后ToolStripMenuItem2, 分钟后ToolStripMenuItem3, 分钟后ToolStripMenuItem4, ToolStripMenuItem11, 小时后ToolStripMenuItem, 小时后ToolStripMenuItem1, 小时后ToolStripMenuItem2, 小时后ToolStripMenuItem3, ToolStripMenuItem12, 天后ToolStripMenuItem, ToolStripMenuItem14, ToolStripMenuItem13, ToolStripMenuItem17, 高级自定义ToolStripMenuItem})
         设置定时关机ToolStripMenuItem.Name = "设置定时关机ToolStripMenuItem"
-        设置定时关机ToolStripMenuItem.Size = New Size(255, 40)
+        设置定时关机ToolStripMenuItem.Size = New Size(315, 40)
         设置定时关机ToolStripMenuItem.Text = "设置定时关机"
         ' 
         ' 分钟后ToolStripMenuItem
         ' 
         分钟后ToolStripMenuItem.Name = "分钟后ToolStripMenuItem"
-        分钟后ToolStripMenuItem.Size = New Size(222, 40)
+        分钟后ToolStripMenuItem.Size = New Size(315, 40)
         分钟后ToolStripMenuItem.Text = "1 分钟后"
         ' 
         ' 分钟后ToolStripMenuItem1
         ' 
         分钟后ToolStripMenuItem1.Name = "分钟后ToolStripMenuItem1"
-        分钟后ToolStripMenuItem1.Size = New Size(222, 40)
+        分钟后ToolStripMenuItem1.Size = New Size(315, 40)
         分钟后ToolStripMenuItem1.Text = "5 分钟后"
         ' 
         ' 分钟后ToolStripMenuItem2
         ' 
         分钟后ToolStripMenuItem2.Name = "分钟后ToolStripMenuItem2"
-        分钟后ToolStripMenuItem2.Size = New Size(222, 40)
+        分钟后ToolStripMenuItem2.Size = New Size(315, 40)
         分钟后ToolStripMenuItem2.Text = "10 分钟后"
         ' 
         ' 分钟后ToolStripMenuItem3
         ' 
         分钟后ToolStripMenuItem3.Name = "分钟后ToolStripMenuItem3"
-        分钟后ToolStripMenuItem3.Size = New Size(222, 40)
+        分钟后ToolStripMenuItem3.Size = New Size(315, 40)
         分钟后ToolStripMenuItem3.Text = "20 分钟后"
         ' 
         ' 分钟后ToolStripMenuItem4
         ' 
         分钟后ToolStripMenuItem4.Name = "分钟后ToolStripMenuItem4"
-        分钟后ToolStripMenuItem4.Size = New Size(222, 40)
+        分钟后ToolStripMenuItem4.Size = New Size(315, 40)
         分钟后ToolStripMenuItem4.Text = "30 分钟后"
         ' 
         ' ToolStripMenuItem11
         ' 
         ToolStripMenuItem11.Name = "ToolStripMenuItem11"
-        ToolStripMenuItem11.Size = New Size(219, 6)
+        ToolStripMenuItem11.Size = New Size(312, 6)
         ' 
         ' 小时后ToolStripMenuItem
         ' 
         小时后ToolStripMenuItem.Name = "小时后ToolStripMenuItem"
-        小时后ToolStripMenuItem.Size = New Size(222, 40)
+        小时后ToolStripMenuItem.Size = New Size(315, 40)
         小时后ToolStripMenuItem.Text = "1 小时后"
         ' 
         ' 小时后ToolStripMenuItem1
         ' 
         小时后ToolStripMenuItem1.Name = "小时后ToolStripMenuItem1"
-        小时后ToolStripMenuItem1.Size = New Size(222, 40)
+        小时后ToolStripMenuItem1.Size = New Size(315, 40)
         小时后ToolStripMenuItem1.Text = "2 小时后"
         ' 
         ' 小时后ToolStripMenuItem2
         ' 
         小时后ToolStripMenuItem2.Name = "小时后ToolStripMenuItem2"
-        小时后ToolStripMenuItem2.Size = New Size(222, 40)
+        小时后ToolStripMenuItem2.Size = New Size(315, 40)
         小时后ToolStripMenuItem2.Text = "5 小时后"
         ' 
         ' 小时后ToolStripMenuItem3
         ' 
         小时后ToolStripMenuItem3.Name = "小时后ToolStripMenuItem3"
-        小时后ToolStripMenuItem3.Size = New Size(222, 40)
+        小时后ToolStripMenuItem3.Size = New Size(315, 40)
         小时后ToolStripMenuItem3.Text = "12 小时后"
         ' 
         ' ToolStripMenuItem12
         ' 
         ToolStripMenuItem12.Name = "ToolStripMenuItem12"
-        ToolStripMenuItem12.Size = New Size(219, 6)
+        ToolStripMenuItem12.Size = New Size(312, 6)
         ' 
         ' 天后ToolStripMenuItem
         ' 
         天后ToolStripMenuItem.Name = "天后ToolStripMenuItem"
-        天后ToolStripMenuItem.Size = New Size(222, 40)
+        天后ToolStripMenuItem.Size = New Size(315, 40)
         天后ToolStripMenuItem.Text = "1 天后"
         ' 
         ' ToolStripMenuItem14
         ' 
         ToolStripMenuItem14.Name = "ToolStripMenuItem14"
-        ToolStripMenuItem14.Size = New Size(222, 40)
+        ToolStripMenuItem14.Size = New Size(315, 40)
         ToolStripMenuItem14.Text = "2 天后"
         ' 
         ' ToolStripMenuItem13
         ' 
         ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        ToolStripMenuItem13.Size = New Size(219, 6)
+        ToolStripMenuItem13.Size = New Size(312, 6)
         ' 
         ' ToolStripMenuItem17
         ' 
         ToolStripMenuItem17.Name = "ToolStripMenuItem17"
-        ToolStripMenuItem17.Size = New Size(222, 40)
+        ToolStripMenuItem17.Size = New Size(315, 40)
         ToolStripMenuItem17.Text = "自定义"
         ' 
         ' 高级自定义ToolStripMenuItem
         ' 
         高级自定义ToolStripMenuItem.Name = "高级自定义ToolStripMenuItem"
-        高级自定义ToolStripMenuItem.Size = New Size(222, 40)
+        高级自定义ToolStripMenuItem.Size = New Size(315, 40)
         高级自定义ToolStripMenuItem.Text = "高级选项"
         ' 
         ' ToolStripMenuItem10
         ' 
         ToolStripMenuItem10.Name = "ToolStripMenuItem10"
-        ToolStripMenuItem10.Size = New Size(252, 6)
+        ToolStripMenuItem10.Size = New Size(312, 6)
         ' 
         ' 取消定时关机ToolStripMenuItem
         ' 
         取消定时关机ToolStripMenuItem.Name = "取消定时关机ToolStripMenuItem"
-        取消定时关机ToolStripMenuItem.Size = New Size(255, 40)
+        取消定时关机ToolStripMenuItem.Size = New Size(315, 40)
         取消定时关机ToolStripMenuItem.Text = "取消定时关机"
         ' 
         ' 关机ToolStripMenuItem
         ' 
         关机ToolStripMenuItem.Name = "关机ToolStripMenuItem"
-        关机ToolStripMenuItem.Size = New Size(282, 40)
+        关机ToolStripMenuItem.Size = New Size(315, 40)
         关机ToolStripMenuItem.Text = "关机"
         ' 
         ' 重启ToolStripMenuItem
         ' 
         重启ToolStripMenuItem.Name = "重启ToolStripMenuItem"
-        重启ToolStripMenuItem.Size = New Size(282, 40)
+        重启ToolStripMenuItem.Size = New Size(315, 40)
         重启ToolStripMenuItem.Text = "重启"
         ' 
         ' 进入WinREToolStripMenuItem
         ' 
         进入WinREToolStripMenuItem.Name = "进入WinREToolStripMenuItem"
-        进入WinREToolStripMenuItem.Size = New Size(282, 40)
+        进入WinREToolStripMenuItem.Size = New Size(315, 40)
         进入WinREToolStripMenuItem.Text = "进入 WinRE"
         ' 
         ' ToolStripMenuItem31
         ' 
         ToolStripMenuItem31.Name = "ToolStripMenuItem31"
-        ToolStripMenuItem31.Size = New Size(279, 6)
+        ToolStripMenuItem31.Size = New Size(312, 6)
         ToolStripMenuItem31.Visible = False
         ' 
         ' 快速关机ToolStripMenuItem
         ' 
         快速关机ToolStripMenuItem.Name = "快速关机ToolStripMenuItem"
-        快速关机ToolStripMenuItem.Size = New Size(282, 40)
+        快速关机ToolStripMenuItem.Size = New Size(315, 40)
         快速关机ToolStripMenuItem.Text = "快速关机"
         快速关机ToolStripMenuItem.Visible = False
         ' 
@@ -928,11 +927,6 @@ Partial Class Form1
         ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         ToolStripMenuItem3.Size = New Size(177, 32)
         ToolStripMenuItem3.Text = "右上角文字显示"
-        ' 
-        ' ToolStripMenuItem32
-        ' 
-        ToolStripMenuItem32.Name = "ToolStripMenuItem32"
-        ToolStripMenuItem32.Size = New Size(18, 32)
         ' 
         ' Button1
         ' 
@@ -1327,7 +1321,7 @@ Partial Class Form1
         VerLabel.Name = "VerLabel"
         VerLabel.Size = New Size(87, 21)
         VerLabel.TabIndex = 10
-        VerLabel.Text = "  v15.5"
+        VerLabel.Text = "  v15.6"
         VerLabel.Visible = False
         ' 
         ' FeatureControlLabel1
@@ -1604,5 +1598,4 @@ Partial Class Form1
     Friend WithEvents 离线更新下载ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 快速关机ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem31 As ToolStripSeparator
-    Friend WithEvents ToolStripMenuItem32 As ToolStripMenuItem
 End Class

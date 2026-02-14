@@ -58,7 +58,7 @@ Partial Class SetupUserLicense
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(119, 35)
         Me.Label5.TabIndex = 38
-        Me.Label5.Text = "版本 15.5"
+        Me.Label5.Text = "版本 15.6"
         '
         'Label7
         '
