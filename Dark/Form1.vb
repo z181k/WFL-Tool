@@ -422,7 +422,7 @@ starttask:
         'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
         '
         'beta不显示横幅
-        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Beta", "无")
+        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
         'If Beta = "9504.1" Then
         '    Panel1.Visible = False
         '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
@@ -779,7 +779,7 @@ legacy:
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Panel1.Visible = False
         'Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Beta /T REG_SZ /d 9504.1 /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Preview /T REG_SZ /d 9504.2 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 设备管理器错误代码帮助helpmenu_Click(sender As Object, e As EventArgs) Handles 设备管理器错误代码帮助helpmenu.Click

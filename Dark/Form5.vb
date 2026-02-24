@@ -103,6 +103,7 @@
             Me.ContextMenuStrip = ContextMenuStrip2
             返回主界面.Visible = False
             返回没有关闭窗口就行.Visible = True
+            快捷键返回BToolStripMenuItem.Enabled = False
         End If
     End Sub
 
