@@ -499,6 +499,8 @@ starttask:
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
             仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
         End If
+        '
+        Timer1.Start()    '分离的调用
         Exit Sub
 openreg:
         '辅助打开软件
@@ -915,6 +917,33 @@ legacy:
         NF4.MaximumSize = New Size(0, 0)
         NF4.MinimumSize = New Size(0, 0)
         NF4.WebBrowser1.ScriptErrorsSuppressed = True
+    End Sub
+
+    Private Sub 禁用Win自动更新ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 禁用Win自动更新ToolStripMenuItem.Click
+        CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU /v AUOptions /T REG_DWORD /d 0 /f", "", "runas", 0)
+        CreateObject("shell.application").shellexecute("reg.exe", "add HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU /v NoAutoUpdate /T REG_DWORD /d 1 /f", "", "runas", 0)
+        Timer1.Start()
+    End Sub
+
+    Private Sub 开启Win自动更新ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 开启Win自动更新ToolStripMenuItem.Click
+        CreateObject("shell.application").shellexecute("reg.exe", "delete HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU /v AUOptions /f", "", "runas", 0)
+        CreateObject("shell.application").shellexecute("reg.exe", "delete HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU /v NoAutoUpdate /f", "", "runas", 0)
+        Timer1.Start()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        '检查注册表Windows自动更新设置
+        Timer1.Stop()
+        On Error GoTo ntc
+        Dim WinNoAutoUpdate As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU", "NoAutoUpdate", Nothing)
+        If WinNoAutoUpdate = 1 Then
+            开启Win自动更新ToolStripMenuItem.Text = "开启自动更新"
+            禁用Win自动更新ToolStripMenuItem.Text = "禁用自动更新 (当前)"
+        Else
+ntc:
+            开启Win自动更新ToolStripMenuItem.Text = "开启自动更新 (当前)"
+            禁用Win自动更新ToolStripMenuItem.Text = "禁用自动更新"
+        End If
     End Sub
 End Class
 
