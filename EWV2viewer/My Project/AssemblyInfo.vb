@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("DBT WebPageViewer")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("© 2026 董博涛")>
-<Assembly: AssemblyProduct("WFL Tool (x64)")>
+<Assembly: AssemblyProduct("DBT Embedded WebPageViewer")>
 <Assembly: AssemblyCopyright("版权所有 © 2026 董博涛 保留所有权利.")>
 <Assembly: AssemblyTrademark("")>
 
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 '通过使用 "*"，如下所示:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("15.6.9504.3")>
-<Assembly: AssemblyFileVersion("15.6.9504.3")>
+<Assembly: AssemblyVersion("1.0.1000.1")>
+<Assembly: AssemblyFileVersion("16.0.9584.1")>
 <Assembly: NeutralResourcesLanguage("zh-SG")>

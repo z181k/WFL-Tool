@@ -10,15 +10,15 @@
     <Platforms>AnyCPU;x64</Platforms>
     <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
     <ApplicationIcon>xinlogo.ico</ApplicationIcon>
-    <AssemblyVersion>15.6.9504.3</AssemblyVersion>
-    <FileVersion>15.6.9504.3</FileVersion>
+    <AssemblyVersion>16.0.9584.1</AssemblyVersion>
+    <FileVersion>16.0.9584.1</FileVersion>
     <Copyright>版权所有 © 2026 董博涛 保留所有权利.</Copyright>
     <Company>© 2026 董博涛</Company>
     <Product>电脑功能启动器 (x64)</Product>
     <Title>WFL Tool</Title>
     <AssemblyTitle>WFL Tool</AssemblyTitle>
     <Description>WFL Tool</Description>
-    <Version>15.6.9504.3</Version>
+    <Version>16.0.9584.1</Version>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <NeutralLanguage>zh-Hans-HK</NeutralLanguage>
   </PropertyGroup>
