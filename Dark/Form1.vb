@@ -499,8 +499,11 @@ starttask:
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
             仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
         End If
+        '分离的调用:winupdate
+        Timer1.Start()
+        '低分辨率设备兼容代码
+        PictureBox2.Height = PictureBox2.Width
         '
-        Timer1.Start()    '分离的调用
         Exit Sub
 openreg:
         '辅助打开软件

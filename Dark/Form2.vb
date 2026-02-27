@@ -164,6 +164,13 @@ legacy:
                 Button15.Text = "任务管理器 (x86)"
                 ToolTip1.Active = True
             End If
+            '低分辨率设备兼容代码
+            Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
+            If ScreenWidth < 1000 Then
+                If Me.Width < 572 Then
+                    Me.Width = 572
+                End If
+            End If
         End If
     End Sub
 

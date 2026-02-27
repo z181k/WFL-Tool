@@ -45,6 +45,12 @@
         ElseIf EWV2viewerInsatll = "False" Then
             CheckBox1.Checked = True
         End If
+        '低分辨率设备兼容代码
+        PictureBox2.Height = PictureBox2.Width
+        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
+        If ScreenHeight < 1080 Then
+            Label7.Location = Label7.Location - New Size(3, 0)
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

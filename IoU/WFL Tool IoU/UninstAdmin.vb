@@ -63,4 +63,13 @@
         SetupUserInstall.ControlBox = True
         SetupUserInstall.Text = "WFL Tool (x64) 卸载程序"
     End Sub
+
+    Private Sub UninstAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '低分辨率设备兼容代码
+        PictureBox2.Height = PictureBox2.Width
+        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
+        If ScreenHeight < 1080 Then
+            Label7.Location = Label7.Location - New Size(3, 0)
+        End If
+    End Sub
 End Class

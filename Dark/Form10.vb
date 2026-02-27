@@ -1,4 +1,6 @@
-﻿Public Class Form10
+﻿Imports System.Reflection.Emit
+
+Public Class Form10
     Private Sub 打开主界面ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开主界面ToolStripMenuItem.Click
         Form1.Show()
     End Sub
@@ -80,5 +82,15 @@
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
         CreateObject("shell.application").shellexecute("Slui.EXE", "4", "", "runas", 1)
+    End Sub
+
+    Private Sub Form10_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '低分辨率设备兼容代码
+        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
+        If ScreenHeight < 1080 Then
+            If Me.Height < 461 Then
+                Me.Height = 461
+            End If
+        End If
     End Sub
 End Class

@@ -23,5 +23,11 @@
         If CurrentBuild < 5033 Then         '拒绝在Windows Longhorn重置前版本、WindowsXP及更低版本系统的X64版本上运行
             MsgBox("本软件仅支持 Windows Vista 及以上版本 x64 架构 Windows 系统！")
         End If
+        '低分辨率设备兼容代码
+        PictureBox2.Height = PictureBox2.Width
+        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
+        If ScreenHeight < 1080 Then
+            Label7.Location = Label7.Location - New Size(3, 0)
+        End If
     End Sub
 End Class

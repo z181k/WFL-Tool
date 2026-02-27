@@ -879,7 +879,7 @@ Partial Class Form7
         AutoScaleMode = AutoScaleMode.Dpi
         AutoScroll = True
         BackColor = SystemColors.Control
-        ClientSize = New Size(1428, 894)
+        ClientSize = New Size(1413, 894)
         ContextMenuStrip = ContextMenuStrip1
         Controls.Add(Button34)
         Controls.Add(PictureBox1)
@@ -894,8 +894,8 @@ Partial Class Form7
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(6, 5, 6, 5)
         MaximizeBox = False
-        MaximumSize = New Size(1452, 1625)
-        MinimumSize = New Size(1452, 844)
+        MaximumSize = New Size(1437, 1625)
+        MinimumSize = New Size(1437, 844)
         Name = "Form7"
         StartPosition = FormStartPosition.CenterScreen
         Text = "系统修改"

@@ -199,6 +199,21 @@
             Button25.Enabled = False              '检查版本控制Windows 11 explorer xaml菜单显示
             Button15.Enabled = False              '检查版本控制Windows 11 explorer win32菜单显示
         End If
+        '低分辨率设备兼容代码
+        Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
+        If ScreenWidth < 1400 Then
+            If Me.Width < 828 Then
+                Me.Width = 828
+                Me.MinimumSize = New Size(828, Me.MinimumSize.Height)
+            ElseIf Me.Width < 1032 And Me.Width > 850 Then
+                Me.Width = 1032
+                Me.MinimumSize = New Size(1032, Me.MinimumSize.Height)
+            ElseIf Me.Width < 1235 And Me.Width > 1050 Then
+                Me.Width = 1235
+                Me.MinimumSize = New Size(1235, Me.MinimumSize.Height)
+            End If
+        End If
+        MsgBox(Me.Width, 0, Me.Height)
     End Sub
 
     Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click

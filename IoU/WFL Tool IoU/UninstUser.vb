@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Reflection.Emit
 
 Public Class UninstUser
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -91,5 +92,14 @@ Public Class UninstUser
 
     Private Sub UninstUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
+    End Sub
+
+    Private Sub UninstUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '低分辨率设备兼容代码
+        PictureBox2.Height = PictureBox2.Width
+        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
+        If ScreenHeight < 1080 Then
+            Label7.Location = Label7.Location - New Size(3, 0)
+        End If
     End Sub
 End Class

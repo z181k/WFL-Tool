@@ -28,8 +28,10 @@ Partial Class Form10
         打开主界面ToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         GroupBox1 = New GroupBox()
-        Button12 = New Button()
+        GroupBox2 = New GroupBox()
+        Button5 = New Button()
         Button11 = New Button()
+        Button12 = New Button()
         GroupBox4 = New GroupBox()
         Button10 = New Button()
         Button7 = New Button()
@@ -41,15 +43,13 @@ Partial Class Form10
         Label3 = New Label()
         Button3 = New Button()
         Button4 = New Button()
-        Button5 = New Button()
         Button2 = New Button()
         Button1 = New Button()
-        GroupBox2 = New GroupBox()
         ContextMenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
+        GroupBox2.SuspendLayout()
         GroupBox4.SuspendLayout()
         GroupBox3.SuspendLayout()
-        GroupBox2.SuspendLayout()
         SuspendLayout()
         ' 
         ' ContextMenuStrip1
@@ -91,14 +91,25 @@ Partial Class Form10
         GroupBox1.TabStop = False
         GroupBox1.Text = "Windows"
         ' 
-        ' Button12
+        ' GroupBox2
         ' 
-        Button12.Location = New Point(213, 34)
-        Button12.Name = "Button12"
-        Button12.Size = New Size(113, 140)
-        Button12.TabIndex = 4
-        Button12.Text = "电话" & vbCrLf & "激活"
-        Button12.UseVisualStyleBackColor = True
+        GroupBox2.Controls.Add(Button5)
+        GroupBox2.Controls.Add(Button11)
+        GroupBox2.Location = New Point(353, 34)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(258, 140)
+        GroupBox2.TabIndex = 5
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "取消激活"
+        ' 
+        ' Button5
+        ' 
+        Button5.Location = New Point(16, 32)
+        Button5.Name = "Button5"
+        Button5.Size = New Size(230, 48)
+        Button5.TabIndex = 6
+        Button5.Text = "卸载密钥"
+        Button5.UseVisualStyleBackColor = True
         ' 
         ' Button11
         ' 
@@ -108,6 +119,15 @@ Partial Class Form10
         Button11.TabIndex = 7
         Button11.Text = "重置激活"
         Button11.UseVisualStyleBackColor = True
+        ' 
+        ' Button12
+        ' 
+        Button12.Location = New Point(213, 34)
+        Button12.Name = "Button12"
+        Button12.Size = New Size(113, 140)
+        Button12.TabIndex = 4
+        Button12.Text = "电话" & vbCrLf & "激活"
+        Button12.UseVisualStyleBackColor = True
         ' 
         ' GroupBox4
         ' 
@@ -192,7 +212,7 @@ Partial Class Form10
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(6, 31)
+        Label3.Location = New Point(3, 31)
         Label3.Name = "Label3"
         Label3.Size = New Size(577, 84)
         Label3.TabIndex = 0
@@ -216,15 +236,6 @@ Partial Class Form10
         Button4.Text = "安装密钥"
         Button4.UseVisualStyleBackColor = True
         ' 
-        ' Button5
-        ' 
-        Button5.Location = New Point(16, 32)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(230, 48)
-        Button5.TabIndex = 6
-        Button5.Text = "卸载密钥"
-        Button5.UseVisualStyleBackColor = True
-        ' 
         ' Button2
         ' 
         Button2.Location = New Point(6, 107)
@@ -242,17 +253,6 @@ Partial Class Form10
         Button1.TabIndex = 2
         Button1.Text = "查看状态"
         Button1.UseVisualStyleBackColor = True
-        ' 
-        ' GroupBox2
-        ' 
-        GroupBox2.Controls.Add(Button5)
-        GroupBox2.Controls.Add(Button11)
-        GroupBox2.Location = New Point(353, 34)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(258, 140)
-        GroupBox2.TabIndex = 5
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "取消激活"
         ' 
         ' Form10
         ' 
@@ -274,10 +274,10 @@ Partial Class Form10
         Text = "Windows 密钥管理服务激活 UI - WFL Tool"
         ContextMenuStrip1.ResumeLayout(False)
         GroupBox1.ResumeLayout(False)
+        GroupBox2.ResumeLayout(False)
         GroupBox4.ResumeLayout(False)
         GroupBox3.ResumeLayout(False)
         GroupBox3.PerformLayout()
-        GroupBox2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
 

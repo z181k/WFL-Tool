@@ -18,6 +18,13 @@
             返回更多功能.Visible = False
             快捷键返回BToolStripMenuItem.Enabled = False
         End If
+        '低分辨率设备兼容代码
+        Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
+        If ScreenWidth < 1000 Then
+            If Me.Width < 572 Then
+                Me.Width = 572
+            End If
+        End If
     End Sub
 
     Private Sub MSDT弃用说明_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles MSDT弃用说明.LinkClicked

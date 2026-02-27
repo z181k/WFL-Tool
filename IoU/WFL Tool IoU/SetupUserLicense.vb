@@ -29,6 +29,12 @@
             Close()               '企业自动化安装：当前用户
         End If
 jump:
+        '低分辨率设备兼容代码
+        PictureBox2.Height = PictureBox2.Width
+        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
+        If ScreenHeight < 1080 Then
+            Label7.Location = Label7.Location - New Size(3, 0)
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

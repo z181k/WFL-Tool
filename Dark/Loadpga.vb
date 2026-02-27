@@ -8,7 +8,7 @@
         End If
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild < 10240 Then              '检查版本控制应用启动
-            MsgBox("WFL Tool 仅支持 Windows 10 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", 0, "WFL Tool without Dark Theme")
+            MsgBox("WFL Tool 仅支持 Windows 10 及以上版本 x64 架构 Windows 系统，请升级你的操作系统。", MsgBoxStyle.Critical, "WFL Tool without Dark Theme")
             End
             '拒绝在比Windows 8.1更低版本系统的X64版本上运行
         End If
@@ -24,6 +24,13 @@
             Else
                 Application.SetColorMode(SystemColorMode.System)
             End If
+        End If
+        Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
+        Dim ScreenHeigh As Integer = Screen.PrimaryScreen.Bounds.Height
+        If ScreenWidth < 800 Or ScreenHeigh < 600 Then
+            MsgBox("请在 800x600 或更高分辨率下运行！", MsgBoxStyle.Critical, "WFL Tool")
+            Application.Exit()
+            Exit Sub
         End If
 1:
         Dim NF1 As New Form1()
