@@ -37,13 +37,6 @@ Public Class EWV2webpage
             Dim URL2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("URL", "https://player.bilibili.com/player.html?isOutside=true&aid=291456358&bvid=BV1sf4y1b74k&cid=361932939&p=1")
             WebView21.Source = New Uri(URL2)
         End If
-        '低分辨率设备兼容代码
-        Dim WV21W As Int64 = WebView21.Width - Me.Width
-        Dim WV21H As Int64 = WebView21.Height - Me.Height
-        Dim WV21HS As String = WV21H.ToString
-        Dim WV21WS As String = WV21W.ToString
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v WV21W /T REG_SZ /d " + WV21WS + " /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v WV21H /T REG_SZ /d " + WV21HS + " /f", AppWinStyle.Hide, True, -1)
         '根据分辨率调整窗口大小
         Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
         Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
@@ -58,29 +51,39 @@ Public Class EWV2webpage
         End If
     End Sub
     Private Sub HelpEWV2_sizechange(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.SizeChanged
-        Dim WV21W As Int64 = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("WV21W", "24")
-        Dim WV21H As Int64 = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("WV21H", "63")
-        If WV21H >= 444 Then       '300%+
-            WebView21.Width = Me.Width - 44
-            WebView21.Height = Me.Height - 110
-        ElseIf WV21H >= 300 Then   '250%
-            WebView21.Width = Me.Width - 34
-            WebView21.Height = Me.Height - 90
-        ElseIf WV21H >= 100 Then   '225%
-            WebView21.Width = Me.Width - 29
-            WebView21.Height = Me.Height - 80
-        ElseIf WV21H >= -100 Then   '175%
-            WebView21.Width = Me.Width - 25
-            WebView21.Height = Me.Height - 64
-        ElseIf WV21H >= -150 Then   '150%
-            WebView21.Width = Me.Width - 21
-            WebView21.Height = Me.Height - 54
-        ElseIf WV21H >= -200 Then   '125%
-            WebView21.Width = Me.Width - 21
-            WebView21.Height = Me.Height - 54
-        ElseIf WV21H < -200 Then    '100%
+        Dim scalePercentage As Integer
+        Using g As Graphics = Me.CreateGraphics
+            scalePercentage = CInt(Math.Round((g.DpiX / 96.0F) * 100))
+        End Using
+
+        ' 根据缩放比例设置宽度
+        If scalePercentage <= 100 Then
             WebView21.Width = Me.Width - 15
             WebView21.Height = Me.Height - 37
+        ElseIf scalePercentage <= 150 Then
+            WebView21.Width = Me.Width - 20
+            WebView21.Height = Me.Height - 54
+        ElseIf scalePercentage <= 175 Then
+            WebView21.Width = Me.Width - 24
+            WebView21.Height = Me.Height - 64
+        ElseIf scalePercentage <= 225 Then
+            WebView21.Width = Me.Width - 28
+            WebView21.Height = Me.Height - 80
+        ElseIf scalePercentage <= 250 Then
+            WebView21.Width = Me.Width - 34
+            WebView21.Height = Me.Height - 90
+        ElseIf scalePercentage <= 300 Then
+            WebView21.Width = Me.Width - 43
+            WebView21.Height = Me.Height - 108
+        ElseIf scalePercentage <= 375 Then
+            WebView21.Width = Me.Width - 53
+            WebView21.Height = Me.Height - 136
+        ElseIf scalePercentage <= 450 Then
+            WebView21.Width = Me.Width - 64
+            WebView21.Height = Me.Height - 164
+        ElseIf scalePercentage <= 525 Then
+            WebView21.Width = Me.Width - 75
+            WebView21.Height = Me.Height - 192
         End If
     End Sub
 
