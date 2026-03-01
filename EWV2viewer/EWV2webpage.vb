@@ -4,6 +4,20 @@ Imports System.Windows.Forms
 
 Public Class EWV2webpage
     Private Sub HelpEWV2_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        '根据分辨率调整窗口大小
+        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
+        Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
+        If ScreenWidth > 2500 And ScreenHeight > 1400 Then
+            Me.Size = New Size(2000, 1200)
+        ElseIf ScreenWidth > 2000 And ScreenHeight > 1000 Then
+            Me.Size = New Size(1400, 850)
+        ElseIf ScreenWidth > 1400 And ScreenHeight > 1000 Then
+            Me.Size = New Size(900, 700)
+        ElseIf ScreenWidth > 1000 And ScreenHeight > 700 Then
+            Me.Size = New Size(750, 500)
+        ElseIf ScreenWidth > 799 And ScreenHeight > 599 Then
+            Me.Size = New Size(600, 400)
+        End If
         '下方代码为根据注册表信息调整网页界面内容代码
         Dim EWV2webpageClean As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("EWV2webpageClean", "False")
         If EWV2webpageClean = "True" Then
@@ -36,20 +50,6 @@ Public Class EWV2webpage
             'url地址
             Dim URL2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("URL", "https://player.bilibili.com/player.html?isOutside=true&aid=291456358&bvid=BV1sf4y1b74k&cid=361932939&p=1")
             WebView21.Source = New Uri(URL2)
-        End If
-        '根据分辨率调整窗口大小
-        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
-        Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
-        If ScreenWidth > 2500 And ScreenHeight > 1400 Then
-            Me.Size = New Size(2000, 1200)
-        ElseIf ScreenWidth > 2000 And ScreenHeight > 1000 Then
-            Me.Size = New Size(1400, 850)
-        ElseIf ScreenWidth > 1400 And ScreenHeight > 1000 Then
-            Me.Size = New Size(900, 700)
-        ElseIf ScreenWidth > 1000 And ScreenHeight > 700 Then
-            Me.Size = New Size(750, 500)
-        ElseIf ScreenWidth > 799 And ScreenHeight > 599 Then
-            Me.Size = New Size(600, 400)
         End If
     End Sub
     Private Sub HelpEWV2_sizechange(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.SizeChanged
