@@ -18,5 +18,6 @@
         Close()
         Exit Sub
 legacy:
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 End Class

@@ -139,6 +139,7 @@ legacy:
         Exit Sub
 legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
         Shell("cmd.exe /c start https://kdocs.cn/l/sqxx3d4vumUT", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click         '此电脑
@@ -282,9 +283,9 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
         Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
         Exit Sub
 legacy:
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
         'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
         Shell("cmd.exe /c start helppane.exe -home", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 系统修改ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 系统修改ToolStripMenuItem.Click
@@ -803,6 +804,7 @@ legacy:
         Exit Sub
 legacy:
         Shell("cmd.exe /c start https://go.microsoft.com/fwlink/?LinkID=2004354", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 关于设备管理器错误代码的帮助ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于设备管理器错误代码的帮助ToolStripMenuItem.Click
@@ -859,9 +861,9 @@ legacy:
         If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
             GoTo legacy
         End If
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""沉浸式网页预览工具 - WFL Tool WebPageViewer"" /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d """ + InstallLocation + "\EWV2viewer\iwpt.html"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""沉浸式网页预览工具 - WFL Tool WebPageViewer"" /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageURL /T REG_SZ /d """ + InstallLocation + "\EWV2viewer\iwpt.html"" /f", AppWinStyle.Hide, True, -1)
         Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
         Exit Sub
 legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
@@ -873,6 +875,7 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
 legacy2:
             MsgBox("使用该功能需先在你的电脑上以用户模式安装 WFL Tool 并安装有以管理员身份安装的的 Edge Webview2", MsgBoxStyle.Information, "WFL Tool")
         End If
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 运行ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 运行ToolStripMenuItem.Click
@@ -920,6 +923,7 @@ legacy:
         NF4.MaximumSize = New Size(0, 0)
         NF4.MinimumSize = New Size(0, 0)
         NF4.WebBrowser1.ScriptErrorsSuppressed = True
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 禁用Win自动更新ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 禁用Win自动更新ToolStripMenuItem.Click

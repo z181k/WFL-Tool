@@ -5,7 +5,7 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo As String = "RTM 版本(9584.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "新增 Windows 自动更新控制 功能" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决多个在低分辨率设备的显示异常问题" & vbCrLf & "2.解决系统附件在弹出式打开下返回快捷键仍能用问题" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
+        Dim upginfo As String = "RTM 版本(9584.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "新增 Windows 自动更新控制 功能" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决多个在低分辨率设备的显示异常问题" & vbCrLf & "2.解决系统附件在弹出式打开下返回快捷键仍能用问题" & vbCrLf & "3.解决多个依赖 WebView2 功能加载异常问题" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         ''   此处放启用后日志
@@ -64,9 +64,9 @@ legacy:
             If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
                 GoTo legacy
             End If
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageTitle /T REG_SZ /d ""检查更新 - 请手动下载完整最新版安装包 - WFL Tool 下载中心  (无法访问请右击检查更新选择应急链接重试)"" /f", AppWinStyle.Hide, True, -1)
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageURL /T REG_SZ /d https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL /f", AppWinStyle.Hide, True, -1)      'onedrive链接，方便下载
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""检查更新 - 请手动下载完整最新版安装包 - WFL Tool 下载中心  (无法访问请右击检查更新选择应急链接重试)"" /f", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageURL /T REG_SZ /d https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL /f", AppWinStyle.Hide, True, -1)      'onedrive链接，方便下载
             Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
             Exit Sub
 legacy:
@@ -79,6 +79,7 @@ legacy:
             NF4.MinimumSize = New Size(0, 0)
             NF4.WebBrowser1.ScriptErrorsSuppressed = True
         End If
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub LinkLabel7_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel7.LinkClicked
@@ -160,6 +161,7 @@ legacy:
         Exit Sub
 legacy:
         Shell("cmd.exe /c start https://github.com/z181k/WFL-Tool", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -200,6 +202,7 @@ legacy:
         Exit Sub
 legacy:
         Shell("cmd.exe /c start https://medbt-my.sharepoint.cn/:f:/g/personal/dbtob_medbt_partner_onmschina_cn/IgBdYnImsH-5RIqkDkx3h2pCAZaJ_8KKWMkn7g9S3mbt5tM?e=EaTFxL", AppWinStyle.Hide, False, -1)      'onedrive链接，方便下载
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 应急下载链接ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 应急下载链接ToolStripMenuItem.Click

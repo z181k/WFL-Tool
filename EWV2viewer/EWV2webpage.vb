@@ -41,7 +41,9 @@ Public Class EWV2webpage
         Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
         Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
         If ScreenWidth > 2500 And ScreenHeight > 1400 Then
-            Me.Size = New Size(1800, 1200)
+            Me.Size = New Size(2000, 1200)
+        ElseIf ScreenWidth > 2000 And ScreenHeight > 1000 Then
+            Me.Size = New Size(1400, 850)
         ElseIf ScreenWidth > 1400 And ScreenHeight > 1000 Then
             Me.Size = New Size(900, 700)
         ElseIf ScreenWidth > 1000 And ScreenHeight > 700 Then
