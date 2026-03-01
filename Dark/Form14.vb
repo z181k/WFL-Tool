@@ -34,7 +34,7 @@
             GoTo legacy
         End If
         If MsgBox("要在本应用窗口内打开 MSDT 弃用说明吗？这是一个来自 Microsoft 的网页内容", 308, "WFL Tool (x64)") = vbYes Then
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""Microsoft 支持诊断工具 (MSDT) 弃用的说明 - Microsoft 支持"" /f", AppWinStyle.Hide, True, -1)
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageShowIcon /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageURL /T REG_SZ /d ""https://aka.ms/msdtretire"" /f", AppWinStyle.Hide, True, -1)
