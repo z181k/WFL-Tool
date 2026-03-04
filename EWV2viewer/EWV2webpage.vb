@@ -1,6 +1,7 @@
 ﻿
 Option Explicit On
 Imports System.Windows.Forms
+Imports Microsoft.Win32
 
 Public Class EWV2webpage
     Private Sub HelpEWV2_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
@@ -33,11 +34,30 @@ Public Class EWV2webpage
             Dim EWV2webpageURL As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("EWV2webpageURL", "https://player.bilibili.com/player.html?isOutside=true&aid=291456358&bvid=BV1sf4y1b74k&cid=361932939&p=1")
             WebView21.Source = New Uri(EWV2webpageURL)
             '清理信息
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageShow /T REG_SZ /d 6 /f", AppWinStyle.Hide, True, -1)
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageShowIcon /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageTitle /T REG_SZ /d 注意！这是第三方页面 /f", AppWinStyle.Hide, True, -1)
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageURL /T REG_SZ /d ""https://liulanmi.com/core"" /f", AppWinStyle.Hide, True, -1)
-            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
+            Try
+                ' 写入 HKEY_CURRENT_USER\Software\MyApp
+                Using key As RegistryKey = Registry.CurrentUser.CreateSubKey("Software\DBT\WebPageViewer")
+                    ' 写入字符串值
+                    key.SetValue("EWV2webpageShowIcon", "True", RegistryValueKind.String)
+                    key.SetValue("EWV2webpageTitle", "注意！这是第三方页面", RegistryValueKind.String)
+                    key.SetValue("EWV2webpageURL", "https://liulanmi.com/core", RegistryValueKind.String)
+                    key.SetValue("EWV2webpageClean", "False", RegistryValueKind.String)
+
+                    ' 写入整数值
+                    'key.SetValue("UserAge", 25, RegistryValueKind.DWord)
+
+                    ' 写入其他类型
+                    'key.SetValue("LastLogin", DateTime.Now.ToString(), RegistryValueKind.String)
+                    'key.SetValue("IsAdmin", False, RegistryValueKind.DWord) ' 0 = False, 1 = True
+
+                    'MessageBox.Show("注册表写入成功！")
+
+                End Using
+            Catch ex As UnauthorizedAccessException
+                MessageBox.Show("没有权限写入注册表，请以管理员身份运行程序或联系开发者以寻求帮助。", "错误 - DBT WebPageViewer")
+            Catch ex As Exception
+                MsgBox("写入注册表失败：" & ex.Message, MsgBoxStyle.Critical, "错误 - DBT WebPageViewer")
+            End Try
         Else
             '显示图标
             Dim Sicon2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("ShowIcon", "True")
