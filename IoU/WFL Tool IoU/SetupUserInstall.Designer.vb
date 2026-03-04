@@ -37,10 +37,10 @@ Partial Class SetupUserInstall
         '
         'PB1
         '
-        Me.PB1.Location = New System.Drawing.Point(314, 231)
+        Me.PB1.Location = New System.Drawing.Point(328, 231)
         Me.PB1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.PB1.Name = "PB1"
-        Me.PB1.Size = New System.Drawing.Size(479, 10)
+        Me.PB1.Size = New System.Drawing.Size(465, 10)
         Me.PB1.TabIndex = 0
         Me.PB1.Value = 10
         '
@@ -61,18 +61,18 @@ Partial Class SetupUserInstall
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 7.714286!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label7.Location = New System.Drawing.Point(53, 236)
+        Me.Label7.Location = New System.Drawing.Point(58, 236)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(164, 24)
+        Me.Label7.Size = New System.Drawing.Size(159, 24)
         Me.Label7.TabIndex = 43
-        Me.Label7.Text = "方便快捷  一点即达"
+        Me.Label7.Text = "方便快捷 一点即达"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("微软雅黑", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label8.Location = New System.Drawing.Point(46, 192)
+        Me.Label8.Location = New System.Drawing.Point(50, 192)
         Me.Label8.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(176, 46)
@@ -83,7 +83,7 @@ Partial Class SetupUserInstall
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 27.0!)
-        Me.Label1.Location = New System.Drawing.Point(413, 77)
+        Me.Label1.Location = New System.Drawing.Point(416, 77)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(287, 82)
@@ -109,7 +109,7 @@ Partial Class SetupUserInstall
         '
         Me.Button1.Enabled = False
         Me.Button1.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(429, 338)
+        Me.Button1.Location = New System.Drawing.Point(432, 338)
         Me.Button1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(257, 68)

@@ -181,11 +181,6 @@ legacy:
 
         '低屏幕分辨率设备兼容代码
         PictureBox1.Height = PictureBox1.Width
-        Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
-        If ScreenHeight < 1080 Then
-            Label2.Location = Label2.Location - New Size(3, 0)
-            Label6.Location = Label2.Location
-        End If
     End Sub
 
     Private Sub 检查更新ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 检查更新ToolStripMenuItem.Click

@@ -60,7 +60,7 @@ Partial Class Form9
         Label1.AutoSize = True
         Label1.ContextMenuStrip = ContextMenuStrip1
         Label1.Font = New Font("微软雅黑", 15F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label1.Location = New Point(40, 206)
+        Label1.Location = New Point(45, 206)
         Label1.Margin = New Padding(6, 0, 6, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(176, 46)
@@ -97,12 +97,12 @@ Partial Class Form9
         Label2.ContextMenuStrip = ContextMenuStrip1
         Label2.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label2.ForeColor = SystemColors.ControlDark
-        Label2.Location = New Point(47, 250)
+        Label2.Location = New Point(54, 250)
         Label2.Margin = New Padding(6, 0, 6, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(164, 24)
+        Label2.Size = New Size(159, 24)
         Label2.TabIndex = 2
-        Label2.Text = "方便快捷  一点即达"
+        Label2.Text = "方便快捷 一点即达"
         ' 
         ' Label3
         ' 
@@ -308,12 +308,12 @@ Partial Class Form9
         Label6.ContextMenuStrip = ContextMenuStrip1
         Label6.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label6.ForeColor = SystemColors.ControlDark
-        Label6.Location = New Point(47, 250)
+        Label6.Location = New Point(53, 250)
         Label6.Margin = New Padding(6, 0, 6, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(164, 24)
+        Label6.Size = New Size(159, 24)
         Label6.TabIndex = 18
-        Label6.Text = "方便快捷  一点即达"
+        Label6.Text = "方便快捷 一点即达"
         Label6.Visible = False
         ' 
         ' PictureBox1
@@ -345,7 +345,7 @@ Partial Class Form9
         ' FeatureControlLabel1
         ' 
         FeatureControlLabel1.AutoSize = True
-        FeatureControlLabel1.Location = New Point(73, 35)
+        FeatureControlLabel1.Location = New Point(78, 35)
         FeatureControlLabel1.Name = "FeatureControlLabel1"
         FeatureControlLabel1.Size = New Size(87, 21)
         FeatureControlLabel1.TabIndex = 111
