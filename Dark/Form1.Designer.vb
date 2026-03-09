@@ -194,7 +194,6 @@ Partial Class Form1
         Label1 = New Label()
         OpenFileDialog1 = New OpenFileDialog()
         Timer1 = New Timer(components)
-        ToolStripMenuItem32 = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -221,7 +220,7 @@ Partial Class Form1
         ' 
         ' 文件FToolStripMenuItem
         ' 
-        文件FToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem25, 运行ToolStripMenuItem, ToolStripMenuItem1, 系统更新UToolStripMenuItem, 系统修改ToolStripMenuItem, ToolStripMenuItem15, ToolStripMenuItem32, 更多ToolStripMenuItem, ToolStripMenuItem2, ToolStripMenuItem6, ToolStripMenuItem18, ToolStripMenuItem19, 退出XToolStripMenuItem})
+        文件FToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem25, 运行ToolStripMenuItem, ToolStripMenuItem1, 系统更新UToolStripMenuItem, 系统修改ToolStripMenuItem, ToolStripMenuItem15, 更多ToolStripMenuItem, ToolStripMenuItem2, ToolStripMenuItem6, ToolStripMenuItem18, ToolStripMenuItem19, 退出XToolStripMenuItem})
         文件FToolStripMenuItem.Name = "文件FToolStripMenuItem"
         文件FToolStripMenuItem.Size = New Size(97, 33)
         文件FToolStripMenuItem.Text = "功能(&F)"
@@ -229,25 +228,25 @@ Partial Class Form1
         ' ToolStripMenuItem25
         ' 
         ToolStripMenuItem25.Name = "ToolStripMenuItem25"
-        ToolStripMenuItem25.Size = New Size(360, 40)
+        ToolStripMenuItem25.Size = New Size(315, 40)
         ToolStripMenuItem25.Text = "浏览文件(&B)"
         ' 
         ' 运行ToolStripMenuItem
         ' 
         运行ToolStripMenuItem.Name = "运行ToolStripMenuItem"
-        运行ToolStripMenuItem.Size = New Size(360, 40)
+        运行ToolStripMenuItem.Size = New Size(315, 40)
         运行ToolStripMenuItem.Text = "运行(&R)"
         ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(357, 6)
+        ToolStripMenuItem1.Size = New Size(312, 6)
         ' 
         ' 系统更新UToolStripMenuItem
         ' 
         系统更新UToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {Windows1011ToolStripMenuItem, 离线更新下载ToolStripMenuItem, 下载WindowsToolStripMenuItem, Windows自动更新控制ToolStripMenuItem, ToolStripMenuItem7, 下载新版本WFLToolTSMI})
         系统更新UToolStripMenuItem.Name = "系统更新UToolStripMenuItem"
-        系统更新UToolStripMenuItem.Size = New Size(360, 40)
+        系统更新UToolStripMenuItem.Size = New Size(315, 40)
         系统更新UToolStripMenuItem.Text = "系统更新(&U)"
         ' 
         ' Windows1011ToolStripMenuItem
@@ -297,13 +296,13 @@ Partial Class Form1
         ' 开启Win自动更新ToolStripMenuItem
         ' 
         开启Win自动更新ToolStripMenuItem.Name = "开启Win自动更新ToolStripMenuItem"
-        开启Win自动更新ToolStripMenuItem.Size = New Size(315, 40)
+        开启Win自动更新ToolStripMenuItem.Size = New Size(255, 40)
         开启Win自动更新ToolStripMenuItem.Text = "开启自动更新"
         ' 
         ' 禁用Win自动更新ToolStripMenuItem
         ' 
         禁用Win自动更新ToolStripMenuItem.Name = "禁用Win自动更新ToolStripMenuItem"
-        禁用Win自动更新ToolStripMenuItem.Size = New Size(315, 40)
+        禁用Win自动更新ToolStripMenuItem.Size = New Size(255, 40)
         禁用Win自动更新ToolStripMenuItem.Text = "禁用自动更新"
         ' 
         ' ToolStripMenuItem7
@@ -320,50 +319,50 @@ Partial Class Form1
         ' 系统修改ToolStripMenuItem
         ' 
         系统修改ToolStripMenuItem.Name = "系统修改ToolStripMenuItem"
-        系统修改ToolStripMenuItem.Size = New Size(360, 40)
+        系统修改ToolStripMenuItem.Size = New Size(315, 40)
         系统修改ToolStripMenuItem.Text = "系统修改(&C)"
         ' 
         ' ToolStripMenuItem15
         ' 
         ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        ToolStripMenuItem15.Size = New Size(360, 40)
+        ToolStripMenuItem15.Size = New Size(315, 40)
         ToolStripMenuItem15.Text = "密钥管理服务(&K)"
         ' 
         ' 更多ToolStripMenuItem
         ' 
         更多ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {所有任务ToolStripMenuItem, 查看系统位数ToolStripMenuItem, ToolStripMenuItem30, ToolStripMenuItem5, 测试功能ToolStripMenuItem})
         更多ToolStripMenuItem.Name = "更多ToolStripMenuItem"
-        更多ToolStripMenuItem.Size = New Size(360, 40)
+        更多ToolStripMenuItem.Size = New Size(315, 40)
         更多ToolStripMenuItem.Text = "更多(&M)"
         ' 
         ' 所有任务ToolStripMenuItem
         ' 
         所有任务ToolStripMenuItem.Name = "所有任务ToolStripMenuItem"
-        所有任务ToolStripMenuItem.Size = New Size(315, 40)
+        所有任务ToolStripMenuItem.Size = New Size(360, 40)
         所有任务ToolStripMenuItem.Text = "所有任务(&A)"
         ' 
         ' 查看系统位数ToolStripMenuItem
         ' 
         查看系统位数ToolStripMenuItem.Name = "查看系统位数ToolStripMenuItem"
-        查看系统位数ToolStripMenuItem.Size = New Size(315, 40)
+        查看系统位数ToolStripMenuItem.Size = New Size(360, 40)
         查看系统位数ToolStripMenuItem.Text = "打开系统属性(&W)"
         ' 
         ' ToolStripMenuItem30
         ' 
         ToolStripMenuItem30.Name = "ToolStripMenuItem30"
-        ToolStripMenuItem30.Size = New Size(315, 40)
-        ToolStripMenuItem30.Text = "网页预览工具(&O)"
+        ToolStripMenuItem30.Size = New Size(360, 40)
+        ToolStripMenuItem30.Text = "设置 Windows 安全问题"
         ' 
         ' ToolStripMenuItem5
         ' 
         ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        ToolStripMenuItem5.Size = New Size(312, 6)
+        ToolStripMenuItem5.Size = New Size(357, 6)
         ' 
         ' 测试功能ToolStripMenuItem
         ' 
         测试功能ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {功能说明帮助ToolStripMenuItem, ToolStripMenuItem8, 修复Win1011开始菜单卡死ToolStripMenuItem, 禁用恢复命令提示符ToolStripMenuItem, 禁用恢复控制面板ToolStripMenuItem, 禁用恢复taskmgrToolStripMenuItem})
         测试功能ToolStripMenuItem.Name = "测试功能ToolStripMenuItem"
-        测试功能ToolStripMenuItem.Size = New Size(315, 40)
+        测试功能ToolStripMenuItem.Size = New Size(360, 40)
         测试功能ToolStripMenuItem.Text = "高级功能"
         ' 
         ' 功能说明帮助ToolStripMenuItem
@@ -443,12 +442,12 @@ Partial Class Form1
         ' ToolStripMenuItem2
         ' 
         ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        ToolStripMenuItem2.Size = New Size(357, 6)
+        ToolStripMenuItem2.Size = New Size(312, 6)
         ' 
         ' ToolStripMenuItem6
         ' 
         ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        ToolStripMenuItem6.Size = New Size(360, 40)
+        ToolStripMenuItem6.Size = New Size(315, 40)
         ToolStripMenuItem6.Text = "新选项(&S)"
         ToolStripMenuItem6.Visible = False
         ' 
@@ -456,7 +455,7 @@ Partial Class Form1
         ' 
         ToolStripMenuItem18.DropDownItems.AddRange(New ToolStripItem() {WFLTool应用设置ToolStripMenuItem, ToolStripMenuItem20, 查看更多和系统附件弹出方式ToolStripMenuItem, 查看更多内部功能ToolStripMenuItem, 主界面右上角显示样式ToolStripMenuItem, ToolStripMenuItem16, 通知区域托盘图标ToolStripMenuItem, ToolStripMenuItem26, 清除数据并退出程序ToolStripMenuItem})
         ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        ToolStripMenuItem18.Size = New Size(360, 40)
+        ToolStripMenuItem18.Size = New Size(315, 40)
         ToolStripMenuItem18.Text = "选项(&S)"
         ' 
         ' WFLTool应用设置ToolStripMenuItem
@@ -601,12 +600,12 @@ Partial Class Form1
         ' ToolStripMenuItem19
         ' 
         ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        ToolStripMenuItem19.Size = New Size(357, 6)
+        ToolStripMenuItem19.Size = New Size(312, 6)
         ' 
         ' 退出XToolStripMenuItem
         ' 
         退出XToolStripMenuItem.Name = "退出XToolStripMenuItem"
-        退出XToolStripMenuItem.Size = New Size(360, 40)
+        退出XToolStripMenuItem.Size = New Size(315, 40)
         退出XToolStripMenuItem.Text = "退出(&X)"
         ' 
         ' UWP应用ToolStripMenuItem
@@ -619,65 +618,65 @@ Partial Class Form1
         ' 设置ToolStripMenuItem
         ' 
         设置ToolStripMenuItem.Name = "设置ToolStripMenuItem"
-        设置ToolStripMenuItem.Size = New Size(315, 40)
+        设置ToolStripMenuItem.Size = New Size(312, 40)
         设置ToolStripMenuItem.Text = "设置"
         ' 
         ' WindowsDefenderToolStripMenuItem
         ' 
         WindowsDefenderToolStripMenuItem.Name = "WindowsDefenderToolStripMenuItem"
-        WindowsDefenderToolStripMenuItem.Size = New Size(315, 40)
+        WindowsDefenderToolStripMenuItem.Size = New Size(312, 40)
         WindowsDefenderToolStripMenuItem.Text = "Windows 安全中心"
         ' 
         ' 微软商店
         ' 
         微软商店.Name = "微软商店"
-        微软商店.Size = New Size(315, 40)
+        微软商店.Size = New Size(312, 40)
         微软商店.Text = "Microsoft Store"
         ' 
         ' UWP资源管理器
         ' 
         UWP资源管理器.Name = "UWP资源管理器"
-        UWP资源管理器.Size = New Size(315, 40)
+        UWP资源管理器.Size = New Size(312, 40)
         UWP资源管理器.Text = "UWP 资源管理器"
         ' 
         ' ToolStripMenuItem24
         ' 
         ToolStripMenuItem24.Name = "ToolStripMenuItem24"
-        ToolStripMenuItem24.Size = New Size(312, 6)
+        ToolStripMenuItem24.Size = New Size(309, 6)
         ' 
         ' 媒体播放器
         ' 
         媒体播放器.Name = "媒体播放器"
-        媒体播放器.Size = New Size(315, 40)
+        媒体播放器.Size = New Size(312, 40)
         媒体播放器.Text = "媒体播放器"
         ' 
         ' 相机ToolStripMenuItem
         ' 
         相机ToolStripMenuItem.Name = "相机ToolStripMenuItem"
-        相机ToolStripMenuItem.Size = New Size(315, 40)
+        相机ToolStripMenuItem.Size = New Size(312, 40)
         相机ToolStripMenuItem.Text = "相机"
         ' 
         ' 相册ToolStripMenuItem
         ' 
         相册ToolStripMenuItem.Name = "相册ToolStripMenuItem"
-        相册ToolStripMenuItem.Size = New Size(315, 40)
+        相册ToolStripMenuItem.Size = New Size(312, 40)
         相册ToolStripMenuItem.Text = "相册"
         ' 
         ' 时钟app
         ' 
         时钟app.Name = "时钟app"
-        时钟app.Size = New Size(315, 40)
+        时钟app.Size = New Size(312, 40)
         时钟app.Text = "时钟"
         ' 
         ' ToolStripMenuItem21
         ' 
         ToolStripMenuItem21.Name = "ToolStripMenuItem21"
-        ToolStripMenuItem21.Size = New Size(312, 6)
+        ToolStripMenuItem21.Size = New Size(309, 6)
         ' 
         ' 所有应用ToolStripMenuItem
         ' 
         所有应用ToolStripMenuItem.Name = "所有应用ToolStripMenuItem"
-        所有应用ToolStripMenuItem.Size = New Size(315, 40)
+        所有应用ToolStripMenuItem.Size = New Size(312, 40)
         所有应用ToolStripMenuItem.Text = "查看所有应用 (&A)"
         ' 
         ' 关机选项UToolStripMenuItem
@@ -1417,13 +1416,6 @@ Partial Class Form1
         ' 
         Timer1.Interval = 500
         ' 
-        ' ToolStripMenuItem32
-        ' 
-        ToolStripMenuItem32.Name = "ToolStripMenuItem32"
-        ToolStripMenuItem32.Size = New Size(360, 40)
-        ToolStripMenuItem32.Text = "设置 Windows 安全问题"
-        ToolStripMenuItem32.Visible = False
-        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(11F, 21F)
@@ -1637,5 +1629,4 @@ Partial Class Form1
     Friend WithEvents 开启Win自动更新ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 禁用Win自动更新ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents ToolStripMenuItem32 As ToolStripMenuItem
 End Class

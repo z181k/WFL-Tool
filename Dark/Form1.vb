@@ -855,27 +855,7 @@ legacy:
     End Sub
 
     Private Sub ToolStripMenuItem30_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem30.Click
-        On Error GoTo legacy
-        Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
-        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
-            GoTo legacy
-        End If
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""沉浸式网页预览工具 - WFL Tool WebPageViewer"" /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageURL /T REG_SZ /d """ + InstallLocation + "\EWV2viewer\iwpt.html"" /f", AppWinStyle.Hide, True, -1)
-        Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
-        Exit Sub
-legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2的旧版方案
-        On Error GoTo legacy2
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Shell(InstallLocation + "\MessageBox.exe ""使用该功能需先在你的电脑上以用户模式安装 WFL Tool 并安装有以管理员身份安装的的 Edge Webview2"" ""WFL Tool"" 0 64 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy2:
-            MsgBox("使用该功能需先在你的电脑上以用户模式安装 WFL Tool 并安装有以管理员身份安装的的 Edge Webview2", MsgBoxStyle.Information, "WFL Tool")
-        End If
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
+        Shell("cmd.exe /c start ms-cxh://setsqsalocalonly/", AppWinStyle.Hide, True, -1)    '安全问题
     End Sub
 
     Private Sub 运行ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 运行ToolStripMenuItem.Click
@@ -951,10 +931,6 @@ ntc:
             开启Win自动更新ToolStripMenuItem.Text = "开启自动更新 (当前)"
             禁用Win自动更新ToolStripMenuItem.Text = "禁用自动更新"
         End If
-    End Sub
-
-    Private Sub ToolStripMenuItem32_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem32.Click
-        Shell("cmd.exe /c start ms-cxh://setsqsalocalonly/", AppWinStyle.Hide, True, -1)
     End Sub
 End Class
 
