@@ -62,8 +62,8 @@
         Shell("cmd.EXE /c copy 3RDparty\amb.bin ""%localappdata%\WFL Tool\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c copy 3RDparty\mbp.bin ""%localappdata%\WFL Tool\MessageBox.exe"" /y", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 40
-        Shell("cmd.EXE /c copy HtmlPages\iwpt.bin ""%localappdata%\WFL Tool\EWV2viewer\iwpt.html"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c Xcopy.EXE HtmlPages\iwpt_files ""%localappdata%\WFL Tool\EWV2viewer\iwpt_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\EWV2viewer\iwpt.html""", AppWinStyle.Hide, True, -1)
+        Shell("cmd.EXE /c rd ""%localappdata%\WFL Tool\EWV2viewer\iwpt_files"" /s /q", AppWinStyle.Hide, False, -1)
         Shell("cmd.EXE /c copy DotNet10Pga\npga.bin ""%localappdata%\WFL Tool\WFLToolDark.exe"" /y", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool Dark.dll""", AppWinStyle.Hide, True, -1)
         Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json""", AppWinStyle.Hide, True, -1)
