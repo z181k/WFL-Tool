@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -119,8 +119,8 @@
   </resheader>
   <data name="TextBox1.Text" xml:space="preserve">
     <value>WFL Tool 软件许可协议
-内容更新日期：2025/11/26
-协议生效日期：2026/01/02
+内容更新日期：2026/03/08
+协议生效日期：2026/04/01
 
 欢迎您使用 WFL Tool 软件！该软件由 董博涛（以下简称“我们”）提供，为使用 WFL Tool 软件（以下简称“本软件”），您应当阅读并遵守《WFL Tool 软件许可协议》（以下简称“本协议”），若要使用我们的源码，则需额外阅读并遵守《Apache-2.0》许可证。请您务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款，以及使用某项服务的单独协议，并选择接受或不接受。
 
@@ -137,6 +137,12 @@
 本协议项下的许可内容是指我们向用户提供的包括但不限于 WFL Tool 软件许可及服务（以下简称“本服务”）。
 
 本协议内容同时包括我们可能不断发布的关于本服务的相关协议、业务规则等内容。上述内容一经正式发布，即为本协议不可分割的组成部分，您同样应当遵守。
+
+1.3 非中国大陆用户须知
+
+本协议适用中华人民共和国法律。若您所在国家/地区的法律与中华人民共和国法律存在冲突，且相关冲突规定具有强制性，则在该等冲突规定范围内，以您所在国家/地区的法律为准。但在此情况下，本协议的其他条款及我们依据中国法律享有的权利依然有效。
+
+若您对法律适用有任何疑虑，建议在使用前咨询当地法律专业人士。
 
 二、关于本服务
 
@@ -176,11 +182,15 @@
 
 5.3 本软件新版本发布后，旧版本的软件可能无法使用。我们不保证旧版本软件继续可用及相应的客户服务，请您随时核对并下载最新版本。
 
+5.4 本软件按“原样”提供服务，但我们不保证本软件将会持续更新。我们有权在任何时间，出于任何原因，自行决定停止本软件的功能更新、版本发布或技术支持，且无需事先通知。您理解并接受，本软件的后续维护与更新非我们的法定义务。
+
 六、用户个人信息
 
 保护用户个人信息是我们的一项基本原则。我们收集和产生的所有数据（可能包括隐私信息）均不会上传，不会共享，均保存在您的计算机中。本软件所用第三方组件收集的数据请联系第三方组件厂家查看个人信息保护条款。
 
 七、主权利义务条款
+
+本软件按“原样”（AS-IS）提供，不提供任何明示或暗示的担保，包括但不限于适销性、特定用途适用性及不侵权的默示担保。以下条款进一步明确我们的责任范围：
 
 7.1.保证
 
@@ -200,8 +210,7 @@
 
 7.3.1 您在使用本软件中第三方提供的产品或服务时，除遵守本协议约定外，还应遵守第三方的用户协议。我们和第三方对可能出现的纠纷在法律规定和约定的范围内各自承担责任。
 7.3.2 因用户使用本软件或要求我们提供特定服务时，本软件可能会调用第三方系统或者通过第三方支持用户的使用或访问，使用或访问的结果由该第三方提供，我们不保证通过第三方系统提供的服务及内容或支持实现的结果的安全性、准确性、有效性及其他不确定的风险，由此若引发的任何争议及损害，与我们无关，我们不承担任何责任。
-7.3.3这里列出部分在本应用提供的窗口打开的第三方功能 (包括但不限于)：检查更新、更新本程序、获取帮助、开源地址、更新有关帮助、Windows 帮助和支持、关于设备管理器错误代码的帮助、设备管理器错误代码帮助。可能还会存在一些协议内未列出的第三方功能在本应用窗口打开，对于未列出的在本应用窗口打开的第三方功能，在打开时本软件会有明显弹窗提示以确认，需用户手动确认才能在本应用内打开，注意辨别。其他功能可能存在跳转到浏览器打开网站的行为，打开的这些网站均为第三方提供。
-7.3.4由于本软件时聚合功能类软件，所以会打开大量非本应用的功能界面，请注意辨别，本应用提供的功能界面会在标题栏或任务栏对应图标上有明显的软件名或软件图标，使用时注意辨别，使用第三方功能造成的损失我们概不负责。
+7.3.3这里列出部分在本应用提供的窗口打开的第三方功能：检查更新、更新本程序、获取帮助、开源地址、更新有关帮助、Windows 帮助和支持、关于设备管理器错误代码的帮助、设备管理器错误代码帮助。其他功能可能存在跳转到浏览器打开网站的行为，打开的这些网站均为第三方提供。
 
 八、用户行为规范
 
@@ -264,11 +273,11 @@
 
 十二、其他
 
-12.1 我们有权在必要时修改本协议条款。您可以在本软件的最新版本中查阅相关协议条款。本协议条款变更后，如果您继续使用本软件，即视为您已接受修改后的协议。如果您不接受修改后的协议，应当停止使用本软件。
+12.1 我们有权在必要时修改本协议条款。修改后的协议将在本软件新版本内部和帮助页或我们指定的其他公开渠道发布，并注明更新日期。您在协议修改后继续使用本软件，即视为您已接受修改后的协议。如不接受修改后的协议，您应立即停止使用本软件并卸载。
 
 12.2 本协议签订地为中华人民共和国晋中市。
 
-12.3 本协议的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）及世界各国法律，受世界范围内的版权法保护。
+12.3 本协议的成立、生效、履行、解释及纠纷解决，均适用中华人民共和国大陆地区法律。若中国法律与中国缔结或参加的国际条约有不同规定的，适用该等国际条约的规定，但中国声明保留的条款除外。
 
 12.4 若您和我们之间发生任何纠纷或争议，首先应友好协商解决；协商不成的，您同意将纠纷或争议提交本协议签订地有管辖权的人民法院管辖。
 
@@ -283,7 +292,22 @@
 12.7.3 因为我们可能存在对已开源源码再次闭源行为，因此我们不接受任何个人/组织/单位向我们开源项目提交任何代码。
 12.7.4 停止开源后发布的闭源新版本的所有新增代码即重新成为我们的私有版权代码，不受Apache-2.0 许可证管辖，原有开源代码保持原有开源属性，使用我们的私有版权代码需要经过我们书面单独授权，否则视为侵权，因此使用我们的代码时您需随时查看代码开源情况。
 
-12.8 本软件所含文字材料和软件程序以及附属文件受到世界范围内已颁布/待颁布的版权法保护，若某项条款与当地法规不符，请停止使用本软件</value>
+12.8 本软件所含文字材料、软件程序及附属文件受中华人民共和国著作权法及中国加入的国际版权公约的保护。若您所在国家/地区的法律与本协议任何条款存在不可调和的冲突，且该冲突导致本协议部分条款在您所在地区无效，您应立即停止使用本软件。您继续使用本软件的行为，视为您确认已了解并接受该等风险。
+
+12.9 协议发布渠道与更新效力
+
+12.9.1 发布渠道：本协议及我们可能发布的相关补充协议、业务规则等（统称“本协议”），均发布于以下任一指定渠道（以下简称“指定发布渠道”）：
+
+（1）本软件的 最新版安装程序内；
+（2）本软件的 帮助文档中；
+（3）本软件 最新版内嵌；
+（4）我们可能新增的其他公开渠道。
+
+12.9.2 以最新版为准：我们可能在任一指定渠道单独更新本协议，各渠道更新进度可能存在不一致。您理解并同意，以所有指定渠道中发布时间最新的版本为准。您应定期访问上述渠道，自行查阅并核对本协议的最新版本。
+
+12.9.3 无单独通知义务：我们更新本协议后，无义务通过电子邮件、站内信、弹窗或其他方式向您单独发送通知。您在任何指定渠道查阅到更新后的协议后继续使用本软件，即视为您已充分阅读、理解并接受更新后的协议。若您不同意更新后的协议，您应立即停止使用本软件并卸载。
+
+12.9.4 用户责任：您有责任确保您所查阅的为本协议的最新版本。因您未及时查阅指定发布渠道或未以最新版本为准而导致的对本协议内容的误解、争议或损失，由您自行承担相关责任。</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
