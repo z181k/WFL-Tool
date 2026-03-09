@@ -952,6 +952,10 @@ ntc:
             禁用Win自动更新ToolStripMenuItem.Text = "禁用自动更新"
         End If
     End Sub
+
+    Private Sub ToolStripMenuItem32_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem32.Click
+        Shell("cmd.exe /c start ms-cxh://setsqsalocalonly/", AppWinStyle.Hide, True, -1)
+    End Sub
 End Class
 
 
