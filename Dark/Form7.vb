@@ -213,7 +213,6 @@
                 Me.MinimumSize = New Size(1235, Me.MinimumSize.Height)
             End If
         End If
-        MsgBox(Me.Width, 0, Me.Height)
     End Sub
 
     Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
