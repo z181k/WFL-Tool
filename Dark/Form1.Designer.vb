@@ -157,8 +157,6 @@ Partial Class Form1
         Button13 = New Button()
         Button20 = New Button()
         Button19 = New Button()
-        ContextMenuStrip3 = New ContextMenuStrip(components)
-        打开窗口不关闭原窗口MoreToolStripMenuItem = New ToolStripMenuItem()
         Button18 = New Button()
         ContextMenuStrip4 = New ContextMenuStrip(components)
         注册表编辑器多开ToolStripMenuItem = New ToolStripMenuItem()
@@ -171,8 +169,6 @@ Partial Class Form1
         Button12 = New Button()
         Button11 = New Button()
         Button10 = New Button()
-        ContextMenuStrip2 = New ContextMenuStrip(components)
-        打开窗口不关闭原窗口附件ToolStripMenuItem = New ToolStripMenuItem()
         Button9 = New Button()
         ContextMenuStrip5 = New ContextMenuStrip(components)
         关于设备管理器错误代码的帮助ToolStripMenuItem = New ToolStripMenuItem()
@@ -197,9 +193,7 @@ Partial Class Form1
         MenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
-        ContextMenuStrip3.SuspendLayout()
         ContextMenuStrip4.SuspendLayout()
-        ContextMenuStrip2.SuspendLayout()
         ContextMenuStrip5.SuspendLayout()
         ContextMenuStrip1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -214,7 +208,7 @@ Partial Class Form1
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Padding = New Padding(11, 4, 0, 4)
-        MenuStrip1.Size = New Size(726, 41)
+        MenuStrip1.Size = New Size(726, 40)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -1083,7 +1077,6 @@ Partial Class Form1
         ' 
         ' Button19
         ' 
-        Button19.ContextMenuStrip = ContextMenuStrip3
         Button19.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button19.Location = New Point(486, 228)
         Button19.Margin = New Padding(6, 5, 6, 5)
@@ -1092,19 +1085,6 @@ Partial Class Form1
         Button19.TabIndex = 53
         Button19.Text = "查看更多"
         Button19.UseVisualStyleBackColor = True
-        ' 
-        ' ContextMenuStrip3
-        ' 
-        ContextMenuStrip3.ImageScalingSize = New Size(28, 28)
-        ContextMenuStrip3.Items.AddRange(New ToolStripItem() {打开窗口不关闭原窗口MoreToolStripMenuItem})
-        ContextMenuStrip3.Name = "ContextMenuStrip1"
-        ContextMenuStrip3.Size = New Size(337, 38)
-        ' 
-        ' 打开窗口不关闭原窗口MoreToolStripMenuItem
-        ' 
-        打开窗口不关闭原窗口MoreToolStripMenuItem.Name = "打开窗口不关闭原窗口MoreToolStripMenuItem"
-        打开窗口不关闭原窗口MoreToolStripMenuItem.Size = New Size(336, 34)
-        打开窗口不关闭原窗口MoreToolStripMenuItem.Text = "查看更多（不关闭主界面）"
         ' 
         ' Button18
         ' 
@@ -1206,7 +1186,6 @@ Partial Class Form1
         ' 
         ' Button10
         ' 
-        Button10.ContextMenuStrip = ContextMenuStrip2
         Button10.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Button10.Location = New Point(528, 38)
         Button10.Margin = New Padding(6, 5, 6, 5)
@@ -1215,19 +1194,6 @@ Partial Class Form1
         Button10.TabIndex = 13
         Button10.Text = "系统附件"
         Button10.UseVisualStyleBackColor = True
-        ' 
-        ' ContextMenuStrip2
-        ' 
-        ContextMenuStrip2.ImageScalingSize = New Size(28, 28)
-        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {打开窗口不关闭原窗口附件ToolStripMenuItem})
-        ContextMenuStrip2.Name = "ContextMenuStrip2"
-        ContextMenuStrip2.Size = New Size(337, 38)
-        ' 
-        ' 打开窗口不关闭原窗口附件ToolStripMenuItem
-        ' 
-        打开窗口不关闭原窗口附件ToolStripMenuItem.Name = "打开窗口不关闭原窗口附件ToolStripMenuItem"
-        打开窗口不关闭原窗口附件ToolStripMenuItem.Size = New Size(336, 34)
-        打开窗口不关闭原窗口附件ToolStripMenuItem.Text = "系统附件（不关闭主界面）"
         ' 
         ' Button9
         ' 
@@ -1446,9 +1412,7 @@ Partial Class Form1
         MenuStrip1.PerformLayout()
         GroupBox1.ResumeLayout(False)
         GroupBox2.ResumeLayout(False)
-        ContextMenuStrip3.ResumeLayout(False)
         ContextMenuStrip4.ResumeLayout(False)
-        ContextMenuStrip2.ResumeLayout(False)
         ContextMenuStrip5.ResumeLayout(False)
         ContextMenuStrip1.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
@@ -1525,10 +1489,6 @@ Partial Class Form1
     Friend WithEvents ToolStripMenuItem14 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem13 As ToolStripSeparator
     Friend WithEvents 高级自定义ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
-    Friend WithEvents 打开窗口不关闭原窗口MoreToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
-    Friend WithEvents 打开窗口不关闭原窗口附件ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem15 As ToolStripMenuItem

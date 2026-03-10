@@ -513,15 +513,6 @@ openreg:
         Exit Sub
     End Sub
 
-    Private Sub 打开窗口不关闭原窗口ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开窗口不关闭原窗口MoreToolStripMenuItem.Click
-        Dim OF2 As New Form2()
-        OF2.Show()                             '查看更多右键菜单1
-    End Sub
-
-    Private Sub 打开窗口不关闭原窗口附件ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开窗口不关闭原窗口附件ToolStripMenuItem.Click
-        Form5.Show()              '附件右键菜单1
-    End Sub
-
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click   '主页应用图标点击
         On Error GoTo legacy
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
