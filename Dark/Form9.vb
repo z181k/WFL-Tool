@@ -5,7 +5,10 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo As String = "RTM 版本(9584.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.新增 Windows 自动更新控制 功能" & vbCrLf & "2.新增拒绝在低于 800×600 分辨率下启动" & vbCrLf & "3.文件菜单改名为功能菜单" & vbCrLf & "4.功能菜单新增 设置 Windows 安全问题" & vbCrLf & "5.移除 网页预览工具 功能" & vbCrLf & "6.许可协议更新" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决多个在低分辨率设备的显示异常问题" & vbCrLf & "2.解决系统附件在弹出式打开下返回快捷键仍能用问题" & vbCrLf & "3.解决多个依赖 WebView2 功能加载异常问题" & vbCrLf & "4.解决从旧版本更新卸载页不显示更改问题" & vbCrLf & "5.解决多个在上个版本出现的影响稳定性和使用体验的问题" & vbCrLf & vbCrLf & vbCrLf & "修补版本(9584.3):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "删除在返回模式下 系统附件 和 更多功能 按钮的右键菜单" & vbCrLf & vbCrLf & "-修复" & vbCrLf & "修复 系统修改 打开时意外弹出调试窗口问题" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
+        Dim upginfo1 As String = "RTM 版本(9584.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.新增 Windows 自动更新控制 功能" & vbCrLf & "2.新增拒绝在低于 800×600 分辨率下启动" & vbCrLf & "3.文件菜单改名为功能菜单" & vbCrLf & "4.功能菜单新增 设置 Windows 安全问题" & vbCrLf & "5.移除 网页预览工具 功能" & vbCrLf & "6.许可协议更新" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决多个在低分辨率设备的显示异常问题" & vbCrLf & "2.解决系统附件在弹出式打开下返回快捷键仍能用问题" & vbCrLf & "3.解决多个依赖 WebView2 功能加载异常问题" & vbCrLf & "4.解决从旧版本更新卸载页不显示更改问题" & vbCrLf & "5.解决多个在上个版本出现的影响稳定性和使用体验的问题"
+        Dim upginfo2 As String = "修补版本(9584.3):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "删除在返回模式下 系统附件 和 更多功能 按钮的右键菜单" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "修复 系统修改 打开时意外弹出调试窗口问题"
+        Dim upginfoNext As String = "" & vbCrLf & vbCrLf & vbCrLf & ""     '此处是多个日志分割用
+        Dim upginfoEnd As String = "" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         ''   此处放启用后日志
@@ -14,10 +17,10 @@ Public Class Form9
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe """ + upginfo + """ ""当前 Build 更新日志"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe """ + upginfo1 + upginfoNext + upginfo2 + upginfoEnd + """ ""当前 Build 更新日志"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox(upginfo, 0, "当前 Build 更新日志")
+            MsgBox(upginfo2, 0, "当前小版本更新日志")
         End If
     End Sub
 

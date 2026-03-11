@@ -59,6 +59,12 @@ Public Class EWV2webpage
                 MsgBox("写入注册表失败：" & ex.Message, MsgBoxStyle.Critical, "错误 - DBT WebPageViewer")
             End Try
         Else
+            '窗口大小
+            Dim FormWidth As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("Width", "0")
+            Dim FormHeight As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("Height", "0")
+            If FormWidth > 0 And FormHeight > 0 Then
+                Me.Size = New Size(FormWidth, FormHeight)
+            End If
             '显示图标
             Dim Sicon2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("ShowIcon", "True")
             If Sicon2 <> "True" Then

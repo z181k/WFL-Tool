@@ -420,13 +420,13 @@ starttask:
         'Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
         'LinkLabel2.Visible = False     '不再显示
         'LinkLabel3.Visible = False      '关闭
-        'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
+        'Label1.Text = "这是内测版本,若意外获得,请删除,并向我们举报"
         '
         'beta不显示横幅
         'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
         'If Beta = "9504.1" Then
         '    Panel1.Visible = False
-        '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
+        '    Me.Text = "WFL Tool - Alapha 版 - 不得外泄"
         'End If
         '
         '主题菜单文本显示
