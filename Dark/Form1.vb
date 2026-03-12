@@ -402,6 +402,8 @@ starttask:
         If CurrentBuild < 19041 Then
             '检查版本控制主题显示
             主题与版本ToolStripMenuItem.Enabled = False
+            '低版本不支持该功能，屏蔽
+            ToolStripMenuItem30.Enabled = False
         End If
         If CurrentBuild < 22000 Then
             '检查版本控制Win11IE名字和自动切换颜色
