@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 
 '查看程序集特性的值
 
-<Assembly: AssemblyTitle("DBT WebPageViewer")>
+<Assembly: AssemblyTitle("Easy WebPageViewer")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("© 2026 董博涛")>
-<Assembly: AssemblyProduct("DBT Embedded WebPageViewer")>
+<Assembly: AssemblyProduct("Easy Embedded WebPageViewer")>
 <Assembly: AssemblyCopyright("版权所有 © 2026 董博涛 保留所有权利.")>
 <Assembly: AssemblyTrademark("")>
 
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 '通过使用 "*"，如下所示:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.1.1000.2")>
-<Assembly: AssemblyFileVersion("16.1.9584.3")>
+<Assembly: AssemblyVersion("2.1.9584.3")>
+<Assembly: AssemblyFileVersion("2.1.9584.3")>
 <Assembly: NeutralResourcesLanguage("zh-SG")>

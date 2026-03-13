@@ -36,7 +36,6 @@ Partial Class EWV2webpage
         Me.WebView21.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.WebView21.Name = "WebView21"
         Me.WebView21.Size = New System.Drawing.Size(1342, 705)
-        Me.WebView21.Source = New System.Uri("https://www.gov.cn", System.UriKind.Absolute)
         Me.WebView21.TabIndex = 0
         Me.WebView21.ZoomFactor = 1.0R
         '
