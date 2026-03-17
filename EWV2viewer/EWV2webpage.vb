@@ -105,6 +105,11 @@ Showpage:
                 If NoDev = "True" Then
                     WebView21.CoreWebView2.Settings.AreDevToolsEnabled = False
                 End If
+                '禁用快捷键
+                Dim NoKeys As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("NoKeys", "False")
+                If NoKeys = "True" Then
+                    WebView21.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = False
+                End If
                 '禁用默认上下文菜单
                 Dim NoMenu As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("NoMenu", "False")
                 If NoMenu = "True" Then
