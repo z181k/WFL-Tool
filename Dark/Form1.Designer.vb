@@ -1310,7 +1310,7 @@ Partial Class Form1
         VerLabel.Name = "VerLabel"
         VerLabel.Size = New Size(87, 21)
         VerLabel.TabIndex = 10
-        VerLabel.Text = "  v16.0"
+        VerLabel.Text = "  v16.1"
         VerLabel.Visible = False
         ' 
         ' FeatureControlLabel1
