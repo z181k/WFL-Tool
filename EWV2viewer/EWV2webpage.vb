@@ -264,10 +264,52 @@ Showpage:
             menuList.Remove(SLAItem)
         End If
 
-        '其他
+        '更多
         Dim ShareItem = menuList.FirstOrDefault(Function(x) x.Name = "moreTools")
         If ShareItem IsNot Nothing Then
             menuList.Remove(ShareItem)
+        End If
+
+        '复制链接：视频
+        Dim VCLItem = menuList.FirstOrDefault(Function(x) x.Name = "copyLink")
+        If VCLItem IsNot Nothing Then
+            menuList.Remove(VCLItem)
+        End If
+
+        '显示所有控件：视频
+        Dim SACItem = menuList.FirstOrDefault(Function(x) x.Name = "showAllControls")
+        If SACItem IsNot Nothing Then
+            menuList.Remove(SACItem)
+        End If
+
+        '循环：视频
+        Dim LOOPItem = menuList.FirstOrDefault(Function(x) x.Name = "loop")
+        If LOOPItem IsNot Nothing Then
+            menuList.Remove(LOOPItem)
+        End If
+
+        '刷新
+        Dim reloadItem = menuList.FirstOrDefault(Function(x) x.Name = "reload")
+        If reloadItem IsNot Nothing Then
+            menuList.Remove(reloadItem)
+        End If
+
+        '打印
+        Dim printItem = menuList.FirstOrDefault(Function(x) x.Name = "print")
+        If printItem IsNot Nothing Then
+            menuList.Remove(printItem)
+        End If
+
+        '保存图片
+        Dim SAAItem = menuList.FirstOrDefault(Function(x) x.Name = "saveImageAs")
+        If SAAItem IsNot Nothing Then
+            menuList.Remove(SAAItem)
+        End If
+
+        '保存视频
+        Dim SVAItem = menuList.FirstOrDefault(Function(x) x.Name = "saveVideoAs")
+        If SVAItem IsNot Nothing Then
+            menuList.Remove(SVAItem)
         End If
 
         '其他
