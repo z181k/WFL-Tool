@@ -37,11 +37,11 @@ Public Class EWV2webpage
             Dim environment As CoreWebView2Environment =
                 Await CoreWebView2Environment.CreateAsync(browserExecutableFolder:=runtimePath)
 
+Showpage:
             ' 使用创建好的环境初始化 WebView2 控件
             ' 控件名称是 WebView21
             Await WebView21.EnsureCoreWebView2Async(environment)
 
-Showpage:
 
             ' 初始化成功后导航到网页
             Dim EWV2webpageClean As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("EWV2webpageClean", "False")
@@ -59,7 +59,7 @@ Showpage:
                 WebView21.Source = New Uri(EWV2webpageURL)
                 '清理信息
                 Try
-                    ' 写入 HKEY_CURRENT_USER\Software\MyApp
+                    ' 写入
                     Using key As RegistryKey = Registry.CurrentUser.CreateSubKey("Software\DBT\WebPageViewer")
                         ' 写入字符串值
                         key.SetValue("EWV2webpageShowIcon", "True", RegistryValueKind.String)
@@ -95,16 +95,25 @@ Showpage:
                     Me.ShowIcon = False
                 End If
                 '标题
-                Dim Title2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("Title", "彩蛋 - 注意！这是第三方页面 - DBT WebPageViewer")
+                Dim Title2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("Title", "DBT WebPageViewer")
                 Me.Text = Title2
                 'url地址
                 Dim URL2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("URL", "https://player.bilibili.com/player.html?isOutside=true&aid=291456358&bvid=BV1sf4y1b74k&cid=361932939&p=1")
                 WebView21.Source = New Uri(URL2)
+                '禁用开发工具
+                Dim NoDev As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("NoDev", "False")
+                If NoDev = "True" Then
+                    WebView21.CoreWebView2.Settings.AreDevToolsEnabled = False
+                End If
+                '禁用默认上下文菜单
+                Dim NoMenu As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("NoMenu", "False")
+                If NoMenu = "True" Then
+                    WebView21.CoreWebView2.Settings.AreDefaultContextMenusEnabled = False
+                End If
             End If
 
         Catch ex As Exception
-            WebView21.Source = New Uri("https://www.gov.cn")
-            'MessageBox.Show("WebView2 初始化失败: " & ex.Message)
+            MessageBox.Show("WebView2 初始化失败: " & ex.Message)
         End Try
     End Sub
 
@@ -163,4 +172,103 @@ Showpage:
         End If
     End Sub
 
+    Private Sub OnNewWindowRequested(sender As Object, e As CoreWebView2NewWindowRequestedEventArgs)
+        Dim NoNewWindow As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("NoNewWindow", "False")
+        If NoNewWindow = "True" Then
+            ' 标记事件为已处理，阻止系统创建新窗口
+            e.Handled = True
+            ' 直接在当前 WebView2 控件中导航到目标 URL
+            WebView21.CoreWebView2.Navigate(e.Uri)
+        End If
+    End Sub
+
+    Private Sub WebView21_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs) Handles WebView21.CoreWebView2InitializationCompleted
+        ' 获取 CoreWebView2 对象
+        Dim coreWebView2 As CoreWebView2 = WebView21.CoreWebView2
+
+
+        Dim NoNewWindow As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("NoNewWindow", "False")
+        If NoNewWindow = "True" Then
+            ' 订阅新窗口请求事件
+            AddHandler coreWebView2.NewWindowRequested, AddressOf OnNewWindowRequested
+        End If
+
+        Dim ThinMenu As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("ThinMenu", "False")
+        If ThinMenu = "True" Then
+            ' 订阅右键菜单请求事件
+            AddHandler coreWebView2.ContextMenuRequested, AddressOf OnContextMenuRequested
+        End If
+
+    End Sub
+    ' 事件处理程序 - 删除指定菜单项
+    Private Sub OnContextMenuRequested(sender As Object, e As CoreWebView2ContextMenuRequestedEventArgs)
+        ' 创建一个字符串来收集所有菜单项信息
+        Dim menuInfo As String = ""
+
+        ' 遍历所有菜单项
+        For Each item In e.MenuItems
+            menuInfo &= $"Name: {item.Name}" & vbCrLf
+            menuInfo &= $"Label: {item.Label}" & vbCrLf
+            menuInfo &= $"Kind: {item.Kind}" & vbCrLf
+            menuInfo &= "-------------------" & vbCrLf
+        Next
+
+        ' 如果没有菜单项
+        If String.IsNullOrEmpty(menuInfo) Then
+            menuInfo = "没有找到任何菜单项"
+        End If
+
+        ' 用 MessageBox 显示(调试用)
+        'MessageBox.Show(menuInfo, "右键菜单项列表")
+        ' 获取默认菜单项列表
+        Dim menuList As IList(Of CoreWebView2ContextMenuItem) = e.MenuItems
+
+        ' 查找并删除"另存为"菜单项（通常 Name 为 "saveAs"）
+        Dim saveAsItem = menuList.FirstOrDefault(Function(x) x.Name = "saveAs")
+        If saveAsItem IsNot Nothing Then
+            menuList.Remove(saveAsItem)
+        End If
+
+        ' 查找并删除"在新窗口中打开"菜单项（通常 Name 为 "openInNewWindow"）
+        Dim openInNewWindowItem = menuList.FirstOrDefault(Function(x) x.Name = "openLinkInNewWindow")
+        If openInNewWindowItem IsNot Nothing Then
+            menuList.Remove(openInNewWindowItem)
+        End If
+
+        '复制链接
+        Dim CLItem = menuList.FirstOrDefault(Function(x) x.Name = "copyLinkLocation")
+        If CLItem IsNot Nothing Then
+            menuList.Remove(CLItem)
+        End If
+
+        '复制图像
+        Dim CIItem = menuList.FirstOrDefault(Function(x) x.Name = "copyImage")
+        If CIItem IsNot Nothing Then
+            menuList.Remove(CIItem)
+        End If
+
+        '复制图像链接
+        Dim CILItem = menuList.FirstOrDefault(Function(x) x.Name = "copyImageLocation")
+        If CILItem IsNot Nothing Then
+            menuList.Remove(CILItem)
+        End If
+
+        '链接另存
+        Dim SLAItem = menuList.FirstOrDefault(Function(x) x.Name = "saveLinkAs")
+        If SLAItem IsNot Nothing Then
+            menuList.Remove(SLAItem)
+        End If
+
+        '其他
+        Dim ShareItem = menuList.FirstOrDefault(Function(x) x.Name = "moreTools")
+        If ShareItem IsNot Nothing Then
+            menuList.Remove(ShareItem)
+        End If
+
+        '其他
+        Dim OtherItem = menuList.FirstOrDefault(Function(x) x.Name = "other")
+        If OtherItem IsNot Nothing Then
+            menuList.Remove(OtherItem)
+        End If
+    End Sub
 End Class
