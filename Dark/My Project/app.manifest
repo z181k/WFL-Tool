@@ -19,7 +19,7 @@
 			
 			此manifest是.net10版本应用的
         -->
-        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel level="asInvoker" uiAccess="true" />
       </requestedPrivileges>
     </security>
   </trustInfo>

@@ -1,5 +1,8 @@
 ﻿
 Option Explicit On
+Imports System
+Imports System.IO
+Imports System.Runtime.InteropServices
 Imports System.Security.Policy
 Imports System.Windows.Forms
 Imports Microsoft.Web.WebView2.Core
@@ -26,6 +29,21 @@ Public Class EWV2webpage
             Me.Size = New Size(600, 400)
         End If
         Try
+            ' 1. 构建目标路径：%localappdata%\Publish\App
+            Dim appDataPath As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)
+            Dim targetFolder As String = Path.Combine(appDataPath, "DBT", "EasyWebpageViewer")
+
+            ' 2. 检查文件夹是否存在，不存在则创建
+            If Not Directory.Exists(targetFolder) Then
+                Directory.CreateDirectory(targetFolder)
+                'Debug.WriteLine($"创建文件夹: {targetFolder}")
+            Else
+                'Debug.WriteLine($"文件夹已存在: {targetFolder}")
+            End If
+
+            ' 3. 指定为用户数据文件夹
+            Dim userDataFolder As String = targetFolder
+
             ' 获取存放固定版本运行时的完整路径
             Dim runtimePath As String = System.IO.Path.Combine(Application.StartupPath, "WebView2Runtime")
 
@@ -38,13 +56,14 @@ Public Class EWV2webpage
 
             ' 使用固定版本运行时创建 WebView2 环境
             ' 注意：参数必须用括号括起来
-            Dim environment As CoreWebView2Environment =
-                Await CoreWebView2Environment.CreateAsync(browserExecutableFolder:=runtimePath)
+
+            Dim environmentWV2 As CoreWebView2Environment
+            environmentWV2 = Await CoreWebView2Environment.CreateAsync(browserExecutableFolder:=runtimePath, userDataFolder)
 
 Showpage:
             ' 使用创建好的环境初始化 WebView2 控件
             ' 控件名称是 WebView21
-            Await WebView21.EnsureCoreWebView2Async(environment)
+            Await WebView21.EnsureCoreWebView2Async(environmentWV2)
 
 
             ' 初始化成功后导航到网页
@@ -141,7 +160,7 @@ Showpage:
         If e.IsSuccess Then
             ' 可以在这里执行其他操作
         Else
-            MessageBox.Show("页面加载失败")
+            'MessageBox.Show("页面加载失败")
         End If
     End Sub
     Private Sub HelpEWV2_sizechange(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.SizeChanged
