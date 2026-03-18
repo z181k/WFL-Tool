@@ -10,15 +10,19 @@ Public Class EWV2webpage
         '根据分辨率调整窗口大小
         Dim ScreenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
         Dim ScreenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
-        If ScreenWidth > 2500 And ScreenHeight > 1400 Then
+        If ScreenWidth >= 4000 And ScreenHeight >= 2500 Then
+            Me.Size = New Size(3500, 2000)
+        ElseIf ScreenWidth >= 2500 And ScreenHeight >= 1400 Then
             Me.Size = New Size(2000, 1200)
-        ElseIf ScreenWidth > 2000 And ScreenHeight > 1000 Then
-            Me.Size = New Size(1400, 850)
-        ElseIf ScreenWidth > 1400 And ScreenHeight > 1000 Then
-            Me.Size = New Size(900, 700)
-        ElseIf ScreenWidth > 1000 And ScreenHeight > 700 Then
-            Me.Size = New Size(750, 500)
-        ElseIf ScreenWidth > 799 And ScreenHeight > 599 Then
+        ElseIf ScreenWidth >= 1900 And ScreenHeight >= 1000 Then
+            Me.Size = New Size(1600, 900)
+        ElseIf ScreenWidth >= 1400 And ScreenHeight >= 900 Then
+            Me.Size = New Size(1150, 700)
+        ElseIf ScreenWidth >= 1100 And ScreenHeight >= 700 Then
+            Me.Size = New Size(950, 600)
+        ElseIf ScreenWidth >= 900 And ScreenHeight >= 700 Then
+            Me.Size = New Size(750, 600)
+        ElseIf ScreenWidth >= 799 And ScreenHeight >= 599 Then
             Me.Size = New Size(600, 400)
         End If
         Try
@@ -48,8 +52,8 @@ Showpage:
             If EWV2webpageClean = "True" Then
                 '显示图标
                 Dim EWV2webpageSicon As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("EWV2webpageShowIcon", "True")
-                If EWV2webpageSicon = "False" Then
-                    Me.ShowIcon = False
+                If EWV2webpageSicon <> "False" Then
+                    Me.ShowIcon = True
                 End If
                 '标题
                 Dim EWV2webpageTitle As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("EWV2webpageTitle", "彩蛋 - 注意！这是第三方页面 - DBT WebPageViewer")
@@ -90,12 +94,12 @@ Showpage:
                     Me.Size = New Size(FormWidth, FormHeight)
                 End If
                 '显示图标
-                Dim Sicon2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("ShowIcon", "True")
-                If Sicon2 <> "True" Then
-                    Me.ShowIcon = False
+                Dim Sicon2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("ShowIcon", "False")
+                If Sicon2 = "True" Then
+                    Me.ShowIcon = True
                 End If
                 '标题
-                Dim Title2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("Title", "DBT WebPageViewer")
+                Dim Title2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("Title", "无页面 - DBT WebPageViewer")
                 Me.Text = Title2
                 'url地址
                 Dim URL2 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("software\DBT\WebPageViewer", True).GetValue("URL", "https://player.bilibili.com/player.html?isOutside=true&aid=291456358&bvid=BV1sf4y1b74k&cid=361932939&p=1")

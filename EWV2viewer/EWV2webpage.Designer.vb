@@ -49,7 +49,7 @@ Partial Class EWV2webpage
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Name = "EWV2webpage"
-        Me.Text = "标题由代码控制"
+        Me.ShowIcon = False
         CType(Me.WebView21, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

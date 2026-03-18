@@ -96,7 +96,7 @@ Partial Class Form9
         Label2.AutoSize = True
         Label2.ContextMenuStrip = ContextMenuStrip1
         Label2.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label2.ForeColor = SystemColors.ControlDark
+        Label2.ForeColor = SystemColors.GrayText
         Label2.Location = New Point(54, 250)
         Label2.Margin = New Padding(6, 0, 6, 0)
         Label2.Name = "Label2"
@@ -109,7 +109,7 @@ Partial Class Form9
         Label3.AutoSize = True
         Label3.ContextMenuStrip = ContextMenuStrip1
         Label3.Font = New Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label3.ForeColor = SystemColors.ControlDarkDark
+        Label3.ForeColor = SystemColors.GrayText
         Label3.Location = New Point(72, 352)
         Label3.Margin = New Padding(6, 0, 6, 0)
         Label3.Name = "Label3"
@@ -122,7 +122,7 @@ Partial Class Form9
         Label4.AutoSize = True
         Label4.ContextMenuStrip = ContextMenuStrip1
         Label4.Font = New Font("微软雅黑", 7.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label4.ForeColor = SystemColors.ControlDark
+        Label4.ForeColor = Color.Gray
         Label4.Location = New Point(74, 388)
         Label4.Margin = New Padding(6, 0, 6, 0)
         Label4.Name = "Label4"
@@ -307,7 +307,7 @@ Partial Class Form9
         Label6.AutoSize = True
         Label6.ContextMenuStrip = ContextMenuStrip1
         Label6.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label6.ForeColor = SystemColors.ControlDark
+        Label6.ForeColor = SystemColors.GrayText
         Label6.Location = New Point(53, 250)
         Label6.Margin = New Padding(6, 0, 6, 0)
         Label6.Name = "Label6"

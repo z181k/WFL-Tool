@@ -60,7 +60,7 @@ Partial Class SetupUserInstall
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 7.714286!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label7.ForeColor = System.Drawing.SystemColors.GrayText
         Me.Label7.Location = New System.Drawing.Point(58, 236)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
