@@ -956,7 +956,7 @@ ntc:
     End Sub
 
     Private Sub 关于此功能ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于此功能ToolStripMenuItem.Click
-        MsgBox("为了弹窗正常显示，置顶后将不使用 WinAppSDK 提供的弹窗。在为所有用户安装情况下，将使用 UIAccess 这个置顶模式。")
+        MsgBox("为了弹窗正常显示，置顶后将不使用 WinAppSDK 提供的弹窗。在为所有用户安装情况下，将使用 UIAccess 这个置顶模式。"， 0， “置顶功能说明”)
     End Sub
 
     Private Sub 不置顶当前ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 不置顶当前ToolStripMenuItem.Click
