@@ -99,16 +99,14 @@ legacy:
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click                     '关闭explorer
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""请保存数据，所有打开的文件夹将关闭(包括文件复制)。"" ""Microsoft Windows"" 0 0 0", AppWinStyle.NormalFocus, True, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
+        Dim NoMsgReExp As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("NoMsgReExp", "无")
+        If NoMsgReExp = "True" Then
+            Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
+        Else
+            Dim Nform16ReExp As New Form16
+            Nform16ReExp.Show()
+            Nform16ReExp.Label1.Text = "要 关闭资源管理器 吗？"
         End If
-        Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
@@ -523,7 +521,7 @@ starttask:
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
             仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
         End If
-        '分离的调用:winupdate
+        '分离的调用:winupdate、ReExp
         Timer1.Start()
         '低分辨率设备兼容代码
         PictureBox2.Height = PictureBox2.Width
@@ -736,17 +734,15 @@ legacy:
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
-        On Error GoTo legacy        '重启explorer
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""请保存数据，所有打开的文件夹将关闭(包括文件复制)。"" ""Microsoft Windows"" 0 0 0", AppWinStyle.NormalFocus, True, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
+        Dim NoMsgReExp As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("NoMsgReExp", "无")
+        If NoMsgReExp = "True" Then
+            Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
+        Else
+            Dim Nform16ReExp As New Form16
+            Nform16ReExp.Show()
+            Nform16ReExp.Label1.Text = "要 重启资源管理器 吗？"
         End If
-        Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 仅软件名ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 仅软件名ToolStripMenuItem.Click
@@ -945,6 +941,11 @@ ntc:
             开启Win自动更新ToolStripMenuItem.Text = "开启自动更新 (当前)"
             禁用Win自动更新ToolStripMenuItem.Text = "禁用自动更新"
         End If
+        'ReExp
+        Dim NoMsgReExp As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("NoMsgReExp", "无")
+        If NoMsgReExp = "True" Then
+            ToolStripMenuItem34.Visible = True
+        End If
     End Sub
 
     Private Sub 置顶ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 置顶ToolStripMenuItem.Click
@@ -965,6 +966,11 @@ ntc:
         SetWindowPos(Me.Handle, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE)
         不置顶当前ToolStripMenuItem.Text = "不置顶 (当前)"
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub ToolStripMenuItem34_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem34.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NoMsgReExp /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
+        ToolStripMenuItem34.Visible = False
     End Sub
 End Class
 

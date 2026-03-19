@@ -151,9 +151,15 @@ Public Class Form7
     End Sub
 
     Private Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
-        MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
-        Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
+        Dim NoMsgReExp As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("NoMsgReExp", "无")
+        If NoMsgReExp = "True" Then
+            Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
+        Else
+            Dim Nform16ReExp As New Form16
+            Nform16ReExp.Show()
+            Nform16ReExp.Label1.Text = "要 重启资源管理器 吗？"
+        End If
     End Sub
 
     Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
