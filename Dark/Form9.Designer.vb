@@ -115,7 +115,7 @@ Partial Class Form9
         Label3.Name = "Label3"
         Label3.Size = New Size(122, 32)
         Label3.TabIndex = 3
-        Label3.Text = "版本 16.1"
+        Label3.Text = "版本 16.2"
         ' 
         ' Label4
         ' 
