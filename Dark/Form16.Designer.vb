@@ -31,7 +31,9 @@ Partial Class Form16
         Button3 = New Button()
         Button2 = New Button()
         Timer1 = New Timer(components)
+        PictureBox1 = New PictureBox()
         Panel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TextBox1
@@ -71,7 +73,7 @@ Partial Class Form16
         Panel1.Controls.Add(TextBox1)
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(760, 456)
+        Panel1.Size = New Size(754, 456)
         Panel1.TabIndex = 2
         ' 
         ' Label1
@@ -125,15 +127,25 @@ Partial Class Form16
         ' 
         Timer1.Interval = 1
         ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Location = New Point(10, 519)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(54, 34)
+        PictureBox1.TabIndex = 7
+        PictureBox1.TabStop = False
+        ' 
         ' Form16
         ' 
         AcceptButton = Button1
         AutoScaleDimensions = New SizeF(11F, 21F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoSize = True
         AutoSizeMode = AutoSizeMode.GrowAndShrink
         CancelButton = Button1
         ClientSize = New Size(754, 553)
         ControlBox = False
+        Controls.Add(PictureBox1)
         Controls.Add(Button2)
         Controls.Add(Panel1)
         Controls.Add(Button3)
@@ -147,6 +159,7 @@ Partial Class Form16
         StartPosition = FormStartPosition.CenterScreen
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -158,4 +171,5 @@ Partial Class Form16
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

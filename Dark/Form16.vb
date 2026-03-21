@@ -30,6 +30,10 @@ Public Class Form16
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Stop()
+        Dim heightback As Int32 = Me.Height
+        AutoSize = False
+        Me.Height = heightback
         If Label1.Text = "要 重启资源管理器 吗？" Then
             TextBox1.Text = "你确定要重启资源管理器吗？" & vbCrLf & vbCrLf & "重启资源管理器会导致你正在进行的文件操作（文件复制、删除等操作）被强行打断，如果你需要重启，请先关闭这些操作或等待这些操作完成后单击继续重启或不再提示" & vbCrLf & vbCrLf & "如果不希望以后再弹出这个提示，请点击不再提示，否则请单击继续重启"
             Button2.Visible = True
@@ -45,6 +49,7 @@ Public Class Form16
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Visible = False
         Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
         If Label1.Text = "要 重启资源管理器 吗？" Then
             Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
@@ -53,6 +58,7 @@ Public Class Form16
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Visible = False
         Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
         If Label1.Text = "要 重启资源管理器 吗？" Then
             Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
