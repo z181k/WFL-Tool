@@ -211,11 +211,11 @@ Public Class Form7
             '该功能暂时不屏蔽'Button33.Enabled = False          '检查版本控制旧版任务栏图标选项显示(由于win11 21h2 支持所以不屏蔽win11 21h2)'该功能暂时不屏蔽
             GroupBox19.Enabled = True       '检查版本控制Win11恢复打印界面显示（win11 21h2还是旧版所以剔除win11 21h2）
         End If
+        If CurrentBuild > 26020 Then
+            GroupBox10.Enabled = False    '24h2+不支持该功能（任务栏缩略图大小）
+        End If
         '分界线
-        If CurrentBuild < 10240 Then
-            GroupBox7.Enabled = False               '检查版本控制Windows 10 桌面上下文菜单显示(小于win10部分)
-            GroupBox18.Enabled = False              '检查版本控制MMC适配高DPI显示（小于win10部分）
-        ElseIf CurrentBuild >= 18362 Then
+        If CurrentBuild >= 18362 Then
             GroupBox7.Enabled = False             '检查版本控制Windows 10 桌面上下文菜单显示(大于win10 1903部分)
             GroupBox17.Enabled = True             '检查版本显示Windows 19/11 (大于1903)登录模糊
         End If
