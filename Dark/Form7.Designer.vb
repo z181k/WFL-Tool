@@ -657,7 +657,7 @@ Partial Class Form7
         GroupBox8.Name = "GroupBox8"
         GroupBox8.Padding = New Padding(6, 4, 6, 4)
         GroupBox8.Size = New Size(653, 314)
-        GroupBox8.TabIndex = 5
+        GroupBox8.TabIndex = 3
         GroupBox8.TabStop = False
         GroupBox8.Text = "个性化"
         ' 
@@ -673,7 +673,7 @@ Partial Class Form7
         GroupBox14.Name = "GroupBox14"
         GroupBox14.Padding = New Padding(6, 4, 6, 4)
         GroupBox14.Size = New Size(653, 429)
-        GroupBox14.TabIndex = 6
+        GroupBox14.TabIndex = 4
         GroupBox14.TabStop = False
         GroupBox14.Text = "资源管理器 (此栏所有功能均需重启资源管理器)"
         ' 
@@ -691,7 +691,7 @@ Partial Class Form7
         GroupBox15.Name = "GroupBox15"
         GroupBox15.Padding = New Padding(6, 4, 6, 4)
         GroupBox15.Size = New Size(653, 851)
-        GroupBox15.TabIndex = 11
+        GroupBox15.TabIndex = 5
         GroupBox15.TabStop = False
         GroupBox15.Text = "其他选项"
         ' 
@@ -809,7 +809,7 @@ Partial Class Form7
         GroupBox16.Name = "GroupBox16"
         GroupBox16.Padding = New Padding(6, 4, 6, 4)
         GroupBox16.Size = New Size(653, 431)
-        GroupBox16.TabIndex = 3
+        GroupBox16.TabIndex = 6
         GroupBox16.TabStop = False
         GroupBox16.Text = "Windows 10 及以上版本控制面板隐藏项目"
         ' 
@@ -869,7 +869,7 @@ Partial Class Form7
         Button34.Margin = New Padding(6, 5, 6, 5)
         Button34.Name = "Button34"
         Button34.Size = New Size(653, 64)
-        Button34.TabIndex = 4
+        Button34.TabIndex = 7
         Button34.Text = "重启资源管理器"
         Button34.UseVisualStyleBackColor = True
         ' 
@@ -881,7 +881,6 @@ Partial Class Form7
         BackColor = SystemColors.Control
         ClientSize = New Size(1413, 894)
         ContextMenuStrip = ContextMenuStrip1
-        Controls.Add(Button34)
         Controls.Add(PictureBox1)
         Controls.Add(GroupBox16)
         Controls.Add(GroupBox15)
@@ -890,6 +889,7 @@ Partial Class Form7
         Controls.Add(GroupBox1)
         Controls.Add(Label1)
         Controls.Add(Label2)
+        Controls.Add(Button34)
         Font = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(6, 5, 6, 5)

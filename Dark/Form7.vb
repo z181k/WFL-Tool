@@ -207,10 +207,6 @@ Public Class Form7
             GroupBox5.Enabled = False            '检查版本控制Win10 网络面板显示
             Button16.Enabled = False            '检查版本控制Windows 10 任务栏透明度设置教程显示
         End If
-        If CurrentBuild >= 22621 Then
-            '该功能暂时不屏蔽'Button33.Enabled = False          '检查版本控制旧版任务栏图标选项显示(由于win11 21h2 支持所以不屏蔽win11 21h2)'该功能暂时不屏蔽
-            GroupBox19.Enabled = True       '检查版本控制Win11恢复打印界面显示（win11 21h2还是旧版所以剔除win11 21h2）
-        End If
         If CurrentBuild > 26020 Then
             GroupBox10.Enabled = False    '24h2+不支持该功能（任务栏缩略图大小）
         End If
