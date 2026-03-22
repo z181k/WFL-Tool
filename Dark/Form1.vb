@@ -277,8 +277,13 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
-        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\gpedit.msc", "", "", "", 0)        '组策略
+        Dim EditionID As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", Nothing)
+        If EditionID <> "Core" Or EditionID <> "CoreSingleLanguage" Or EditionID <> "CoreCountrySpecific" Then
+            Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
+            CreateObject("shell.application").shellexecute(SystemRoot + "\system32\gpedit.msc", "", "", "", 0)        '组策略
+        Else
+            MsgBox("家庭版、家庭单语言版以及家庭中文版的 Windows 不支持该功能"， MsgBoxStyle.Exclamation, "WFL Tool")
+        End If
     End Sub
 
     Private Sub 打开helpcenterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开helpcenterToolStripMenuItem.Click
