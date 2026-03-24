@@ -37,6 +37,8 @@
         ElseIf WinAppSdkUi = "0" Then
             CheckBox2.Enabled = True
             CheckBox2.Checked = True
+        Else
+            CheckBox2.Checked = True
         End If
         '
         Dim EWV2viewerInsatll As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "EWV2viewerInsatll", Nothing)
