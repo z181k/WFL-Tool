@@ -158,7 +158,7 @@ Partial Class Form9
         LinkLabel2.Size = New Size(96, 28)
         LinkLabel2.TabIndex = 8
         LinkLabel2.TabStop = True
-        LinkLabel2.Text = "版本声明"
+        LinkLabel2.Text = "命令参数"
         ' 
         ' LinkLabel3
         ' 

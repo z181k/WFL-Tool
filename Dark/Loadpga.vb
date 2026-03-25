@@ -1,4 +1,7 @@
-﻿Public Class Loadpga
+﻿Imports System.Reflection.Emit
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class Loadpga
     Private Sub Load_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim PROCESSOR_ARCHITECTURE As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PROCESSOR_ARCHITECTURE", Nothing)
         If PROCESSOR_ARCHITECTURE <> "AMD64" Then
@@ -12,6 +15,26 @@
             End
             '拒绝在比Windows 8.1更低版本系统的X64版本上运行
         End If
+
+
+        ' 获取命令行参数（包括程序路径）
+        Dim args As String() = Environment.GetCommandLineArgs()
+
+        Dim conline1 As String = If(args.Length >= 2, args(1), "")
+        Dim conline2 As String = If(args.Length >= 3, args(2), "")
+
+        If Not String.IsNullOrEmpty(conline1) Then
+            If conline1 = "/openie" Then
+                Dim ie11 As Object = CreateObject("InternetExplorer.Application")
+                ie11.Visible = True            '打开ie
+                If Not String.IsNullOrEmpty(conline2) Then
+                    ie11.Navigate(conline2)
+                End If
+                End
+            End If
+        End If
+
+
         On Error GoTo 1
         Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
         If CurrentBuild < 19041 Then              '检查版本控制应用启动颜色

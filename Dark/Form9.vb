@@ -31,15 +31,10 @@ Public Class Form9
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""本应用提供 x64 版本，对最新版本提供支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本从 2025/10/17 起停止支持。不提供 arm 架构版本。"" ""版本声明"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("本应用只提供 x64 版本。对最新版本提供支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本从 2025/10/17 起停止支持。不提供 arm 架构版本。", MsgBoxStyle.OkOnly, "版本声明")
-        End If
+        Dim Nform16ConLine As New Form16
+        Nform16ConLine.Show()
+        Nform16ConLine.TextBox1.Text = "本程序支持命令调用" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /openie              打开IE空白页" & vbCrLf & "  /openie [网址]    打开IE，访问指定网址" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://cn.bing.com"
+        Nform16ConLine.Label1.Text = "命令行参数"
     End Sub
 
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
@@ -47,17 +42,17 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""最低支持 Windows 10，系统架构必须为 x64。" & vbCrLf & "暗色模式需要 Windows 10 v2004 及更高版本的系统。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""本应用只提供 x64 版本。对最新版本提供支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本从 2025/10/17 起停止支持。不提供 arm 架构版本。最低支持 Windows 10，系统架构必须为 x64。" & vbCrLf & "暗色模式需要 Windows 10 v2004 及更高版本的系统。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("最低支持 Windows 10，系统架构必须为 x64。" & vbCrLf & "暗色模式需要 Windows 10 v2004 及更高版本的系统。", MsgBoxStyle.OkOnly, "系统要求")
+            MsgBox("本应用只提供 x64 版本。对最新版本提供支持。由于从 Windows 11 开始，Microsoft 不再提供 x86 版本的 Windows，所以 x86 版本从 2025/10/17 起停止支持。不提供 arm 架构版本。最低支持 Windows 10，系统架构必须为 x64。" & vbCrLf & "暗色模式需要 Windows 10 v2004 及更高版本的系统。", MsgBoxStyle.OkOnly, "系统要求")
         End If
     End Sub
 
     Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
         Dim Nform16UPGINFO As New Form16
         Nform16UPGINFO.Show()
-        Nform16UPGINFO.TextBox1.Text = "邮箱: z181k@139.com 或 z181k@hotmail.com" & vbCrLf & "" & vbCrLf & "注：原来的 18734477184@139.com 现在只外发邮件，不接收邮件" & vbCrLf & "可以使用发送反馈按钮直接跳转到邮箱，注意删除发送反馈的主题" & vbCrLf & vbCrLf & "社交平台：" & vbCrLf & "Bilibili@也问Bot              小红书@尃瑫" & vbCrLf & "抖音@ccccf                     知乎@尃瑫"
+        Nform16UPGINFO.TextBox1.Text = "邮箱: z181k@139.com 或 z181k@hotmail.com" & vbCrLf & "" & vbCrLf & "注：原来的 18734477184@139.com 现在只外发邮件，不接收邮件" & vbCrLf & "可以使用发送反馈按钮直接跳转到邮箱，注意删除发送反馈的主题" & vbCrLf & vbCrLf & "社交平台：" & vbCrLf & "Bilibili@也问Bot              小红书@尃瑫" & vbCrLf & "抖音@也问Bot                     知乎@尃瑫"
         Nform16UPGINFO.Label1.Text = "联系我们"
     End Sub
 
