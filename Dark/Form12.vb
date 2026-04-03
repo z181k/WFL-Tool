@@ -48,6 +48,6 @@ Public Class Form12
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Form11.Show()
+        Close()
     End Sub
 End Class

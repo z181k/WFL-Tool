@@ -29,7 +29,6 @@ Partial Class Form11
         ToolStripMenuItem1 = New ToolStripSeparator()
         退出程序ToolStripMenuItem = New ToolStripMenuItem()
         Button1 = New Button()
-        Button2 = New Button()
         GroupBox1 = New GroupBox()
         ContextMenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
@@ -65,33 +64,21 @@ Partial Class Form11
         Button1.Location = New Point(9, 32)
         Button1.Margin = New Padding(6, 5, 6, 5)
         Button1.Name = "Button1"
-        Button1.Size = New Size(160, 54)
+        Button1.Size = New Size(376, 54)
         Button1.TabIndex = 1
-        Button1.Text = "清除数据"
+        Button1.Text = "清除软件使用时产生的数据"
         Button1.UseVisualStyleBackColor = True
-        ' 
-        ' Button2
-        ' 
-        Button2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Button2.Location = New Point(181, 32)
-        Button2.Margin = New Padding(6, 5, 6, 5)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(204, 54)
-        Button2.TabIndex = 2
-        Button2.Text = "取消协议授权"
-        Button2.UseVisualStyleBackColor = True
         ' 
         ' GroupBox1
         ' 
         GroupBox1.Controls.Add(Button1)
-        GroupBox1.Controls.Add(Button2)
         GroupBox1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         GroupBox1.Location = New Point(12, 12)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(394, 98)
         GroupBox1.TabIndex = 3
         GroupBox1.TabStop = False
-        GroupBox1.Text = "清除数据与撤回协议同意"
+        GroupBox1.Text = "清除数据"
         ' 
         ' Form11
         ' 
@@ -119,6 +106,5 @@ Partial Class Form11
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents 退出程序ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents GroupBox1 As GroupBox
 End Class

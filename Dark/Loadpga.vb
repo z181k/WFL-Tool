@@ -31,6 +31,13 @@ Public Class Loadpga
                     ie11.Navigate(conline2)
                 End If
                 End
+            ElseIf conline1 = "/help" Then
+                Dim Nform16ConLine As New Form16
+                Nform16ConLine.Show()
+                Nform16ConLine.TextBox1.Text = "本程序支持命令调用" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /openie              打开IE空白页" & vbCrLf & "  /openie [网址]    打开IE，访问指定网址" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://cn.bing.com"
+                Nform16ConLine.Label1.Text = "命令行参数"
+                'ElseIf conline1 = "/more" Then
+                'ElseIf conline1 = "/kmsui" Then
             End If
         End If
 

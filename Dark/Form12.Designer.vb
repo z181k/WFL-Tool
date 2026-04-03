@@ -72,9 +72,9 @@ Partial Class Form12
         Button3.Location = New Point(22, 716)
         Button3.Margin = New Padding(6, 5, 6, 5)
         Button3.Name = "Button3"
-        Button3.Size = New Size(290, 56)
+        Button3.Size = New Size(228, 56)
         Button3.TabIndex = 3
-        Button3.Text = "取消协议授权"
+        Button3.Text = "我看完了"
         Button3.UseVisualStyleBackColor = True
         Button3.Visible = False
         ' 

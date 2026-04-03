@@ -183,14 +183,16 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     Private Sub 离线更新下载ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 离线更新下载ToolStripMenuItem.Click
         Dim InstallationType As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "InstallationType", Nothing)
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild > 26100 Then   '兼容未来版本的Win11和win server更新日志及离线更新包
+        If CurrentBuild > 26300 Then   '兼容未来版本的Win11和win server更新日志及离线更新包
             If InstallationType = "Client" Then
                 Shell("cmd.exe /c start https://support.microsoft.com/topic/253c73cd-cab1-4bfd-94dc-76c452273fc9", AppWinStyle.Hide, True, -1)
             Else
                 '没有新的win server链接，拿server2025的顶一下，毕竟server 2022/v23h2/2025都被放在了一起，估计新版本也在一起
                 Shell("cmd.exe /c start https://support.microsoft.com/topic/10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
             End If
-        ElseIf CurrentBuild = 26100 Then   'Win11 24h2/win server 2025更新日志及离线更新包
+        ElseIf CurrentBuild >= 26200 Then    'Win11 25h2 eKB 更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/topic/99c7f493-df2a-4832-bd2d-6706baa0dec0", AppWinStyle.Hide, True, -1)
+        ElseIf CurrentBuild >= 26100 Then   'Win11 24h2/win server 2025更新日志及离线更新包
             If InstallationType = "Client" Then
                 Shell("cmd.exe /c start https://support.microsoft.com/topic/0929c747-1815-4543-8461-0160d16f15e5", AppWinStyle.Hide, True, -1)
             Else
