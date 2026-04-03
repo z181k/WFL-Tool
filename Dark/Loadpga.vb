@@ -1,7 +1,77 @@
 ﻿Imports System.Reflection.Emit
+Imports System.Runtime.InteropServices
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Loadpga
+
+    <DllImport("kernel32.dll")>
+    Private Shared Function AttachConsole(ByVal dwProcessId As Integer) As Boolean
+    End Function
+
+    <DllImport("kernel32.dll")>
+    Private Shared Function AllocConsole() As Boolean
+    End Function
+
+    <DllImport("kernel32.dll")>
+    Private Shared Function FreeConsole() As Boolean
+    End Function
+
+    <DllImport("kernel32.dll")>
+    Private Shared Function GetLastError() As Integer
+    End Function
+
+    Private Const ATTACH_PARENT_PROCESS As Integer = -1
+
+    Public Shared Sub ConsoleShowHelp()
+        Console.WriteLine()
+        Console.WriteLine()
+        Console.WriteLine("WFL Tool   版本 16.2.9584.3  x64")
+        Console.WriteLine()
+        Console.WriteLine("使用命令行调用本程序即代表你同意本软件的软件许可协议")
+        Console.WriteLine()
+        Console.WriteLine("用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]")
+        Console.WriteLine()
+        Console.WriteLine("参数:")
+        Console.WriteLine("  /help                查询 WFL Tool 命令行参数")
+        Console.WriteLine("  /openie              打开IE空白页")
+        Console.WriteLine("  /openie [网址]       打开IE，访问指定网址")
+        Console.WriteLine()
+        Console.WriteLine("不带任何参数或参数错误则以正常方式打开程序")
+        Console.WriteLine()
+        Console.WriteLine("示例：")
+        Console.WriteLine("  WFLToolDark.exe /openie https://cn.bing.com")
+        Console.WriteLine()
+        Console.WriteLine("从控制台程序和 gui 程序调用 /help 提供的内容会有差别")
+        Console.WriteLine()
+        Console.WriteLine("按 Enter 以退出程序/返回控制台...")
+
+        Environment.Exit(0)
+    End Sub
+
+    Public Shared Sub ShowHelpAndExit()
+
+        If AttachConsole(ATTACH_PARENT_PROCESS) Then
+            ' 输出内容到控制台
+            Loadpga.ConsoleShowHelp()
+            'Console.WriteLine("=" & StrDup(50, "="))
+
+            ' 可选：等待按键（注意：这会阻塞控制台输入）
+            ' Console.WriteLine("按任意键继续...")
+            ' Console.ReadKey()
+
+            ' 分离控制台（可选，程序退出时会自动分离）
+            'FreeConsole()
+
+        Else
+            ' 无法附加到父进程控制台（可能不是从控制台启动）
+            Dim Nform16ConLine As New Form16
+            Nform16ConLine.Show()
+            Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                查询 WFL Tool 命令行参数" & vbCrLf & "  /openie              打开IE空白页" & vbCrLf & "  /openie [网址]    打开IE，访问指定网址" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://cn.bing.com"
+            Nform16ConLine.Label1.Text = "WFL Tool 命令行参数"
+        End If
+
+    End Sub
+
     Private Sub Load_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim PROCESSOR_ARCHITECTURE As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PROCESSOR_ARCHITECTURE", Nothing)
         If PROCESSOR_ARCHITECTURE <> "AMD64" Then
@@ -24,18 +94,17 @@ Public Class Loadpga
         Dim conline2 As String = If(args.Length >= 3, args(2), "")
 
         If Not String.IsNullOrEmpty(conline1) Then
-            If conline1 = "/openie" Then
+            If conline1 = "/openie" Or conline1 = "/OPENIE" Or conline1 = "/OpenIE" Then
                 Dim ie11 As Object = CreateObject("InternetExplorer.Application")
                 ie11.Visible = True            '打开ie
                 If Not String.IsNullOrEmpty(conline2) Then
                     ie11.Navigate(conline2)
                 End If
                 End
-            ElseIf conline1 = "/help" Then
-                Dim Nform16ConLine As New Form16
-                Nform16ConLine.Show()
-                Nform16ConLine.TextBox1.Text = "本程序支持命令调用" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /openie              打开IE空白页" & vbCrLf & "  /openie [网址]    打开IE，访问指定网址" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://cn.bing.com"
-                Nform16ConLine.Label1.Text = "命令行参数"
+            ElseIf conline1 = "/help" Or conline1 = "/?" Or conline1 = "/？" Or conline1 = "/HELP" Or conline1 = "/Help" Then
+                Loadpga.ShowHelpAndExit()
+                Close()
+                Exit Sub
                 'ElseIf conline1 = "/more" Then
                 'ElseIf conline1 = "/kmsui" Then
             End If

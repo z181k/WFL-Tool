@@ -33,7 +33,7 @@ Public Class Form9
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Dim Nform16ConLine As New Form16
         Nform16ConLine.Show()
-        Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /openie              打开IE空白页" & vbCrLf & "  /openie [网址]    打开IE，访问指定网址" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://cn.bing.com"
+        Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                查询 WFL Tool 命令行参数" & vbCrLf & "  /openie              打开IE空白页" & vbCrLf & "  /openie [网址]    打开IE，访问指定网址" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://cn.bing.com"
         Nform16ConLine.Label1.Text = "命令行参数"
     End Sub
 
