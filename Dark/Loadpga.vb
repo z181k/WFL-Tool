@@ -32,14 +32,20 @@ Public Class Loadpga
         Console.WriteLine("用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]")
         Console.WriteLine()
         Console.WriteLine("参数:")
-        Console.WriteLine("  /help                查询 WFL Tool 命令行参数")
-        Console.WriteLine("  /openie              打开IE空白页")
-        Console.WriteLine("  /openie [网址]       打开IE，访问指定网址")
+        Console.WriteLine("  /help                 查询 WFL Tool 命令行参数")
+        Console.WriteLine("  /openie               打开IE空白页")
+        Console.WriteLine("  /openie [网址]        打开IE，访问指定网址")
+        Console.WriteLine("  /kmsui                打开 KMS 激活 UI")
+        Console.WriteLine("  /ActiveTool           打开 KMS 激活 UI（和 kmsui 效果一样）")
+        Console.WriteLine("  /modsys               打开系统修改页")
+        Console.WriteLine("  /SystemModifications  打开系统修改页（和 modsys 效果一样）")
+        Console.WriteLine("  /Accessories          打开附件页")
+        Console.WriteLine("  /about                打开关于页")
         Console.WriteLine()
         Console.WriteLine("不带任何参数或参数错误则以正常方式打开程序")
         Console.WriteLine()
         Console.WriteLine("示例：")
-        Console.WriteLine("  WFLToolDark.exe /openie https://cn.bing.com")
+        Console.WriteLine("  WFLToolDark.exe /openie https://www.gov.cn")
         Console.WriteLine()
         Console.WriteLine("从控制台程序和 gui 程序调用 /help 提供的内容会有差别")
         Console.WriteLine()
@@ -66,7 +72,7 @@ Public Class Loadpga
             ' 无法附加到父进程控制台（可能不是从控制台启动）
             Dim Nform16ConLine As New Form16
             Nform16ConLine.Show()
-            Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                查询 WFL Tool 命令行参数" & vbCrLf & "  /openie              打开IE空白页" & vbCrLf & "  /openie [网址]    打开IE，访问指定网址" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://cn.bing.com"
+            Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                          查询 WFL Tool 命令行参数" & vbCrLf & "  /openie                        打开IE空白页" & vbCrLf & "  /openie [网址]              打开IE，访问指定网址" & vbCrLf & "  /kmsui                         打开 KMS 激活 UI" & vbCrLf & "  /ActiveTool        打开 KMS 激活 UI（和 modsys 效果一样）" & vbCrLf & "  /modsys                         打开系统修改页" & vbCrLf & "  /SystemModifications  打开系统修改页（和 kmsui 效果一样）" & vbCrLf & "  /Accessories                   打开附件页" & vbCrLf & "  /about                         打开关于页" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://www.gov.cn"
             Nform16ConLine.Label1.Text = "WFL Tool 命令行参数"
         End If
 
@@ -105,8 +111,35 @@ Public Class Loadpga
                 Loadpga.ShowHelpAndExit()
                 Close()
                 Exit Sub
-                'ElseIf conline1 = "/more" Then
-                'ElseIf conline1 = "/kmsui" Then
+            ElseIf conline1 = "/more" Or conline1 = "/MORE" Or conline1 = "/More" Then
+                Form2.Show()
+                Form2.打开主页ToolStripMenuItem.Enabled = False
+                Form2.返回主界面.Visible = False                     '显示更多
+                Form2.快捷键返回BToolStripMenuItem.Enabled = False
+                Close()
+                Exit Sub
+            ElseIf conline1 = "/kmsui" Or conline1 = "/KMSUI" Or conline1 = "/KmsUI" Or conline1 = "/ActiveTool" Or conline1 = "/activetool" Or conline1 = "/ACTIVETOOL" Then
+                Form10.Show()
+                Form10.打开主界面ToolStripMenuItem.Enabled = False   '激活工具
+                Close()
+                Exit Sub
+            ElseIf conline1 = "/SystemModifications" Or conline1 = "/systemmodifications" Or conline1 = "/SYSTEMMODIFICATIONS" Or conline1 = "/MODSYS" Or conline1 = "/ModSys" Or conline1 = "/modsys" Then
+                Form7.Show()
+                Form7.返回主界面ToolStripMenuItem.Visible = False    '系统修改
+                Form7.ToolStripMenuItem1.Visible = False
+                Close()
+                Exit Sub
+            ElseIf conline1 = "/Accessories" Or conline1 = "/accessories" Or conline1 = "/ACCESSORIES" Then
+                Form5.Show()
+                Form5.打开主页ToolStripMenuItem.Enabled = False
+                Form5.返回主界面.Visible = False                     '附件
+                Form5.快捷键返回BToolStripMenuItem.Enabled = False
+                Close()
+                Exit Sub
+            ElseIf conline1 = "/About" Or conline1 = "/ABOUT" Or conline1 = "/about" Then
+                Form9.Show()
+                Close()
+                Exit Sub
             End If
         End If
 

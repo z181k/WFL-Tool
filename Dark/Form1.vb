@@ -396,30 +396,6 @@ starttask:
             不置顶当前ToolStripMenuItem.Text = "不置顶"
             SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
         End If
-        '启动时显示指定界面
-        Dim ShowSpecifyPage As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "ShowSpecifyPage", Nothing)
-        If ShowSpecifyPage = "More" Then
-            Form2.Show()
-            Form2.打开主页ToolStripMenuItem.Enabled = False
-            Form2.返回主界面.Visible = False                     '显示更多
-            Form2.快捷键返回BToolStripMenuItem.Enabled = False
-            Close()
-        ElseIf ShowSpecifyPage = "Accessories" Then
-            Form5.Show()
-            Form5.打开主页ToolStripMenuItem.Enabled = False
-            Form5.返回主界面.Visible = False                     '附件
-            Form5.快捷键返回BToolStripMenuItem.Enabled = False
-            Close()
-        ElseIf ShowSpecifyPage = "SystemModifications" Then
-            Form7.Show()
-            Form7.返回主界面ToolStripMenuItem.Visible = False    '系统修改
-            Form7.ToolStripMenuItem1.Visible = False
-            Close()
-        ElseIf ShowSpecifyPage = "ActiveTool" Then
-            Form10.Show()
-            Form10.打开主界面ToolStripMenuItem.Enabled = False   '激活工具
-            Close()
-        End If
         '
         If CurrentBuild < 18362 Then              '检查版本控制UWP应用和电池健康显示
             UWP应用ToolStripMenuItem.Enabled = False

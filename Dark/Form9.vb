@@ -17,7 +17,7 @@ Public Class Form9
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim upginfo1 As String = "RTM 版本(9584.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.新增 Windows 自动更新控制 功能" & vbCrLf & "2.新增拒绝在低于 800×600 分辨率下启动" & vbCrLf & "3.文件菜单改名为功能菜单" & vbCrLf & "4.功能菜单新增 设置 Windows 安全问题" & vbCrLf & "5.移除 网页预览工具 功能" & vbCrLf & "6.许可协议更新" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决多个在低分辨率设备的显示异常问题" & vbCrLf & "2.解决系统附件在弹出式打开下返回快捷键仍能用问题" & vbCrLf & "3.解决多个依赖 WebView2 功能加载异常问题" & vbCrLf & "4.解决从旧版本更新卸载页不显示更改问题" & vbCrLf & "5.解决多个在上个版本出现的影响稳定性和使用体验的问题"
         Dim upginfo2 As String = "修补版本(9584.3):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.删除在返回模式下 系统附件 和 更多功能 按钮的右键菜单" & vbCrLf & "2.设置 Windows 安全问题 会在可能不支持的系统禁用" & vbCrLf & "3.添加置顶本程序功能" & vbCrLf & "4.部分窗口弹窗优化" & vbCrLf & "5.关闭/重启资源管理器时弹窗可不再提示" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "修复 系统修改 打开时意外弹出调试窗口问题"
-        Dim upginfo3 As String = "修补版本(9584.5):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.201 (26/03 安全更新)，安装程序附带 WinAppSDK 提升至 1.7.9" & vbCrLf & "2.在不支持 任务栏缩略图大小调整 的 Win11 26100+ 版本屏蔽该功能" & vbCrLf & "3.组策略功能在不支持的系统添加提示" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "解决在部分缩放下新版弹窗出现底部大量空白问题"
+        Dim upginfo3 As String = "修补版本(9584.5):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.201 (26/03 安全更新)，安装程序附带 WinAppSDK 提升至 1.7.9" & vbCrLf & "2.在不支持 任务栏缩略图大小调整 的 Win11 26100+ 版本屏蔽该功能" & vbCrLf & "3.组策略功能在不支持的系统添加提示" & vbCrLf & "4.企业功能注册表项 ShowSpecifyPage 已弃用，请使用新的启动参数功能" & vbCrLf & "5.新增应用启动参数，可到关于页查看用法" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "解决在部分缩放下新版弹窗出现底部大量空白问题"
         Dim upginfoNext As String = "" & vbCrLf & vbCrLf & vbCrLf & ""     '此处是多个日志分割用
         Dim upginfoEnd As String = "" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
@@ -33,7 +33,7 @@ Public Class Form9
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Dim Nform16ConLine As New Form16
         Nform16ConLine.Show()
-        Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                查询 WFL Tool 命令行参数" & vbCrLf & "  /openie              打开IE空白页" & vbCrLf & "  /openie [网址]    打开IE，访问指定网址" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://cn.bing.com"
+        Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                          查询 WFL Tool 命令行参数" & vbCrLf & "  /openie                        打开IE空白页" & vbCrLf & "  /openie [网址]              打开IE，访问指定网址" & vbCrLf & "  /kmsui                         打开 KMS 激活 UI" & vbCrLf & "  /ActiveTool        打开 KMS 激活 UI（和 kmsui 效果一样）" & vbCrLf & "  /modsys                         打开系统修改页" & vbCrLf & "  /SystemModifications  打开系统修改页（和 modsys 效果一样）" & vbCrLf & "  /Accessories                   打开附件页" & vbCrLf & "  /about                         打开关于页" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://www.gov.cn"
         Nform16ConLine.Label1.Text = "命令行参数"
     End Sub
 
