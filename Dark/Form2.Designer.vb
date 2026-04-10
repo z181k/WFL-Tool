@@ -232,7 +232,7 @@ Partial Class Form2
         Button15.Size = New Size(319, 65)
         Button15.TabIndex = 102
         Button15.Text = "计算机管理"
-        ToolTip1.SetToolTip(Button15, "在 Windows 11 上打开 x86 任务管理器是旧版界面")
+        ToolTip1.SetToolTip(Button15, "在 Windows 11 上打开任务管理器的旧版界面")
         Button15.UseVisualStyleBackColor = True
         ' 
         ' Button16

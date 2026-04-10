@@ -103,17 +103,16 @@ legacy:
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
         Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "0")
         If cctButton = "1" Then
             CreateObject("shell.application").shellexecute("cmd.exe", "", "", "runas", 1)
-            Exit Sub
+        ElseIf cctButton = "2" And CurrentBuild >= "22621" Then
+            CreateObject("shell.application").shellexecute(SystemRoot + "\SysTEM32\Taskmgr.exe", "-d", "", "runas", 1)
+        Else
+            CreateObject("shell.application").shellexecute(SystemRoot + "\system32\compmgmt.msc", "/s", "", "", 0)  '计算机管理
         End If
-        If cctButton = "2" Then
-            CreateObject("shell.application").shellexecute("C:\Windows\Syswow64\Taskmgr.exe", "", "", "runas", 1)
-            Exit Sub
-        End If
-        Dim SystemRoot As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "SystemRoot", Nothing)
-        CreateObject("shell.application").shellexecute(SystemRoot + "\system32\compmgmt.msc", "/s", "", "", 0)  '计算机管理
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
@@ -147,6 +146,7 @@ legacy:
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         '置顶窗口，如果在programfiles目录或Windows目录并且签名了就可以UIaccess
         Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
         If OnTop = "1" Then
@@ -177,8 +177,8 @@ legacy:
             If cctButton = "1" Then
                 Button15.Text = "命令提示符 (管理员)"
             End If
-            If cctButton = "2" Then
-                Button15.Text = "任务管理器 (x86)"
+            If cctButton = "2" And CurrentBuild >= "22621" Then
+                Button15.Text = "旧版任务管理器"
                 ToolTip1.Active = True
             End If
             '低分辨率设备兼容代码

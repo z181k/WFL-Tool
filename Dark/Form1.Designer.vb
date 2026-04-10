@@ -541,20 +541,21 @@ Partial Class Form1
         ' 计算机管理当前ToolStripMenuItem
         ' 
         计算机管理当前ToolStripMenuItem.Name = "计算机管理当前ToolStripMenuItem"
-        计算机管理当前ToolStripMenuItem.Size = New Size(297, 40)
+        计算机管理当前ToolStripMenuItem.Size = New Size(315, 40)
         计算机管理当前ToolStripMenuItem.Text = "计算机管理 (当前)"
         ' 
         ' 命令提示符管理员ToolStripMenuItem1
         ' 
         命令提示符管理员ToolStripMenuItem1.Name = "命令提示符管理员ToolStripMenuItem1"
-        命令提示符管理员ToolStripMenuItem1.Size = New Size(297, 40)
+        命令提示符管理员ToolStripMenuItem1.Size = New Size(315, 40)
         命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符"
         ' 
         ' 任务管理器x86ToolStripMenuItem
         ' 
         任务管理器x86ToolStripMenuItem.Name = "任务管理器x86ToolStripMenuItem"
-        任务管理器x86ToolStripMenuItem.Size = New Size(297, 40)
-        任务管理器x86ToolStripMenuItem.Text = "任务管理器 x86"
+        任务管理器x86ToolStripMenuItem.Size = New Size(315, 40)
+        任务管理器x86ToolStripMenuItem.Text = "旧版任务管理器"
+        任务管理器x86ToolStripMenuItem.Visible = False
         ' 
         ' ToolStripMenuItem32
         ' 
