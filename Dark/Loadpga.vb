@@ -73,7 +73,7 @@ Public Class Loadpga
             ' 无法附加到父进程控制台（可能不是从控制台启动）
             Dim Nform16ConLine As New Form16
             Nform16ConLine.Show()
-            Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                          查询 WFL Tool 命令行参数" & vbCrLf & "  /openie                        打开IE空白页" & vbCrLf & "  /openie [网址]              打开IE，访问指定网址" & vbCrLf & "  /more                          打开更多功能页" & vbCrLf & "  /kmsui                         打开 KMS 激活 UI" & vbCrLf & "  /ActiveTool        打开 KMS 激活 UI（和 modsys 效果一样）" & vbCrLf & "  /modsys                         打开系统修改页" & vbCrLf & "  /SystemModifications  打开系统修改页（和 kmsui 效果一样）" & vbCrLf & "  /Accessories                   打开附件页" & vbCrLf & "  /about                         打开关于页" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://www.gov.cn"
+            Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                          查询 WFL Tool 命令行参数" & vbCrLf & "  /openie                        打开IE空白页" & vbCrLf & "  /openie [网址]              打开IE，访问指定网址" & vbCrLf & "  /more                          打开更多功能页" & vbCrLf & "  /kmsui                         打开 KMS 激活 UI" & vbCrLf & "  /ActiveTool        打开 KMS 激活 UI（和 kmsui 效果一样）" & vbCrLf & "  /modsys                         打开系统修改页" & vbCrLf & "  /SystemModifications  打开系统修改页（和 kmsui 效果一样）" & vbCrLf & "  /Accessories                   打开附件页" & vbCrLf & "  /about                         打开关于页" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://www.gov.cn"
             Nform16ConLine.Label1.Text = "WFL Tool 命令行参数"
         End If
 
@@ -139,10 +139,17 @@ Public Class Loadpga
                 Exit Sub
             ElseIf conline1 = "/About" Or conline1 = "/ABOUT" Or conline1 = "/about" Then
                 Form9.Show()
+                Form9.打开主界面ToolStripMenuItem.Visible = False
+                Form9.ToolStripMenuItem1.Visible = False
                 Close()
                 Exit Sub
             End If
         End If
+
+
+        '=================================================================================
+        '上方代码由AI和人工共同编写，并非完全AIGC
+        '=================================================================================
 
 
         On Error GoTo 1

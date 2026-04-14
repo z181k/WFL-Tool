@@ -10,12 +10,6 @@ Public Class Form4
     Private Const SWP_NOMOVE As UInteger = &H2
     Private Const SWP_SHOWWINDOW As UInteger = &H40
 
-
-
-    Private Sub 返回主界面ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 返回主界面ToolStripMenuItem.Click
-        Form1.Show()
-    End Sub
-
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '置顶窗口，如果在programfiles目录或Windows目录并且签名了就可以UIaccess
         Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
