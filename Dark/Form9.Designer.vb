@@ -115,7 +115,7 @@ Partial Class Form9
         Label3.Name = "Label3"
         Label3.Size = New Size(122, 32)
         Label3.TabIndex = 3
-        Label3.Text = "版本 16.2"
+        Label3.Text = "版本 17.0"
         ' 
         ' Label4
         ' 
@@ -128,7 +128,7 @@ Partial Class Form9
         Label4.Name = "Label4"
         Label4.Size = New Size(118, 24)
         Label4.TabIndex = 4
-        Label4.Text = "Build 9584.3"
+        Label4.Text = "Build 9632.1"
         ' 
         ' LinkLabel1
         ' 

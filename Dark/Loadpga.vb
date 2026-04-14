@@ -25,7 +25,7 @@ Public Class Loadpga
     Public Shared Sub ConsoleShowHelp()
         Console.WriteLine()
         Console.WriteLine()
-        Console.WriteLine("WFL Tool   版本 16.2.9584.3  x64")
+        Console.WriteLine("WFL Tool   版本 17.0.9632.1  x64")
         Console.WriteLine()
         Console.WriteLine("使用命令行调用本程序即代表你同意本软件的软件许可协议")
         Console.WriteLine()
