@@ -36,7 +36,6 @@ Partial Class Loadpga
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "Loadpga"
         ShowInTaskbar = False
-        StartPosition = FormStartPosition.CenterScreen
         TransparencyKey = Color.Indigo
         ResumeLayout(False)
     End Sub

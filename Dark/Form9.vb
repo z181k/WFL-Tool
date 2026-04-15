@@ -15,7 +15,7 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo1 As String = "RTM 版本(9632.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.201 (26/03 安全更新)，安装程序附带 WinAppSDK 提升至 1.7.9" & vbCrLf & "2.在不支持 任务栏缩略图大小调整 的 Win11 26100+ 版本屏蔽该功能" & vbCrLf & "3.组策略功能在不支持的系统添加提示" & vbCrLf & "4.企业功能注册表项 ShowSpecifyPage 已弃用，请使用新的启动参数功能" & vbCrLf & "5.新增应用启动参数，可到关于页查看用法" & vbCrLf & "6.任务管理器 x86 已在 Win11 及更高版本更改为 旧版任务管理器，在其他版本已删除" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "解决在部分缩放下新版弹窗出现底部大量空白问题"
+        Dim upginfo1 As String = "RTM 版本(9632.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.202 (26/04 安全更新)，安装程序附带 WinAppSDK 提升至 1.7.9" & vbCrLf & "2.在不支持 任务栏缩略图大小调整 的 Win11 26100+ 版本屏蔽该功能" & vbCrLf & "3.组策略功能在不支持的系统添加提示" & vbCrLf & "4.企业功能注册表项 ShowSpecifyPage 已弃用，请使用新的启动参数功能" & vbCrLf & "5.新增应用启动参数，可到关于页查看用法" & vbCrLf & "6.任务管理器 x86 已在 Win11 及更高版本更改为 旧版任务管理器，在其他版本已删除" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "解决在部分缩放下新版弹窗出现底部大量空白问题"
         Dim upginfoNext As String = "" & vbCrLf & vbCrLf & vbCrLf & ""     '此处是多个日志分割用
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
@@ -30,7 +30,7 @@ Public Class Form9
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Dim Nform16ConLine As New Form16
         Nform16ConLine.Show()
-        Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                          查询 WFL Tool 命令行参数" & vbCrLf & "  /openie                        打开IE空白页" & vbCrLf & "  /openie [网址]              打开IE，访问指定网址" & vbCrLf & "  /more                          打开更多功能页" & vbCrLf & "  /kmsui                         打开 KMS 激活 UI" & vbCrLf & "  /ActiveTool        打开 KMS 激活 UI（和 kmsui 效果一样）" & vbCrLf & "  /modsys                         打开系统修改页" & vbCrLf & "  /SystemModifications  打开系统修改页（和 kmsui 效果一样）" & vbCrLf & "  /Accessories                   打开附件页" & vbCrLf & "  /about                         打开关于页" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://www.gov.cn"
+        Nform16ConLine.TextBox1.Text = "使用命令行调用本程序即代表你同意本软件的软件许可协议" & vbCrLf & vbCrLf & "用法: WFLToolDark.exe [参数] 或 WFL Tool.exe [参数]" & vbCrLf & vbCrLf & "参数:" & vbCrLf & "  /help                          查询 WFL Tool 命令行参数" & vbCrLf & "  /openie                        打开IE空白页" & vbCrLf & "  /openie [网址]              打开IE，访问指定网址" & vbCrLf & "  /more                          打开更多功能页" & vbCrLf & "  /more msdt              打开 MSDT 页" & vbCrLf & "  /more nomsdt      打开更多功能页但屏蔽 MSDT 选项" & vbCrLf & "  /kmsui                         打开 KMS 激活 UI" & vbCrLf & "  /ActiveTool        打开 KMS 激活 UI（和 kmsui 效果一样）" & vbCrLf & "  /modsys                         打开系统修改页" & vbCrLf & "  /SystemModifications  打开系统修改页（和 kmsui 效果一样）" & vbCrLf & "  /Accessories                   打开附件页" & vbCrLf & "  /about                         打开关于页" & vbCrLf & "  /about eula         显示软件许可协议" & vbCrLf & "  /run         打开带 WFL Tool 字样的运行对话框" & vbCrLf & "  /run ori              打开运行对话框" & vbCrLf & vbCrLf & "示例:" & vbCrLf & "  WFLToolDark.exe /openie https://www.gov.cn"
         Nform16ConLine.Label1.Text = "命令行参数"
     End Sub
 
