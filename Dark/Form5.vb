@@ -10,7 +10,6 @@ Public Class Form5
     Private Const SWP_NOMOVE As UInteger = &H2
     Private Const SWP_SHOWWINDOW As UInteger = &H40
 
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click '记事本
         Shell("cmd.exe /c start notepad.exe", AppWinStyle.Hide, True, -1)
     End Sub
@@ -84,7 +83,8 @@ Public Class Form5
     End Sub
 
     Private Sub 返回主界面_LinkClicked(sender As Object, e As EventArgs) Handles 返回主界面.LinkClicked
-        Form1.Show()
+        Dim NF1 As New Form1
+        NF1.Show()
         Close()
     End Sub
 
@@ -125,14 +125,16 @@ Public Class Form5
     End Sub
 
     Private Sub 打开主页ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开主页ToolStripMenuItem.Click
-        Form1.Show()
+        Dim NF1 As New Form1
+        NF1.Show()
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Shell("cmd.exe /c start ms-settings:optionalfeatures", AppWinStyle.Hide, True, -1)
     End Sub
     Private Sub 快捷键返回BToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 快捷键返回BToolStripMenuItem.Click
-        Form1.Show()
+        Dim NF1 As New Form1
+        NF1.Show()
         Close()
     End Sub
 

@@ -86,7 +86,8 @@ Public Class Form2
     End Sub
 
     Private Sub 返回主界面_LinkClicked(sender As Object, e As EventArgs) Handles 返回主界面.LinkClicked
-        Form1.Show()
+        Dim NF1 As New Form1
+        NF1.Show()
         Close()
     End Sub
 
@@ -192,7 +193,8 @@ legacy:
     End Sub
 
     Private Sub 打开主页ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开主页ToolStripMenuItem.Click
-        Form1.Show()
+        Dim NF1 As New Form1
+        NF1.Show()
     End Sub
 
     Private Sub WindowsPowershellISEx86管理员ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsPowershellISEx86管理员ToolStripMenuItem.Click
@@ -212,11 +214,9 @@ legacy:
     End Sub
 
     Private Sub 快捷键返回BToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 快捷键返回BToolStripMenuItem.Click
-        Form1.Show()
+        Dim NF1 As New Form1
+        NF1.Show()
         Close()
     End Sub
 
-    Private Sub 返回主界面_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 返回主界面.LinkClicked
-
-    End Sub
 End Class
