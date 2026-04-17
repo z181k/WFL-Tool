@@ -385,7 +385,7 @@ Partial Class Form9
         MinimizeBox = False
         Name = "Form9"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "关于 WFL Tool  -  我诞生 5 周年啦！"
+        Text = "关于 WFL Tool  -  五载相伴，感谢同行"
         ContextMenuStrip1.ResumeLayout(False)
         ContextMenuStrip2.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

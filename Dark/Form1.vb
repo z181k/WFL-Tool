@@ -54,17 +54,15 @@ Public Class Form1
     End Sub
 
     Private Sub 切换用户ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 切换用户ToolStripMenuItem.Click
-        Shell("rundll32.exe user32.dll,LockWorkStation", AppWinStyle.NormalFocus, False, -1)
+        Shell("tsdiscon.exe", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 关机ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关机ToolStripMenuItem.Click
-        Shell("shutdown.exe -s -t 1", AppWinStyle.Hide, True, -1)
-        End
+        Shell("shutdown.exe -s -t 0", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 进入WinREToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 进入WinREToolStripMenuItem.Click
-        Shell("shutdown.exe /r /o /T 1", AppWinStyle.Hide, True, -1)
-        End
+        Shell("shutdown.exe /r /o /T 0", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Windows1011ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Windows1011ToolStripMenuItem.Click
@@ -185,25 +183,29 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild > 26300 Then   '兼容未来版本的Win11和win server更新日志及离线更新包
             If InstallationType = "Client" Then
-                Shell("cmd.exe /c start https://support.microsoft.com/topic/253c73cd-cab1-4bfd-94dc-76c452273fc9", AppWinStyle.Hide, True, -1)
+                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5079670", AppWinStyle.Hide, True, -1)
             Else
                 '没有新的win server链接，拿server2025的顶一下，毕竟server 2022/v23h2/2025都被放在了一起，估计新版本也在一起
-                Shell("cmd.exe /c start https://support.microsoft.com/topic/10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
+                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5047442", AppWinStyle.Hide, True, -1)
             End If
         ElseIf CurrentBuild >= 26200 Then    'Win11 25h2 eKB 更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/topic/99c7f493-df2a-4832-bd2d-6706baa0dec0", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5065323", AppWinStyle.Hide, True, -1)
         ElseIf CurrentBuild >= 26100 Then   'Win11 24h2/win server 2025更新日志及离线更新包
             If InstallationType = "Client" Then
-                Shell("cmd.exe /c start https://support.microsoft.com/topic/0929c747-1815-4543-8461-0160d16f15e5", AppWinStyle.Hide, True, -1)
+                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5045988", AppWinStyle.Hide, True, -1)
             Else
-                Shell("cmd.exe /c start https://support.microsoft.com/topic/10f58da7-e57b-4a9d-9c16-9f1dcd72d7d7", AppWinStyle.Hide, True, -1)
+                Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5047442", AppWinStyle.Hide, True, -1)
             End If
         ElseIf CurrentBuild = 25398 Then  'win server v23h2更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/topic/68c851ff-825a-4dbc-857b-51c5aa0ab248", AppWinStyle.Hide, True, -1)
-        ElseIf CurrentBuild >= 21380 Then   'Win11其他版本更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/topic/59875222-b990-4bd9-932f-91a5954de434", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5031680", AppWinStyle.Hide, True, -1)
+        ElseIf CurrentBuild >= 22631 Then   'Win11 23H2 eKB更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5031682", AppWinStyle.Hide, True, -1)
+        ElseIf CurrentBuild >= 22621 Then   'Win11 22H2更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5018680", AppWinStyle.Hide, True, -1)
+        ElseIf CurrentBuild >= 21380 Then   'Win11 21H2更新日志及离线更新包
+            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5006099", AppWinStyle.Hide, True, -1)
         ElseIf CurrentBuild = 20348 Then       'win server 2022更新日志及离线更新包
-            Shell("cmd.exe /c start https://support.microsoft.com/topic/e1caa597-00c5-4ab9-9f3e-8212fe80b2ee", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start https://support.microsoft.com/zh-cn/help/5005454", AppWinStyle.Hide, True, -1)
         Else
             'win10及Server2016/2019更新日志及离线更新包
             '还有些版本也有更新日志页，但.net10版的此应用人为不兼容它们了，所以不列出，旧框架版本中是有的
@@ -261,13 +263,11 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
     End Sub
 
     Private Sub 重启ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 重启ToolStripMenuItem.Click
-        Shell("shutdown.exe -r -t 1", AppWinStyle.Hide, True, -1)
-        End
+        Shell("shutdown.exe -r -t 0", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 注销ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 注销ToolStripMenuItem.Click
         Shell("shutdown.exe -L", AppWinStyle.Hide, True, -1)
-        End
     End Sub
 
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click   '自解压创建程序
@@ -955,6 +955,10 @@ ntc:
     Private Sub ToolStripMenuItem34_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem34.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NoMsgReExp /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
         ToolStripMenuItem34.Visible = False
+    End Sub
+
+    Private Sub 锁定ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem36.Click
+        Shell("rundll32.exe user32.dll,LockWorkStation", AppWinStyle.NormalFocus, False, -1)
     End Sub
 End Class
 
