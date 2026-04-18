@@ -949,7 +949,12 @@ ntc:
         置顶ToolStripMenuItem.Text = "置顶"
         SetWindowPos(Me.Handle, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE)
         不置顶当前ToolStripMenuItem.Text = "不置顶 (当前)"
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        If CurrentBuild >= 17763 Then
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+        Else
+            Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /f", AppWinStyle.Hide, True, -1)
+        End If
     End Sub
 
     Private Sub ToolStripMenuItem34_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem34.Click
