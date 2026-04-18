@@ -74,7 +74,7 @@
             If WinAppSdkUi <> "0" Then
                 Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
             End If
-            CreateObject("shell.application").shellexecute("3RDparty\wari17x64.exe", "", "", "", 0)
+            Shell("cmd.exe /c 3RDparty\wari17x64.exe", AppWinStyle.Hide, True, -1)
         End If
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v Show /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.PB1.Value = 60
