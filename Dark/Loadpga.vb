@@ -98,6 +98,10 @@ Public Class Loadpga
             Nform16ConLine.Label1.Text = "WFL Tool 命令行参数"
         End If
 
+
+        '=================================================================================
+        '上方代码由AI和人工共同编写，并非完全AIGC
+        '=================================================================================
     End Sub
 
     Private Sub Load_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -114,6 +118,7 @@ Public Class Loadpga
             '拒绝在比Windows 8.1更低版本系统的X64版本上运行
         End If
 
+        '==========================分隔============================下面代码有AI参与==================================
 
         ' 获取命令行参数（包括程序路径）
         Dim args As String() = Environment.GetCommandLineArgs()
@@ -194,15 +199,17 @@ Public Class Loadpga
                 End If
                 End
             End If
-            End If
+        End If
 
 
         '=================================================================================
         '上方代码由AI和人工共同编写，并非完全AIGC
         '=================================================================================
 
-
-        On Error GoTo 1
+        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        If WinAppSdkUi = "1" And CurrentBuild < 17763 Then
+            Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /f", AppWinStyle.Hide, True, -1)
+        End If
         Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
         If CurrentBuild < 19041 Then              '检查版本控制应用启动颜色
             Application.SetColorMode(SystemColorMode.Classic)

@@ -26,27 +26,17 @@
             Else
                 Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
             End If
-        Else
-            Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-            If CurrentBuild < 17763 Then
-                Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /f", AppWinStyle.Hide, True, -1)
-            End If
         End If
         Application.Exit()
     End Sub
 
     Private Sub SetupUserModify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild >= 17763 Then
-            Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-            If WinAppSdkUi = "1" Then
-                CheckBox2.Enabled = True
-            ElseIf WinAppSdkUi = "0" Then
-                CheckBox2.Enabled = True
-                CheckBox2.Checked = True
-            Else
-                CheckBox2.Checked = True
-            End If
+        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+        If WinAppSdkUi = "1" Then
+            CheckBox2.Enabled = True
+        ElseIf WinAppSdkUi = "0" Then
+            CheckBox2.Enabled = True
+            CheckBox2.Checked = True
         Else
             CheckBox2.Checked = True
         End If
