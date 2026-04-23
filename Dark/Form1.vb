@@ -434,16 +434,18 @@ starttask:
             LinkLabel2.Visible = False
         ElseIf Beta.Text = "B2" Then
             Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
-            If Beta <> "9504.1" Then
+            If Beta <> Build.Text Then
                 Panel1.Show()
+                Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
             End If
-            Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
         ElseIf Beta.Text = "SF" Then
-            Panel1.Show()
-            Label1.Text = "新版本,新征程！WFL Tool 团队祝大家 2026 春节快乐！"
-            LinkLabel3.Visible = False
+            Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
+            If Beta <> Build.Text Then
+                Panel1.Show()
+                Label1.Text = "新版本,新征程！WFL Tool 团队祝大家 2026 春节快乐！"
+                LinkLabel3.Visible = False
+            End If
         End If
-
         '
         '主题菜单文本显示
         Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
@@ -790,8 +792,7 @@ legacy:
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Panel1.Visible = False
-        'Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Preview /T REG_SZ /d 9504.2 /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Preview /T REG_SZ /d " + Build.Text + " /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 设备管理器错误代码帮助helpmenu_Click(sender As Object, e As EventArgs) Handles 设备管理器错误代码帮助helpmenu.Click
