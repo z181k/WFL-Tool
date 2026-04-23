@@ -38,10 +38,10 @@ Public Class Loadpga
 
     Private Const ATTACH_PARENT_PROCESS As Integer = -1
 
-    Public Shared Sub ConsoleShowHelp()
+    Public Shared Sub ConsoleShowHelp(currentMe As Loadpga)
         Console.WriteLine()
         Console.WriteLine()
-        Console.WriteLine("WFL Tool   版本 17.0.9632.1  x64")
+        Console.WriteLine("WFL Tool   版本 " + currentMe.Ver.Text + "." + currentMe.Build.Text + "  x64   " + currentMe.Beta.Text)
         Console.WriteLine()
         Console.WriteLine("使用命令行调用本程序即代表你同意本软件的软件许可协议")
         Console.WriteLine()
@@ -80,7 +80,8 @@ Public Class Loadpga
 
         If AttachConsole(ATTACH_PARENT_PROCESS) Then
             ' 输出内容到控制台
-            Loadpga.ConsoleShowHelp()
+            Dim myLoadpga As New Loadpga()
+            Loadpga.ConsoleShowHelp(myLoadpga)
             'Console.WriteLine("=" & StrDup(50, "="))
 
             ' 可选：等待按键（注意：这会阻塞控制台输入）
@@ -188,6 +189,9 @@ Public Class Loadpga
                     Form9.Show()
                     Form9.打开主界面ToolStripMenuItem.Visible = False
                     Form9.ToolStripMenuItem1.Visible = False
+                    Form9.Label3.Text = "版本 " + Ver.Text
+                    Form9.Label4.Text = "Build " + Build.Text
+                    Form9.Beta.Text = Beta.Text
                 End If
                 Close()
                 Exit Sub

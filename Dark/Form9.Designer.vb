@@ -50,6 +50,7 @@ Partial Class Form9
         PictureBox1 = New PictureBox()
         LinkLabel10 = New LinkLabel()
         FeatureControlLabel1 = New Label()
+        Beta = New Label()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -115,7 +116,7 @@ Partial Class Form9
         Label3.Name = "Label3"
         Label3.Size = New Size(122, 32)
         Label3.TabIndex = 3
-        Label3.Text = "版本 17.0"
+        Label3.Text = "版本 00.0"
         ' 
         ' Label4
         ' 
@@ -128,7 +129,7 @@ Partial Class Form9
         Label4.Name = "Label4"
         Label4.Size = New Size(118, 24)
         Label4.TabIndex = 4
-        Label4.Text = "Build 9632.1"
+        Label4.Text = "Build 0000.0"
         ' 
         ' LinkLabel1
         ' 
@@ -352,6 +353,16 @@ Partial Class Form9
         FeatureControlLabel1.Text = "disable"
         FeatureControlLabel1.Visible = False
         ' 
+        ' Beta
+        ' 
+        Beta.AutoSize = True
+        Beta.Location = New Point(78, 56)
+        Beta.Name = "Beta"
+        Beta.Size = New Size(96, 21)
+        Beta.TabIndex = 112
+        Beta.Text = "是否beta"
+        Beta.Visible = False
+        ' 
         ' Form9
         ' 
         AutoScaleDimensions = New SizeF(11F, 21F)
@@ -360,6 +371,7 @@ Partial Class Form9
         BackColor = SystemColors.Control
         ClientSize = New Size(831, 516)
         ContextMenuStrip = ContextMenuStrip1
+        Controls.Add(Beta)
         Controls.Add(FeatureControlLabel1)
         Controls.Add(LinkLabel10)
         Controls.Add(Label6)
@@ -420,4 +432,5 @@ Partial Class Form9
     Friend WithEvents 检查更新ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
     Friend WithEvents 应急下载链接ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Beta As Label
 End Class

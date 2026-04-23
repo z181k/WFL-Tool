@@ -46,6 +46,9 @@ Public Class Form1
 
     Private Sub 关于AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于AToolStripMenuItem.Click
         Form9.Show()
+        Form9.Label3.Text = "版本 " + VerLabel.Text
+        Form9.Label4.Text = "Build " + Build.Text
+        Form9.Beta.Text = Beta.Text
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
@@ -376,7 +379,12 @@ legacy:
 starttask:
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         '
-        ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text  '主界面右上角wfltool - 现代
+        '从loadpga读取版本
+        VerLabel.Text = Loadpga.Ver.Text
+        Build.Text = Loadpga.Build.Text
+        Beta.Text = Loadpga.Beta.Text
+        '
+        ToolStripMenuItem3.Text = "WFL Tool  v" + VerLabel.Text  '主界面右上角wfltool - 现代
         '读取设置并调整界面（注册表读取）
         Dim License As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("EULA", "无")
         If License = "无" Then                                                                       '以前是License键值，不是EULA
@@ -418,20 +426,24 @@ starttask:
         'Size = New Size(900, 550) '调整窗口大小
         '
         '测试版提示文字
-        'Panel1.Show()
-        'Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
-        'Label1.Text = "新版本,新征程！WFL Tool 团队祝大家 2026 春节快乐！"
-        'Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
-        'LinkLabel2.Visible = False     '不再显示
-        'LinkLabel3.Visible = False      '关闭
-        'Label1.Text = "这是内测版本,若意外获得,请删除,并向我们举报"
-        '
-        'beta不显示横幅
-        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
-        'If Beta = "9504.1" Then
-        '    Panel1.Visible = False
-        '    Me.Text = "WFL Tool - Alapha 版 - 不得外泄"
-        'End If
+
+
+        If Beta.Text = "B1" Then
+            Panel1.Show()
+            Label1.Text = "仅供内部测试,内部机密,若意外获得,请向我们举报"
+            LinkLabel2.Visible = False
+        ElseIf Beta.Text = "B2" Then
+            Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
+            If Beta <> "9504.1" Then
+                Panel1.Show()
+            End If
+            Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
+        ElseIf Beta.Text = "SF" Then
+            Panel1.Show()
+            Label1.Text = "新版本,新征程！WFL Tool 团队祝大家 2026 春节快乐！"
+            LinkLabel3.Visible = False
+        End If
+
         '
         '主题菜单文本显示
         Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
@@ -493,11 +505,11 @@ starttask:
         End If
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
-            ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text
+            ToolStripMenuItem3.Text = "欢迎使用  v" + VerLabel.Text
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 欢迎使用
             伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         ElseIf LegacyHomeUI = "OnlyVersion" Then
-            ToolStripMenuItem3.Text = VerLabel.Text
+            ToolStripMenuItem3.Text = "v" + VerLabel.Text
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅版本号
             仅版本号ToolStripMenuItem.Text = "仅版本号 (当前)"
         ElseIf LegacyHomeUI = "OnlyAppName" Then
@@ -557,14 +569,14 @@ legacy:
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-            ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text                       '判断并且改为wfltool
+            ToolStripMenuItem3.Text = "WFL Tool  v" + VerLabel.Text                       '判断并且改为wfltool
             现代当前ToolStripMenuItem.Text = "现代 (当前)"
             伪旧ToolStripMenuItem.Text = "伪旧"
             Exit Sub     '结束事件防止执行下面
         End If
 wflttext:
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text
+        ToolStripMenuItem3.Text = "欢迎使用  v" + VerLabel.Text
         现代当前ToolStripMenuItem.Text = "现代"              '例外：改为欢迎使用
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         'Label1.Font = New Font("新宋体", 12, FontStyle.Bold, Font.Style.Italic)   ’废弃的字体代码
@@ -594,14 +606,14 @@ wflttext:
 
     Private Sub 现代当前ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 现代当前ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d 5 /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "WFL Tool" + VerLabel.Text                    '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "WFL Tool  v" + VerLabel.Text                    '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代 (当前)"
         伪旧ToolStripMenuItem.Text = "伪旧"
     End Sub
 
     Private Sub 伪旧ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 伪旧ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = "欢迎使用" + VerLabel.Text                       '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "欢迎使用  v" + VerLabel.Text                       '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代"
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
         仅版本号ToolStripMenuItem.Text = "仅版本号"
@@ -740,7 +752,7 @@ legacy:
 
     Private Sub 仅版本号ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 仅版本号ToolStripMenuItem.Click
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v LegacyHomeUI /T REG_SZ /d OnlyVersion /f", AppWinStyle.Hide, True, -1)
-        ToolStripMenuItem3.Text = VerLabel.Text                       '主界面右上角wfltool
+        ToolStripMenuItem3.Text = "v" + VerLabel.Text                       '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代"
         伪旧ToolStripMenuItem.Text = "伪旧"
         仅版本号ToolStripMenuItem.Text = "仅版本号 (当前)"

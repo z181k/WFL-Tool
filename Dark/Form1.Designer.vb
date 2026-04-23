@@ -197,6 +197,8 @@ Partial Class Form1
         Label1 = New Label()
         OpenFileDialog1 = New OpenFileDialog()
         Timer1 = New Timer(components)
+        Build = New Label()
+        Beta = New Label()
         MenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -215,7 +217,7 @@ Partial Class Form1
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Padding = New Padding(11, 4, 0, 4)
-        MenuStrip1.Size = New Size(726, 41)
+        MenuStrip1.Size = New Size(726, 40)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -223,7 +225,7 @@ Partial Class Form1
         ' 
         文件FToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem25, 运行ToolStripMenuItem, ToolStripMenuItem1, 系统更新UToolStripMenuItem, 系统修改ToolStripMenuItem, ToolStripMenuItem15, 更多ToolStripMenuItem, ToolStripMenuItem2, ToolStripMenuItem6, ToolStripMenuItem18, ToolStripMenuItem19, 退出XToolStripMenuItem})
         文件FToolStripMenuItem.Name = "文件FToolStripMenuItem"
-        文件FToolStripMenuItem.Size = New Size(97, 33)
+        文件FToolStripMenuItem.Size = New Size(97, 32)
         文件FToolStripMenuItem.Text = "功能(&F)"
         ' 
         ' ToolStripMenuItem25
@@ -651,7 +653,7 @@ Partial Class Form1
         ' 
         UWP应用ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {设置ToolStripMenuItem, WindowsDefenderToolStripMenuItem, 微软商店, UWP资源管理器, ToolStripMenuItem24, 媒体播放器, 相机ToolStripMenuItem, 相册ToolStripMenuItem, 时钟app, ToolStripMenuItem21, 所有应用ToolStripMenuItem})
         UWP应用ToolStripMenuItem.Name = "UWP应用ToolStripMenuItem"
-        UWP应用ToolStripMenuItem.Size = New Size(128, 33)
+        UWP应用ToolStripMenuItem.Size = New Size(128, 32)
         UWP应用ToolStripMenuItem.Text = "U&WP 应用"
         ' 
         ' 设置ToolStripMenuItem
@@ -722,49 +724,49 @@ Partial Class Form1
         ' 
         关机选项UToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {电池健康ToolStripMenuItem, ToolStripMenuItem28, ToolStripMenuItem36, 切换用户ToolStripMenuItem, 休眠ToolStripMenuItem, 注销ToolStripMenuItem, ToolStripMenuItem9, 关机ToolStripMenuItem, 重启ToolStripMenuItem, 进入WinREToolStripMenuItem, ToolStripMenuItem31, 快速关机ToolStripMenuItem})
         关机选项UToolStripMenuItem.Name = "关机选项UToolStripMenuItem"
-        关机选项UToolStripMenuItem.Size = New Size(102, 33)
+        关机选项UToolStripMenuItem.Size = New Size(102, 32)
         关机选项UToolStripMenuItem.Text = "电源(&U)"
         ' 
         ' 电池健康ToolStripMenuItem
         ' 
         电池健康ToolStripMenuItem.Name = "电池健康ToolStripMenuItem"
-        电池健康ToolStripMenuItem.Size = New Size(315, 40)
+        电池健康ToolStripMenuItem.Size = New Size(282, 40)
         电池健康ToolStripMenuItem.Text = "电池健康信息(&B)"
         ' 
         ' ToolStripMenuItem28
         ' 
         ToolStripMenuItem28.Name = "ToolStripMenuItem28"
-        ToolStripMenuItem28.Size = New Size(312, 6)
+        ToolStripMenuItem28.Size = New Size(279, 6)
         ' 
         ' ToolStripMenuItem36
         ' 
         ToolStripMenuItem36.Name = "ToolStripMenuItem36"
-        ToolStripMenuItem36.Size = New Size(315, 40)
+        ToolStripMenuItem36.Size = New Size(282, 40)
         ToolStripMenuItem36.Text = "锁定"
         ' 
         ' 切换用户ToolStripMenuItem
         ' 
         切换用户ToolStripMenuItem.Name = "切换用户ToolStripMenuItem"
-        切换用户ToolStripMenuItem.Size = New Size(315, 40)
+        切换用户ToolStripMenuItem.Size = New Size(282, 40)
         切换用户ToolStripMenuItem.Text = "切换用户"
         ' 
         ' 休眠ToolStripMenuItem
         ' 
         休眠ToolStripMenuItem.Name = "休眠ToolStripMenuItem"
-        休眠ToolStripMenuItem.Size = New Size(315, 40)
+        休眠ToolStripMenuItem.Size = New Size(282, 40)
         休眠ToolStripMenuItem.Text = "休眠"
         ' 
         ' 注销ToolStripMenuItem
         ' 
         注销ToolStripMenuItem.Name = "注销ToolStripMenuItem"
-        注销ToolStripMenuItem.Size = New Size(315, 40)
+        注销ToolStripMenuItem.Size = New Size(282, 40)
         注销ToolStripMenuItem.Text = "注销"
         ' 
         ' ToolStripMenuItem9
         ' 
         ToolStripMenuItem9.DropDownItems.AddRange(New ToolStripItem() {设置定时关机ToolStripMenuItem, ToolStripMenuItem10, 取消定时关机ToolStripMenuItem})
         ToolStripMenuItem9.Name = "ToolStripMenuItem9"
-        ToolStripMenuItem9.Size = New Size(315, 40)
+        ToolStripMenuItem9.Size = New Size(282, 40)
         ToolStripMenuItem9.Text = "定时关机"
         ' 
         ' 设置定时关机ToolStripMenuItem
@@ -881,31 +883,31 @@ Partial Class Form1
         ' 关机ToolStripMenuItem
         ' 
         关机ToolStripMenuItem.Name = "关机ToolStripMenuItem"
-        关机ToolStripMenuItem.Size = New Size(315, 40)
+        关机ToolStripMenuItem.Size = New Size(282, 40)
         关机ToolStripMenuItem.Text = "关机"
         ' 
         ' 重启ToolStripMenuItem
         ' 
         重启ToolStripMenuItem.Name = "重启ToolStripMenuItem"
-        重启ToolStripMenuItem.Size = New Size(315, 40)
+        重启ToolStripMenuItem.Size = New Size(282, 40)
         重启ToolStripMenuItem.Text = "重启"
         ' 
         ' 进入WinREToolStripMenuItem
         ' 
         进入WinREToolStripMenuItem.Name = "进入WinREToolStripMenuItem"
-        进入WinREToolStripMenuItem.Size = New Size(315, 40)
+        进入WinREToolStripMenuItem.Size = New Size(282, 40)
         进入WinREToolStripMenuItem.Text = "进入 WinRE"
         ' 
         ' ToolStripMenuItem31
         ' 
         ToolStripMenuItem31.Name = "ToolStripMenuItem31"
-        ToolStripMenuItem31.Size = New Size(312, 6)
+        ToolStripMenuItem31.Size = New Size(279, 6)
         ToolStripMenuItem31.Visible = False
         ' 
         ' 快速关机ToolStripMenuItem
         ' 
         快速关机ToolStripMenuItem.Name = "快速关机ToolStripMenuItem"
-        快速关机ToolStripMenuItem.Size = New Size(315, 40)
+        快速关机ToolStripMenuItem.Size = New Size(282, 40)
         快速关机ToolStripMenuItem.Text = "快速关机"
         快速关机ToolStripMenuItem.Visible = False
         ' 
@@ -913,7 +915,7 @@ Partial Class Form1
         ' 
         主题与版本ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {亮色ToolStripMenuItem, 暗色ToolStripMenuItem, 自动ToolStripMenuItem})
         主题与版本ToolStripMenuItem.Name = "主题与版本ToolStripMenuItem"
-        主题与版本ToolStripMenuItem.Size = New Size(72, 33)
+        主题与版本ToolStripMenuItem.Size = New Size(72, 32)
         主题与版本ToolStripMenuItem.Text = "主题"
         ' 
         ' 亮色ToolStripMenuItem
@@ -938,7 +940,7 @@ Partial Class Form1
         ' 
         帮助HToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {获取帮助GToolStripMenuItem, 发送反馈邮箱ToolStripMenuItem, ToolStripSeparator1, 设备管理器错误代码帮助helpmenu, 打开helpcenterToolStripMenuItem, ToolStripMenuItem4, WFLTool5周年ToolStripMenuItem, 关于AToolStripMenuItem})
         帮助HToolStripMenuItem.Name = "帮助HToolStripMenuItem"
-        帮助HToolStripMenuItem.Size = New Size(102, 33)
+        帮助HToolStripMenuItem.Size = New Size(102, 32)
         帮助HToolStripMenuItem.Text = "帮助(&H)"
         ' 
         ' 获取帮助GToolStripMenuItem
@@ -993,7 +995,7 @@ Partial Class Form1
         ToolStripMenuItem3.Alignment = ToolStripItemAlignment.Right
         ToolStripMenuItem3.ForeColor = SystemColors.GrayText
         ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        ToolStripMenuItem3.Size = New Size(177, 33)
+        ToolStripMenuItem3.Size = New Size(177, 32)
         ToolStripMenuItem3.Text = "右上角文字显示"
         ' 
         ' Button1
@@ -1359,9 +1361,9 @@ Partial Class Form1
         VerLabel.AutoSize = True
         VerLabel.Location = New Point(586, 95)
         VerLabel.Name = "VerLabel"
-        VerLabel.Size = New Size(87, 21)
+        VerLabel.Size = New Size(115, 21)
         VerLabel.TabIndex = 10
-        VerLabel.Text = "  v17.0"
+        VerLabel.Text = "版本字符串"
         VerLabel.Visible = False
         ' 
         ' FeatureControlLabel1
@@ -1433,6 +1435,26 @@ Partial Class Form1
         ' 
         Timer1.Interval = 500
         ' 
+        ' Build
+        ' 
+        Build.AutoSize = True
+        Build.Location = New Point(589, 118)
+        Build.Name = "Build"
+        Build.Size = New Size(128, 21)
+        Build.TabIndex = 56
+        Build.Text = "Build字符串"
+        Build.Visible = False
+        ' 
+        ' Beta
+        ' 
+        Beta.AutoSize = True
+        Beta.Location = New Point(589, 142)
+        Beta.Name = "Beta"
+        Beta.Size = New Size(94, 21)
+        Beta.TabIndex = 10
+        Beta.Text = "版本类别"
+        Beta.Visible = False
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(11F, 21F)
@@ -1440,6 +1462,8 @@ Partial Class Form1
         AutoScroll = True
         BackColor = SystemColors.Control
         ClientSize = New Size(726, 548)
+        Controls.Add(Beta)
+        Controls.Add(Build)
         Controls.Add(Panel1)
         Controls.Add(FeatureControlLabel1)
         Controls.Add(VerLabel)
@@ -1647,4 +1671,6 @@ Partial Class Form1
     Friend WithEvents 关于此功能ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem34 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem36 As ToolStripMenuItem
+    Friend WithEvents Build As Label
+    Friend WithEvents Beta As Label
 End Class
