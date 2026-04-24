@@ -425,9 +425,22 @@ starttask:
         SizeChangeFlg = True '允许触发SizeChange
         'Size = New Size(900, 550) '调整窗口大小
         '
+        If Loadpga.NewUI.Text = "NSet" Then
+            ToolStripMenuItem6.Visible = True
+            ToolStripMenuItem18.Visible = False
+        ElseIf Loadpga.NewUI.Text = "NSetMod" Then
+            ToolStripMenuItem6.Visible = True
+            ToolStripMenuItem18.Visible = False
+            ToolStripMenuItem35.Visible = True
+            ToolStripMenuItem35.Text = "系统修改(&C)"
+            系统修改ToolStripMenuItem.Visible = False
+        ElseIf Loadpga.NewUI.Text = "NMod" Then
+            ToolStripMenuItem35.Visible = True
+            ToolStripMenuItem35.Text = "系统修改(&C)"
+            系统修改ToolStripMenuItem.Visible = False
+        End If
+        '
         '测试版提示文字
-
-
         If Beta.Text = "B1" Then
             Panel1.Show()
             Label1.Text = "仅供内部测试,内部机密,若意外获得,请向我们举报"
@@ -722,7 +735,7 @@ legacy:
     End Sub
 
     Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
-        Form11.Show()
+        NewSets.Show()
     End Sub
 
     Private Sub 电池健康ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 电池健康ToolStripMenuItem.Click

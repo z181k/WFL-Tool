@@ -41,7 +41,7 @@ Public Class Loadpga
     Public Shared Sub ConsoleShowHelp(currentMe As Loadpga)
         Console.WriteLine()
         Console.WriteLine()
-        Console.WriteLine("WFL Tool   版本 " + currentMe.Ver.Text + "." + currentMe.Build.Text + "  x64   " + currentMe.Beta.Text)
+        Console.WriteLine("WFL Tool   版本 " + currentMe.Ver.Text + "." + currentMe.Build.Text + "  x64")
         Console.WriteLine()
         Console.WriteLine("使用命令行调用本程序即代表你同意本软件的软件许可协议")
         Console.WriteLine()
@@ -165,9 +165,25 @@ Public Class Loadpga
                 Close()
                 Exit Sub
             ElseIf conline1 = "/SystemModifications" Or conline1 = "/systemmodifications" Or conline1 = "/SYSTEMMODIFICATIONS" Or conline1 = "/MODSYS" Or conline1 = "/ModSys" Or conline1 = "/modsys" Then
-                Form7.Show()
-                Form7.返回主界面ToolStripMenuItem.Visible = False    '系统修改
-                Form7.ToolStripMenuItem1.Visible = False
+                If NewUI.Text = "NSetMod" Then
+
+                ElseIf NewUI.Text = "NMod" Then
+
+                Else
+                    Form7.Show()
+                    Form7.返回主界面ToolStripMenuItem.Visible = False    '系统修改
+                    Form7.ToolStripMenuItem1.Visible = False
+                End If
+                '
+                Close()
+                Exit Sub
+            ElseIf conline1 = "/Sets" Or conline1 = "/SETS" Or conline1 = "/sets" Then
+                If NewUI.Text = "NSetMod" Then
+                    NewSets.Show()
+                ElseIf NewUI.Text = "NSets" Then
+                    NewSets.Show()
+                End If
+                '
                 Close()
                 Exit Sub
             ElseIf conline1 = "/Accessories" Or conline1 = "/accessories" Or conline1 = "/ACCESSORIES" Then
@@ -201,6 +217,9 @@ Public Class Loadpga
                 Else
                     RunFileDialog.ShowRunDialog(Me, "", "运行  -  WFL Tool", "WFL Tool 将根据你所输入的名称,为你打开相应的程序、文件夹、文档、Internet 资源以及 Intranet 资源。")
                 End If
+                End
+            ElseIf conline1 = "xscpcl" Then
+                MsgBox(Ver.Text + "，" + Beta.Text + "，" + NewUI.Text + "，" + Build.Text, 0, "配置的 WFL Tool 产品策略")
                 End
             End If
         End If

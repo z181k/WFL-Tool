@@ -26,6 +26,7 @@ Partial Class Loadpga
         Beta = New Label()
         Build = New Label()
         Ver = New Label()
+        NewUI = New Label()
         SuspendLayout()
         ' 
         ' Beta
@@ -61,13 +62,24 @@ Partial Class Loadpga
         Ver.Text = "17.0"
         Ver.Visible = False
         ' 
+        ' NewUI
+        ' 
+        NewUI.AutoSize = True
+        NewUI.ForeColor = Color.Lavender
+        NewUI.Location = New Point(5, 79)
+        NewUI.Name = "NewUI"
+        NewUI.Size = New Size(108, 28)
+        NewUI.TabIndex = 3
+        NewUI.Text = "NSetMod"
+        ' 
         ' Loadpga
         ' 
         AutoScaleDimensions = New SizeF(13F, 28F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Indigo
-        ClientSize = New Size(80, 87)
+        ClientSize = New Size(80, 111)
         ControlBox = False
+        Controls.Add(NewUI)
         Controls.Add(Ver)
         Controls.Add(Build)
         Controls.Add(Beta)
@@ -83,4 +95,5 @@ Partial Class Loadpga
     Friend WithEvents Beta As Label
     Friend WithEvents Build As Label
     Friend WithEvents Ver As Label
+    Friend WithEvents NewUI As Label
 End Class

@@ -41,6 +41,7 @@ Partial Class Form1
         禁用Win自动更新ToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem7 = New ToolStripSeparator()
         下载新版本WFLToolTSMI = New ToolStripMenuItem()
+        ToolStripMenuItem35 = New ToolStripMenuItem()
         系统修改ToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem15 = New ToolStripMenuItem()
         更多ToolStripMenuItem = New ToolStripMenuItem()
@@ -223,7 +224,7 @@ Partial Class Form1
         ' 
         ' 文件FToolStripMenuItem
         ' 
-        文件FToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem25, 运行ToolStripMenuItem, ToolStripMenuItem1, 系统更新UToolStripMenuItem, 系统修改ToolStripMenuItem, ToolStripMenuItem15, 更多ToolStripMenuItem, ToolStripMenuItem2, ToolStripMenuItem6, ToolStripMenuItem18, ToolStripMenuItem19, 退出XToolStripMenuItem})
+        文件FToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem25, 运行ToolStripMenuItem, ToolStripMenuItem1, 系统更新UToolStripMenuItem, ToolStripMenuItem35, 系统修改ToolStripMenuItem, ToolStripMenuItem15, 更多ToolStripMenuItem, ToolStripMenuItem2, ToolStripMenuItem6, ToolStripMenuItem18, ToolStripMenuItem19, 退出XToolStripMenuItem})
         文件FToolStripMenuItem.Name = "文件FToolStripMenuItem"
         文件FToolStripMenuItem.Size = New Size(97, 32)
         文件FToolStripMenuItem.Text = "功能(&F)"
@@ -231,25 +232,25 @@ Partial Class Form1
         ' ToolStripMenuItem25
         ' 
         ToolStripMenuItem25.Name = "ToolStripMenuItem25"
-        ToolStripMenuItem25.Size = New Size(282, 40)
+        ToolStripMenuItem25.Size = New Size(315, 40)
         ToolStripMenuItem25.Text = "浏览文件(&B)"
         ' 
         ' 运行ToolStripMenuItem
         ' 
         运行ToolStripMenuItem.Name = "运行ToolStripMenuItem"
-        运行ToolStripMenuItem.Size = New Size(282, 40)
+        运行ToolStripMenuItem.Size = New Size(315, 40)
         运行ToolStripMenuItem.Text = "运行(&R)"
         ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(279, 6)
+        ToolStripMenuItem1.Size = New Size(312, 6)
         ' 
         ' 系统更新UToolStripMenuItem
         ' 
         系统更新UToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {Windows1011ToolStripMenuItem, 离线更新下载ToolStripMenuItem, 下载WindowsToolStripMenuItem, Windows自动更新控制ToolStripMenuItem, ToolStripMenuItem7, 下载新版本WFLToolTSMI})
         系统更新UToolStripMenuItem.Name = "系统更新UToolStripMenuItem"
-        系统更新UToolStripMenuItem.Size = New Size(282, 40)
+        系统更新UToolStripMenuItem.Size = New Size(315, 40)
         系统更新UToolStripMenuItem.Text = "系统更新(&U)"
         ' 
         ' Windows1011ToolStripMenuItem
@@ -319,23 +320,30 @@ Partial Class Form1
         下载新版本WFLToolTSMI.Size = New Size(438, 40)
         下载新版本WFLToolTSMI.Text = "下载新版本 WFL Tool"
         ' 
+        ' ToolStripMenuItem35
+        ' 
+        ToolStripMenuItem35.Name = "ToolStripMenuItem35"
+        ToolStripMenuItem35.Size = New Size(315, 40)
+        ToolStripMenuItem35.Text = "系统修改(&C)新"
+        ToolStripMenuItem35.Visible = False
+        ' 
         ' 系统修改ToolStripMenuItem
         ' 
         系统修改ToolStripMenuItem.Name = "系统修改ToolStripMenuItem"
-        系统修改ToolStripMenuItem.Size = New Size(282, 40)
+        系统修改ToolStripMenuItem.Size = New Size(315, 40)
         系统修改ToolStripMenuItem.Text = "系统修改(&C)"
         ' 
         ' ToolStripMenuItem15
         ' 
         ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        ToolStripMenuItem15.Size = New Size(282, 40)
+        ToolStripMenuItem15.Size = New Size(315, 40)
         ToolStripMenuItem15.Text = "密钥管理服务(&K)"
         ' 
         ' 更多ToolStripMenuItem
         ' 
         更多ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {所有任务ToolStripMenuItem, 查看系统位数ToolStripMenuItem, ToolStripMenuItem30, ToolStripMenuItem5, 测试功能ToolStripMenuItem})
         更多ToolStripMenuItem.Name = "更多ToolStripMenuItem"
-        更多ToolStripMenuItem.Size = New Size(282, 40)
+        更多ToolStripMenuItem.Size = New Size(315, 40)
         更多ToolStripMenuItem.Text = "更多(&M)"
         ' 
         ' 所有任务ToolStripMenuItem
@@ -445,20 +453,20 @@ Partial Class Form1
         ' ToolStripMenuItem2
         ' 
         ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        ToolStripMenuItem2.Size = New Size(279, 6)
+        ToolStripMenuItem2.Size = New Size(312, 6)
         ' 
         ' ToolStripMenuItem6
         ' 
         ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        ToolStripMenuItem6.Size = New Size(282, 40)
-        ToolStripMenuItem6.Text = "新选项(&S)"
+        ToolStripMenuItem6.Size = New Size(315, 40)
+        ToolStripMenuItem6.Text = "选项(&S)"
         ToolStripMenuItem6.Visible = False
         ' 
         ' ToolStripMenuItem18
         ' 
         ToolStripMenuItem18.DropDownItems.AddRange(New ToolStripItem() {WFLTool应用设置ToolStripMenuItem, ToolStripMenuItem20, 查看更多和系统附件弹出方式ToolStripMenuItem, 主界面右上角显示样式ToolStripMenuItem, ToolStripMenuItem16, 查看更多内部功能ToolStripMenuItem, ToolStripMenuItem32, ToolStripMenuItem34, 通知区域托盘图标ToolStripMenuItem, ToolStripMenuItem26, 清除数据并退出程序ToolStripMenuItem})
         ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        ToolStripMenuItem18.Size = New Size(282, 40)
+        ToolStripMenuItem18.Size = New Size(315, 40)
         ToolStripMenuItem18.Text = "选项(&S)"
         ' 
         ' WFLTool应用设置ToolStripMenuItem
@@ -641,12 +649,12 @@ Partial Class Form1
         ' ToolStripMenuItem19
         ' 
         ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        ToolStripMenuItem19.Size = New Size(279, 6)
+        ToolStripMenuItem19.Size = New Size(312, 6)
         ' 
         ' 退出XToolStripMenuItem
         ' 
         退出XToolStripMenuItem.Name = "退出XToolStripMenuItem"
-        退出XToolStripMenuItem.Size = New Size(282, 40)
+        退出XToolStripMenuItem.Size = New Size(315, 40)
         退出XToolStripMenuItem.Text = "退出(&X)"
         ' 
         ' UWP应用ToolStripMenuItem
@@ -1673,4 +1681,5 @@ Partial Class Form1
     Friend WithEvents ToolStripMenuItem36 As ToolStripMenuItem
     Friend WithEvents Build As Label
     Friend WithEvents Beta As Label
+    Friend WithEvents ToolStripMenuItem35 As ToolStripMenuItem
 End Class
