@@ -1,4 +1,6 @@
-﻿Public Class SetupAdmin
+﻿Imports System.Threading.Tasks
+
+Public Class SetupAdmin
     Private Sub SetupAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         On Error GoTo Errorchk
         Dim InstallAdmin As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("InstallAdmin", "无")
@@ -18,43 +20,53 @@ Errorchk:
     End Sub
 
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Private Async Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Timer2.Stop()
-        Shell("cmd.EXE /c md ""%programfiles%\WFL Tool""", AppWinStyle.Hide, True, -1)
-        '下面是终止正在运行的wfltool相关代码
-        Dim TargetName As String = "WFL Tool" '存储进程名为文本型，注：进程名不加扩展名
-        Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
-        Dim TargetPath As String '存储进程路径为文本型
-        If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
-            For i = 0 To TargetKill.Length - 1
-                TargetPath = TargetKill(i).MainModule.FileName
-                TargetKill(i).Kill()
-            Next
-        ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
-            TargetKill(0).Kill()
-        End If
+        Await Task.Run(Sub()
+                           Shell("cmd.EXE /c md ""%programfiles%\WFL Tool""", AppWinStyle.Hide, True, -1)
+                           '下面是终止正在运行的wfltool相关代码
+                           Dim TargetName As String = "WFL Tool" '存储进程名为文本型，注：进程名不加扩展名
+                           Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
+                           Dim TargetPath As String '存储进程路径为文本型
+                           If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
+                               For i = 0 To TargetKill.Length - 1
+                                   TargetPath = TargetKill(i).MainModule.FileName
+                                   TargetKill(i).Kill()
+                               Next
+                           ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
+                               TargetKill(0).Kill()
+                           End If
+                       End Sub)
         '-------------分割线--------------
         SetupUserInstall.PB1.Value = 20
-        Shell("cmd.EXE /c copy DotNet10Pga\npga.bin ""%programfiles%\WFL Tool\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy aiu.bin ""%programfiles%\WFL Tool\uninstall.exe"" /y", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe delete ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /f", AppWinStyle.Hide, True, -1)
-        '上面那条是删除build8320的安装信息
-        Shell("cmd.EXE /c copy adl.bin ""%programdata%\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
+        Await Task.Run(Sub()
+                           Shell("cmd.EXE /c copy DotNet10Pga\npga.bin ""%programfiles%\WFL Tool\WFL Tool.exe"" /y", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.EXE /c copy aiu.bin ""%programfiles%\WFL Tool\uninstall.exe"" /y", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe delete ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /f", AppWinStyle.Hide, True, -1)
+                           '上面那条是删除build8320的安装信息
+                           Shell("cmd.EXE /c copy adl.bin ""%programdata%\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
+                       End Sub)
         SetupUserInstall.PB1.Value = 40
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v PaintDesktopVersion /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayIcon /T REG_SZ /d ""%programfiles%\WFL Tool\WFL Tool.exe"" /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) Admin"" /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayVersion /T REG_SZ /d 17.0.9632.1 /f", AppWinStyle.Hide, True, -1)
+        Await Task.Run(Sub()
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v PaintDesktopVersion /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayIcon /T REG_SZ /d ""%programfiles%\WFL Tool\WFL Tool.exe"" /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) Admin"" /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayVersion /T REG_SZ /d 17.0.9632.2 /f", AppWinStyle.Hide, True, -1)
+                       End Sub)
         SetupUserInstall.PB1.Value = 60
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v UninstallString /T REG_SZ /d ""%programfiles%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v NoModify /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v NoRepair /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
+        Await Task.Run(Sub()
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v UninstallString /T REG_SZ /d ""%programfiles%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v NoModify /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v NoRepair /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
+                       End Sub)
         SetupUserInstall.PB1.Value = 80
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v EstimatedSize /T REG_DWORD /d 115066 /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v Publisher /T REG_SZ /d ""(c) 2021-2026 董博涛"" /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v InstallLocation /T REG_SZ /d ""%programfiles%\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.EXE /c copy adl.bin ""%homedrive%\users\public\desktop\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
+        Await Task.Run(Sub()
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v EstimatedSize /T REG_DWORD /d 115066 /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v Publisher /T REG_SZ /d ""(c) 2021-2026 董博涛"" /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v InstallLocation /T REG_SZ /d ""%programfiles%\WFL Tool"" /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.EXE /c copy adl.bin ""%homedrive%\users\public\desktop\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
+                       End Sub)
         SetupUserInstall.PB1.Value = 100
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EWV2webpageShow /T REG_SZ /d 4 /f", AppWinStyle.Hide, True, -1)
         SetupUserInstall.Label1.Text = "安装完成"

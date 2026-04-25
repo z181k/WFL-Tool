@@ -199,6 +199,9 @@ Public Class Loadpga
                     NewSets.Show()
                 ElseIf NewUI.Text = "NSets" Then
                     NewSets.Show()
+                Else
+                    Dim f1 As New Form1
+                    f1.Show()
                 End If
                 '
                 Close()

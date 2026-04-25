@@ -455,7 +455,7 @@ starttask:
             Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
             If Beta <> Build.Text Then
                 Panel1.Show()
-                Label1.Text = "新版本,新征程！WFL Tool 团队祝大家 2026 春节快乐！"
+                Label1.Text = "五周年，大更新！欢迎点击帮助参加五周年活动。"
                 LinkLabel3.Visible = False
             End If
         End If
