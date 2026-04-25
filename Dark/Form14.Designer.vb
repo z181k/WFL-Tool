@@ -47,11 +47,14 @@ Partial Class Form14
         Button1 = New Button()
         Button18 = New Button()
         Button19 = New Button()
+        FeatureControlLabel1 = New Label()
+        Panel1.SuspendLayout()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
+        Panel1.Controls.Add(FeatureControlLabel1)
         Panel1.Location = New Point(220, -5)
         Panel1.Margin = New Padding(6, 5, 6, 5)
         Panel1.Name = "Panel1"
@@ -318,6 +321,16 @@ Partial Class Form14
         Button19.Text = "设备中心"
         Button19.UseVisualStyleBackColor = True
         ' 
+        ' FeatureControlLabel1
+        ' 
+        FeatureControlLabel1.AutoSize = True
+        FeatureControlLabel1.Location = New Point(51, 16)
+        FeatureControlLabel1.Name = "FeatureControlLabel1"
+        FeatureControlLabel1.Size = New Size(76, 21)
+        FeatureControlLabel1.TabIndex = 132
+        FeatureControlLabel1.Text = "enable"
+        FeatureControlLabel1.Visible = False
+        ' 
         ' Form14
         ' 
         AutoScaleDimensions = New SizeF(11F, 21F)
@@ -353,6 +366,8 @@ Partial Class Form14
         Name = "Form14"
         StartPosition = FormStartPosition.CenterScreen
         Text = "MSDT 疑难解答 - WFL Tool (x64)"
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         ResumeLayout(False)
@@ -384,4 +399,5 @@ Partial Class Form14
     Friend WithEvents Button1 As Button
     Friend WithEvents Button18 As Button
     Friend WithEvents Button19 As Button
+    Friend WithEvents FeatureControlLabel1 As Label
 End Class

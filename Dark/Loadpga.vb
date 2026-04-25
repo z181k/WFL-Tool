@@ -145,17 +145,20 @@ Public Class Loadpga
                     Form14.快捷键返回BToolStripMenuItem.Enabled = False
                     Form14.返回更多功能.Visible = False                     '显示MSDT
                     Form14.快捷键返回BToolStripMenuItem.Enabled = False
+                    Form14.FeatureControlLabel1.Text = "ConMSDT"
                 ElseIf conline2 = "NOMSDT" Or conline2 = "nomsdt" Or conline2 = "NoMSDT" Then
                     Form2.Show()
                     Form2.打开主页ToolStripMenuItem.Enabled = False
                     Form2.返回主界面.Visible = False                     '显示更多 - 无msdt
                     Form2.快捷键返回BToolStripMenuItem.Enabled = False
                     Form2.Button14.Enabled = False
+                    Form2.FeatureControlLabel1.Text = "ConNoMSDT"
                 Else
                     Form2.Show()
                     Form2.打开主页ToolStripMenuItem.Enabled = False
                     Form2.返回主界面.Visible = False                     '显示更多
                     Form2.快捷键返回BToolStripMenuItem.Enabled = False
+                    Form2.FeatureControlLabel1.Text = "ConAll"
                 End If
                 Close()
                 Exit Sub
@@ -218,7 +221,7 @@ Public Class Loadpga
                     RunFileDialog.ShowRunDialog(Me, "", "运行  -  WFL Tool", "WFL Tool 将根据你所输入的名称,为你打开相应的程序、文件夹、文档、Internet 资源以及 Intranet 资源。")
                 End If
                 End
-            ElseIf conline1 = "xscpcl" Then
+            ElseIf conline1 = "devinfo" And conline2 = "xscpcl" Then
                 MsgBox(Ver.Text + "，" + Beta.Text + "，" + NewUI.Text + "，" + Build.Text, 0, "配置的 WFL Tool 产品策略")
                 End
             End If

@@ -68,9 +68,9 @@ Partial Class Loadpga
         NewUI.ForeColor = Color.Lavender
         NewUI.Location = New Point(5, 79)
         NewUI.Name = "NewUI"
-        NewUI.Size = New Size(108, 28)
+        NewUI.Size = New Size(61, 28)
         NewUI.TabIndex = 3
-        NewUI.Text = "NSetMod"
+        NewUI.Text = "NSet"
         ' 
         ' Loadpga
         ' 

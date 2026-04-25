@@ -13,11 +13,23 @@ Public Class Form14
 
     Private Sub 返回更多功能_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 返回更多功能.LinkClicked
         Form2.Show()
+        If FeatureControlLabel1.Text = "ConAll" Then    '判断是否conline启动
+            Form2.打开主页ToolStripMenuItem.Enabled = False
+            Form2.返回主界面.Visible = False                     '显示更多
+            Form2.快捷键返回BToolStripMenuItem.Enabled = False
+            Form2.FeatureControlLabel1.Text = "ConAll"
+        End If
         Close()
     End Sub
 
     Private Sub 快捷键返回BToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 快捷键返回BToolStripMenuItem.Click
         Form2.Show()
+        If FeatureControlLabel1.Text = "ConAll" Then    '判断是否conline启动
+            Form2.打开主页ToolStripMenuItem.Enabled = False
+            Form2.返回主界面.Visible = False                     '显示更多
+            Form2.快捷键返回BToolStripMenuItem.Enabled = False
+            Form2.FeatureControlLabel1.Text = "ConAll"
+        End If
         Close()
     End Sub
 
