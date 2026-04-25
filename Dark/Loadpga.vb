@@ -1,5 +1,6 @@
 ﻿Imports System.Reflection.Emit
 Imports System.Runtime.InteropServices
+Imports System.Threading
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Loadpga
@@ -129,11 +130,24 @@ Public Class Loadpga
 
         If Not String.IsNullOrEmpty(conline1) Then
             If conline1 = "/openie" Or conline1 = "/OPENIE" Or conline1 = "/OpenIE" Then
-                Dim ie11 As Object = CreateObject("InternetExplorer.Application")
-                ie11.Visible = True            '打开ie
-                If Not String.IsNullOrEmpty(conline2) Then
-                    ie11.Navigate(conline2)
-                End If
+                Try
+                    Dim ie11 As Object = CreateObject("InternetExplorer.Application")
+                    ie11.Visible = True            '打开ie
+                    If Not String.IsNullOrEmpty(conline2) Then
+                        ie11.Navigate(conline2)
+                    End If
+                Catch ex As System.Exception When ex.Message.Contains("Cannot create ActiveX component")
+                    '生成随机数，随机延迟后再启动，避免冲突
+                    Dim random1 As New Random()
+                    Dim randomNumber As Integer = random1.Next(500, 5001) ' 注意：上界是5001才包含5000
+                    Thread.Sleep(randomNumber)
+                    '
+                    Dim ie11next As Object = CreateObject("InternetExplorer.Application")
+                    ie11next.Visible = True            '打开ie
+                    If Not String.IsNullOrEmpty(conline2) Then
+                        ie11next.Navigate(conline2)
+                    End If
+                End Try
                 End
             ElseIf conline1 = "/help" Or conline1 = "/?" Or conline1 = "/？" Or conline1 = "/HELP" Or conline1 = "/Help" Then
                 Loadpga.ShowHelpAndExit()
