@@ -1,25 +1,17 @@
 ﻿Imports System.Threading.Tasks
 
 Public Class SetupUserBackground
-    Private Sub SetupUserBackground_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer2.Start()
-        SetupUserInstall.Show()
-        SetupUserInstall.Text = "WFL Tool (x64) 安装程序"
-        SetupUserInstall.Label4.Text = "安装程序"
-        SetupUserInstall.Label1.Text = "正在安装"
-        SetupUserInstall.PB1.Value = 0
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Application.Exit()
-    End Sub
-
-    Private Sub SetupUserBackground_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-        Me.Visible = False
-    End Sub
-
-    Private Async Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        Timer2.Stop()
+    Private Async Sub SetupUserBackground_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim setupUserI As New SetupUserInstall
+        Dim StartPoint As New System.Drawing.Point
+        StartPoint.X = Me.Location.X
+        StartPoint.Y = Me.Location.Y
+        setupUserI.Location = StartPoint
+        setupUserI.Show()
+        setupUserI.Text = "WFL Tool (x64) 安装程序"
+        setupUserI.Label4.Text = "安装程序"
+        setupUserI.Label1.Text = "正在安装"
+        setupUserI.PB1.Value = 0
         Await Task.Run(Sub()
                            Shell("cmd.EXE /c md ""%localappdata%\WFL Tool""", AppWinStyle.Hide, True, -1)
                            '下面是终止正在运行的wfltool相关代码
@@ -48,14 +40,14 @@ Public Class SetupUserBackground
                            End If
                        End Sub)
         '-------------分割线--------------
-        SetupUserInstall.PB1.Value = 10
+        setupUserI.PB1.Value = 10
         Await Task.Run(Sub()
                            Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool.exe""", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c Xcopy.EXE EWV2viewer ""%localappdata%\WFL Tool\EWV2viewer\"" /Y", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c md ""%localappdata%\WFL Tool\EWV2viewer\runtimes\win-x64\native""", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c copy 3RDparty\wv2l.bin ""%localappdata%\WFL Tool\EWV2viewer\runtimes\win-x64\native\WebView2Loader.dll"" /y", AppWinStyle.Hide, True, -1)
                        End Sub)
-        SetupUserInstall.PB1.Value = 20
+        setupUserI.PB1.Value = 20
         Await Task.Run(Sub()
                            Shell("cmd.EXE /c copy uiu.bin ""%localappdata%\WFL Tool\uninstall.exe"" /y", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c Xcopy.EXE 3RDparty\deverrcodehlp_files ""%localappdata%\WFL Tool\EWV2viewer\deverrcodehlp_files\"" /E /C /Y", AppWinStyle.Hide, True, -1)
@@ -64,14 +56,14 @@ Public Class SetupUserBackground
                            Shell("cmd.EXE /c copy HtmlPages\5thc.bin ""%localappdata%\WFL Tool\EWV2viewer\5THcelebrate.html"" /y", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c copy 3RDparty\pri.bin ""%localappdata%\WFL Tool\resources.pri"" /y", AppWinStyle.Hide, True, -1)
                        End Sub)
-        SetupUserInstall.PB1.Value = 30
+        setupUserI.PB1.Value = 30
         Await Task.Run(Sub()
                            Shell("cmd.EXE /c copy mu.bin ""%localappdata%\WFL Tool\DBTModernSetupUI-Modify.exe"" /y", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c copy 3RDparty\arb.bin ""%localappdata%\WFL Tool\Microsoft.WindowsAppRuntime.Bootstrap.dll"" /y", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c copy 3RDparty\amb.bin ""%localappdata%\WFL Tool\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll"" /y", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c copy 3RDparty\mbp.bin ""%localappdata%\WFL Tool\MessageBox.exe"" /y", AppWinStyle.Hide, True, -1)
                        End Sub)
-        SetupUserInstall.PB1.Value = 40
+        setupUserI.PB1.Value = 40
         Await Task.Run(Sub()
                            Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\EWV2viewer\iwpt.html""", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c rd ""%localappdata%\WFL Tool\EWV2viewer\iwpt_files"" /s /q", AppWinStyle.Hide, False, -1)
@@ -79,7 +71,7 @@ Public Class SetupUserBackground
                            Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool Dark.dll""", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c del ""%localappdata%\WFL Tool\WFL Tool Dark.runtimeconfig.json""", AppWinStyle.Hide, True, -1)
                        End Sub)
-        SetupUserInstall.PB1.Value = 50
+        setupUserI.PB1.Value = 50
         Await Task.Run(Sub()
                            Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
                            If CurrentBuild >= 17763 Then              '检查版本配置WinAppSdk项目
@@ -91,20 +83,20 @@ Public Class SetupUserBackground
                            End If
                            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v Show /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
                        End Sub)
-        SetupUserInstall.PB1.Value = 60
+        setupUserI.PB1.Value = 60
         Await Task.Run(Sub()
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v EWV2viewerInsatll /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v PaintDesktopVersion /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayIcon /T REG_SZ /d ""%localappdata%\WFL Tool\WFLToolDark.exe"" /f", AppWinStyle.Hide, True, -1)
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) User"" /f", AppWinStyle.Hide, True, -1)
                        End Sub)
-        SetupUserInstall.PB1.Value = 70
+        setupUserI.PB1.Value = 70
         Await Task.Run(Sub()
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 17.0.9632.2 /f", AppWinStyle.Hide, True, -1)
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v UninstallString /T REG_SZ /d ""%localappdata%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
                        End Sub)
-        SetupUserInstall.PB1.Value = 80
+        setupUserI.PB1.Value = 80
         Await Task.Run(Sub()
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v ModifyPath /T REG_SZ /d ""%localappdata%\WFL Tool\DBTModernSetupUI-Modify.exe"" /f", AppWinStyle.Hide, True, -1)
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v NoModify /T REG_DWORD /d 0 /f", AppWinStyle.Hide, True, -1)
@@ -120,16 +112,24 @@ Public Class SetupUserBackground
                            Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin """ + dpf + "\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
                            Shell("cmd.EXE /c copy DotNet10Pga\nudl.bin ""%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WFL Tool.lnk"" /y", AppWinStyle.Hide, True, -1)
                        End Sub)
-        SetupUserInstall.PB1.Value = 100
-        SetupUserInstall.Label1.Text = "安装完成"
-        SetupUserInstall.ControlBox = True
-        SetupUserInstall.Button1.Text = "关闭"
-        SetupUserInstall.Button1.Enabled = True
+        setupUserI.PB1.Value = 100
+        setupUserI.Label1.Text = "安装完成"
+        setupUserI.ControlBox = True
+        setupUserI.Button1.Text = "关闭"
+        setupUserI.Button1.Enabled = True
         Dim EAI As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\DBT\WFL Tool", "EnterpriseAutoInstall", Nothing)
         If EAI = "2" Then
             Timer1.Start()
             'Timer1.Enabled = True                  '检查企业自动化安装
-            SetupUserInstall.Button1.Text = "3 秒后自动关闭"
+            setupUserI.Button1.Text = "3 秒后自动关闭"
         End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Application.Exit()
+    End Sub
+
+    Private Sub SetupUserBackground_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        Me.Visible = False
     End Sub
 End Class

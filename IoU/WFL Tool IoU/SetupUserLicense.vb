@@ -38,7 +38,12 @@ jump:
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        SetupUser.Show()
+        Dim setupU As New SetupUser
+        Dim StartPoint As New System.Drawing.Point
+        StartPoint.X = Me.Location.X
+        StartPoint.Y = Me.Location.Y
+        setupU.Location = StartPoint
+        setupU.Show()
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EULA /T REG_SZ /d SetupUser /f", AppWinStyle.Hide, True, -1)
         Close()
     End Sub

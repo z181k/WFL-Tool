@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class SetupAdmin
     Inherits System.Windows.Forms.Form
 
     'Form 重写 Dispose，以清理组件列表。
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,10 @@ Partial Class SetupAdmin
     '注意: 以下过程是 Windows 窗体设计器所必需的
     '可以使用 Windows 窗体设计器修改它。  
     '不要使用代码编辑器修改它。
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SetupAdmin))
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 500
         '
         'SetupAdmin
         '
@@ -39,11 +33,10 @@ Partial Class SetupAdmin
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SetupAdmin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = " "
         Me.TransparencyKey = System.Drawing.SystemColors.Control
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Timer2 As Timer
 End Class

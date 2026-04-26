@@ -22,18 +22,15 @@ Partial Class UninstAdmin
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UninstAdmin))
         Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -70,18 +67,6 @@ Partial Class UninstAdmin
         Me.Label2.Size = New System.Drawing.Size(323, 36)
         Me.Label2.TabIndex = 68
         Me.Label2.Text = "要取消卸载请关闭此窗口"
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(444, 187)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(227, 72)
-        Me.Button1.TabIndex = 67
-        Me.Button1.Text = "移除"
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
         '
         'Label1
         '
@@ -140,9 +125,6 @@ Partial Class UninstAdmin
         Me.PictureBox2.TabIndex = 61
         Me.PictureBox2.TabStop = False
         '
-        'Timer1
-        '
-        '
         'UninstAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
@@ -152,7 +134,6 @@ Partial Class UninstAdmin
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label7)
@@ -173,11 +154,9 @@ Partial Class UninstAdmin
     Friend WithEvents Button2 As Button
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Timer1 As Timer
 End Class

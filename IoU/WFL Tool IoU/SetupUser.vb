@@ -5,16 +5,21 @@
     End Sub
 
     Private Sub 为当前用户安装_Click(sender As Object, e As EventArgs) Handles 为当前用户安装.Click
-        SetupUserBackground.Show()
+        Dim setupUserB As New SetupUserBackground
+        Dim StartPoint As New System.Drawing.Point
+        StartPoint.X = Me.Location.X
+        StartPoint.Y = Me.Location.Y
+        setupUserB.Location = StartPoint
+        setupUserB.Show()
         Close()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Hide()
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v InstallAdmin /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
         Me.Visible = False
-        CreateObject("shell.application").shellexecute("InAdmin.exe", "", "", "runas", 1)        '所有用户
-        'Shell("InAdmin.exe", AppWinStyle.NormalFocus, False, -1)   '防止单文件安装包清理不干净
+        Dim LX As String = Me.Location.X
+        Dim LY As String = Me.Location.Y
+        CreateObject("shell.application").shellexecute("InAdmin.exe", LX + " " + LY, "", "runas", 1)        '所有用户
         Application.Exit()
     End Sub
 

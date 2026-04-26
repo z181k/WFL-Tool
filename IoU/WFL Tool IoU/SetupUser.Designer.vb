@@ -173,7 +173,6 @@ Partial Class SetupUser
         Me.Label6.Size = New System.Drawing.Size(264, 28)
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "你在安装测试版，请注意！"
-        Me.Label6.Visible = False
         '
         'SetupUser
         '
@@ -198,7 +197,7 @@ Partial Class SetupUser
         Me.MaximizeBox = False
         Me.Name = "SetupUser"
         Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "WFL Tool (x64) 安装程序"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

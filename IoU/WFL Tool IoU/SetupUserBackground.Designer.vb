@@ -25,15 +25,11 @@ Partial Class SetupUserBackground
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SetupUserBackground))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Timer1
         '
         Me.Timer1.Interval = 3000
-        '
-        'Timer2
-        '
         '
         'SetupUserBackground
         '
@@ -48,12 +44,11 @@ Partial Class SetupUserBackground
         Me.MinimizeBox = False
         Me.Name = "SetupUserBackground"
         Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "WFL Tool (x64) 自动部署程序"
         Me.TransparencyKey = System.Drawing.SystemColors.Control
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Timer2 As Timer
 End Class
