@@ -49,7 +49,6 @@ Partial Class Form9
         Label6 = New Label()
         PictureBox1 = New PictureBox()
         LinkLabel10 = New LinkLabel()
-        FeatureControlLabel1 = New Label()
         Beta = New Label()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
@@ -61,7 +60,7 @@ Partial Class Form9
         Label1.AutoSize = True
         Label1.ContextMenuStrip = ContextMenuStrip1
         Label1.Font = New Font("微软雅黑", 15F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label1.Location = New Point(45, 206)
+        Label1.Location = New Point(45, 200)
         Label1.Margin = New Padding(6, 0, 6, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(176, 46)
@@ -98,7 +97,7 @@ Partial Class Form9
         Label2.ContextMenuStrip = ContextMenuStrip1
         Label2.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label2.ForeColor = SystemColors.GrayText
-        Label2.Location = New Point(54, 250)
+        Label2.Location = New Point(54, 244)
         Label2.Margin = New Padding(6, 0, 6, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(159, 24)
@@ -111,7 +110,7 @@ Partial Class Form9
         Label3.ContextMenuStrip = ContextMenuStrip1
         Label3.Font = New Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label3.ForeColor = SystemColors.GrayText
-        Label3.Location = New Point(72, 352)
+        Label3.Location = New Point(72, 360)
         Label3.Margin = New Padding(6, 0, 6, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(122, 32)
@@ -124,7 +123,7 @@ Partial Class Form9
         Label4.ContextMenuStrip = ContextMenuStrip1
         Label4.Font = New Font("微软雅黑", 7.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label4.ForeColor = Color.Gray
-        Label4.Location = New Point(74, 388)
+        Label4.Location = New Point(74, 396)
         Label4.Margin = New Padding(6, 0, 6, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(118, 24)
@@ -309,7 +308,7 @@ Partial Class Form9
         Label6.ContextMenuStrip = ContextMenuStrip1
         Label6.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label6.ForeColor = SystemColors.GrayText
-        Label6.Location = New Point(53, 250)
+        Label6.Location = New Point(53, 244)
         Label6.Margin = New Padding(6, 0, 6, 0)
         Label6.Name = "Label6"
         Label6.Size = New Size(159, 24)
@@ -320,7 +319,7 @@ Partial Class Form9
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(75, 90)
+        PictureBox1.Location = New Point(75, 84)
         PictureBox1.Margin = New Padding(6, 5, 6, 5)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(117, 112)
@@ -343,20 +342,10 @@ Partial Class Form9
         LinkLabel10.TabStop = True
         LinkLabel10.Text = "开源地址"
         ' 
-        ' FeatureControlLabel1
-        ' 
-        FeatureControlLabel1.AutoSize = True
-        FeatureControlLabel1.Location = New Point(78, 35)
-        FeatureControlLabel1.Name = "FeatureControlLabel1"
-        FeatureControlLabel1.Size = New Size(87, 21)
-        FeatureControlLabel1.TabIndex = 111
-        FeatureControlLabel1.Text = "disable"
-        FeatureControlLabel1.Visible = False
-        ' 
         ' Beta
         ' 
         Beta.AutoSize = True
-        Beta.Location = New Point(78, 56)
+        Beta.Location = New Point(72, 9)
         Beta.Name = "Beta"
         Beta.Size = New Size(96, 21)
         Beta.TabIndex = 112
@@ -372,7 +361,6 @@ Partial Class Form9
         ClientSize = New Size(831, 516)
         ContextMenuStrip = ContextMenuStrip1
         Controls.Add(Beta)
-        Controls.Add(FeatureControlLabel1)
         Controls.Add(LinkLabel10)
         Controls.Add(Label6)
         Controls.Add(LinkLabel5)
@@ -427,7 +415,6 @@ Partial Class Form9
     Friend WithEvents LinkLabel5 As LinkLabel
     Friend WithEvents Label6 As Label
     Friend WithEvents LinkLabel10 As LinkLabel
-    Friend WithEvents FeatureControlLabel1 As Label
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents 检查更新ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator

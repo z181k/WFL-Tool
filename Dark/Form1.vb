@@ -496,28 +496,18 @@ starttask:
             启动时不打开当前ToolStripMenuItem.Text = "启动时不打开"
             启动时打开ToolStripMenuItem.Text = "启动时打开 (当前)"
         End If
-        '此处标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
-        ''Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
-        ''If v122 = "ture" Then
-        ''   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
-        ''End If
-        ''Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
-        ''If v122a = "True" Then
-        ''   FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
-        ''End If
-        If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
-            查看更多内部功能ToolStripMenuItem.Visible = True
-            ''VerLabel.Text = "  v12.2"
-            Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "无")
-            If cctButton = "1" Then
-                计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - admin cmd
-                命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符 (当前)"
-            ElseIf cctButton = "2" And CurrentBuild >= "22621" Then
-                计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - taskmger x86
-                任务管理器x86ToolStripMenuItem.Text = "旧版任务管理器 (当前)"
-                任务管理器x86ToolStripMenuItem.Visible = True
-            End If
+        '
+        查看更多内部功能ToolStripMenuItem.Visible = True
+        Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "无")
+        If cctButton = "1" Then
+            计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - admin cmd
+            命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符 (当前)"
+        ElseIf cctButton = "2" And CurrentBuild >= "22621" Then
+            计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - taskmger x86
+            任务管理器x86ToolStripMenuItem.Text = "旧版任务管理器 (当前)"
+            任务管理器x86ToolStripMenuItem.Visible = True
         End If
+        '
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
         If LegacyHomeUI = "True" Then
             ToolStripMenuItem3.Text = "欢迎使用  v" + VerLabel.Text

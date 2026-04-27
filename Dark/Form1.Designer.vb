@@ -191,7 +191,6 @@ Partial Class Form1
         PictureBox2 = New PictureBox()
         Button16 = New Button()
         VerLabel = New Label()
-        FeatureControlLabel1 = New Label()
         Panel1 = New Panel()
         LinkLabel3 = New LinkLabel()
         LinkLabel2 = New LinkLabel()
@@ -232,25 +231,25 @@ Partial Class Form1
         ' ToolStripMenuItem25
         ' 
         ToolStripMenuItem25.Name = "ToolStripMenuItem25"
-        ToolStripMenuItem25.Size = New Size(315, 40)
+        ToolStripMenuItem25.Size = New Size(282, 40)
         ToolStripMenuItem25.Text = "浏览文件(&B)"
         ' 
         ' 运行ToolStripMenuItem
         ' 
         运行ToolStripMenuItem.Name = "运行ToolStripMenuItem"
-        运行ToolStripMenuItem.Size = New Size(315, 40)
+        运行ToolStripMenuItem.Size = New Size(282, 40)
         运行ToolStripMenuItem.Text = "运行(&R)"
         ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(312, 6)
+        ToolStripMenuItem1.Size = New Size(279, 6)
         ' 
         ' 系统更新UToolStripMenuItem
         ' 
         系统更新UToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {Windows1011ToolStripMenuItem, 离线更新下载ToolStripMenuItem, 下载WindowsToolStripMenuItem, Windows自动更新控制ToolStripMenuItem, ToolStripMenuItem7, 下载新版本WFLToolTSMI})
         系统更新UToolStripMenuItem.Name = "系统更新UToolStripMenuItem"
-        系统更新UToolStripMenuItem.Size = New Size(315, 40)
+        系统更新UToolStripMenuItem.Size = New Size(282, 40)
         系统更新UToolStripMenuItem.Text = "系统更新(&U)"
         ' 
         ' Windows1011ToolStripMenuItem
@@ -323,27 +322,27 @@ Partial Class Form1
         ' ToolStripMenuItem35
         ' 
         ToolStripMenuItem35.Name = "ToolStripMenuItem35"
-        ToolStripMenuItem35.Size = New Size(315, 40)
+        ToolStripMenuItem35.Size = New Size(282, 40)
         ToolStripMenuItem35.Text = "系统修改(&C)新"
         ToolStripMenuItem35.Visible = False
         ' 
         ' 系统修改ToolStripMenuItem
         ' 
         系统修改ToolStripMenuItem.Name = "系统修改ToolStripMenuItem"
-        系统修改ToolStripMenuItem.Size = New Size(315, 40)
+        系统修改ToolStripMenuItem.Size = New Size(282, 40)
         系统修改ToolStripMenuItem.Text = "系统修改(&C)"
         ' 
         ' ToolStripMenuItem15
         ' 
         ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        ToolStripMenuItem15.Size = New Size(315, 40)
+        ToolStripMenuItem15.Size = New Size(282, 40)
         ToolStripMenuItem15.Text = "密钥管理服务(&K)"
         ' 
         ' 更多ToolStripMenuItem
         ' 
         更多ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {所有任务ToolStripMenuItem, 查看系统位数ToolStripMenuItem, ToolStripMenuItem30, ToolStripMenuItem5, 测试功能ToolStripMenuItem})
         更多ToolStripMenuItem.Name = "更多ToolStripMenuItem"
-        更多ToolStripMenuItem.Size = New Size(315, 40)
+        更多ToolStripMenuItem.Size = New Size(282, 40)
         更多ToolStripMenuItem.Text = "更多(&M)"
         ' 
         ' 所有任务ToolStripMenuItem
@@ -453,12 +452,12 @@ Partial Class Form1
         ' ToolStripMenuItem2
         ' 
         ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        ToolStripMenuItem2.Size = New Size(312, 6)
+        ToolStripMenuItem2.Size = New Size(279, 6)
         ' 
         ' ToolStripMenuItem6
         ' 
         ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        ToolStripMenuItem6.Size = New Size(315, 40)
+        ToolStripMenuItem6.Size = New Size(282, 40)
         ToolStripMenuItem6.Text = "选项(&S)"
         ToolStripMenuItem6.Visible = False
         ' 
@@ -466,7 +465,7 @@ Partial Class Form1
         ' 
         ToolStripMenuItem18.DropDownItems.AddRange(New ToolStripItem() {WFLTool应用设置ToolStripMenuItem, ToolStripMenuItem20, 查看更多和系统附件弹出方式ToolStripMenuItem, 主界面右上角显示样式ToolStripMenuItem, ToolStripMenuItem16, 查看更多内部功能ToolStripMenuItem, ToolStripMenuItem32, ToolStripMenuItem34, 通知区域托盘图标ToolStripMenuItem, ToolStripMenuItem26, 清除数据并退出程序ToolStripMenuItem})
         ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        ToolStripMenuItem18.Size = New Size(315, 40)
+        ToolStripMenuItem18.Size = New Size(282, 40)
         ToolStripMenuItem18.Text = "选项(&S)"
         ' 
         ' WFLTool应用设置ToolStripMenuItem
@@ -649,12 +648,12 @@ Partial Class Form1
         ' ToolStripMenuItem19
         ' 
         ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        ToolStripMenuItem19.Size = New Size(312, 6)
+        ToolStripMenuItem19.Size = New Size(279, 6)
         ' 
         ' 退出XToolStripMenuItem
         ' 
         退出XToolStripMenuItem.Name = "退出XToolStripMenuItem"
-        退出XToolStripMenuItem.Size = New Size(315, 40)
+        退出XToolStripMenuItem.Size = New Size(282, 40)
         退出XToolStripMenuItem.Text = "退出(&X)"
         ' 
         ' UWP应用ToolStripMenuItem
@@ -1374,16 +1373,6 @@ Partial Class Form1
         VerLabel.Text = "版本字符串"
         VerLabel.Visible = False
         ' 
-        ' FeatureControlLabel1
-        ' 
-        FeatureControlLabel1.AutoSize = True
-        FeatureControlLabel1.Location = New Point(586, 74)
-        FeatureControlLabel1.Name = "FeatureControlLabel1"
-        FeatureControlLabel1.Size = New Size(76, 21)
-        FeatureControlLabel1.TabIndex = 11
-        FeatureControlLabel1.Text = "enable"
-        FeatureControlLabel1.Visible = False
-        ' 
         ' Panel1
         ' 
         Panel1.Controls.Add(LinkLabel3)
@@ -1473,7 +1462,6 @@ Partial Class Form1
         Controls.Add(Beta)
         Controls.Add(Build)
         Controls.Add(Panel1)
-        Controls.Add(FeatureControlLabel1)
         Controls.Add(VerLabel)
         Controls.Add(Button16)
         Controls.Add(PictureBox2)
@@ -1628,7 +1616,6 @@ Partial Class Form1
     Friend WithEvents 计算机管理当前ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 命令提示符管理员ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents 任务管理器x86ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FeatureControlLabel1 As Label
     Friend WithEvents WFLTool5周年ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label

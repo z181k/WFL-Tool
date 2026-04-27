@@ -64,6 +64,23 @@ Public Class Form16
             Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
         End If
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NoMsgReExp /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+
+        ' 遍历所有打开的窗体，查找类型为 Form1 的实例
+        For Each frm As Form In Application.OpenForms
+            If TypeOf frm Is Form1 Then
+                ' 找到目标窗体实例，将其转换为 Form1 类型以访问其控件
+                Dim targetForm As Form1 = DirectCast(frm, Form1)
+                ' 确保控件存在并设置其可见性
+                ' 注意：ToolStripMenuItem34 可能是 Private，需修改为 Internal 或 Public，
+                ' 或通过公开方法/属性来设置。这里假设已将其 Modifiers 属性设置为 Friend 或 Public。
+                If targetForm.ToolStripMenuItem34 IsNot Nothing Then
+                    targetForm.ToolStripMenuItem34.Visible = True
+                End If
+                ' 找到并操作后可以退出循环（如果只需操作第一个找到的实例）
+                Exit For
+            End If
+        Next
+
         Close()
     End Sub
 End Class

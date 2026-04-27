@@ -15,12 +15,8 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo1 As String = "版本(9632.2):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.202 (26/04 安全更新)，安装程序附带 WinAppSDK 提升至 1.7.9" & vbCrLf & "2.在不支持 任务栏缩略图大小调整 的 Win11 26100+ 版本屏蔽该功能" & vbCrLf & "3.组策略功能在不支持的系统添加提示" & vbCrLf & "4.企业功能注册表项 ShowSpecifyPage 已弃用，请使用新的启动参数功能" & vbCrLf & "5.新增应用启动参数，可到关于页查看用法" & vbCrLf & "6.任务管理器 x86 已在 Win11 及更高版本更改为 旧版任务管理器，在其他版本已删除" & vbCrLf & "7.电源菜单中新增锁定功能" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.处理了一些返回主页功能失效问题" & vbCrLf & "2.解决在部分缩放下新版弹窗出现底部大量空白问题" & vbCrLf & "3.解决电源菜单关机或重启时会弹窗显示不正确的一分钟计时问题" & vbCrLf & "4.解决在低版本系统下使用置顶功能会错误启用不支持的 WinAppSDKUI 弹窗问题" & vbCrLf & "5.解决安装程序在安装 WinAppSdk 时的进度不同步和临时文件不删除问题" & vbCrLf & "6.修复安装/卸载时进度窗口不响应 UI 交互问题" & vbCrLf & "7.修复安装/卸载窗口在移动位置后再进行操作会自动回到默认位置问题"
+        Dim upginfo1 As String = "RTM 版本(9632.3):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.202 (26/04 安全更新)，安装程序附带 WinAppSDK 提升至 1.7.9" & vbCrLf & "2.在不支持 任务栏缩略图大小调整 的 Win11 26100+ 版本屏蔽该功能" & vbCrLf & "3.组策略功能在不支持的系统添加提示" & vbCrLf & "4.企业功能注册表项 ShowSpecifyPage 已弃用，请使用新的启动参数功能" & vbCrLf & "5.新增应用启动参数，可到关于页查看用法" & vbCrLf & "6.任务管理器 x86 已在 Win11 22h2 及更高版本更改为 旧版任务管理器，在低版本系统中删除了该选项" & vbCrLf & "7.电源菜单中新增锁定功能" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.处理了一些返回主页功能失效问题" & vbCrLf & "2.解决在部分缩放下新版弹窗出现底部大量空白问题" & vbCrLf & "3.解决电源菜单关机或重启时会弹窗显示不正确的一分钟计时问题" & vbCrLf & "4.解决在低版本系统下使用置顶功能会错误启用不支持的 WinAppSDKUI 弹窗问题" & vbCrLf & "5.解决安装程序在安装 WinAppSdk 时的进度不同步和临时文件不删除问题" & vbCrLf & "6.修复安装/卸载时进度窗口不响应 UI 交互问题" & vbCrLf & "7.修复安装/卸载窗口在移动位置后再进行操作会自动回到默认位置问题" & vbCrLf & "8.修复关闭/重启 Exp 窗口点击不再提示后选项中未及时显示恢复菜单问题"
         Dim upginfoNext As String = "" & vbCrLf & vbCrLf & vbCrLf & ""     '此处是多个日志分割用
-        '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
-        ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
-        ''   此处放启用后日志
-        ''End If
         Dim Nform16UPGINFO As New Form16
         Nform16UPGINFO.Show()
         Nform16UPGINFO.TextBox1.Text = upginfo1
@@ -166,20 +162,6 @@ legacy:
         If OnTop = "1" Then
             SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
         End If
-        '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
-        ''Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
-        ''Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)
-        ''If v122a = "True" Then
-        ''    FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - admin
-        ''End If
-        ''If v122 = "ture" Then
-        ''    FeatureControlLabel1.Text = "enable"    '启用v12.2的功能 - user
-        ''End If
-        ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
-        ''    Dim cctButton As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("cctButton", "0")
-        ''    Label3.Text = "版本 12.2"     '修改版本
-        ''End If
-
         '低屏幕分辨率设备兼容代码
         PictureBox1.Height = PictureBox1.Width
     End Sub
