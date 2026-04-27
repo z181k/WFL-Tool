@@ -2,21 +2,21 @@
 
 Public Class SetupAdmin
     Private Async Sub SetupAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Try
-        Dim InstallAdmin As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("InstallAdmin", "无")
+        Try
+            Dim InstallAdmin As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("InstallAdmin", "无")
             Dim args As String() = Environment.GetCommandLineArgs()
-        Dim conline1 As String = If(args.Length >= 2, args(1), "")
-        Dim conline2 As String = If(args.Length >= 3, args(2), "")
-        Dim NLX As Double = conline1
-        Dim NLY As Double = conline2
-        If Not String.IsNullOrEmpty(conline1) Then
+            Dim conline1 As String = If(args.Length >= 2, args(1), "")
+            Dim conline2 As String = If(args.Length >= 3, args(2), "")
+            Dim NLX As Double = conline1
+            Dim NLY As Double = conline2
+            If Not String.IsNullOrEmpty(conline1) Then
                 If conline1 <> "" And conline1 <> "" Then
                     Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v InstallAdmin /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
                     Dim setupUserI As New SetupUserInstall
                     Dim StartPoint As New System.Drawing.Point
-                StartPoint.X = NLX
-                StartPoint.Y = NLY
-                setupUserI.Location = StartPoint
+                    StartPoint.X = NLX
+                    StartPoint.Y = NLY
+                    setupUserI.Location = StartPoint
                     setupUserI.Show()
                     setupUserI.Text = "WFL Tool (x64) 安装程序"
                     setupUserI.Label4.Text = "安装程序"
@@ -51,7 +51,7 @@ Public Class SetupAdmin
                                        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v PaintDesktopVersion /T REG_DWORD /d 1 /f", AppWinStyle.Hide, True, -1)
                                        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayIcon /T REG_SZ /d ""%programfiles%\WFL Tool\WFL Tool.exe"" /f", AppWinStyle.Hide, True, -1)
                                        Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayName /T REG_SZ /d ""WFL Tool (x64) Admin"" /f", AppWinStyle.Hide, True, -1)
-                                       Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayVersion /T REG_SZ /d 17.0.9632.2 /f", AppWinStyle.Hide, True, -1)
+                                       Shell("cmd.exe /c reg.exe add ""HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA"" /v DisplayVersion /T REG_SZ /d 17.0.9632.3 /f", AppWinStyle.Hide, True, -1)
                                    End Sub)
                     setupUserI.PB1.Value = 60
                     Await Task.Run(Sub()
@@ -81,10 +81,10 @@ Public Class SetupAdmin
                     Exit Sub     '结束事件防止执行下面
                 End If
             End If
-            'Catch ex As Exception
-            '    MsgBox("请执行 Setup.exe 以进行安装。", MsgBoxStyle.Critical, "WFL Tool 安装程序")
-            'End Try
-            End
+        Catch ex As Exception
+            MsgBox("请执行 Setup.exe 以进行安装。", MsgBoxStyle.Critical, "WFL Tool 安装程序")
+        End Try
+        End
     End Sub
 
     Private Sub SetupAdmin_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
