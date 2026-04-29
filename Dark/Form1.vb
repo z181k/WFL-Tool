@@ -69,16 +69,20 @@ Public Class Form1
     End Sub
 
     Private Sub Windows1011ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Windows1011ToolStripMenuItem.Click
-        Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
-        If CurrentBuild >= 10240 Then   'Win10/11更新
-            Shell("cmd.exe /c start ms-settings:windowsupdate", AppWinStyle.Hide, True, -1)
-        Else
-            Shell("wuapp.exe", AppWinStyle.NormalFocus, False, -1)   'win7/8/vista更新
-        End If
+        Shell("cmd.exe /c start ms-settings:windowsupdate", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub WindowsDefenderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WindowsDefenderToolStripMenuItem.Click
-        Shell("cmd.exe /c start WindowsDefender:5", AppWinStyle.Hide, True, -1) 'win安全中心
+        If Build.Text = "9632.3" Then   '9632.3用旧版逻辑
+            Shell("cmd.exe /c start WindowsDefender:5", AppWinStyle.Hide, True, -1) 'win安全中心
+        Else
+            Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+            If CurrentBuild <= "14393" Then
+                Shell("cmd.exe /c ""%ProgramFiles%\Windows Defender\MSASCui.exe""&exit", AppWinStyle.Hide, False, -1)
+            Else
+                Shell("cmd.exe /c start WindowsDefender:5", AppWinStyle.Hide, True, -1) 'win安全中心
+            End If
+        End If
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
@@ -406,7 +410,11 @@ starttask:
         End If
         '
         If CurrentBuild < 18362 Then              '检查版本控制UWP应用和电池健康显示
-            UWP应用ToolStripMenuItem.Enabled = False
+            If Build.Text = "9632.3" Then   '9632.3用旧版逻辑
+                UWP应用ToolStripMenuItem.Enabled = False
+            Else
+                UWP资源管理器.Enabled = False
+            End If
             电池健康ToolStripMenuItem.Enabled = False
         End If
         If CurrentBuild < 19041 Then
@@ -416,6 +424,9 @@ starttask:
             ToolStripMenuItem30.Enabled = False
         End If
         If CurrentBuild < 22000 Then
+            If Build.Text <> "9632.3" Then   '9632.3用旧版逻辑
+                媒体播放器.Text = "Groove 音乐"
+            End If
             '检查版本控制Win11IE名字和自动切换颜色
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
             自动ToolStripMenuItem.Enabled = False

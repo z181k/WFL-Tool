@@ -192,11 +192,11 @@ Public Class Form7
         End If
         '下面采用14393这个版本作为保底，再之前的win10版本功能缺失过多，故屏蔽
         If CurrentBuild < 14393 Then
-            GroupBox6.Enabled = False             '检查版本控制Windows 10 音量控制界面样式显示
+            GroupBox6.Enabled = False             '检查版本控制Windows 10 音量控制界面样式显示 del
             GroupBox16.Enabled = False             '检查版本控制Windows 10 及以上版本控制面板隐藏项目显示
-            GroupBox3.Enabled = False             '检查版本控制WWindows 10 电池界面样式显示
-            GroupBox2.Enabled = False             '检查版本控制WWindows 10 通知显示
-            GroupBox5.Enabled = False             '检查版本控制Win10 网络面板显示
+            GroupBox3.Enabled = False             '检查版本控制WWindows 10 电池界面样式显示 del
+            GroupBox2.Enabled = False             '检查版本控制WWindows 10 通知显示 del
+            GroupBox5.Enabled = False             '检查版本控制Win10 网络面板显示 del
             Button16.Enabled = False            '检查版本控制Windows 10 任务栏透明度设置教程显示
         End If
         '下面是win11隐藏win10专属功能
