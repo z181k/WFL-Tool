@@ -563,9 +563,20 @@ legacy:
     End Sub
 
     Private Sub ToolStripMenuItem17_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem17.Click
-        Dim pwstdntime As String
-        pwstdntime = InputBox("输入要在几秒后关机", "自动关机自定义")                             '自动关机自定义
-        CreateObject("shell.application").shellexecute("shutdown.EXE", "/s /t " + pwstdntime, "", "", 0)
+        If Build.Text = "9632.3" Then   '9632.3用旧版逻辑
+            Dim pwstdntime As String
+            pwstdntime = InputBox("输入要在几秒后关机", "自动关机自定义")                             '自动关机自定义
+            CreateObject("shell.application").shellexecute("shutdown.EXE", "/s /t " + pwstdntime, "", "", 0)
+        Else
+            Dim pwstdntimeINT As Int64
+            Try
+                pwstdntimeINT = InputBox("输入要在几秒后关机", "自动关机自定义")                             '自动关机自定义
+            Catch ex As Exception
+                Exit Sub
+            End Try
+            Dim pwstdntimeString As String = pwstdntimeINT
+            CreateObject("shell.application").shellexecute("shutdown.EXE", "/s /t " + pwstdntimeString, "", "", 0)
+        End If
     End Sub
 
     Private Sub 旧版ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 旧版ToolStripMenuItem.Click
