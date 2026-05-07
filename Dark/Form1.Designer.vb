@@ -69,10 +69,6 @@ Partial Class Form1
         查看更多和系统附件弹出方式ToolStripMenuItem = New ToolStripMenuItem()
         新版覆盖返回方式ToolStripMenuItem = New ToolStripMenuItem()
         旧版ToolStripMenuItem = New ToolStripMenuItem()
-        查看更多内部功能ToolStripMenuItem = New ToolStripMenuItem()
-        计算机管理当前ToolStripMenuItem = New ToolStripMenuItem()
-        命令提示符管理员ToolStripMenuItem1 = New ToolStripMenuItem()
-        任务管理器x86ToolStripMenuItem = New ToolStripMenuItem()
         主界面右上角显示样式ToolStripMenuItem = New ToolStripMenuItem()
         现代当前ToolStripMenuItem = New ToolStripMenuItem()
         伪旧ToolStripMenuItem = New ToolStripMenuItem()
@@ -80,6 +76,16 @@ Partial Class Form1
         仅版本号ToolStripMenuItem = New ToolStripMenuItem()
         仅软件名ToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem16 = New ToolStripSeparator()
+        查看更多内部功能ToolStripMenuItem = New ToolStripMenuItem()
+        计算机管理当前ToolStripMenuItem = New ToolStripMenuItem()
+        命令提示符管理员ToolStripMenuItem1 = New ToolStripMenuItem()
+        任务管理器x86ToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem32 = New ToolStripMenuItem()
+        不置顶当前ToolStripMenuItem = New ToolStripMenuItem()
+        置顶ToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem33 = New ToolStripSeparator()
+        关于此功能ToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem34 = New ToolStripMenuItem()
         通知区域托盘图标ToolStripMenuItem = New ToolStripMenuItem()
         启动时打开ToolStripMenuItem = New ToolStripMenuItem()
         启动时不打开当前ToolStripMenuItem = New ToolStripMenuItem()
@@ -447,7 +453,7 @@ Partial Class Form1
         ' 
         ' ToolStripMenuItem18
         ' 
-        ToolStripMenuItem18.DropDownItems.AddRange(New ToolStripItem() {WFLTool应用设置ToolStripMenuItem, ToolStripMenuItem20, 查看更多和系统附件弹出方式ToolStripMenuItem, 查看更多内部功能ToolStripMenuItem, 主界面右上角显示样式ToolStripMenuItem, ToolStripMenuItem16, 通知区域托盘图标ToolStripMenuItem, ToolStripMenuItem26, 清除数据并退出程序ToolStripMenuItem})
+        ToolStripMenuItem18.DropDownItems.AddRange(New ToolStripItem() {WFLTool应用设置ToolStripMenuItem, ToolStripMenuItem20, 查看更多和系统附件弹出方式ToolStripMenuItem, 主界面右上角显示样式ToolStripMenuItem, ToolStripMenuItem16, 查看更多内部功能ToolStripMenuItem, ToolStripMenuItem32, ToolStripMenuItem34, 通知区域托盘图标ToolStripMenuItem, ToolStripMenuItem26, 清除数据并退出程序ToolStripMenuItem})
         ToolStripMenuItem18.Name = "ToolStripMenuItem18"
         ToolStripMenuItem18.Size = New Size(282, 40)
         ToolStripMenuItem18.Text = "选项(&S)"
@@ -456,19 +462,19 @@ Partial Class Form1
         ' 
         WFLTool应用设置ToolStripMenuItem.Enabled = False
         WFLTool应用设置ToolStripMenuItem.Name = "WFLTool应用设置ToolStripMenuItem"
-        WFLTool应用设置ToolStripMenuItem.Size = New Size(360, 40)
+        WFLTool应用设置ToolStripMenuItem.Size = New Size(381, 40)
         WFLTool应用设置ToolStripMenuItem.Text = "WFL Tool 设置"
         ' 
         ' ToolStripMenuItem20
         ' 
         ToolStripMenuItem20.Name = "ToolStripMenuItem20"
-        ToolStripMenuItem20.Size = New Size(357, 6)
+        ToolStripMenuItem20.Size = New Size(378, 6)
         ' 
         ' 查看更多和系统附件弹出方式ToolStripMenuItem
         ' 
         查看更多和系统附件弹出方式ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {新版覆盖返回方式ToolStripMenuItem, 旧版ToolStripMenuItem})
         查看更多和系统附件弹出方式ToolStripMenuItem.Name = "查看更多和系统附件弹出方式ToolStripMenuItem"
-        查看更多和系统附件弹出方式ToolStripMenuItem.Size = New Size(360, 40)
+        查看更多和系统附件弹出方式ToolStripMenuItem.Size = New Size(381, 40)
         查看更多和系统附件弹出方式ToolStripMenuItem.Text = "查看更多和附件打开方式"
         ' 
         ' 新版覆盖返回方式ToolStripMenuItem
@@ -483,37 +489,11 @@ Partial Class Form1
         旧版ToolStripMenuItem.Size = New Size(401, 40)
         旧版ToolStripMenuItem.Text = "旧版弹出窗口方式"
         ' 
-        ' 查看更多内部功能ToolStripMenuItem
-        ' 
-        查看更多内部功能ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {计算机管理当前ToolStripMenuItem, 命令提示符管理员ToolStripMenuItem1, 任务管理器x86ToolStripMenuItem})
-        查看更多内部功能ToolStripMenuItem.Name = "查看更多内部功能ToolStripMenuItem"
-        查看更多内部功能ToolStripMenuItem.Size = New Size(360, 40)
-        查看更多内部功能ToolStripMenuItem.Text = "查看更多内部功能"
-        查看更多内部功能ToolStripMenuItem.Visible = False
-        ' 
-        ' 计算机管理当前ToolStripMenuItem
-        ' 
-        计算机管理当前ToolStripMenuItem.Name = "计算机管理当前ToolStripMenuItem"
-        计算机管理当前ToolStripMenuItem.Size = New Size(297, 40)
-        计算机管理当前ToolStripMenuItem.Text = "计算机管理 (当前)"
-        ' 
-        ' 命令提示符管理员ToolStripMenuItem1
-        ' 
-        命令提示符管理员ToolStripMenuItem1.Name = "命令提示符管理员ToolStripMenuItem1"
-        命令提示符管理员ToolStripMenuItem1.Size = New Size(297, 40)
-        命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符"
-        ' 
-        ' 任务管理器x86ToolStripMenuItem
-        ' 
-        任务管理器x86ToolStripMenuItem.Name = "任务管理器x86ToolStripMenuItem"
-        任务管理器x86ToolStripMenuItem.Size = New Size(297, 40)
-        任务管理器x86ToolStripMenuItem.Text = "任务管理器 x86"
-        ' 
         ' 主界面右上角显示样式ToolStripMenuItem
         ' 
         主界面右上角显示样式ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {现代当前ToolStripMenuItem, 伪旧ToolStripMenuItem, ToolStripMenuItem29, 仅版本号ToolStripMenuItem, 仅软件名ToolStripMenuItem})
         主界面右上角显示样式ToolStripMenuItem.Name = "主界面右上角显示样式ToolStripMenuItem"
-        主界面右上角显示样式ToolStripMenuItem.Size = New Size(360, 40)
+        主界面右上角显示样式ToolStripMenuItem.Size = New Size(381, 40)
         主界面右上角显示样式ToolStripMenuItem.Text = "主界面右上角显示样式"
         ' 
         ' 现代当前ToolStripMenuItem
@@ -548,13 +528,76 @@ Partial Class Form1
         ' ToolStripMenuItem16
         ' 
         ToolStripMenuItem16.Name = "ToolStripMenuItem16"
-        ToolStripMenuItem16.Size = New Size(357, 6)
+        ToolStripMenuItem16.Size = New Size(378, 6)
+        ' 
+        ' 查看更多内部功能ToolStripMenuItem
+        ' 
+        查看更多内部功能ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {计算机管理当前ToolStripMenuItem, 命令提示符管理员ToolStripMenuItem1, 任务管理器x86ToolStripMenuItem})
+        查看更多内部功能ToolStripMenuItem.Name = "查看更多内部功能ToolStripMenuItem"
+        查看更多内部功能ToolStripMenuItem.Size = New Size(381, 40)
+        查看更多内部功能ToolStripMenuItem.Text = "查看更多内部功能"
+        查看更多内部功能ToolStripMenuItem.Visible = False
+        ' 
+        ' 计算机管理当前ToolStripMenuItem
+        ' 
+        计算机管理当前ToolStripMenuItem.Name = "计算机管理当前ToolStripMenuItem"
+        计算机管理当前ToolStripMenuItem.Size = New Size(297, 40)
+        计算机管理当前ToolStripMenuItem.Text = "计算机管理 (当前)"
+        ' 
+        ' 命令提示符管理员ToolStripMenuItem1
+        ' 
+        命令提示符管理员ToolStripMenuItem1.Name = "命令提示符管理员ToolStripMenuItem1"
+        命令提示符管理员ToolStripMenuItem1.Size = New Size(297, 40)
+        命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符"
+        ' 
+        ' 任务管理器x86ToolStripMenuItem
+        ' 
+        任务管理器x86ToolStripMenuItem.Name = "任务管理器x86ToolStripMenuItem"
+        任务管理器x86ToolStripMenuItem.Size = New Size(297, 40)
+        任务管理器x86ToolStripMenuItem.Text = "任务管理器 x86"
+        ' 
+        ' ToolStripMenuItem32
+        ' 
+        ToolStripMenuItem32.DropDownItems.AddRange(New ToolStripItem() {不置顶当前ToolStripMenuItem, 置顶ToolStripMenuItem, ToolStripMenuItem33, 关于此功能ToolStripMenuItem})
+        ToolStripMenuItem32.Name = "ToolStripMenuItem32"
+        ToolStripMenuItem32.Size = New Size(381, 40)
+        ToolStripMenuItem32.Text = "将本程序置顶显示"
+        ' 
+        ' 不置顶当前ToolStripMenuItem
+        ' 
+        不置顶当前ToolStripMenuItem.Name = "不置顶当前ToolStripMenuItem"
+        不置顶当前ToolStripMenuItem.Size = New Size(254, 40)
+        不置顶当前ToolStripMenuItem.Text = "不置顶 (当前)"
+        ' 
+        ' 置顶ToolStripMenuItem
+        ' 
+        置顶ToolStripMenuItem.Name = "置顶ToolStripMenuItem"
+        置顶ToolStripMenuItem.Size = New Size(254, 40)
+        置顶ToolStripMenuItem.Text = "置顶"
+        ' 
+        ' ToolStripMenuItem33
+        ' 
+        ToolStripMenuItem33.Name = "ToolStripMenuItem33"
+        ToolStripMenuItem33.Size = New Size(251, 6)
+        ' 
+        ' 关于此功能ToolStripMenuItem
+        ' 
+        关于此功能ToolStripMenuItem.Name = "关于此功能ToolStripMenuItem"
+        关于此功能ToolStripMenuItem.Size = New Size(254, 40)
+        关于此功能ToolStripMenuItem.Text = "关于此功能"
+        ' 
+        ' ToolStripMenuItem34
+        ' 
+        ToolStripMenuItem34.Name = "ToolStripMenuItem34"
+        ToolStripMenuItem34.Size = New Size(381, 40)
+        ToolStripMenuItem34.Text = "恢复 关闭/重启 Exp 的弹窗"
+        ToolStripMenuItem34.Visible = False
         ' 
         ' 通知区域托盘图标ToolStripMenuItem
         ' 
         通知区域托盘图标ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {启动时打开ToolStripMenuItem, 启动时不打开当前ToolStripMenuItem, ToolStripMenuItem22, 临时打开ToolStripMenuItem})
         通知区域托盘图标ToolStripMenuItem.Name = "通知区域托盘图标ToolStripMenuItem"
-        通知区域托盘图标ToolStripMenuItem.Size = New Size(360, 40)
+        通知区域托盘图标ToolStripMenuItem.Size = New Size(381, 40)
         通知区域托盘图标ToolStripMenuItem.Text = "通知区域(托盘)图标"
         ' 
         ' 启动时打开ToolStripMenuItem
@@ -583,12 +626,12 @@ Partial Class Form1
         ' ToolStripMenuItem26
         ' 
         ToolStripMenuItem26.Name = "ToolStripMenuItem26"
-        ToolStripMenuItem26.Size = New Size(357, 6)
+        ToolStripMenuItem26.Size = New Size(378, 6)
         ' 
         ' 清除数据并退出程序ToolStripMenuItem
         ' 
         清除数据并退出程序ToolStripMenuItem.Name = "清除数据并退出程序ToolStripMenuItem"
-        清除数据并退出程序ToolStripMenuItem.Size = New Size(360, 40)
+        清除数据并退出程序ToolStripMenuItem.Size = New Size(381, 40)
         清除数据并退出程序ToolStripMenuItem.Text = "清除数据相关选项"
         ' 
         ' ToolStripMenuItem19
@@ -1310,7 +1353,7 @@ Partial Class Form1
         VerLabel.Name = "VerLabel"
         VerLabel.Size = New Size(87, 21)
         VerLabel.TabIndex = 10
-        VerLabel.Text = "  v16.0"
+        VerLabel.Text = "  v16.2"
         VerLabel.Visible = False
         ' 
         ' FeatureControlLabel1
@@ -1340,12 +1383,12 @@ Partial Class Form1
         LinkLabel3.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel3.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel3.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
-        LinkLabel3.Location = New Point(490, 17)
+        LinkLabel3.Location = New Point(448, 17)
         LinkLabel3.Name = "LinkLabel3"
-        LinkLabel3.Size = New Size(54, 28)
+        LinkLabel3.Size = New Size(96, 28)
         LinkLabel3.TabIndex = 1
         LinkLabel3.TabStop = True
-        LinkLabel3.Text = "关闭"
+        LinkLabel3.Text = "了解更多"
         ' 
         ' LinkLabel2
         ' 
@@ -1589,4 +1632,10 @@ Partial Class Form1
     Friend WithEvents 开启Win自动更新ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 禁用Win自动更新ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents ToolStripMenuItem32 As ToolStripMenuItem
+    Friend WithEvents 不置顶当前ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents 置顶ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem33 As ToolStripSeparator
+    Friend WithEvents 关于此功能ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem34 As ToolStripMenuItem
 End Class

@@ -1,24 +1,33 @@
 ﻿Imports System.Reflection.PortableExecutable
+Imports System.Runtime.InteropServices
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Form9
 
+    <DllImport("user32.dll")>
+    Private Shared Function SetWindowPos(ByVal hWnd As IntPtr, ByVal hWndInsertAfter As IntPtr, ByVal X As Integer, ByVal Y As Integer, ByVal cx As Integer, ByVal cy As Integer, ByVal uFlags As UInteger) As Boolean
+    End Function
+
+    Private Shared ReadOnly HWND_TOPMOST As New IntPtr(-1)
+    Private Const SWP_NOSIZE As UInteger = &H1
+    Private Const SWP_NOMOVE As UInteger = &H2
+    Private Const SWP_SHOWWINDOW As UInteger = &H40
+
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo As String = "RTM 版本(9584.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.新增 Windows 自动更新控制 功能" & vbCrLf & "2.新增拒绝在低于 800×600 分辨率下启动" & vbCrLf & "3.文件菜单改名为功能菜单" & vbCrLf & "4.功能菜单新增 设置 Windows 安全问题" & vbCrLf & "5.移除 网页预览工具 功能" & vbCrLf & "6.许可协议更新" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决多个在低分辨率设备的显示异常问题" & vbCrLf & "2.解决系统附件在弹出式打开下返回快捷键仍能用问题" & vbCrLf & "3.解决多个依赖 WebView2 功能加载异常问题" & vbCrLf & "4.解决从旧版本更新卸载页不显示更改问题" & vbCrLf & "5.解决多个在上个版本出现的影响稳定性和使用体验的问题" & vbCrLf & vbCrLf & vbCrLf & "修补版本(9584.3):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "删除在返回模式下 系统附件 和 更多功能 按钮的右键菜单" & vbCrLf & vbCrLf & "-修复" & vbCrLf & "修复 系统修改 打开时意外弹出调试窗口问题" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
+        Dim upginfo1 As String = "RTM 版本(9584.1):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.新增 Windows 自动更新控制 功能" & vbCrLf & "2.新增拒绝在低于 800×600 分辨率下启动" & vbCrLf & "3.文件菜单改名为功能菜单" & vbCrLf & "4.功能菜单新增 设置 Windows 安全问题" & vbCrLf & "5.移除 网页预览工具 功能" & vbCrLf & "6.许可协议更新" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.解决多个在低分辨率设备的显示异常问题" & vbCrLf & "2.解决系统附件在弹出式打开下返回快捷键仍能用问题" & vbCrLf & "3.解决多个依赖 WebView2 功能加载异常问题" & vbCrLf & "4.解决从旧版本更新卸载页不显示更改问题" & vbCrLf & "5.解决多个在上个版本出现的影响稳定性和使用体验的问题"
+        Dim upginfo2 As String = "修补版本(9584.3):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.删除在返回模式下 系统附件 和 更多功能 按钮的右键菜单" & vbCrLf & "2.设置 Windows 安全问题 会在可能不支持的系统禁用" & vbCrLf & "3.添加置顶本程序功能" & vbCrLf & "4.部分窗口弹窗优化" & vbCrLf & "5.关闭/重启资源管理器时弹窗可不再提示" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "修复 系统修改 打开时意外弹出调试窗口问题"
+        Dim upginfo3 As String = "修补版本(9584.6):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.202 (26/04 安全更新)" & vbCrLf & "2.对于低版本 Win10，由于存在一个已知 Bug，因此屏蔽置顶功能"
+        Dim upginfoNext As String = "" & vbCrLf & vbCrLf & vbCrLf & ""     '此处是多个日志分割用
+        Dim upginfoEnd As String = "" & vbCrLf & ""     '此处换行为了解决 Messagebox.exe 吞行问题
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''If FeatureControlLabel1.Text = "enable" Then    '判断相关功能是否可以使用
         ''   此处放启用后日志
         ''End If
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe """ + upginfo + """ ""当前 Build 更新日志"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox(upginfo, 0, "当前 Build 更新日志")
-        End If
+        Dim Nform16UPGINFO As New Form16
+        Nform16UPGINFO.Show()
+        Nform16UPGINFO.TextBox1.Text = upginfo1 + upginfoNext + upginfo2 + upginfoNext + upginfo3 + upginfoEnd
+        Nform16UPGINFO.Label1.Text = "当前 Build 更新日志"
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
@@ -38,23 +47,18 @@ legacy:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
             Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况。注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。暗色模式需要 .net 10 框架，仅支持 Windows 10 v2004 及更高版本的系统。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
+            Shell(InstallLocation + "\MessageBox.exe ""最低支持 Windows 10，系统架构必须为 x64。" & vbCrLf & "暗色模式需要 Windows 10 v2004 及更高版本的系统。"" ""系统要求"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
         Else              '旧版弹窗
 legacy:
-            MsgBox("最低支持 Windows Vista SP2，并且安装了相关运行库 (Windows 8 及以上系统自带运行库)，系统架构必须为 x64 或 x86，Vista 系统存在部分功能无法使用情况" & vbCrLf & "注：只有 Windows NT 10.0 ( Win 10 和 Win 11 ) 才可以使用进入 WinRE 和 UWP 应用功能。暗色模式需要 .net 10 框架，仅支持 Windows 10 v2004 及更高版本的系统。", MsgBoxStyle.OkOnly, "系统要求")
+            MsgBox("最低支持 Windows 10，系统架构必须为 x64。" & vbCrLf & "暗色模式需要 Windows 10 v2004 及更高版本的系统。", MsgBoxStyle.OkOnly, "系统要求")
         End If
     End Sub
 
     Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""邮箱: z181k@139.com 或 z181k@hotmail.com" & vbCrLf & "" & vbCrLf & "注：原来的 18734477184@139.com 现在只外发邮件，不接收邮件" & vbCrLf & "可以使用发送反馈按钮直接跳转到邮箱，注意删除发送反馈的主题"" ""联系我们"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("邮箱: z181k@139.com 或 z181k@hotmail.com" & vbCrLf & "" & vbCrLf & "注：原来的 18734477184@139.com 现在只外发邮件，不接收邮件" & vbCrLf & "可以使用发送反馈按钮直接跳转到邮箱，注意删除发送反馈的主题", MsgBoxStyle.OkOnly, "联系我们")
-        End If
+        Dim Nform16UPGINFO As New Form16
+        Nform16UPGINFO.Show()
+        Nform16UPGINFO.TextBox1.Text = "邮箱: z181k@139.com 或 z181k@hotmail.com" & vbCrLf & "" & vbCrLf & "注：原来的 18734477184@139.com 现在只外发邮件，不接收邮件" & vbCrLf & "可以使用发送反馈按钮直接跳转到邮箱，注意删除发送反馈的主题" & vbCrLf & vbCrLf & "社交平台：" & vbCrLf & "Bilibili@也问Bot              小红书@尃瑫" & vbCrLf & "抖音@ccccf                     知乎@尃瑫"
+        Nform16UPGINFO.Label1.Text = "联系我们"
     End Sub
 
     Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel6.LinkClicked '检查更新
@@ -83,16 +87,10 @@ legacy:
     End Sub
 
     Private Sub LinkLabel7_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel7.LinkClicked
-        Dim releasedate As String = "各个组件签名日期即该组件编译日期"
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""全名: WFL Tool (x64)                        版本类别: 正式版 - .NET 10 版" & vbCrLf & "分支: AMD64.Tree5-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"" ""更多信息"" 0 0 0", AppWinStyle.NormalFocus, False, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("全名: WFL Tool (x64)                        版本类别: 正式版 - .NET 10 版" & vbCrLf & "分支: AMD64.Tree5-Main.Release" & vbCrLf & "编译日期：" + releasedate + vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名", MsgBoxStyle.OkOnly, "更多信息")
-        End If
+        Dim Nform16UPGINFO As New Form16
+        Nform16UPGINFO.Show()
+        Nform16UPGINFO.TextBox1.Text = "全名: WFL Tool (x64)              版本类别: 正式版 - .NET 10 版" & vbCrLf & "分支: AMD64.Tree5-Branch2-16_2.Release" & vbCrLf & "编译日期：各个组件的签名日期即编译日期" & vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"
+        Nform16UPGINFO.Label1.Text = "更多信息"
     End Sub
 
     Private Sub LinkLabel8_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel8.LinkClicked
@@ -165,6 +163,11 @@ legacy:
     End Sub
 
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '置顶窗口，如果在programfiles目录或Windows目录并且签名了就可以UIaccess
+        Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
+        If OnTop = "1" Then
+            SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
+        End If
         '所有标两个引号的是在Windows 7及以下系统存在严重问题的功能可控启用模块代码
         ''Dim v122 As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", True).GetValue("v122", "无")
         ''Dim v122a As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WFLtoolA", "v122a", Nothing)

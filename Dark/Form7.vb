@@ -1,4 +1,16 @@
-﻿Public Class Form7
+﻿Imports System.Runtime.InteropServices
+
+Public Class Form7
+    <DllImport("user32.dll")>
+    Private Shared Function SetWindowPos(ByVal hWnd As IntPtr, ByVal hWndInsertAfter As IntPtr, ByVal X As Integer, ByVal Y As Integer, ByVal cx As Integer, ByVal cy As Integer, ByVal uFlags As UInteger) As Boolean
+    End Function
+
+    Private Shared ReadOnly HWND_TOPMOST As New IntPtr(-1)
+    Private Const SWP_NOSIZE As UInteger = &H1
+    Private Const SWP_NOMOVE As UInteger = &H2
+    Private Const SWP_SHOWWINDOW As UInteger = &H40
+
+
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         TextBox1.Text = "此功能使用前请先到注册表编辑器修改 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network 的权限"
     End Sub
@@ -139,9 +151,15 @@
     End Sub
 
     Private Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
-        MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
-        Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
+        Dim NoMsgReExp As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("NoMsgReExp", "无")
+        If NoMsgReExp = "True" Then
+            Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
+        Else
+            Dim Nform16ReExp As New Form16
+            Nform16ReExp.Show()
+            Nform16ReExp.Label1.Text = "要 重启资源管理器 吗？"
+        End If
     End Sub
 
     Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
@@ -161,6 +179,12 @@
     End Sub
 
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '置顶窗口，如果在programfiles目录或Windows目录并且签名了就可以UIaccess
+        Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
+        If OnTop = "1" Then
+            SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
+        End If
+
         Timer1.Start()
         Dim CurrentBuild As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
         If CurrentBuild < 19041 Then              '检查版本控制netplwiz显示

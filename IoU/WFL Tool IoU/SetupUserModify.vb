@@ -51,6 +51,10 @@
         If ScreenHeight < 1080 Then
             Label7.Location = Label7.Location - New Size(3, 0)
         End If
+        Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
+        If OnTop = "1" Then
+            CheckBox2.Enabled = False
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

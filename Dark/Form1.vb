@@ -2,6 +2,20 @@
 Imports System.Runtime.InteropServices
 
 Public Class Form1
+
+    <DllImport("user32.dll")>
+    Private Shared Function SetWindowPos(ByVal hWnd As IntPtr, ByVal hWndInsertAfter As IntPtr, ByVal X As Integer, ByVal Y As Integer, ByVal cx As Integer, ByVal cy As Integer, ByVal uFlags As UInteger) As Boolean
+    End Function
+
+    Private Shared ReadOnly HWND_TOPMOST As New IntPtr(-1)     ' 置顶
+    Private Shared ReadOnly HWND_NOTOPMOST As New IntPtr(-2)   ' 取消置顶
+    Private Shared ReadOnly HWND_TOP As New IntPtr(0)          ' 放在顶层但不置顶
+    Private Shared ReadOnly HWND_BOTTOM As New IntPtr(1)       ' 放在底层
+    Private Const SWP_NOSIZE As UInteger = &H1
+    Private Const SWP_NOMOVE As UInteger = &H2
+    Private Const SWP_SHOWWINDOW As UInteger = &H40
+
+
     Dim asc As AutoSizeFormClass = New AutoSizeFormClass()
     Dim SizeChangeFlg As Boolean = False '首次加载窗体会误触发SizeChange,容易报错
 
@@ -85,16 +99,14 @@ legacy:
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click                     '关闭explorer
-        On Error GoTo legacy
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""请保存数据，所有打开的文件夹将关闭(包括文件复制)。"" ""Microsoft Windows"" 0 0 0", AppWinStyle.NormalFocus, True, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
+        Dim NoMsgReExp As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("NoMsgReExp", "无")
+        If NoMsgReExp = "True" Then
+            Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
+        Else
+            Dim Nform16ReExp As New Form16
+            Nform16ReExp.Show()
+            Nform16ReExp.Label1.Text = "要 关闭资源管理器 吗？"
         End If
-        Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
@@ -370,6 +382,13 @@ starttask:
             frm.Show()
             Close()                             '确认阅读协议
         End If
+        '置顶窗口，如果在programfiles目录或Windows目录并且签名了就可以UIaccess
+        Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
+        If OnTop = "1" Then
+            置顶ToolStripMenuItem.Text = "置顶 (当前)"
+            不置顶当前ToolStripMenuItem.Text = "不置顶"
+            SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
+        End If
         '启动时显示指定界面
         Dim ShowSpecifyPage As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "ShowSpecifyPage", Nothing)
         If ShowSpecifyPage = "More" Then
@@ -396,12 +415,20 @@ starttask:
         End If
         '
         If CurrentBuild < 18362 Then              '检查版本控制UWP应用和电池健康显示
+            If OnTop = "1" Then
+                SetWindowPos(Me.Handle, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE)
+                Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 2 /f", AppWinStyle.Hide, True, -1)
+                Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v OnTop /T REG_SZ /d 2 /f", AppWinStyle.Hide, True, -1)
+            End If
+            ToolStripMenuItem32.Enabled = False
             UWP应用ToolStripMenuItem.Enabled = False
             电池健康ToolStripMenuItem.Enabled = False
         End If
         If CurrentBuild < 19041 Then
             '检查版本控制主题显示
             主题与版本ToolStripMenuItem.Enabled = False
+            '低版本不支持该功能，屏蔽
+            ToolStripMenuItem30.Enabled = False
         End If
         If CurrentBuild < 22000 Then
             '检查版本控制Win11IE名字和自动切换颜色
@@ -413,21 +440,23 @@ starttask:
         SizeChangeFlg = True '允许触发SizeChange
         'Size = New Size(900, 550) '调整窗口大小
         '
-        '测试版提示文字
-        'Panel1.Show()
-        'Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
-        'Label1.Text = "新版本,新征程！WFL Tool 团队祝大家 2026 春节快乐！"
-        'Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
-        'LinkLabel2.Visible = False     '不再显示
-        'LinkLabel3.Visible = False      '关闭
-        'Label1.Text = "Alpha 版本,不得外泄,如你意外获得,请立即删除,立即向我们举报"
-        '
-        'beta不显示横幅
-        'Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
-        'If Beta = "9504.1" Then
-        '    Panel1.Visible = False
-        '    Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        'End If
+        If CurrentBuild = 10240 Then
+            '测试版提示文字
+            Panel1.Show()
+            Label1.Text = "WFL Tool 不再支持 Windows 10 1507"
+            'Label1.Text = "新版本,新征程！WFL Tool 团队祝大家 2026 春节快乐！"
+            'Me.Text = "WFL Tool - Alpha 版 - 仅供内部测试,内部机密"
+            'LinkLabel2.Visible = False     '不再显示
+            'LinkLabel3.Visible = False      '关闭
+            'Label1.Text = "这是内测版本,若意外获得,请删除,并向我们举报"
+            '
+            'beta不显示横幅
+            Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("EOS", "无")
+            If Beta = "1507" Then
+                Panel1.Visible = False
+                '    Me.Text = "WFL Tool - Alapha 版 - 不得外泄"
+            End If
+        End If
         '
         '主题菜单文本显示
         Dim NColor As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "NColor", Nothing)
@@ -500,7 +529,7 @@ starttask:
             现代当前ToolStripMenuItem.Text = "现代"           '主界面右上角wfltool - 仅软件名
             仅软件名ToolStripMenuItem.Text = "仅软件名 (当前)"
         End If
-        '分离的调用:winupdate
+        '分离的调用:winupdate、ReExp
         Timer1.Start()
         '低分辨率设备兼容代码
         PictureBox2.Height = PictureBox2.Width
@@ -713,17 +742,15 @@ legacy:
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
-        On Error GoTo legacy        '重启explorer
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then              'WinAppSdk弹窗
-            Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
-            Shell(InstallLocation + "\MessageBox.exe ""请保存数据，所有打开的文件夹将关闭(包括文件复制)。"" ""Microsoft Windows"" 0 0 0", AppWinStyle.NormalFocus, True, -1)
-        Else              '旧版弹窗
-legacy:
-            MsgBox("请保存数据，所有打开的文件夹将关闭(包括文件复制)。", MsgBoxStyle.OkOnly, "Microsoft Windows")
+        Dim NoMsgReExp As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("NoMsgReExp", "无")
+        If NoMsgReExp = "True" Then
+            Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
+        Else
+            Dim Nform16ReExp As New Form16
+            Nform16ReExp.Show()
+            Nform16ReExp.Label1.Text = "要 重启资源管理器 吗？"
         End If
-        Shell("taskkill.exe /im explorer.exe /f", AppWinStyle.Hide, True, -1)
-        Shell("cmd.exe /c start %windir%\explorer.exe", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 仅软件名ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 仅软件名ToolStripMenuItem.Click
@@ -770,13 +797,13 @@ legacy:
     End Sub
 
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
-        Panel1.Visible = False
+        Shell("cmd.exe /c start https://medbt-my.sharepoint.cn/:u:/g/personal/dbtob_medbt_partner_onmschina_cn/IQBVv2V8AKksS71cNXC8zJbzAaPuoW0O4E3gsTj6bWsylM8?e=iImeCT", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Panel1.Visible = False
         'Me.Text = "WFL Tool - Beta 版 - 仅用于公测"
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v Preview /T REG_SZ /d 9504.2 /f", AppWinStyle.Hide, True, -1)
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v EOS /T REG_SZ /d 1507 /f", AppWinStyle.Hide, True, -1)
     End Sub
 
     Private Sub 设备管理器错误代码帮助helpmenu_Click(sender As Object, e As EventArgs) Handles 设备管理器错误代码帮助helpmenu.Click
@@ -922,6 +949,36 @@ ntc:
             开启Win自动更新ToolStripMenuItem.Text = "开启自动更新 (当前)"
             禁用Win自动更新ToolStripMenuItem.Text = "禁用自动更新"
         End If
+        'ReExp
+        Dim NoMsgReExp As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("NoMsgReExp", "无")
+        If NoMsgReExp = "True" Then
+            ToolStripMenuItem34.Visible = True
+        End If
+    End Sub
+
+    Private Sub 置顶ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 置顶ToolStripMenuItem.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v OnTop /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+        置顶ToolStripMenuItem.Text = "置顶 (当前)"
+        SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
+        不置顶当前ToolStripMenuItem.Text = "不置顶"
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub 关于此功能ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于此功能ToolStripMenuItem.Click
+        MsgBox("为了弹窗正常显示，置顶后将不使用 WinAppSDK 提供的弹窗。在为所有用户安装情况下，将使用 UIAccess 这个置顶模式。"， 0， “置顶功能说明”)
+    End Sub
+
+    Private Sub 不置顶当前ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 不置顶当前ToolStripMenuItem.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v OnTop /T REG_SZ /d 2 /f", AppWinStyle.Hide, True, -1)
+        置顶ToolStripMenuItem.Text = "置顶"
+        SetWindowPos(Me.Handle, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE)
+        不置顶当前ToolStripMenuItem.Text = "不置顶 (当前)"
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)
+    End Sub
+
+    Private Sub ToolStripMenuItem34_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem34.Click
+        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v NoMsgReExp /T REG_SZ /d 0 /f", AppWinStyle.Hide, True, -1)
+        ToolStripMenuItem34.Visible = False
     End Sub
 End Class
 
