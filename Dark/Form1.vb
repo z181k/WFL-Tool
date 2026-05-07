@@ -599,6 +599,8 @@ legacy:
             ToolStripMenuItem3.Text = "WFL Tool  v" + VerLabel.Text                       '判断并且改为wfltool
             现代当前ToolStripMenuItem.Text = "现代 (当前)"
             伪旧ToolStripMenuItem.Text = "伪旧"
+            仅版本号ToolStripMenuItem.Text = "仅版本号"
+            仅软件名ToolStripMenuItem.Text = "仅软件名"
             Exit Sub     '结束事件防止执行下面
         End If
 wflttext:
@@ -606,6 +608,8 @@ wflttext:
         ToolStripMenuItem3.Text = "欢迎使用  v" + VerLabel.Text
         现代当前ToolStripMenuItem.Text = "现代"              '例外：改为欢迎使用
         伪旧ToolStripMenuItem.Text = "伪旧 (当前)"
+        仅版本号ToolStripMenuItem.Text = "仅版本号"
+        仅软件名ToolStripMenuItem.Text = "仅软件名"
         'Label1.Font = New Font("新宋体", 12, FontStyle.Bold, Font.Style.Italic)   ’废弃的字体代码
     End Sub
 
@@ -636,6 +640,8 @@ wflttext:
         ToolStripMenuItem3.Text = "WFL Tool  v" + VerLabel.Text                    '主界面右上角wfltool
         现代当前ToolStripMenuItem.Text = "现代 (当前)"
         伪旧ToolStripMenuItem.Text = "伪旧"
+        仅版本号ToolStripMenuItem.Text = "仅版本号"
+        仅软件名ToolStripMenuItem.Text = "仅软件名"
     End Sub
 
     Private Sub 伪旧ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 伪旧ToolStripMenuItem.Click
