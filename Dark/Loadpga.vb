@@ -200,8 +200,7 @@ Public Class Loadpga
                 ElseIf NewUI.Text = "NSets" Then
                     NewSets.Show()
                 Else
-                    Dim f1 As New Form1
-                    f1.Show()
+                    GoTo sttsk
                 End If
                 '
                 Close()
@@ -249,6 +248,7 @@ Public Class Loadpga
         '上方代码由AI和人工共同编写，并非完全AIGC
         '=================================================================================
 
+sttsk:
         Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "WinAppSdkUi", Nothing)
         If WinAppSdkUi = "1" And CurrentBuild < 17763 Then
             Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /f", AppWinStyle.Hide, True, -1)
@@ -272,7 +272,6 @@ Public Class Loadpga
             Application.Exit()
             Exit Sub
         End If
-1:
         Dim NF1 As New Form1()
         NF1.Show()
         Close()
