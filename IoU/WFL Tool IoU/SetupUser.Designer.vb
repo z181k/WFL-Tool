@@ -103,9 +103,9 @@ Partial Class SetupUser
         Me.Label5.Location = New System.Drawing.Point(77, 320)
         Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(119, 35)
+        Me.Label5.Size = New System.Drawing.Size(115, 35)
         Me.Label5.TabIndex = 38
-        Me.Label5.Text = "版本 17.0"
+        Me.Label5.Text = "版本 17.1"
         '
         'Label7
         '
@@ -173,7 +173,6 @@ Partial Class SetupUser
         Me.Label6.Size = New System.Drawing.Size(264, 28)
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "你在安装测试版，请注意！"
-        Me.Label6.Visible = False
         '
         'SetupUser
         '

@@ -35,9 +35,9 @@ Partial Class Loadpga
         Beta.ForeColor = Color.Lavender
         Beta.Location = New Point(4, 55)
         Beta.Name = "Beta"
-        Beta.Size = New Size(35, 28)
+        Beta.Size = New Size(37, 28)
         Beta.TabIndex = 0
-        Beta.Text = "SF"
+        Beta.Text = "B1"
         Beta.Visible = False
         ' 
         ' Build
@@ -48,7 +48,7 @@ Partial Class Loadpga
         Build.Name = "Build"
         Build.Size = New Size(77, 28)
         Build.TabIndex = 1
-        Build.Text = "9632.3"
+        Build.Text = "9632.4"
         Build.Visible = False
         ' 
         ' Ver
@@ -59,7 +59,7 @@ Partial Class Loadpga
         Ver.Name = "Ver"
         Ver.Size = New Size(53, 28)
         Ver.TabIndex = 2
-        Ver.Text = "17.0"
+        Ver.Text = "17.1"
         Ver.Visible = False
         ' 
         ' NewUI
@@ -68,9 +68,9 @@ Partial Class Loadpga
         NewUI.ForeColor = Color.Lavender
         NewUI.Location = New Point(5, 79)
         NewUI.Name = "NewUI"
-        NewUI.Size = New Size(82, 28)
+        NewUI.Size = New Size(71, 28)
         NewUI.TabIndex = 3
-        NewUI.Text = "Legacy"
+        NewUI.Text = "NSets"
         ' 
         ' Loadpga
         ' 
