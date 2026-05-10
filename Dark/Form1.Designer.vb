@@ -1445,7 +1445,7 @@ Partial Class Form1
         ' Beta
         ' 
         Beta.AutoSize = True
-        Beta.Location = New Point(589, 142)
+        Beta.Location = New Point(589, 74)
         Beta.Name = "Beta"
         Beta.Size = New Size(94, 21)
         Beta.TabIndex = 10
@@ -1459,7 +1459,6 @@ Partial Class Form1
         AutoScroll = True
         BackColor = SystemColors.Control
         ClientSize = New Size(726, 548)
-        Controls.Add(Beta)
         Controls.Add(Build)
         Controls.Add(Panel1)
         Controls.Add(VerLabel)
@@ -1470,6 +1469,7 @@ Partial Class Form1
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(MenuStrip1)
+        Controls.Add(Beta)
         Font = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ForeColor = SystemColors.MenuText
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
