@@ -203,6 +203,7 @@ Partial Class Form10
         ' 
         ' TextBox1
         ' 
+        TextBox1.AllowDrop = True
         TextBox1.Font = New Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         TextBox1.Location = New Point(8, 128)
         TextBox1.Name = "TextBox1"
