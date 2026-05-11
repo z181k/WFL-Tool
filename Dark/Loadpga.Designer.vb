@@ -48,7 +48,7 @@ Partial Class Loadpga
         Build.Name = "Build"
         Build.Size = New Size(77, 28)
         Build.TabIndex = 1
-        Build.Text = "9632.4"
+        Build.Text = "9632.5"
         Build.Visible = False
         ' 
         ' Ver

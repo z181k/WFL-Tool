@@ -462,7 +462,7 @@ starttask:
                 Panel1.Show()
                 Label1.Text = "这是 WFL Tool 公测版本 (Beta),有问题及时反馈"
             End If
-        ElseIf Beta.Text = "SF" Then
+        ElseIf Beta.Text = "SF" Or Beta.Text = "StoreSF" Then
             Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
             If Beta <> Build.Text Then
                 Panel1.Show()
@@ -731,6 +731,9 @@ legacy:
 
     Private Sub 清除数据并退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除数据并退出程序ToolStripMenuItem.Click
         Form11.Show()
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+            Form11.Text = "清除数据"
+        End If
     End Sub
 
     Private Sub UUPDump不忘初心ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UUPDump不忘初心ToolStripMenuItem.Click

@@ -29,6 +29,9 @@ Public Class Form11
             End If
 nexttap:
             Shell("reg.exe delete ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /va /f", AppWinStyle.Hide, True, -1)
+            If Me.Text = "清除数据" Then
+                Shell("cmd.exe /c rd ""%localappdata%\DBT\EasyWebpageViewer"" /s /q", AppWinStyle.Hide, True, -1)
+            End If
             Shell("cmd.exe /c rd ""%localappdata%\WFL Tool\EWV2viewer\EWV2viewer.exe.webview2"" /s /q", AppWinStyle.Hide, True, -1)
             If CreateWinAppSdkUi = "True" Then
                 Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WFL Tool"" /v WinAppSdkUi /T REG_SZ /d 1 /f", AppWinStyle.Hide, True, -1)

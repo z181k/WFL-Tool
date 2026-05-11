@@ -92,7 +92,7 @@ Public Class SetupUserBackground
                        End Sub)
         setupUserI.PB1.Value = 70
         Await Task.Run(Sub()
-                           Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 17.1.9632.4 /f", AppWinStyle.Hide, True, -1)
+                           Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v DisplayVersion /T REG_SZ /d 17.1.9632.5 /f", AppWinStyle.Hide, True, -1)
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v HelpLink /T REG_SZ /d ""https://kdocs.cn/l/sqxx3d4vumUT"" /f", AppWinStyle.Hide, True, -1)
                            Shell("cmd.exe /c reg.exe add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool"" /v UninstallString /T REG_SZ /d ""%localappdata%\WFL Tool\Uninstall.exe"" /f", AppWinStyle.Hide, True, -1)
                        End Sub)
