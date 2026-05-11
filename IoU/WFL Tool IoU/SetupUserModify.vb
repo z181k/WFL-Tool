@@ -36,15 +36,18 @@
     End Sub
 
     Private Sub SetupUserModify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "WinAppSdkUi", Nothing)
-        If WinAppSdkUi = "1" Then
-            CheckBox2.Enabled = True
-        ElseIf WinAppSdkUi = "0" Then
-            CheckBox2.Enabled = True
-            CheckBox2.Checked = True
-        Else
-            CheckBox2.Checked = True
-        End If
+        Try
+            Dim WinAppSdkUi As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "WinAppSdkUi", Nothing)
+            If WinAppSdkUi = "1" Then
+                CheckBox2.Enabled = True
+            ElseIf WinAppSdkUi = "0" Then
+                CheckBox2.Enabled = True
+                CheckBox2.Checked = True
+            Else
+                CheckBox2.Checked = True
+            End If
+        Catch ex As Exception
+        End Try
         '
         Dim EWV2viewerInsatll As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "EWV2viewerInsatll", Nothing)
         If EWV2viewerInsatll = "True" Then
@@ -58,10 +61,13 @@
         If ScreenHeight < 1080 Then
             Label7.Location = Label7.Location - New Size(3, 0)
         End If
-        Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
-        If OnTop = "1" Then
-            CheckBox2.Enabled = False
-        End If
+        Try
+            Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
+            If OnTop = "1" Then
+                CheckBox2.Enabled = False
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
