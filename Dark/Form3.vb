@@ -4,8 +4,9 @@
     End Sub
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim InstallLocation As String
+        InstallLocation = Application.StartupPath
         On Error GoTo legacy
-        Dim InstallLocation As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing)
         Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
         If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
             GoTo legacy

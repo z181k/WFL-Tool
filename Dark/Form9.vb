@@ -51,10 +51,16 @@ legacy:
 
     Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel6.LinkClicked '检查更新
         If e.Button = MouseButtons.Left Then            '识别左键单击事件才操作
-            On Error GoTo legacy
-            Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
-            If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
-                GoTo legacy
+            Dim InstallLocation As String
+            If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+                InstallLocation = Application.StartupPath
+            Else
+                On Error GoTo legacy
+                Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+                If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+                    GoTo legacy
+                End If
+                InstallLocation = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing) + "\"
             End If
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
             Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebpageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""检查更新 - 请手动下载完整最新版安装包 - WFL Tool 下载中心  (无法访问请右击检查更新选择应急链接重试)"" /f", AppWinStyle.Hide, True, -1)
@@ -144,10 +150,16 @@ legacy:
     End Sub
 
     Private Sub LinkLabel10_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel10.LinkClicked
-        On Error GoTo legacy
-        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
-        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
-            GoTo legacy
+        Dim InstallLocation As String
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+            InstallLocation = Application.StartupPath
+        Else
+            On Error GoTo legacy
+            Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+            If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+                GoTo legacy
+            End If
+            InstallLocation = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing) + "\"
         End If
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
@@ -171,10 +183,16 @@ legacy:
     End Sub
 
     Private Sub 检查更新ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 检查更新ToolStripMenuItem.Click
-        On Error GoTo legacy
-        Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
-        If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
-            GoTo legacy
+        Dim InstallLocation As String
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+            InstallLocation = Application.StartupPath
+        Else
+            On Error GoTo legacy
+            Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+            If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+                GoTo legacy
+            End If
+            InstallLocation = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing) + "\"
         End If
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
         Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
