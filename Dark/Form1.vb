@@ -394,6 +394,7 @@ legacy:
         On Error GoTo openreg       '防止注册表不存在
 starttask:
         Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
+        Dim UBR As Int64 = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "UBR", Nothing)
         '
         '从loadpga读取版本
         VerLabel.Text = Loadpga.Ver.Text
@@ -442,6 +443,10 @@ starttask:
             '检查版本控制Win11IE名字和自动切换颜色
             Button20.Text = "启动没有任何起始页的 Internet Explorer 浏览器"
             自动ToolStripMenuItem.Enabled = False
+        End If
+        If CurrentBuild = 26200 Or CurrentBuild = 26100 And UBR >= 8457 Then
+            注销ToolStripMenuItem.Text = "退出登录"
+            注销ToolStripMenuItem.ToolTipText = "原""注销""功能"
         End If
         '
         asc.ControllInitializeSize(Me) '记录控件初始位置&大小
