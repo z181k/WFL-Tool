@@ -27,17 +27,22 @@ Partial Class InputUI
         Label2 = New Label()
         Button1 = New Button()
         Button2 = New Button()
+        Second = New RadioButton()
+        Minute = New RadioButton()
+        Hour = New RadioButton()
+        GroupBox1 = New GroupBox()
+        GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TextBox1
         ' 
         TextBox1.AllowDrop = True
         TextBox1.BorderStyle = BorderStyle.FixedSingle
-        TextBox1.Font = New Font("Microsoft YaHei UI", 11F)
-        TextBox1.Location = New Point(35, 133)
+        TextBox1.Font = New Font("Microsoft YaHei UI", 10F)
+        TextBox1.Location = New Point(35, 136)
         TextBox1.Margin = New Padding(3, 2, 3, 2)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(492, 40)
+        TextBox1.Size = New Size(492, 37)
         TextBox1.TabIndex = 0
         ' 
         ' Label1
@@ -46,9 +51,9 @@ Partial Class InputUI
         Label1.Font = New Font("Microsoft YaHei UI Light", 16.5F)
         Label1.Location = New Point(27, 27)
         Label1.Name = "Label1"
-        Label1.Size = New Size(131, 51)
+        Label1.Size = New Size(100, 51)
         Label1.TabIndex = 1
-        Label1.Text = "Label1"
+        Label1.Text = "标题"
         ' 
         ' Label2
         ' 
@@ -56,9 +61,9 @@ Partial Class InputUI
         Label2.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label2.Location = New Point(31, 86)
         Label2.Name = "Label2"
-        Label2.Size = New Size(78, 28)
+        Label2.Size = New Size(54, 28)
         Label2.TabIndex = 2
-        Label2.Text = "Label2"
+        Label2.Text = "文本"
         ' 
         ' Button1
         ' 
@@ -82,26 +87,78 @@ Partial Class InputUI
         Button2.Text = "取消"
         Button2.UseVisualStyleBackColor = True
         ' 
+        ' Second
+        ' 
+        Second.AutoSize = True
+        Second.Checked = True
+        Second.Font = New Font("微软雅黑", 8F)
+        Second.Location = New Point(17, 31)
+        Second.Name = "Second"
+        Second.Size = New Size(56, 29)
+        Second.TabIndex = 0
+        Second.TabStop = True
+        Second.Text = "秒"
+        Second.UseVisualStyleBackColor = True
+        ' 
+        ' Minute
+        ' 
+        Minute.AutoSize = True
+        Minute.Font = New Font("微软雅黑", 8F)
+        Minute.Location = New Point(17, 66)
+        Minute.Name = "Minute"
+        Minute.Size = New Size(75, 29)
+        Minute.TabIndex = 1
+        Minute.Text = "分钟"
+        Minute.UseVisualStyleBackColor = True
+        ' 
+        ' Hour
+        ' 
+        Hour.AutoSize = True
+        Hour.Font = New Font("微软雅黑", 8F)
+        Hour.Location = New Point(17, 101)
+        Hour.Name = "Hour"
+        Hour.Size = New Size(75, 29)
+        Hour.TabIndex = 2
+        Hour.Text = "小时"
+        Hour.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(Second)
+        GroupBox1.Controls.Add(Hour)
+        GroupBox1.Controls.Add(Minute)
+        GroupBox1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        GroupBox1.Location = New Point(401, 27)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(123, 146)
+        GroupBox1.TabIndex = 5
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "时间单位"
+        GroupBox1.Visible = False
+        ' 
         ' InputUI
         ' 
+        AcceptButton = Button1
         AutoScaleDimensions = New SizeF(11F, 21F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSizeMode = AutoSizeMode.GrowAndShrink
+        CancelButton = Button2
         ClientSize = New Size(561, 275)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(TextBox1)
+        Controls.Add(GroupBox1)
         Font = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
         MinimizeBox = False
         Name = "InputUI"
         ShowIcon = False
-        ShowInTaskbar = False
         StartPosition = FormStartPosition.CenterScreen
-        Text = "InputUI"
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -111,4 +168,8 @@ Partial Class InputUI
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Second As RadioButton
+    Friend WithEvents Minute As RadioButton
+    Friend WithEvents Hour As RadioButton
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
