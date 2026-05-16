@@ -79,7 +79,8 @@ Public Class Form1
         Else
             Dim CurrentBuild As Integer = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuild", Nothing)
             If CurrentBuild <= "14393" Then
-                Shell("cmd.exe /c ""%ProgramFiles%\Windows Defender\MSASCui.exe""&exit", AppWinStyle.Hide, False, -1)
+                Dim ProgramFilesD As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "ProgramFilesDir", Nothing)
+                CreateObject("shell.application").shellexecute(ProgramFilesD + "\Windows Defender\MSASCui.exe", "", "", "", 1)
             Else
                 Shell("cmd.exe /c start WindowsDefender:5", AppWinStyle.Hide, True, -1) 'win安全中心
             End If
