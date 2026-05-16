@@ -21,6 +21,9 @@ Public Class InputUI
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Visible = False
+        If TextBox1.Text = "" Or TextBox1.Text = " " Or TextBox1.Text = "  " Or TextBox1.Text = "　" Then
+            Exit Sub
+        End If
         If Me.Text = "自定义自动关机时间 - WFL Tool" Then
             Dim pwstdntimeINT As Int64
             Dim pwstdntimeText As String = TextBox1.Text

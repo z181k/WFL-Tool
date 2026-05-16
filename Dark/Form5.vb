@@ -147,13 +147,11 @@ Public Class Form5
     End Sub
 
     Private Sub Conhost执行自定义命令ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Conhost执行自定义命令ToolStripMenuItem.Click
-        Dim commandline As String
-        commandline = InputBox("输入要在 conhost 执行的命令", "在 Conhost 执行自定义命令 - WFL Tool")
-        If commandline = "" Then
-            '不执行任何命令
-        Else
-            Shell("conhost.exe " + commandline, AppWinStyle.NormalFocus, False, -1)
-        End If
+        Dim WtInputUI As New InputUI
+        WtInputUI.Show()
+        WtInputUI.Text = "在""Conhost""中执行自定义命令 - WFL Tool"
+        WtInputUI.Label1.Text = "在下方输入要执行的命令"
+        WtInputUI.Label2.Text = "在""控制台窗口主机""中的命令提示符执行命令"
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
@@ -173,12 +171,10 @@ Public Class Form5
     End Sub
 
     Private Sub 在终端执行自定义命令ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 在终端执行自定义命令ToolStripMenuItem.Click
-        Dim commandline As String
-        commandline = InputBox("输入要在 终端 执行的命令", "在 终端 执行自定义命令 - WFL Tool")
-        If commandline = "" Then
-            '不执行任何命令
-        Else
-            Shell("conhost.exe wt " + commandline, AppWinStyle.NormalFocus, False, -1)
-        End If
+        Dim WtInputUI As New InputUI
+        WtInputUI.Show()
+        WtInputUI.Text = "在""Windows 终端""中执行命令 - WFL Tool"
+        WtInputUI.Label1.Text = "在下方输入要执行的命令"
+        WtInputUI.Label2.Text = "在""终端""下的命令提示符执行命令"
     End Sub
 End Class
