@@ -532,10 +532,17 @@ starttask:
         If cctButton = "1" Then
             计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - admin cmd
             命令提示符管理员ToolStripMenuItem1.Text = "管理员命令提示符 (当前)"
-        ElseIf cctButton = "2" And CurrentBuild >= "22621" Then
+            If CurrentBuild >= 22621 Then
+                任务管理器x86ToolStripMenuItem.Visible = True
+            End If
+        ElseIf cctButton = "2" And CurrentBuild >= 22621 Then
             计算机管理当前ToolStripMenuItem.Text = "计算机管理"           '查看更多内部功能 - taskmger x86
             任务管理器x86ToolStripMenuItem.Text = "旧版任务管理器 (当前)"
             任务管理器x86ToolStripMenuItem.Visible = True
+        Else
+            If CurrentBuild >= 22621 Then
+                任务管理器x86ToolStripMenuItem.Visible = True
+            End If
         End If
         '
         Dim LegacyHomeUI As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("LegacyHomeUI", "无")
