@@ -197,7 +197,7 @@ Public Class Loadpga
             ElseIf conline1 = "/Sets" Or conline1 = "/SETS" Or conline1 = "/sets" Then
                 If NewUI.Text = "NSetMod" Then
                     NewSets.Show()
-                ElseIf NewUI.Text = "NSets" Then
+                ElseIf NewUI.Text = "NSet" Then
                     NewSets.Show()
                 Else
                     GoTo sttsk
