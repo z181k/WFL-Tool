@@ -46,13 +46,15 @@ Partial Class Form9
         LinkLabel8 = New LinkLabel()
         LinkLabel9 = New LinkLabel()
         LinkLabel5 = New LinkLabel()
-        Label6 = New Label()
         PictureBox1 = New PictureBox()
         LinkLabel10 = New LinkLabel()
+        ContextMenuStrip3 = New ContextMenuStrip(components)
+        在浏览器打开该页ToolStripMenuItem = New ToolStripMenuItem()
         Beta = New Label()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        ContextMenuStrip3.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -60,7 +62,7 @@ Partial Class Form9
         Label1.AutoSize = True
         Label1.ContextMenuStrip = ContextMenuStrip1
         Label1.Font = New Font("微软雅黑", 15F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label1.Location = New Point(45, 200)
+        Label1.Location = New Point(46, 200)
         Label1.Margin = New Padding(6, 0, 6, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(176, 46)
@@ -110,7 +112,7 @@ Partial Class Form9
         Label3.ContextMenuStrip = ContextMenuStrip1
         Label3.Font = New Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label3.ForeColor = SystemColors.GrayText
-        Label3.Location = New Point(72, 360)
+        Label3.Location = New Point(73, 360)
         Label3.Margin = New Padding(6, 0, 6, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(122, 32)
@@ -123,12 +125,12 @@ Partial Class Form9
         Label4.ContextMenuStrip = ContextMenuStrip1
         Label4.Font = New Font("微软雅黑", 7.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label4.ForeColor = Color.Gray
-        Label4.Location = New Point(74, 396)
+        Label4.Location = New Point(68, 396)
         Label4.Margin = New Padding(6, 0, 6, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(118, 24)
+        Label4.Size = New Size(129, 24)
         Label4.TabIndex = 4
-        Label4.Text = "Build 0000.0"
+        Label4.Text = "Build 0000.00"
         ' 
         ' LinkLabel1
         ' 
@@ -302,20 +304,6 @@ Partial Class Form9
         LinkLabel5.TabStop = True
         LinkLabel5.Text = "法律信息"
         ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.ContextMenuStrip = ContextMenuStrip1
-        Label6.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label6.ForeColor = SystemColors.GrayText
-        Label6.Location = New Point(53, 244)
-        Label6.Margin = New Padding(6, 0, 6, 0)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(159, 24)
-        Label6.TabIndex = 18
-        Label6.Text = "方便快捷 一点即达"
-        Label6.Visible = False
-        ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
@@ -331,6 +319,7 @@ Partial Class Form9
         ' 
         LinkLabel10.ActiveLinkColor = Color.DarkRed
         LinkLabel10.AutoSize = True
+        LinkLabel10.ContextMenuStrip = ContextMenuStrip3
         LinkLabel10.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel10.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel10.LinkColor = Color.FromArgb(CByte(132), CByte(117), CByte(213))
@@ -341,6 +330,19 @@ Partial Class Form9
         LinkLabel10.TabIndex = 14
         LinkLabel10.TabStop = True
         LinkLabel10.Text = "开源地址"
+        ' 
+        ' ContextMenuStrip3
+        ' 
+        ContextMenuStrip3.ImageScalingSize = New Size(28, 28)
+        ContextMenuStrip3.Items.AddRange(New ToolStripItem() {在浏览器打开该页ToolStripMenuItem})
+        ContextMenuStrip3.Name = "ContextMenuStrip3"
+        ContextMenuStrip3.Size = New Size(253, 38)
+        ' 
+        ' 在浏览器打开该页ToolStripMenuItem
+        ' 
+        在浏览器打开该页ToolStripMenuItem.Name = "在浏览器打开该页ToolStripMenuItem"
+        在浏览器打开该页ToolStripMenuItem.Size = New Size(252, 34)
+        在浏览器打开该页ToolStripMenuItem.Text = "在浏览器打开该页"
         ' 
         ' Beta
         ' 
@@ -362,7 +364,6 @@ Partial Class Form9
         ContextMenuStrip = ContextMenuStrip1
         Controls.Add(Beta)
         Controls.Add(LinkLabel10)
-        Controls.Add(Label6)
         Controls.Add(LinkLabel5)
         Controls.Add(LinkLabel9)
         Controls.Add(LinkLabel8)
@@ -389,6 +390,7 @@ Partial Class Form9
         ContextMenuStrip1.ResumeLayout(False)
         ContextMenuStrip2.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        ContextMenuStrip3.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
 
@@ -413,11 +415,12 @@ Partial Class Form9
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents 退出程序ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LinkLabel5 As LinkLabel
-    Friend WithEvents Label6 As Label
     Friend WithEvents LinkLabel10 As LinkLabel
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents 检查更新ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
     Friend WithEvents 应急下载链接ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Beta As Label
+    Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
+    Friend WithEvents 在浏览器打开该页ToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -15,7 +15,7 @@ Public Class Form9
 
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim upginfo1 As String = "RTM 版本(9632.3/4):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.203 (26/04 带外安全更新)，安装程序附带 WinAppSDK 提升至 1.7.9" & vbCrLf & "2.在不支持 任务栏缩略图大小调整 的 Win11 26100+ 版本屏蔽该功能" & vbCrLf & "3.组策略功能在不支持的系统添加提示" & vbCrLf & "4.企业功能注册表项 ShowSpecifyPage 已弃用，请使用新的启动参数功能" & vbCrLf & "5.新增应用启动参数，可到关于页查看用法" & vbCrLf & "6.任务管理器 x86 已在 Win11 22h2 及更高版本更改为 旧版任务管理器，在低版本系统中删除了该选项" & vbCrLf & "7.电源菜单中新增锁定功能" & vbCrLf & "8.从该版本开始不再支持 Win10 1507" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.处理了一些返回主页功能失效问题" & vbCrLf & "2.解决在部分缩放下新版弹窗出现底部大量空白问题" & vbCrLf & "3.解决电源菜单关机或重启时会弹窗显示不正确的一分钟计时问题" & vbCrLf & "4.低版本系统置顶功能重新启用，相关 bug 已修复" & vbCrLf & "5.解决安装程序在安装 WinAppSdk 时的进度不同步和临时文件不删除问题" & vbCrLf & "6.修复安装/卸载时进度窗口不响应 UI 交互问题" & vbCrLf & "7.修复安装/卸载窗口在移动位置后再进行操作会自动回到默认位置问题" & vbCrLf & "8.修复关闭/重启 Exp 窗口点击不再提示后选项中未及时显示恢复菜单问题" & vbCrLf & "9.修复一个影响右上角显示项目设置的问题" & vbCrLf & vbCrLf & vbCrLf & "维护版本(9632.5):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.输入相关多个对话框更新" & vbCrLf & "2.放开低版本 win10 的 UWP 应用限制" & vbCrLf & "3.系统修改 功能对低版本 Win10 放开更多功能" & vbCrLf & "4.自定义定时关机增加时间单位选择" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.修复组策略功能在不支持的系统添加的提示不显示问题" & vbCrLf & "2.仅在 Win11+ 修复：在 Win10/11 上 Appx 版本软件以存在管理员运行时内嵌 Webview2 运行库报错" & vbCrLf & "3.修复了部分情况下设置菜单项：旧版任务管理器 不显示问题" & vbCrLf & "4.内嵌.NET 框架更新到 10.0.300 (26/05 安全及功能更新)"
+        Dim upginfo1 As String = "RTM 版本(9632.3/4):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.应用内嵌.NET SDK 提升至 10.0.203 (26/04 带外安全更新)，安装程序附带 WinAppSDK 提升至 1.7.9" & vbCrLf & "2.在不支持 任务栏缩略图大小调整 的 Win11 26100+ 版本屏蔽该功能" & vbCrLf & "3.组策略功能在不支持的系统添加提示" & vbCrLf & "4.企业功能注册表项 ShowSpecifyPage 已弃用，请使用新的启动参数功能" & vbCrLf & "5.新增应用启动参数，可到关于页查看用法" & vbCrLf & "6.任务管理器 x86 已在 Win11 22h2 及更高版本更改为 旧版任务管理器，在低版本系统中删除了该选项" & vbCrLf & "7.电源菜单中新增锁定功能" & vbCrLf & "8.从该版本开始不再支持 Win10 1507" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.处理了一些返回主页功能失效问题" & vbCrLf & "2.解决在部分缩放下新版弹窗出现底部大量空白问题" & vbCrLf & "3.解决电源菜单关机或重启时会弹窗显示不正确的一分钟计时问题" & vbCrLf & "4.低版本系统置顶功能重新启用，相关 bug 已修复" & vbCrLf & "5.解决安装程序在安装 WinAppSdk 时的进度不同步和临时文件不删除问题" & vbCrLf & "6.修复安装/卸载时进度窗口不响应 UI 交互问题" & vbCrLf & "7.修复安装/卸载窗口在移动位置后再进行操作会自动回到默认位置问题" & vbCrLf & "8.修复关闭/重启 Exp 窗口点击不再提示后选项中未及时显示恢复菜单问题" & vbCrLf & "9.修复一个影响右上角显示项目设置的问题" & vbCrLf & vbCrLf & vbCrLf & "维护版本(9632.5):" & vbCrLf & vbCrLf & "-新增：" & vbCrLf & "1.输入相关多个对话框更新" & vbCrLf & "2.放开低版本 win10 的 UWP 应用限制" & vbCrLf & "3.系统修改 功能对低版本 Win10 放开更多功能" & vbCrLf & "4.自定义定时关机增加时间单位选择" & vbCrLf & "5.开源地址增加右键：在浏览器中打开" & vbCrLf & vbCrLf & "-修复：" & vbCrLf & "1.修复组策略功能在不支持的系统添加的提示不显示问题" & vbCrLf & "2.仅在 Win11+ 修复：在 Win10/11 上 Appx 版本软件以存在管理员运行时内嵌 Webview2 运行库报错" & vbCrLf & "3.修复了部分情况下设置菜单项：旧版任务管理器 不显示问题" & vbCrLf & "4.内嵌.NET 框架更新到 10.0.300 (26/05 安全及功能更新)" & vbCrLf & "5.解决一个可能影响更改安装程序的稳定性问题"
         Dim upginfoNext As String = "" & vbCrLf & vbCrLf & vbCrLf & ""     '此处是多个日志分割用
         Dim Nform16UPGINFO As New Form16
         Nform16UPGINFO.Show()
@@ -109,10 +109,6 @@ legacy:
         LinkLabel9.Visible = False
     End Sub
 
-    Private Sub Label4_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles Label4.MouseDoubleClick
-        Label6.Visible = True      '彩蛋-版本
-    End Sub
-
     Private Sub 打开主界面ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开主界面ToolStripMenuItem.Click
         Form1.Show()
     End Sub
@@ -142,11 +138,6 @@ legacy:
     Private Sub LinkLabel10_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Dim NF11 As New Form11()
         NF11.Show()
-    End Sub
-
-    Private Sub Label6_DoubleClick(sender As Object, e As EventArgs) Handles Label6.DoubleClick
-        Form4.Show()
-        Label6.Visible = False        '彩蛋-介绍
     End Sub
 
     Private Sub LinkLabel10_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel10.LinkClicked
@@ -207,5 +198,9 @@ legacy:
 
     Private Sub 应急下载链接ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 应急下载链接ToolStripMenuItem.Click
         Shell("cmd.exe /c start https://z181k.lanzoux.com/b0205vf6f", AppWinStyle.Hide, False, -1)
+    End Sub
+
+    Private Sub 在浏览器打开该页ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 在浏览器打开该页ToolStripMenuItem.Click
+        Shell("cmd.exe /c start https://github.com/z181k/WFL-Tool", AppWinStyle.Hide, True, -1)
     End Sub
 End Class
