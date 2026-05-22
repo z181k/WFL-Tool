@@ -1,4 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
+Imports Microsoft.Win32
 
 Public Class InputUI
     <DllImport("user32.dll")>
@@ -28,21 +29,39 @@ Public Class InputUI
             Dim pwstdntimeINT As Int64
             Dim pwstdntimeText As String = TextBox1.Text
             Try
-                pwstdntimeINT = pwstdntimeText
+                pwstdntimeINT = pwstdntimeText          '尝试转为int64类型
             Catch ex As Exception
-                Exit Sub
+                Exit Sub                       '转换失败说明输入不对，直接退出
             End Try
             Dim pwstdntimeNew As Int64
-            If Second.Checked = True Then
-                pwstdntimeNew = pwstdntimeINT
+            If Second.Checked = True Then               '秒
+                pwstdntimeNew = pwstdntimeINT           '赋值
+                Try                    '注册表写入选择记忆
+                    Using key As RegistryKey = Registry.CurrentUser.CreateSubKey("Software\DBT\WFL Tool")
+                        key.SetValue("ShutTimeUnit", 0, RegistryValueKind.DWord)
+                    End Using
+                Catch ex As Exception
+                End Try
             End If
-            If Minute.Checked = True Then
-                pwstdntimeNew = pwstdntimeINT * 60
+            If Minute.Checked = True Then               '分
+                pwstdntimeNew = pwstdntimeINT * 60      '转换后赋值
+                Try                    '注册表写入选择记忆
+                    Using key As RegistryKey = Registry.CurrentUser.CreateSubKey("Software\DBT\WFL Tool")
+                        key.SetValue("ShutTimeUnit", 1, RegistryValueKind.DWord)
+                    End Using
+                Catch ex As Exception
+                End Try
             End If
-            If Hour.Checked = True Then
-                pwstdntimeNew = pwstdntimeINT * 3600
+            If Hour.Checked = True Then                 '时
+                pwstdntimeNew = pwstdntimeINT * 3600    '转换后赋值
+                Try                    '注册表写入选择记忆
+                    Using key As RegistryKey = Registry.CurrentUser.CreateSubKey("Software\DBT\WFL Tool")
+                        key.SetValue("ShutTimeUnit", 2, RegistryValueKind.DWord)
+                    End Using
+                Catch ex As Exception
+                End Try
             End If
-            Dim pwstdntimeString As String = pwstdntimeNew
+            Dim pwstdntimeString As String = pwstdntimeNew  '转回字符串
             CreateObject("shell.application").shellexecute("shutdown.EXE", "/s /t " + pwstdntimeString, "", "", 0)
         End If
         If Me.Text = "在""Conhost""中执行自定义命令 - WFL Tool" Then
@@ -56,9 +75,15 @@ Public Class InputUI
 
     Private Sub InputUI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '置顶窗口，如果在programfiles目录或Windows目录并且签名了就可以UIaccess
-        Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
+        Dim OnTop As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "OnTop", Nothing)
         If OnTop = "1" Then
             SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
+        End If
+        Dim STU As Integer = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\DBT\WFL Tool", "ShutTimeUnit", Nothing)
+        If STU = 1 Then
+            Minute.Checked = True               '读取上次的时间选择
+        ElseIf STU = 2 Then
+            Hour.Checked = True
         End If
     End Sub
 End Class
