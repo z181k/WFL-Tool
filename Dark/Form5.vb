@@ -151,7 +151,7 @@ Public Class Form5
         WtInputUI.Show()
         WtInputUI.Text = "在""Conhost""中执行自定义命令 - WFL Tool"
         WtInputUI.Label1.Text = "在下方输入要执行的命令"
-        WtInputUI.Label2.Text = "在""控制台窗口主机""中的命令提示符执行命令"
+        WtInputUI.Label2.Text = "在""控制台窗口主机""的命令环境中执行命令"
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
@@ -175,6 +175,6 @@ Public Class Form5
         WtInputUI.Show()
         WtInputUI.Text = "在""Windows 终端""中执行命令 - WFL Tool"
         WtInputUI.Label1.Text = "在下方输入要执行的命令"
-        WtInputUI.Label2.Text = "在""终端""下的命令提示符执行命令"
+        WtInputUI.Label2.Text = "在""终端""下的命令环境执行命令"
     End Sub
 End Class

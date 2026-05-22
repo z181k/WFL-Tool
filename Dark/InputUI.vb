@@ -22,7 +22,7 @@ Public Class InputUI
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Visible = False
         If TextBox1.Text = "" Or TextBox1.Text = " " Or TextBox1.Text = "  " Or TextBox1.Text = "　" Then
-            Exit Sub
+            Exit Sub                    '常见空值直接跳过
         End If
         If Me.Text = "自定义自动关机时间 - WFL Tool" Then
             Dim pwstdntimeINT As Int64
@@ -44,6 +44,12 @@ Public Class InputUI
             End If
             Dim pwstdntimeString As String = pwstdntimeNew
             CreateObject("shell.application").shellexecute("shutdown.EXE", "/s /t " + pwstdntimeString, "", "", 0)
+        End If
+        If Me.Text = "在""Conhost""中执行自定义命令 - WFL Tool" Then
+            Shell("conhost.exe " + TextBox1.Text, AppWinStyle.NormalFocus, False, -1)
+        End If
+        If Me.Text = "在""Windows 终端""中执行命令 - WFL Tool" Then
+            Shell("conhost.exe wt " + TextBox1.Text, AppWinStyle.NormalFocus, False, -1)
         End If
         Close()
     End Sub
