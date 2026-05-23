@@ -589,13 +589,25 @@ legacy:
     End Sub
 
     Private Sub ToolStripMenuItem17_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem17.Click
+        Dim scalePercentage As Integer
+        Using g As Graphics = Me.CreateGraphics                         'DPI感知
+            scalePercentage = CInt(Math.Round((g.DpiX / 96.0F) * 100))
+        End Using
+
         Dim ShuInputUI As New InputUI
         ShuInputUI.Show()
         ShuInputUI.Text = "自定义自动关机时间 - WFL Tool"
         ShuInputUI.Label1.Text = "要在多久后关机？"
         ShuInputUI.Label2.Text = "在下方输入时间，仅支持整数"
         ShuInputUI.GroupBox1.Visible = True
-        ShuInputUI.TextBox1.Size = New Size(326, 40)
+
+        If scalePercentage < 175 Then
+            ShuInputUI.TextBox1.Size = New Size(180, 30)
+        ElseIf scalePercentage < 250 Then
+            ShuInputUI.TextBox1.Size = New Size(326, 40)
+        Else
+            ShuInputUI.TextBox1.Size = New Size(460, 50)
+        End If
     End Sub
 
     Private Sub 旧版ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 旧版ToolStripMenuItem.Click

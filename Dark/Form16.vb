@@ -31,9 +31,9 @@ Public Class Form16
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Stop()
-        Dim heightback As Int32 = Me.Height
-        AutoSize = False
-        Me.Height = heightback
+        Dim heightback As Int32 = Me.Height '捕获自动调整窗体大小模式下的窗体高度
+        AutoSize = False                    '关闭自动调整窗体大小模式，窗体会变窄变高
+        Me.Height = heightback              '应用保存的高度
         If Label1.Text = "要 重启资源管理器 吗？" Then
             TextBox1.Text = "你确定要重启资源管理器吗？" & vbCrLf & vbCrLf & "重启资源管理器会导致你正在进行的文件操作（文件复制、删除等操作）被强行打断，如果你需要重启，请先关闭这些操作或等待这些操作完成后单击继续重启或不再提示" & vbCrLf & vbCrLf & "如果不希望以后再弹出这个提示，请点击不再提示，否则请单击继续重启"
             Button2.Visible = True
