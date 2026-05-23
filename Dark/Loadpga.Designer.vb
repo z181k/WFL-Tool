@@ -35,9 +35,9 @@ Partial Class Loadpga
         Beta.ForeColor = Color.Lavender
         Beta.Location = New Point(4, 55)
         Beta.Name = "Beta"
-        Beta.Size = New Size(90, 28)
+        Beta.Size = New Size(59, 28)
         Beta.TabIndex = 0
-        Beta.Text = "StoreB2"
+        Beta.Text = "RTM"
         Beta.Visible = False
         ' 
         ' Build
@@ -48,7 +48,7 @@ Partial Class Loadpga
         Build.Name = "Build"
         Build.Size = New Size(89, 28)
         Build.TabIndex = 1
-        Build.Text = "9632.06"
+        Build.Text = "9632.07"
         Build.Visible = False
         ' 
         ' Ver
@@ -77,7 +77,7 @@ Partial Class Loadpga
         AutoScaleDimensions = New SizeF(13F, 28F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Indigo
-        ClientSize = New Size(80, 111)
+        ClientSize = New Size(88, 111)
         ControlBox = False
         Controls.Add(NewUI)
         Controls.Add(Ver)
