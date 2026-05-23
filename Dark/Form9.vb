@@ -171,6 +171,33 @@ legacy:
         End If
         '低屏幕分辨率设备兼容代码
         PictureBox1.Height = PictureBox1.Width
+
+        'Slogan文本的缩放兼容
+        Dim scalePercentage As Integer
+        Using g As Graphics = Me.CreateGraphics
+            scalePercentage = CInt(Math.Round((g.DpiX / 96.0F) * 100))
+        End Using
+
+        Dim LocaX As Integer = Label2.Location.X
+        Dim LocaY As Integer = Label2.Location.Y
+
+        If scalePercentage <= 100 Then
+            Label2.Location = New Point(LocaX - 2, LocaY)
+        ElseIf scalePercentage <= 150 Then
+            Label2.Location = New Point(LocaX - 2, LocaY)
+        ElseIf scalePercentage <= 200 Then
+            '保持现状
+        ElseIf scalePercentage <= 225 Then
+            Label2.Location = New Point(LocaX - 3, LocaY)
+        ElseIf scalePercentage <= 275 Then
+            '保持现状
+        ElseIf scalePercentage <= 300 Then
+            Label2.Location = New Point(LocaX - 4, LocaY)
+        ElseIf scalePercentage <= 375 Then
+            '保持现状
+        ElseIf scalePercentage <= 450 Then
+            Label2.Location = New Point(LocaX - 5, LocaY)
+        End If
     End Sub
 
     Private Sub 检查更新ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 检查更新ToolStripMenuItem.Click

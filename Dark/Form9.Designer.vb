@@ -62,7 +62,7 @@ Partial Class Form9
         Label1.AutoSize = True
         Label1.ContextMenuStrip = ContextMenuStrip1
         Label1.Font = New Font("微软雅黑", 15F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label1.Location = New Point(46, 194)
+        Label1.Location = New Point(46, 200)
         Label1.Margin = New Padding(6, 0, 6, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(176, 46)
@@ -99,7 +99,7 @@ Partial Class Form9
         Label2.ContextMenuStrip = ContextMenuStrip1
         Label2.Font = New Font("Microsoft YaHei UI Light", 7.714286F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label2.ForeColor = SystemColors.GrayText
-        Label2.Location = New Point(54, 238)
+        Label2.Location = New Point(54, 244)
         Label2.Margin = New Padding(6, 0, 6, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(159, 24)
@@ -112,7 +112,7 @@ Partial Class Form9
         Label3.ContextMenuStrip = ContextMenuStrip1
         Label3.Font = New Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label3.ForeColor = SystemColors.GrayText
-        Label3.Location = New Point(73, 368)
+        Label3.Location = New Point(73, 371)
         Label3.Margin = New Padding(6, 0, 6, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(122, 32)
@@ -125,7 +125,7 @@ Partial Class Form9
         Label4.ContextMenuStrip = ContextMenuStrip1
         Label4.Font = New Font("微软雅黑", 7.5F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label4.ForeColor = Color.Gray
-        Label4.Location = New Point(68, 404)
+        Label4.Location = New Point(68, 407)
         Label4.Margin = New Padding(6, 0, 6, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(129, 24)
@@ -307,7 +307,7 @@ Partial Class Form9
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(75, 78)
+        PictureBox1.Location = New Point(75, 84)
         PictureBox1.Margin = New Padding(6, 5, 6, 5)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(117, 112)
