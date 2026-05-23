@@ -52,7 +52,7 @@ legacy:
     Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel6.LinkClicked '检查更新
         If e.Button = MouseButtons.Left Then            '识别左键单击事件才操作
             Dim InstallLocation As String
-            If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+            If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
                 InstallLocation = Application.StartupPath
             Else
                 On Error GoTo legacy
@@ -84,12 +84,12 @@ legacy:
         Dim Nform16UPGINFO As New Form16
         Nform16UPGINFO.Show()
         Dim VerName As String = ".NET 10"
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
             VerName = "无 UIaccess"
         End If
         If Beta.Text = "B1" Then
             Nform16UPGINFO.TextBox1.Text = "全名: WFL Tool (x64)              版本类别: 内测版 - " + VerName + " 版" & vbCrLf & "分支: AMD64.Tree5-Main.Release" & vbCrLf & "编译日期：各个组件的签名日期即编译日期" & vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"
-        ElseIf Beta.Text = "B2" Then
+        ElseIf Beta.Text = "B2" Or Beta.Text = "StoreB2" Then
             Nform16UPGINFO.TextBox1.Text = "全名: WFL Tool (x64)              版本类别: 公测版 - " + VerName + " 版" & vbCrLf & "分支: AMD64.Tree5-Main.Release" & vbCrLf & "编译日期：各个组件的签名日期即编译日期" & vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"
         Else
             Nform16UPGINFO.TextBox1.Text = "全名: WFL Tool (x64)              版本类别: 正式版 - " + VerName + " 版" & vbCrLf & "分支: AMD64.Tree5-Main.Release" & vbCrLf & "编译日期：各个组件的签名日期即编译日期" & vbCrLf & "" & vbCrLf & "WinAppSdk 模块由 Bilibili@空糖_SuGar (UID:438929715) 提供支持" & vbCrLf & "" & vbCrLf & "电脑功能启动器是 WFL Tool 的中文名"
@@ -142,7 +142,7 @@ legacy:
 
     Private Sub LinkLabel10_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel10.LinkClicked
         Dim InstallLocation As String
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
             InstallLocation = Application.StartupPath
         Else
             On Error GoTo legacy
@@ -175,7 +175,7 @@ legacy:
 
     Private Sub 检查更新ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 检查更新ToolStripMenuItem.Click
         Dim InstallLocation As String
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
             InstallLocation = Application.StartupPath
         Else
             On Error GoTo legacy

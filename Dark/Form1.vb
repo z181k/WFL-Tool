@@ -146,7 +146,7 @@ legacy:
 
     Private Sub 获取帮助GToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 获取帮助GToolStripMenuItem.Click
         Dim InstallLocation As String
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
             InstallLocation = Application.StartupPath
         Else
             On Error GoTo legacy
@@ -305,7 +305,7 @@ legacy:                           'EDGE WEBVIEW2不存在或者无法启动ewv2�
 
     Private Sub 打开helpcenterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开helpcenterToolStripMenuItem.Click
         Dim InstallLocation As String
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
             InstallLocation = Application.StartupPath
         Else
             On Error GoTo legacy
@@ -475,7 +475,7 @@ starttask:
             Panel1.Show()
             Label1.Text = "仅供内部测试,内部机密,若意外获得,请向我们举报"
             LinkLabel2.Visible = False
-        ElseIf Beta.Text = "B2" Then
+        ElseIf Beta.Text = "B2" Or Beta.Text = "StoreB2" Then
             Dim Beta As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("Preview", "无")
             If Beta <> Build.Text Then
                 Panel1.Show()
@@ -762,7 +762,7 @@ legacy:
 
     Private Sub 清除数据并退出程序ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除数据并退出程序ToolStripMenuItem.Click
         Form11.Show()
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
             Form11.Text = "清除数据"
         End If
     End Sub
@@ -862,7 +862,7 @@ legacy:
 
     Private Sub 设备管理器错误代码帮助helpmenu_Click(sender As Object, e As EventArgs) Handles 设备管理器错误代码帮助helpmenu.Click
         Dim InstallLocation As String
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
             InstallLocation = Application.StartupPath
         Else
             On Error GoTo legacy
@@ -885,7 +885,7 @@ legacy:
 
     Private Sub 关于设备管理器错误代码的帮助ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于设备管理器错误代码的帮助ToolStripMenuItem.Click
         Dim InstallLocation As String
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
             InstallLocation = Application.StartupPath
         Else
             On Error GoTo legacy
@@ -966,7 +966,7 @@ legacy:
 
     Private Sub 下载新版本WFLToolTSMI_Click(sender As Object, e As EventArgs) Handles 下载新版本WFLToolTSMI.Click
         Dim InstallLocation As String
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Then
+        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Or Beta.Text = "StoreB2" Then
             InstallLocation = Application.StartupPath
         Else
             On Error GoTo legacy

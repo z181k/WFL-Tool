@@ -35,9 +35,9 @@ Partial Class Loadpga
         Beta.ForeColor = Color.Lavender
         Beta.Location = New Point(4, 55)
         Beta.Name = "Beta"
-        Beta.Size = New Size(37, 28)
+        Beta.Size = New Size(90, 28)
         Beta.TabIndex = 0
-        Beta.Text = "B1"
+        Beta.Text = "StoreB2"
         Beta.Visible = False
         ' 
         ' Build
