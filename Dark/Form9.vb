@@ -141,26 +141,28 @@ legacy:
     End Sub
 
     Private Sub LinkLabel10_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel10.LinkClicked
-        Dim InstallLocation As String
-        If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
-            InstallLocation = Application.StartupPath
-        Else
-            On Error GoTo legacy
-            Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
-            If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
-                GoTo legacy
+        If e.Button = MouseButtons.Left Then            '识别左键单击事件才操作
+            Dim InstallLocation As String
+            If Beta.Text = "Store" Or Beta.Text = "StoreSF" Or Beta.Text = "StoreB2" Then
+                InstallLocation = Application.StartupPath
+            Else
+                On Error GoTo legacy
+                Dim EDGEWV2 As String = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView", "Version", Nothing)
+                If EDGEWV2 = "" Then               '判断EDGE WEBVIEW2是否存在
+                    GoTo legacy
+                End If
+                InstallLocation = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing) + "\"
             End If
-            InstallLocation = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\WFLtool", "InstallLocation", Nothing) + "\"
-        End If
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""WFL Tool 项目开源页面 - Github"" /f", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageURL /T REG_SZ /d https://github.com/z181k/WFL-Tool /f", AppWinStyle.Hide, True, -1)
-        Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
-        Exit Sub
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageShow /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d True /f", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageTitle /T REG_SZ /d ""WFL Tool 项目开源页面 - Github"" /f", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageURL /T REG_SZ /d https://github.com/z181k/WFL-Tool /f", AppWinStyle.Hide, True, -1)
+            Shell("EWV2viewer\EWV2Viewer.exe", AppWinStyle.NormalFocus, False, -1)   '写入启动参数注册表并且启动ewv2
+            Exit Sub
 legacy:
-        Shell("cmd.exe /c start https://github.com/z181k/WFL-Tool", AppWinStyle.Hide, True, -1)
-        Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
+            Shell("cmd.exe /c start https://github.com/z181k/WFL-Tool", AppWinStyle.Hide, True, -1)
+            Shell("reg.exe add ""HKEY_CURRENT_USER\Software\DBT\WebPageViewer"" /v EWV2webpageClean /T REG_SZ /d False /f", AppWinStyle.Hide, True, -1)
+        End If
     End Sub
 
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
