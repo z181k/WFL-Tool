@@ -53,4 +53,12 @@ nexttap:
             SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
         End If
     End Sub
+
+    Private Sub Form11_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '置顶窗口，如果在programfiles目录或Windows目录并且签名了就可以UIaccess
+        Dim OnTop As String = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\DBT\WFL Tool", True).GetValue("OnTop", "无")
+        If OnTop = "1" Then
+            SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW)
+        End If
+    End Sub
 End Class
