@@ -1,0 +1,108 @@
+规则来源：
+https://github.com/Chuyu-Team/Dism-Multi-language/issues/856
+https://www.tenforums.com/tutorials/45018-turn-off-clear-acrylic-taskbar-transparency-windows-10-a-2.html
+https://windowsreport.com/transparent-taskbar-windows-11/
+
+
+1803 以上系统支持
+19043.1165 亲测有效
+LTSC、家庭版可能效果不完美
+请点击最下方“展开阅读全文”
+若开启过半透明效果，启用其他效果时，需另外结束 dwm.exe 进程！
+重启资源管理器进程是指：结束进程后重新运行，并非右键中的重启
+Win11 132 亲测无效
+
+
+
+系统默认：
+-------------------------------------------------------------------------------------------------------------------
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAcrylicOpacity"=-
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"UseOLEDTaskbarTransparency"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"ForceEffectMode"=-
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+高斯模糊：
+支持深、浅色模式
+支持任务栏主题色
+需重启资源管理器进程
+-------------------------------------------------------------------------------------------------------------------
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+; 开启透明效果
+"EnableTransparency"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; 任务栏透明度
+"TaskbarAcrylicOpacity"=dword:00000005
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"UseOLEDTaskbarTransparency"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"ForceEffectMode"=-
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+半透明：
+注：开始菜单、日历、操作中心背景模糊透明效果将消失！
+支持深、浅色模式
+支持任务栏主题色
+需重启 dwm.exe 进程
+-------------------------------------------------------------------------------------------------------------------
+Windows Registry Editor Version 5.00
+
+; Created by: Shawn Brink
+; Created on: March 23rd 2016
+; Updated on: December 5th 2019
+; Tutorial: https://www.tenforums.com/tutorials/45018-turn-off-clear-acrylic-taskbar-transparency-windows-10-a.html
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+; 开启透明效果
+"EnableTransparency"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"UseOLEDTaskbarTransparency"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"ForceEffectMode"=dword:00000001
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+全透明：
+仅支持深色模式
+不支持任务栏主题色
+若无效果，请开关一次“透明效果”
+需重启资源管理器进程
+-------------------------------------------------------------------------------------------------------------------
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+; 开启透明效果
+"EnableTransparency"=dword:00000001
+; 关闭任务栏主题色
+"ColorPrevalence"=dword:00000000
+; 浅色模式开关
+"SystemUsesLightTheme"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; 任务栏透明度
+"TaskbarAcrylicOpacity"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"UseOLEDTaskbarTransparency"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"ForceEffectMode"=-
+-------------------------------------------------------------------------------------------------------------------

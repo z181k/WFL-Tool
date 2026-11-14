@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="WFLTool.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="WFL Tool">
+
+    <Grid x:Name="RootGrid" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- 使用系统 TitleBar 控件自带的返回按钮，不再自绘 -->
+        <TitleBar x:Name="AppTitleBar"
+                  Grid.Row="0"
+                  Title="WFL Tool"
+                  Subtitle="电脑功能启动器"
+                  Height="45"
+                  IsBackButtonVisible="True"
+                  IsBackButtonEnabled="False"
+                  IsPaneToggleButtonVisible="False"
+                  BackRequested="AppTitleBar_BackRequested">
+        </TitleBar>
+
+        <!-- 经典菜单栏：顶部只保留 5 个菜单，外层加圆角卡片框 -->
+        <Grid Grid.Row="1" Padding="8,4,12,6">
+            <Border Background="{ThemeResource CardBackgroundBrush}"
+                    BorderBrush="{ThemeResource CardStrokeBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="8,2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                <MenuBar x:Name="MainMenu" Grid.Column="0" HorizontalAlignment="Left" Background="Transparent">
+                <MenuBarItem Title="功能">
+                    <MenuFlyoutItem Text="主页" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="浏览文件…" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="运行…" Click="MenuItem_Click" />
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutSubItem Text="系统更新">
+                        <MenuFlyoutItem Text="检查 Windows 更新" Click="MenuItem_Click" />
+                        <MenuFlyoutItem Text="Windows 更新日志及离线更新包" Click="MenuItem_Click" />
+                        <MenuFlyoutSubItem Text="下载 Windows">
+                            <MenuFlyoutItem Text="官网下载" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="MSDN 我告诉你" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="UUP Dump (不忘初心)" Click="MenuItem_Click" />
+                        </MenuFlyoutSubItem>
+                        <MenuFlyoutSubItem Text="Windows 自动更新控制">
+                            <MenuFlyoutItem x:Name="AutoUpdateOnItem" Text="开启自动更新" Click="AutoUpdateOn_Click" />
+                            <MenuFlyoutItem x:Name="AutoUpdateOffItem" Text="禁用自动更新" Click="AutoUpdateOff_Click" />
+                        </MenuFlyoutSubItem>
+                        <MenuFlyoutSeparator />
+                        <MenuFlyoutItem Text="下载新版本 WFL Tool" Click="MenuItem_Click" />
+                    </MenuFlyoutSubItem>
+                    <MenuFlyoutItem x:Name="SystemTweaksMenuItem" Text="系统修改" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="密钥管理服务" Click="MenuItem_Click" />
+                    <MenuFlyoutSubItem Text="更多">
+                        <MenuFlyoutItem Text="所有任务" Click="MenuItem_Click" />
+                        <MenuFlyoutItem Text="打开系统属性" Click="MenuItem_Click" />
+                        <MenuFlyoutItem x:Name="SecurityQuestionsMenuItem" Text="设置 Windows 安全问题" Click="MenuItem_Click" />
+                        <MenuFlyoutSeparator />
+                        <MenuFlyoutSubItem Text="高级功能">
+                            <MenuFlyoutItem Text="功能说明 - 帮助" Click="MenuItem_Click" />
+                            <MenuFlyoutSeparator />
+                            <MenuFlyoutItem Text="修复 Win10/11 开始菜单卡死" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="禁用命令提示符" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="恢复命令提示符" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="禁用控制面板" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="恢复控制面板" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="禁用任务管理器" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="恢复任务管理器" Click="MenuItem_Click" />
+                        </MenuFlyoutSubItem>
+                    </MenuFlyoutSubItem>
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutItem Text="查看更多" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="系统附件" Click="MenuItem_Click" />
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutItem x:Name="SettingsMenuItem" Text="选项" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="清除数据" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="退出" Click="MenuItem_Click" />
+                </MenuBarItem>
+
+                <MenuBarItem Title="UWP 应用">
+                    <MenuFlyoutItem Text="设置" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="Windows 安全中心" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="Microsoft Store" Click="MenuItem_Click" />
+                    <MenuFlyoutItem x:Name="UwpExplorerMenuItem" Text="UWP 资源管理器" Click="UwpExplorer_Click" />
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutItem x:Name="MediaPlayerMenuItem" Text="媒体播放器" Click="MediaPlayer_Click" />
+                    <MenuFlyoutItem Text="相机" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="相册" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="时钟" Click="MenuItem_Click" />
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutItem Text="查看所有应用" Click="MenuItem_Click" />
+                </MenuBarItem>
+
+                <MenuBarItem Title="电源">
+                    <MenuFlyoutItem x:Name="BatteryMenuItem" Text="电池健康信息" Click="Battery_Click" />
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutItem Text="锁定" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="切换用户" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="休眠" Click="MenuItem_Click" />
+                    <MenuFlyoutItem x:Name="LogoffMenuItem" Text="注销" Click="Logoff_Click" />
+                    <MenuFlyoutSubItem Text="定时关机">
+                        <MenuFlyoutSubItem Text="设置定时关机">
+                            <MenuFlyoutItem Text="1 分钟后" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="5 分钟后" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="10 分钟后" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="20 分钟后" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="30 分钟后" Click="MenuItem_Click" />
+                            <MenuFlyoutSeparator />
+                            <MenuFlyoutItem Text="1 小时后" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="2 小时后" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="5 小时后" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="12 小时后" Click="MenuItem_Click" />
+                            <MenuFlyoutSeparator />
+                            <MenuFlyoutItem Text="1 天后" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="2 天后" Click="MenuItem_Click" />
+                            <MenuFlyoutSeparator />
+                            <MenuFlyoutItem Text="自定义…" Click="MenuItem_Click" />
+                            <MenuFlyoutItem Text="高级选项" Click="MenuItem_Click" />
+                        </MenuFlyoutSubItem>
+                        <MenuFlyoutSeparator />
+                        <MenuFlyoutItem Text="取消定时关机" Click="MenuItem_Click" />
+                    </MenuFlyoutSubItem>
+                    <MenuFlyoutItem Text="关机" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="重启" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="进入 WinRE" Click="MenuItem_Click" />
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutItem Text="快速关机" Click="MenuItem_Click" />
+                </MenuBarItem>
+
+                <MenuBarItem x:Name="ThemeMenuBarItem" Title="主题">
+                    <ToggleMenuFlyoutItem x:Name="ThemeLightItem" Text="亮色" Click="ThemeLight_Click" />
+                    <ToggleMenuFlyoutItem x:Name="ThemeDarkItem" Text="暗色" Click="ThemeDark_Click" />
+                    <MenuFlyoutSeparator />
+                    <ToggleMenuFlyoutItem x:Name="ThemeAutoItem" Text="跟随系统" Click="ThemeAuto_Click" />
+                </MenuBarItem>
+
+                <MenuBarItem Title="帮助">
+                    <MenuFlyoutItem Text="获取帮助" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="发送反馈 (邮箱)" Click="MenuItem_Click" />
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutItem Text="设备管理器错误代码帮助" Click="MenuItem_Click" />
+                    <MenuFlyoutItem Text="Windows 帮助和支持" Click="MenuItem_Click" />
+                    <MenuFlyoutSeparator />
+                    <MenuFlyoutItem Text="关于" Click="MenuItem_Click" />
+                </MenuBarItem>
+            </MenuBar>
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                Spacing="4"
+                                VerticalAlignment="Center">
+                        <TextBlock x:Name="VersionText"
+                                   VerticalAlignment="Center"
+                                   FontSize="12"
+                                   Foreground="{ThemeResource MutedTextBrush}"
+                                   Text="WFL Tool  v17.5" />
+                        <Button x:Name="MenuSettingsButton"
+                                Width="36"
+                                Height="32"
+                                Padding="0"
+                                VerticalAlignment="Center"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                CornerRadius="0"
+                                Click="MenuSettings_Click"
+                                AutomationProperties.Name="设置"
+                                ToolTipService.ToolTip="WFL Tool 选项">
+                            <FontIcon Glyph="&#xE713;" FontSize="16" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Frame x:Name="ContentFrame" Grid.Row="2" Background="Transparent"
+               HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+    </Grid>
+</Window>

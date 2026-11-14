@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WFLTool.Pages.SystemPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" MaxWidth="1100">
+        <Grid Padding="32,20,32,36" HorizontalAlignment="Stretch">
+            <StackPanel Spacing="16">
+                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <Button x:Name="BackButton" Click="BackButton_Click" Background="Transparent" BorderThickness="0"
+                            Padding="8" Visibility="Collapsed" ToolTipService.ToolTip="返回">
+                        <FontIcon Glyph="&#xE72B;" FontSize="16" />
+                    </Button>
+                    <StackPanel Spacing="2">
+                        <TextBlock Text="系统修改" Style="{StaticResource PageTitleTextStyle}" />
+                        <TextBlock Text="修改系统拥有、但设置和控制面板中没有显示的隐藏设置"
+                                   Style="{StaticResource PageSubtitleTextStyle}" />
+                    </StackPanel>
+                </StackPanel>
+
+                <InfoBar IsOpen="True" IsClosable="False" Severity="Warning"
+                         Title="使用前须知"
+                         Message="部分功能需要管理员身份，弹出用户账户控制 (UAC) 请点确定；如需大量调整设置，可以用管理员运行 WFL Tool 来跳过用户账户控制。没有声明支持的系统，Windows 7 及以上版本都能使用。" />
+
+                <Grid x:Name="GroupsPanel" ColumnSpacing="12" RowSpacing="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+                <Button Content="退出 WFL Tool" Style="{StaticResource LinkButtonStyle}"
+                        HorizontalAlignment="Left" Click="ExitButton_Click" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+    </Grid>
+</Page>

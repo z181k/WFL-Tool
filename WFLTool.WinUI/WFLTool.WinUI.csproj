@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>WFLTool</RootNamespace>
+    <AssemblyName>WFLTool</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\xinlogo.ico</ApplicationIcon>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>false</WindowsAppSDKSelfContained>
+    <SelfContained>false</SelfContained>
+    <AppxGeneratePriEnabled>true</AppxGeneratePriEnabled>
+    <ShouldComputeInputPris>true</ShouldComputeInputPris>
+    <IncludeCopyLocalFilesOutputGroup>true</IncludeCopyLocalFilesOutputGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyTitle>WFL Tool</AssemblyTitle>
+    <Product>电脑功能启动器 (x64)</Product>
+    <Company>© 2026 董博涛</Company>
+    <Copyright>版权所有 © 2026 董博涛 保留所有权利.</Copyright>
+    <Description>WFL Tool</Description>
+    <Version>17.5.9824.1</Version>
+    <AssemblyVersion>17.5.9824.1</AssemblyVersion>
+    <FileVersion>17.5.9824.1</FileVersion>
+    <NeutralLanguage>zh-Hans-HK</NeutralLanguage>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <AppxBundle>Never</AppxBundle>
+    <AppxMSBuildToolsPath Condition="'$(AppxMSBuildToolsPath)' == '' and Exists('D:\VSBuildTools\MSBuild\Microsoft\VisualStudio\v17.0\AppxPackage\Microsoft.Build.AppxPackage.dll')">D:\VSBuildTools\MSBuild\Microsoft\VisualStudio\v17.0\AppxPackage\</AppxMSBuildToolsPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.4.0" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4948" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\logo256.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Assets\xinlogo.ico" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Assets\background2.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Assets\Eula.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Assets\TransparencyTutorial.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="QuickShutdown.exe" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="vcruntime140.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <!-- 本应用不使用 Windows ML / AI，发布时去掉这些不属于运行时的可选组件。 -->
+  <Target Name="RemoveUnusedWindowsMlAssets" AfterTargets="Build" Condition="Exists('$(OutDir)')">
+    <ItemGroup>
+      <UnusedWindowsMlFile Include="$(OutDir)DirectML.dll;$(OutDir)onnxruntime.dll;$(OutDir)Microsoft.ML.OnnxRuntime.dll;$(OutDir)System.Numerics.Tensors.dll" />
+      <UnusedWindowsMlFile Include="$(OutDir)Microsoft.Windows.AI.*.dll" />
+    </ItemGroup>
+    <Delete Files="@(UnusedWindowsMlFile)" />
+  </Target>
+
+  <Target Name="RemoveUnusedWindowsMlPublishAssets" AfterTargets="Publish" Condition="Exists('$(PublishDir)')">
+    <ItemGroup>
+      <UnusedWindowsMlPublishFile Include="$(PublishDir)DirectML.dll;$(PublishDir)onnxruntime.dll;$(PublishDir)Microsoft.ML.OnnxRuntime.dll;$(PublishDir)System.Numerics.Tensors.dll" />
+      <UnusedWindowsMlPublishFile Include="$(PublishDir)Microsoft.Windows.AI.*.dll" />
+    </ItemGroup>
+    <Delete Files="@(UnusedWindowsMlPublishFile)" />
+  </Target>
+
+</Project>
